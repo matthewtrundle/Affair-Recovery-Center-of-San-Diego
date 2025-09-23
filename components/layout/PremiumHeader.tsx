@@ -31,13 +31,13 @@ const ShellIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 )
 
 const navigation = [
-  { name: 'About Jordan', href: '/about', icon: User, description: 'Meet your therapist' },
-  { name: 'Our Approach', href: '/approach', icon: Heart, description: 'How we help heal' },
-  { name: 'Services', href: '/services', icon: Lightbulb, description: 'What we offer' },
-  { name: 'Stories', href: '/testimonials', icon: MessageCircle, description: 'Client experiences' },
-  { name: 'Questions', href: '/faq', icon: HelpCircle, description: 'Common concerns' },
-  { name: 'Insights', href: '/blog', icon: BookOpen, description: 'Helpful resources' },
-  { name: 'Connect', href: '/contact', icon: Phone, description: 'Get in touch' },
+  { name: 'About', href: '/about', icon: User, description: 'Meet Jordan Zipkin' },
+  { name: 'Approach', href: '/approach', icon: Heart, description: 'Evidence-based methods' },
+  { name: 'Services', href: '/services', icon: Lightbulb, description: 'Therapy options' },
+  { name: 'Success Stories', href: '/testimonials', icon: MessageCircle, description: 'Real transformations' },
+  { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Your questions answered' },
+  { name: 'Resources', href: '/blog', icon: BookOpen, description: 'Healing insights' },
+  { name: 'Contact', href: '/contact', icon: Phone, description: 'Reach out today' },
 ]
 
 export function PremiumHeader() {
@@ -69,21 +69,21 @@ export function PremiumHeader() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center group">
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
-              className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-coral-400/20 to-sage-400/20 backdrop-blur-sm border border-white/30"
+              className="relative h-12"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-coral-400/30 to-sage-400/30 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
-              <span className="text-lg font-display font-medium text-white relative tracking-tight">ARC</span>
+              <Image
+                src="/images/logo/arc-logo-transparent.png"
+                alt="ARC - Affair Recovery Center San Diego"
+                width={240}
+                height={48}
+                className="object-contain h-full w-auto"
+                priority
+              />
             </motion.div>
-            <div className="text-white">
-              <h1 className="font-casual-header text-lg font-medium tracking-wide">
-                ARC San Diego
-              </h1>
-              <p className="text-xs text-white/70 font-relaxed">Evidence-Based Affair Recovery</p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -122,7 +122,7 @@ export function PremiumHeader() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-sage-400 opacity-90 group-hover:opacity-100 transition-opacity" />
                 <span className="relative text-white font-casual-header font-medium text-sm">
-                  Let's Talk
+                  Book Now
                 </span>
                 <ChevronRight className="relative w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
 
@@ -210,8 +210,8 @@ export function PremiumHeader() {
                 className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-sunsetCoral-400 to-warmSand-400 text-white rounded-full font-casual-header font-semibold shadow-lg"
                 onClick={() => setIsOpen(false)}
               >
-                <SunIcon className="w-5 h-5" />
-                Let's Talk
+                <Calendar className="w-5 h-5" />
+                Book Now
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </motion.div>

@@ -6,6 +6,26 @@ import { Calendar, ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { useRef, useEffect, useState } from 'react'
 
+// Video paths and quotes
+const videos = [
+  {
+    src: '/video/Firefly Aerial cinematic shot of a convertible car driving along the Pacific Coast Highway near San .mp4',
+    quote: "The journey forward begins with a single step"
+  },
+  {
+    src: '/video/Firefly Cinematic shot of a couple walking side by side down a quiet San Diego street at dusk, warm .mp4',
+    quote: "Healing happens when we walk together"
+  },
+  {
+    src: '/video/Firefly Medium shot of a couple sitting close together on a bench in a quiet San Diego park, late af.mp4',
+    quote: "Trust can be rebuilt, stronger than before"
+  },
+  {
+    src: '/video/Firefly Wide cinematic shot of a couple walking slowly along a San Diego beach at sunset, seen from .mp4',
+    quote: "Your story isn't over—it's transforming"
+  }
+]
+
 // Rotating Text Component
 function RotatingText() {
   const words = ['way through', 'path forward', 'new beginning', 'way to heal', 'hope ahead']
@@ -19,24 +39,44 @@ function RotatingText() {
   }, [])
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={words[index]}
-        className="block gradient-text text-5xl md:text-6xl lg:text-7xl font-normal italic"
-        initial={{ opacity: 0, y: 20, rotateX: -90 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        exit={{ opacity: 0, y: -20, rotateX: 90 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-      >
-        {words[index]}
-      </motion.span>
-    </AnimatePresence>
+    <div className="relative inline-block">
+      {/* Background card for visibility */}
+      <div className="absolute inset-0 -inset-x-4 -inset-y-2 bg-white/10 backdrop-blur-sm rounded-2xl" />
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={words[index]}
+          className="relative block text-5xl md:text-6xl lg:text-7xl font-normal italic px-4 py-2"
+          style={{
+            background: 'linear-gradient(135deg, #8EA69B 0%, #4A9D9E 50%, #7A9E7E 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            textShadow: '0 2px 10px rgba(142, 166, 155, 0.3)'
+          }}
+          initial={{ opacity: 0, y: 20, rotateX: -90 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          exit={{ opacity: 0, y: -20, rotateX: 90 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          {words[index]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
   )
 }
 
 export function PremiumHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+
+  // Auto-rotate videos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prev) => (prev + 1) % videos.length)
+    }, 5000) // Change video every 5 seconds to match video length
+    return () => clearInterval(interval)
+  }, [])
 
   const { scrollY } = useScroll()
 
@@ -128,7 +168,7 @@ export function PremiumHero() {
               transition={{ duration: 1, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-6"
             >
-              <span className="block">There is a</span>
+              <span className="block mb-2">There is a</span>
               <RotatingText />
             </motion.h1>
 
@@ -210,7 +250,7 @@ export function PremiumHero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side Image Box */}
+          {/* Right Side Video Box */}
           <motion.div
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -223,22 +263,56 @@ export function PremiumHero() {
 
               {/* Glass box container */}
               <div className="relative glass backdrop-blur-xl bg-white/10 rounded-3xl p-2 border border-white/20">
-                <div className="relative overflow-hidden rounded-2xl">
-                  <img
-                    src="/images/couples/beach-conversation.jpg"
-                    alt="Couple having a deep conversation on San Diego beach, representing healing and connection after betrayal"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative overflow-hidden rounded-2xl aspect-[1/1]">
+                  <AnimatePresence mode="wait">
+                    <motion.video
+                      key={currentVideoIndex}
+                      src={videos[currentVideoIndex].src}
+                      autoPlay
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1 }}
+                    />
+                  </AnimatePresence>
 
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent" />
 
-                  {/* Floating text overlay */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-white/90 text-lg font-heading italic">
-                      "Healing is possible, even when it feels impossible."
-                    </p>
+                  {/* Video indicators */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                    {videos.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentVideoIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentVideoIndex
+                            ? 'bg-white w-8'
+                            : 'bg-white/50 hover:bg-white/70'
+                        }`}
+                        aria-label={`Go to video ${index + 1}`}
+                      />
+                    ))}
                   </div>
+
+                  {/* Floating text overlay with changing quotes */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentVideoIndex}
+                      className="absolute bottom-6 left-6 right-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <p className="text-white/90 text-lg font-heading italic">
+                        "{videos[currentVideoIndex].quote}"
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
 
