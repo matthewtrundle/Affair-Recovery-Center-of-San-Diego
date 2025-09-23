@@ -1,6 +1,8 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null
 
 export interface EmailOptions {
   to: string | string[]
@@ -12,6 +14,11 @@ export interface EmailOptions {
 }
 
 export async function sendEmail(options: EmailOptions) {
+  if (!resend) {
+    console.log('Resend not configured - skipping email send')
+    return { success: false, error: 'Email service not configured' }
+  }
+
   try {
     const emailData: any = {
       from: options.from || process.env.MAIL_FROM || 'Affair Recovery Center <hello@affairrecoverysandiego.com>',
@@ -47,6 +54,11 @@ export async function addToAudience(
   email: string,
   fields?: Record<string, string | number | boolean>
 ) {
+  if (!resend) {
+    console.log('Resend not configured - skipping audience add')
+    return { success: false, error: 'Email service not configured' }
+  }
+
   if (!process.env.RESEND_AUDIENCE_ID) {
     console.log('No audience ID configured')
     return { success: false, error: 'No audience ID configured' }
@@ -73,6 +85,11 @@ export async function addToAudience(
 }
 
 export async function removeFromAudience(email: string) {
+  if (!resend) {
+    console.log('Resend not configured - skipping audience remove')
+    return { success: false, error: 'Email service not configured' }
+  }
+
   if (!process.env.RESEND_AUDIENCE_ID) {
     return { success: false, error: 'No audience ID configured' }
   }

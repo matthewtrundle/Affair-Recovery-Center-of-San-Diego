@@ -27,4 +27,11 @@ export { PremiumTimeline } from './PremiumTimeline'
 export { AnimatedStats } from './AnimatedStats'
 
 // Page-specific client components
-export { ServicesPageClient } from './ServicesPageClient'
+export {
+  ServicesHero,
+  MainServicesSection,
+  AdditionalServicesSection,
+  ProcessOverviewSection,
+  InvestmentSection,
+  ServicesFAQSection
+} from './ServicesPageClient'

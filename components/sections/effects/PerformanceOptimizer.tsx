@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { useIntersectionObserver } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 
 interface PerformanceOptimizerProps {
   children: React.ReactNode
@@ -19,7 +19,7 @@ export function PerformanceOptimizer({
   const [isVisible, setIsVisible] = useState(true)
   const { gl, camera } = useThree()
 
-  const { ref, inView } = useIntersectionObserver({
+  const { ref, inView } = useInView({
     threshold: 0.1,
     rootMargin: '100px'
   })
