@@ -73,13 +73,13 @@ export function PremiumHeader() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
-              className="relative h-12"
+              className="relative h-20 md:h-24"
             >
               <Image
-                src="/images/logo/arc-logo-transparent.png"
+                src="/images/logo/logo2.png"
                 alt="ARC - Affair Recovery Center San Diego"
-                width={240}
-                height={48}
+                width={400}
+                height={96}
                 className="object-contain h-full w-auto"
                 priority
               />

@@ -224,13 +224,13 @@ export function TestimonialCarousel() {
                         </div>
 
                         {/* Content */}
-                        <blockquote className="text-lg lg:text-xl text-gray-800 mb-8 italic leading-relaxed">
+                        <blockquote className="text-lg lg:text-xl text-navy-800 mb-8 italic leading-relaxed font-medium">
                           "{testimonial.content}"
                         </blockquote>
 
                         {/* Highlight Badge */}
                         <div className="inline-block px-4 py-2 bg-gradient-to-r from-sage-100 to-coral-100 rounded-full mb-6">
-                          <span className="text-sm font-semibold text-gray-800">
+                          <span className="text-sm font-semibold text-navy-800">
                             ✨ {testimonial.highlight}
                           </span>
                         </div>
@@ -238,10 +238,10 @@ export function TestimonialCarousel() {
                         {/* Author */}
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="font-semibold text-gray-900 text-lg">
+                            <p className="font-semibold text-navy-900 text-lg">
                               {testimonial.author}
                             </p>
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-navy-700 font-medium">
                               {testimonial.role}
                             </p>
                           </div>
