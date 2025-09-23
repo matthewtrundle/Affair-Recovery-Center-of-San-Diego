@@ -59,7 +59,7 @@ export function PremiumHeader() {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'py-3' : 'py-6'
+        isScrolled ? 'py-1' : 'py-2'
       }`}
       style={{
         backgroundColor: isScrolled ? 'rgba(12, 27, 42, 0.95)' : 'rgba(12, 27, 42, 0.85)',
@@ -73,14 +73,15 @@ export function PremiumHeader() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400 }}
-              className="relative h-20 md:h-24"
+              className="relative h-20 md:h-24 lg:h-28"
             >
               <Image
                 src="/images/logo/logo2.png"
                 alt="ARC - Affair Recovery Center San Diego"
                 width={400}
-                height={96}
+                height={120}
                 className="object-contain h-full w-auto"
+                style={{ objectPosition: 'center' }}
                 priority
               />
             </motion.div>
@@ -149,14 +150,14 @@ export function PremiumHeader() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm text-warmSand-100 hover:text-warmSand-50 hover:bg-white/20 transition-all duration-300"
+            className="lg:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm text-warmSand-100 hover:text-warmSand-50 hover:bg-white/20 transition-all duration-300 self-center"
             whileTap={{ scale: 0.95 }}
           >
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </motion.div>
           </motion.button>
         </div>
