@@ -1,0 +1,104 @@
+{
+  "model": "gemini-2.5-flash-image-preview",
+  "contents": [
+    {
+      "type": "image_generation",
+      "prompt": {
+        "scene_overview": "Cinematic coastal therapy hero scene. Split composition: Left side features professional couple in their 40s standing together on La Jolla Cove cliffs at golden hour, looking towards horizon with hope. Right side shows abstract ocean waves with WebGL-style particle effects. Professional yet warm, conveying healing journey. Space for rotating text overlay on left third.",
+        "visual_style": {
+          "aesthetic_direction": "Premium therapeutic practice meets San Diego coastal elegance. Sophisticated color grading with warm golden hour tones. Professional healthcare marketing with local authenticity. Clean, modern design with organic beach textures.",
+          "color_science": "Golden hour warmth (3200K-4500K). Deep ocean blues (#0A4F63), warm sand tones (#E8F5F2), sunset corals (#FFB347). Lifted shadows, preserved highlights. Professional color grade with therapeutic warmth.",
+          "mood_intent": "Professional healing, evidence-based trust, coastal serenity, renewed hope after betrayal."
+        },
+        "cinematography": {
+          "lens_choice": "35mm wide for environmental context, shallow depth (f/2.8) for subject separation.",
+          "camera_position": "Eye-level, rule of thirds composition. Couple positioned left third, ocean fills right two-thirds. Horizon line at upper third.",
+          "depth_control": "Couple sharp, immediate foreground (beach grass) slightly soft, background ocean with graduated focus falloff."
+        },
+        "lighting_design": {
+          "key_light": "Natural golden hour sunlight from camera right, 45° angle creating warm rim light on subjects.",
+          "quality_characteristics": "Soft, diffused coastal light. No harsh shadows. Therapeutic warmth in skin tones.",
+          "fill_and_rim": "Natural fill from ocean reflection. Strong golden rim light separating subjects from background."
+        },
+        "production_design": {
+          "wardrobe_styling": "Professional casual - quality fabrics in neutral tones (cream, navy, soft gray). No logos. Timeless, approachable elegance.",
+          "set_decoration": "La Jolla Cove cliffs with native succulents, weathered sandstone, distant Torrey Pines silhouettes.",
+          "texture_palette": "Organic ocean textures, sand patterns, water ripples, subtle WebGL particle overlays in post."
+        },
+        "post_processing": {
+          "color_grading": "Professional healthcare grade - warm but not oversaturated. Skin tones preserved and healthy.",
+          "digital_effects": "Subtle WebGL-inspired particle overlay on right side. Gentle parallax scroll preparation layers.",
+          "local_edits": "Graduated filter enhancing ocean blues. Subtle vignette focusing attention. Professional retouching maintaining authenticity.",
+          "final": "Typography integration with clean, professional sans-serif. Rotating text effect area designated."
+        },
+        "typography": {
+          "headline": {
+            "text_primary": "There is a way through.",
+            "text_rotating": ["through", "forward", "to heal", "to hope", "back home"],
+            "font_family_suggestions": ["Cormorant Garamond Light", "Playfair Display", "EB Garamond"],
+            "style": "Large, elegant serif, professional weight, generous tracking, left-aligned. Positioned in left third negative space. Deep navy (#0C1B2A)."
+          },
+          "subtitle": {
+            "text_example": "Evidence-based couples therapy for affair recovery in San Diego",
+            "font_family_suggestions": ["Inter Regular", "Source Sans Pro", "Open Sans"],
+            "style": "Clean sans-serif, professional weight, optimal readability, left-aligned below headline. Warm gray (#334155)."
+          },
+          "cta_text": {
+            "text_example": "Schedule Your Free Consultation",
+            "font_family_suggestions": ["Inter Medium", "Montserrat Medium"],
+            "style": "Sans-serif, medium weight, button-ready, sufficient contrast. Coral accent (#F29B88)."
+          },
+          "layout_notes": "Professional hierarchy with generous white space. Text overlays WebGL background with sufficient contrast. Mobile-responsive positioning considered."
+        },
+        "professional_requirements": {
+          "healthcare_compliance": "HIPAA-appropriate imagery, no identifiable patients, professional therapeutic context maintained.",
+          "brand_consistency": "Aligns with Gottman Method and RLT evidence-based approach. Serious yet hopeful tone.",
+          "local_relevance": "Authentic San Diego locations recognizable to locals. Not generic stock imagery.",
+          "therapeutic_sensitivity": "Avoids triggering imagery, maintains professional boundaries, conveys safety and expertise."
+        }
+      }
+    }
+  ],
+  "delivery_specs": {
+    "aspect_ratio": "16:9 (1920x1080) — hero section optimized",
+    "format": "WebP with JPEG fallback, quality 90, optimized for web performance",
+    "responsive_versions": [
+      "Desktop: 1920x1080",
+      "Tablet: 1024x768",
+      "Mobile: 390x844"
+    ]
+  },
+  "animation_specs": {
+    "text_rotation": {
+      "duration": "3s per word",
+      "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "effect": "Smooth morph transition with opacity fade"
+    },
+    "parallax_layers": {
+      "foreground": "1.2x scroll speed",
+      "midground": "1.0x scroll speed",
+      "background": "0.8x scroll speed",
+      "particles": "0.6x scroll speed with float"
+    },
+    "webgl_effects": {
+      "ocean_shader": "Animated water surface with Perlin noise",
+      "particle_system": "800 floating particles with tidal movement",
+      "lighting": "Dynamic golden hour with time-based color shift"
+    }
+  },
+  "copy_variations": {
+    "professional_options": [
+      "When trust breaks, healing is possible.",
+      "Rebuilding your relationship, stronger than before.",
+      "Evidence-based therapy for couples facing betrayal.",
+      "Your path to recovery starts here.",
+      "Gottman-certified expertise in affair recovery."
+    ],
+    "local_touchpoints": [
+      "Serving La Jolla, Del Mar, and all of San Diego County",
+      "15 years helping San Diego couples heal",
+      "Convenient Carmel Valley location off the I-5",
+      "In-person and teletherapy options available"
+    ]
+  }
+}

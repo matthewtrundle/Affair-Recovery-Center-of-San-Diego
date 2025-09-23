@@ -1,0 +1,111 @@
+{
+  "model": "sora-video-generation",
+  "contents": [
+    {
+      "type": "video_generation",
+      "prompt": {
+        "scene_overview": "Professional therapy practice hero video. Cinematic 10-second loop showcasing San Diego coastal therapy environment. Opens on couple (40s, diverse) walking hand-in-hand along water's edge at La Jolla Shores during golden hour. Camera dolly parallel track, maintaining respectful distance. Transitions to therapist office interior - warm, professional space with ocean view through windows. Ends with couple in consultation, natural conversation, hopeful body language.",
+        "visual_style": {
+          "aesthetic_direction": "Premium healthcare marketing meets coastal California elegance. Documentary-style authenticity with cinematic production value. Warm, professional, trustworthy - high-end therapy practice aesthetic.",
+          "color_science": "Golden hour warmth throughout. Ocean blues (#0A4F63), warm sand tones (#E9E2D0), sunset coral accents (#F29B88). Professional color grade - not oversaturated. Healthcare-appropriate skin tones.",
+          "mood_intent": "Professional expertise, evidence-based trust, healing journey, renewed connection after betrayal."
+        },
+        "cinematography": {
+          "camera_movement": "Smooth dolly and gimbal movements only. No handheld shake. Professional, stable footage.",
+          "shot_progression": [
+            "0-3s: Wide establishing - La Jolla Shores at sunset, couple small in frame",
+            "3-5s: Medium tracking shot - couple walking, gentle waves",
+            "5-7s: Transition to office - warm interior, bookshelves, certificates visible",
+            "7-10s: Medium shot - couple in consultation, therapist listening, natural gestures"
+          ],
+          "depth_control": "Consistent shallow depth throughout. f/2.8-4.0 range. Professional focus pulling between subjects."
+        },
+        "lighting_design": {
+          "exterior_scenes": "Natural golden hour light. No artificial lighting. Soft, warm, therapeutic.",
+          "interior_scenes": "Professional office lighting. Warm 3200K practicals. Soft key light from windows. No harsh fluorescents.",
+          "quality_characteristics": "Soft, diffused light throughout. Professional but approachable. No dramatic shadows."
+        },
+        "production_design": {
+          "wardrobe_styling": "Professional casual throughout. Quality fabrics, neutral tones (navy, cream, soft gray). No logos or distracting patterns. Timeless, not trendy.",
+          "office_design": "Warm wood tones, professional furniture, subtle coastal art. Gottman materials visible. Clean, organized, high-end therapy space.",
+          "location_authenticity": "Genuine San Diego locations - La Jolla Shores, Torrey Pines visible. Not generic stock footage."
+        },
+        "post_processing": {
+          "color_grading": "Professional healthcare standard. Warm but not Instagram-filtered. Natural, trustworthy tones.",
+          "transitions": "Smooth dissolves between scenes. No jarring cuts. 0.5s cross-fades.",
+          "text_overlay_areas": "Lower third clear for text. Left third reserved for headline. Sufficient contrast for readability.",
+          "loop_points": "Seamless 10-second loop. End frame matches beginning for continuous play."
+        },
+        "typography_overlay": {
+          "headline": {
+            "text": "There is a way through.",
+            "animation": "Fade in at 1s, hold, fade out at 9s",
+            "font_family_suggestions": ["Cormorant Garamond", "Playfair Display", "EB Garamond"],
+            "style": "Large, elegant serif, left-aligned, deep navy (#0C1B2A). Positioned left third over beach scene."
+          },
+          "rotating_text": {
+            "base_text": "There is a way",
+            "rotating_words": ["through", "forward", "to heal", "to hope", "back home"],
+            "timing": "2s per word, smooth morph transition",
+            "style": "Matching headline font, seamless word replacement animation"
+          },
+          "subtitle": {
+            "text": "Evidence-based couples therapy for affair recovery",
+            "animation": "Fade in at 2s, persist through video",
+            "font_family_suggestions": ["Inter", "Source Sans Pro"],
+            "style": "Clean sans-serif, smaller, professional gray (#334155)"
+          },
+          "cta": {
+            "text": "Schedule Your Free Consultation",
+            "animation": "Fade in at 8s with subtle pulse",
+            "style": "Sans-serif medium, coral accent (#F29B88), button-ready positioning"
+          }
+        },
+        "audio_design": {
+          "ambient_sound": "Subtle ocean waves, very low mix. No music initially.",
+          "voice_elements": "No dialogue. Natural conversation murmur in office scene (unintelligible).",
+          "emotional_tone": "Calm, professional, hopeful. No dramatic swells."
+        },
+        "compliance_requirements": {
+          "healthcare_standards": "No identifiable patients. Professional actors only. HIPAA-compliant imagery.",
+          "therapeutic_ethics": "Appropriate boundaries maintained. No triggering content. Professional therapeutic context.",
+          "accessibility": "Text contrast WCAG AA compliant. No flashing. Reduced motion version available."
+        }
+      }
+    }
+  ],
+  "technical_specs": {
+    "duration": "10 seconds (seamless loop)",
+    "resolution": "4K (3840x2160) master, with 1080p and 720p versions",
+    "frame_rate": "24fps for cinematic feel",
+    "codec": "H.265/HEVC for web, ProRes for editing",
+    "aspect_ratio": "16:9 standard, with 9:16 vertical crop for mobile",
+    "file_size": "Optimized under 50MB for web performance"
+  },
+  "delivery_variants": {
+    "hero_background": {
+      "format": "MP4 loop, no audio, compressed for web",
+      "usage": "Website hero section background"
+    },
+    "social_media": {
+      "format": "MP4 with burned-in captions",
+      "platforms": ["Instagram (1:1, 4:5)", "LinkedIn (16:9)", "Facebook (16:9, 9:16)"]
+    },
+    "presentation": {
+      "format": "4K ProRes with separate audio",
+      "usage": "Professional presentations, conferences"
+    }
+  },
+  "motion_guidelines": {
+    "pacing": "Slow, therapeutic pace. No quick cuts or jarring movements.",
+    "transitions": "Smooth, professional. 0.5-1s dissolves only.",
+    "text_animation": "Subtle fades and morphs. No bouncing or sliding.",
+    "loop_seamlessness": "Perfect loop with no visible seam. End matches beginning."
+  },
+  "brand_elements": {
+    "logo_placement": "Subtle watermark lower right, semi-transparent",
+    "color_consistency": "Matches website palette exactly",
+    "font_matching": "Same typefaces as website for consistency",
+    "professional_tone": "Serious yet hopeful, never casual or trendy"
+  }
+}
