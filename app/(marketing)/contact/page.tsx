@@ -120,8 +120,8 @@ const officeInfo = [
             <span className="font-medium text-slate-400">Closed</span>
           </div>
         </div>
-        <div className="text-sm text-slate-600 bg-sage-50 rounded-lg p-3">
-          <div className="font-medium text-sage-700 mb-1">Flexible Scheduling:</div>
+        <div className="text-sm text-slate-600 bg-turquoise-50 rounded-lg p-3">
+          <div className="font-medium text-turquoise-700 mb-1">Flexible Scheduling:</div>
           <div>Early morning and evening appointments available for working professionals</div>
         </div>
       </>
@@ -145,7 +145,7 @@ const officeInfo = [
               <div>• Encinitas</div>
             </div>
           </div>
-          <div className="border-t border-sage-100 pt-4">
+          <div className="border-t border-turquoise-100 pt-4">
             <p className="font-medium text-navy mb-2">Telehealth Sessions:</p>
             <p className="text-sm">Available for all California residents with secure, HIPAA-compliant video platform</p>
           </div>
@@ -170,7 +170,7 @@ export default function ContactPage() {
       )}
 
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-navy-50 via-sand-50 to-sage-50 overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-deepTeal-50 via-lightGray-50 to-turquoise-50 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-coral/10 to-transparent rounded-full blur-3xl" />
@@ -232,15 +232,15 @@ export default function ContactPage() {
                 <PremiumCard
                   variant={method.isPrimary ? 'gradient' : 'glass'}
                   hoverEffect="lift"
-                  className={`${method.isPrimary ? 'bg-gradient-to-br from-navy to-navy-700' : 'bg-white/80 backdrop-blur-sm border border-sage-100'} transition-all duration-300`}
+                  className={`${method.isPrimary ? 'bg-gradient-to-br from-navy to-deepTeal-700' : 'bg-white/80 backdrop-blur-sm border border-turquoise-100'} transition-all duration-300`}
                 >
                   <div className="flex items-start space-x-6">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.2 }}
-                      className={`p-3 rounded-xl ${method.isPrimary ? 'bg-white/20' : 'bg-sage-100'} flex-shrink-0`}
+                      className={`p-3 rounded-xl ${method.isPrimary ? 'bg-white/20' : 'bg-turquoise-100'} flex-shrink-0`}
                     >
-                      <method.icon className={`h-6 w-6 ${method.isPrimary ? 'text-white' : 'text-sage-700'}`} />
+                      <method.icon className={`h-6 w-6 ${method.isPrimary ? 'text-white' : 'text-turquoise-700'}`} />
                     </motion.div>
 
                     <div className="flex-1">
@@ -255,7 +255,7 @@ export default function ContactPage() {
                           asChild
                           variant={method.isPrimary ? 'secondary' : 'default'}
                           size="lg"
-                          className={method.isPrimary ? 'bg-white text-navy hover:bg-sand-50' : ''}
+                          className={method.isPrimary ? 'bg-white text-navy hover:bg-lightGray-50' : ''}
                         >
                           <a href={method.href} className="inline-flex items-center gap-2">
                             {method.action}
@@ -276,7 +276,7 @@ export default function ContactPage() {
       </section>
 
       {/* Office Information */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-sand-50 to-sage-50">
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-lightGray-50 to-turquoise-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -311,9 +311,9 @@ export default function ContactPage() {
                     <motion.div
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.2 }}
-                      className="p-3 bg-sage-100 rounded-xl w-fit mb-4"
+                      className="p-3 bg-turquoise-100 rounded-xl w-fit mb-4"
                     >
-                      <info.icon className="h-6 w-6 text-sage-700" />
+                      <info.icon className="h-6 w-6 text-turquoise-700" />
                     </motion.div>
 
                     <h3 className="text-xl font-heading font-semibold text-navy mb-4">
@@ -354,10 +354,10 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <PremiumCard variant="glass" hoverEffect="glow" className="h-full bg-sage-50/50">
+                <PremiumCard variant="glass" hoverEffect="glow" className="h-full bg-turquoise-50/50">
                   <div className="flex items-start gap-4">
-                    <div className="p-2 bg-sage-100 rounded-lg">
-                      <Heart className="h-5 w-5 text-sage-700" />
+                    <div className="p-2 bg-turquoise-100 rounded-lg">
+                      <Heart className="h-5 w-5 text-turquoise-700" />
                     </div>
                     <div>
                       <h3 className="text-lg font-heading font-semibold text-navy mb-3">
@@ -380,10 +380,10 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <PremiumCard variant="glass" hoverEffect="glow" className="h-full bg-coral-50/50">
+                <PremiumCard variant="glass" hoverEffect="glow" className="h-full bg-lime-50/50">
                   <div className="flex items-start gap-4">
-                    <div className="p-2 bg-coral-100 rounded-lg">
-                      <Shield className="h-5 w-5 text-coral-700" />
+                    <div className="p-2 bg-lime-100 rounded-lg">
+                      <Shield className="h-5 w-5 text-lime-700" />
                     </div>
                     <div>
                       <h3 className="text-lg font-heading font-semibold text-navy mb-3">
@@ -413,7 +413,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <PremiumCard variant="gradient" className="bg-gradient-to-r from-coral/90 to-coral-600/90">
+            <PremiumCard variant="gradient" className="bg-gradient-to-r from-coral/90 to-lime-600/90">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <AlertTriangle className="h-6 w-6 text-white" />
@@ -426,7 +426,7 @@ export default function ContactPage() {
                     If you're experiencing a mental health emergency or having thoughts of self-harm, please reach out for immediate help:
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <Button variant="secondary" asChild className="bg-white text-coral-700 hover:bg-sand-50">
+                    <Button variant="secondary" asChild className="bg-white text-lime-700 hover:bg-lightGray-50">
                       <a href="tel:988" className="inline-flex items-center gap-2">
                         <Phone className="h-4 w-4" />
                         Crisis Lifeline: 988

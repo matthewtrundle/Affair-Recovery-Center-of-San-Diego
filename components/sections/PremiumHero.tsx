@@ -28,7 +28,7 @@ const videos = [
 
 // Rotating Text Component
 function RotatingText() {
-  const words = ['way through', 'path forward', 'new beginning', 'way to heal', 'hope ahead']
+  const words = ['Rebuild Trust', 'Feel Secure Again', 'Heal Together', 'Find Your Way', 'Start Fresh']
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -111,7 +111,7 @@ export function PremiumHero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-700"
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700"
     >
       {/* Background Layer - Clean Ocean Image */}
       <div className="absolute inset-0 z-0">
@@ -123,7 +123,7 @@ export function PremiumHero() {
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-800/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/80 via-deepTeal-800/40 to-transparent" />
       </div>
 
 
@@ -168,7 +168,7 @@ export function PremiumHero() {
               transition={{ duration: 1, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-6"
             >
-              <span className="block mb-2">There is a</span>
+              <span className="block mb-2">Affair Recovery Therapy in San Diego –</span>
               <RotatingText />
             </motion.h1>
 
@@ -177,20 +177,10 @@ export function PremiumHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-lg md:text-xl font-heading text-gray-200 mb-4"
+            className="text-lg md:text-xl font-heading text-gray-200 mb-8 max-w-2xl"
           >
-            When trust has been broken, healing requires expertise
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl"
-          >
-            For fifteen years, I've guided San Diego's most successful couples through
-            the complexities of betrayal recovery. My evidence-based approach combines
-            Gottman Method expertise with cutting-edge trauma-informed care.
+            When infidelity shakes your world, it feels impossible to move forward. With the right guidance,
+            you can rebuild trust, find calm, and create a relationship that's stronger than before.
           </motion.p>
 
             {/* CTA Buttons with magnetic effect */}
@@ -208,7 +198,7 @@ export function PremiumHero() {
                 >
                   <Link href="/schedule">
                     <Sparkles className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    Begin Your Recovery Journey
+                    Start Healing Today
                   </Link>
                 </Button>
               </MagneticButton>
@@ -221,7 +211,7 @@ export function PremiumHero() {
                   asChild
                 >
                   <Link href="/approach">
-                    Explore Our Methodology
+                    How I Work
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 </Button>
@@ -236,15 +226,15 @@ export function PremiumHero() {
               className="mt-12 flex flex-wrap gap-6 text-white/70 text-sm"
             >
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-warmSand-400 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-lightGray-400 rounded-full animate-pulse" />
                 <span>Gottman Level 3 Certified</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-pacificBlue-300 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-turquoise-300 rounded-full animate-pulse" />
                 <span>Published Clinical Researcher</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-sunsetCoral-400 rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-lime-400 rounded-full animate-pulse" />
                 <span>UCSD Clinical Faculty</span>
               </div>
             </motion.div>
@@ -259,7 +249,7 @@ export function PremiumHero() {
           >
             <div className="relative">
               {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-sage-400/30 to-coral-400/30 blur-2xl" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-turquoise-400/30 to-lime-400/30 blur-2xl" />
 
               {/* Glass box container */}
               <div className="relative glass backdrop-blur-xl bg-white/10 rounded-3xl p-2 border border-white/20">
@@ -280,7 +270,7 @@ export function PremiumHero() {
                   </AnimatePresence>
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/50 via-transparent to-transparent" />
 
                   {/* Video indicators */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
@@ -327,7 +317,7 @@ export function PremiumHero() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-coral-400/20 to-sage-400/20 rounded-full blur-xl"
+                className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-lime-400/20 to-turquoise-400/20 rounded-full blur-xl"
               />
             </div>
           </motion.div>

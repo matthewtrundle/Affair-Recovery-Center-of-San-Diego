@@ -8,35 +8,27 @@ import { useRef } from 'react'
 const testimonials = [
   {
     id: 1,
-    content: "Jordan helped us navigate the darkest period of our marriage. Her direct but compassionate approach gave us the tools we needed to rebuild trust. We're actually stronger now than we were before.",
-    author: 'Sarah M.',
-    role: 'After 18 months of therapy',
+    content: "Jordan gave us the roadmap we desperately needed. We're not just surviving—we're closer than ever.",
+    author: 'M.S.',
+    role: 'Couples Client',
     rating: 5,
-    highlight: 'Stronger than before',
+    highlight: 'Closer than ever',
   },
   {
     id: 2,
-    content: "I didn't think we could survive the affair, but Jordan showed us a path forward. The Gottman Method exercises helped us communicate in ways we never had before. We're grateful for her guidance.",
-    author: 'Mark & Jennifer T.',
-    role: 'Married 15 years',
+    content: "He was the only one who could get through to my husband. Firm, but kind. Exactly what we needed.",
+    author: 'L.B.',
+    role: 'Couples Client',
     rating: 5,
-    highlight: 'Path forward',
+    highlight: 'Got through to my husband',
   },
   {
     id: 3,
-    content: "Jordan's understanding of betrayal trauma was exactly what we needed. She helped my partner understand my pain while also helping me see their perspective. The brain science explanations made everything make sense.",
-    author: 'Anonymous',
-    role: '6 months post-discovery',
+    content: "I thought trust was gone for good. Jordan showed us how to rebuild it, step by step.",
+    author: 'J.P.',
+    role: 'Couples Client',
     rating: 5,
-    highlight: 'Understanding trauma',
-  },
-  {
-    id: 4,
-    content: "We were skeptical that therapy could help after such a devastating betrayal. Jordan's structured approach and evidence-based methods gave us hope. Six months later, we have a marriage we never thought possible.",
-    author: 'David & Lisa R.',
-    role: 'Together 20 years',
-    rating: 5,
-    highlight: 'Never thought possible',
+    highlight: 'Rebuilt trust',
   },
 ]
 
@@ -82,15 +74,15 @@ export function TestimonialCarousel() {
   return (
     <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden">
       {/* Premium gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700" />
+      <div className="absolute inset-0 bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700" />
 
       {/* Animated background elements */}
       <motion.div
         className="absolute inset-0"
         style={{ opacity }}
       >
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-sage-400/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-coral-400/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-turquoise-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-lime-400/10 rounded-full blur-3xl" />
       </motion.div>
 
       {/* Floating hearts animation */}
@@ -132,14 +124,14 @@ export function TestimonialCarousel() {
             whileInView={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, type: "spring" }}
             viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-coral-400 to-coral-500 mb-6"
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-lime-400 to-lime-500 mb-6"
           >
             <Quote className="w-8 h-8 text-white" />
           </motion.div>
 
           <h2 className="text-4xl lg:text-5xl font-display font-light text-white mb-6">
             Stories of
-            <span className="block text-5xl lg:text-6xl font-normal italic bg-gradient-to-r from-coral-300 to-sage-300 bg-clip-text text-transparent mt-2">
+            <span className="block text-5xl lg:text-6xl font-normal italic bg-gradient-to-r from-lime-300 to-turquoise-300 bg-clip-text text-transparent mt-2">
               Hope & Healing
             </span>
           </h2>
@@ -205,7 +197,7 @@ export function TestimonialCarousel() {
                         style={{ cursor: !isActive ? 'pointer' : 'default' }}
                       >
                         {/* Quote Icon */}
-                        <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-coral-400 to-coral-500 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-500 rounded-full flex items-center justify-center shadow-lg">
                           <Quote className="w-6 h-6 text-white" />
                         </div>
 
@@ -218,19 +210,19 @@ export function TestimonialCarousel() {
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ delay: i * 0.1 }}
                             >
-                              <Star className="w-5 h-5 fill-coral-400 text-coral-400" />
+                              <Star className="w-5 h-5 fill-lime-400 text-lime-400" />
                             </motion.div>
                           ))}
                         </div>
 
                         {/* Content */}
-                        <blockquote className="text-lg lg:text-xl text-navy-800 mb-8 italic leading-relaxed font-medium">
+                        <blockquote className="text-lg lg:text-xl text-deepTeal-800 mb-8 italic leading-relaxed font-medium">
                           "{testimonial.content}"
                         </blockquote>
 
                         {/* Highlight Badge */}
-                        <div className="inline-block px-4 py-2 bg-gradient-to-r from-sage-100 to-coral-100 rounded-full mb-6">
-                          <span className="text-sm font-semibold text-navy-800">
+                        <div className="inline-block px-4 py-2 bg-gradient-to-r from-turquoise-100 to-lime-100 rounded-full mb-6">
+                          <span className="text-sm font-semibold text-deepTeal-800">
                             ✨ {testimonial.highlight}
                           </span>
                         </div>
@@ -238,10 +230,10 @@ export function TestimonialCarousel() {
                         {/* Author */}
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="font-semibold text-navy-900 text-lg">
+                            <p className="font-semibold text-deepTeal-900 text-lg">
                               {testimonial.author}
                             </p>
-                            <p className="text-sm text-navy-700 font-medium">
+                            <p className="text-sm text-deepTeal-700 font-medium">
                               {testimonial.role}
                             </p>
                           </div>
@@ -286,7 +278,7 @@ export function TestimonialCarousel() {
                     />
                     {index === currentIndex && (
                       <motion.div
-                        className="absolute inset-0 rounded-full bg-coral-400"
+                        className="absolute inset-0 rounded-full bg-lime-400"
                         initial={{ scale: 0 }}
                         animate={{ scale: [1, 1.5, 1] }}
                         transition={{ duration: 1.5, repeat: Infinity }}

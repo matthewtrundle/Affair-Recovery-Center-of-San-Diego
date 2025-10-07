@@ -124,7 +124,7 @@ export default function BlogPost({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy-900 via-navy-800 to-navy-600">
+    <div className="min-h-screen bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-600">
       <div className="container mx-auto px-4 py-20 lg:py-32">
         <article className="max-w-4xl mx-auto">
           {/* Header */}

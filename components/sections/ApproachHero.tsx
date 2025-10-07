@@ -26,7 +26,7 @@ export function ApproachHero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-slate-800"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-slate-800"
     >
       {/* Animated Background Mesh */}
       <div className="absolute inset-0">
@@ -104,7 +104,7 @@ export function ApproachHero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 glass backdrop-blur-md bg-white/10 text-sage-300 rounded-full text-sm font-medium border border-white/20">
+            <span className="inline-flex items-center gap-2 px-4 py-2 glass backdrop-blur-md bg-white/10 text-turquoise-300 rounded-full text-sm font-medium border border-white/20">
               <Sparkles className="w-4 h-4" />
               Evidence-Based Methods
             </span>
@@ -119,7 +119,7 @@ export function ApproachHero() {
           >
             My Therapeutic
             <motion.span
-              className="block text-6xl lg:text-8xl font-normal bg-gradient-to-r from-sage-300 via-coral-300 to-sage-300 bg-clip-text text-transparent mt-2"
+              className="block text-6xl lg:text-8xl font-normal bg-gradient-to-r from-turquoise-300 via-lime-300 to-turquoise-300 bg-clip-text text-transparent mt-2"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
               }}
@@ -156,8 +156,8 @@ export function ApproachHero() {
           >
             {[
               { name: 'Gottman Method', color: 'from-blue-500 to-indigo-500' },
-              { name: 'Relational Life Therapy', color: 'from-coral-500 to-pink-500' },
-              { name: 'Brain-Based Understanding', color: 'from-sage-500 to-emerald-500' },
+              { name: 'Relational Life Therapy', color: 'from-lime-500 to-pink-500' },
+              { name: 'Brain-Based Understanding', color: 'from-turquoise-500 to-emerald-500' },
             ].map((method, index) => (
               <motion.div
                 key={method.name}

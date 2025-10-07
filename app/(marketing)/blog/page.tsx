@@ -162,12 +162,12 @@ export default function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-navy-900 via-navy-800 to-navy-600">
+    <div className="min-h-screen bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-600">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 to-navy-700/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deepTeal-900/90 to-deepTeal-700/90" />
 
         <div className="relative container mx-auto px-4">
           <motion.div
@@ -180,7 +180,7 @@ export default function BlogPage() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sage mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-turquoise mb-6"
             >
               <BookOpen className="w-4 h-4" />
               <span className="text-sm font-medium">Educational Resources</span>
@@ -188,7 +188,7 @@ export default function BlogPage() {
 
             <h1 className="text-4xl lg:text-6xl font-heading font-bold text-white mb-6">
               Resources for{' '}
-              <span className="bg-gradient-to-r from-coral to-sage bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-lime to-turquoise bg-clip-text text-transparent">
                 Healing
               </span>
             </h1>
@@ -212,7 +212,7 @@ export default function BlogPage() {
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-sage/50 transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-turquoise/50 transition-all"
                 />
               </div>
 
@@ -222,10 +222,10 @@ export default function BlogPage() {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="pl-10 pr-8 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-sage/50 transition-all appearance-none cursor-pointer"
+                  className="pl-10 pr-8 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-turquoise/50 transition-all appearance-none cursor-pointer"
                 >
                   {categories.map(category => (
-                    <option key={category} value={category} className="bg-navy-800 text-white">
+                    <option key={category} value={category} className="bg-deepTeal-800 text-white">
                       {category}
                     </option>
                   ))}
@@ -254,7 +254,7 @@ export default function BlogPage() {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-coral to-sage text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-lime to-turquoise text-white shadow-lg'
                     : 'bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 hover:text-white hover:bg-white/20'
                 }`}
               >
@@ -291,7 +291,7 @@ export default function BlogPage() {
                 onClick={loadMore}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-coral to-sage text-white font-medium shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-lime to-turquoise text-white font-medium shadow-lg hover:shadow-xl transition-all"
               >
                 Load More Articles
                 <ArrowRight className="w-4 h-4" />
@@ -335,9 +335,9 @@ function BlogPostCard({ post, index }: { post: any; index: number }) {
           className="h-full group cursor-pointer overflow-hidden"
         >
           {/* Featured Image */}
-          <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-sage/20 to-coral/20">
+          <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-turquoise/20 to-lime/20">
           {/* Placeholder for featured image */}
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-600 to-navy-800 flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-deepTeal-600 to-deepTeal-800 flex items-center justify-center">
             <div className="text-white/30 text-4xl">📖</div>
           </div>
 
@@ -352,7 +352,7 @@ function BlogPostCard({ post, index }: { post: any; index: number }) {
           {/* Featured Badge */}
           {post.featured && (
             <div className="absolute top-3 right-3">
-              <span className="inline-flex items-center px-2 py-1 rounded-full bg-coral/80 backdrop-blur-sm text-xs font-medium text-white">
+              <span className="inline-flex items-center px-2 py-1 rounded-full bg-lime/80 backdrop-blur-sm text-xs font-medium text-white">
                 Featured
               </span>
             </div>
@@ -374,7 +374,7 @@ function BlogPostCard({ post, index }: { post: any; index: number }) {
           </div>
 
           {/* Title */}
-          <h3 className="text-xl font-heading font-semibold text-white group-hover:text-sage transition-colors overflow-hidden text-ellipsis" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+          <h3 className="text-xl font-heading font-semibold text-white group-hover:text-turquoise transition-colors overflow-hidden text-ellipsis" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
             {post.title}
           </h3>
 
@@ -390,7 +390,7 @@ function BlogPostCard({ post, index }: { post: any; index: number }) {
 
           {/* Read More Arrow */}
           <motion.div
-            className="flex items-center gap-2 text-coral text-sm font-medium hover:text-sage transition-colors"
+            className="flex items-center gap-2 text-lime text-sm font-medium hover:text-turquoise transition-colors"
             whileHover={{ x: 5 }}
           >
             Read Article
@@ -422,7 +422,7 @@ function NewsletterCTA() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-coral"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-lime"
               >
                 <Mail className="w-4 h-4" />
                 <span className="text-sm font-medium">Stay Connected</span>
@@ -440,7 +440,7 @@ function NewsletterCTA() {
                 href="mailto:hello@affairrecoverysd.com?subject=Newsletter Signup&body=I'd like to subscribe to your newsletter for healing resources and updates."
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-navy-800 font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-deepTeal-800 font-semibold shadow-lg hover:shadow-xl transition-all"
               >
                 <Mail className="w-5 h-5" />
                 Subscribe via Email

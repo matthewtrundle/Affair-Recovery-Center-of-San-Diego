@@ -35,7 +35,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-gradient-to-b from-navy-800 to-navy-900 text-white">
+    <footer className="bg-gradient-to-b from-deepTeal-800 to-deepTeal-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
@@ -43,7 +43,7 @@ export function Footer() {
             <h3 className="text-2xl font-display font-light mb-2">
               ARC San Diego
             </h3>
-            <p className="text-sm text-coral-400 mb-4">
+            <p className="text-sm text-lime-400 mb-4">
               Affair Recovery Center
             </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -90,7 +90,7 @@ export function Footer() {
                   onClick={handlePhoneClick}
                   className="flex items-start hover:text-white transition-colors group"
                 >
-                  <Phone className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-coral-400" />
+                  <Phone className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
                   <div>
                     <p className="group-hover:text-white">(858) 555-1234</p>
                     <p className="text-xs text-gray-400">Mon-Fri, 9am-6pm PST</p>
@@ -103,7 +103,7 @@ export function Footer() {
                   onClick={handleEmailClick}
                   className="flex items-start hover:text-white transition-colors group"
                 >
-                  <Mail className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-coral-400" />
+                  <Mail className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
                   <div>
                     <p className="group-hover:text-white break-all">jordan@affairrecoverysandiego.com</p>
                     <p className="text-xs text-gray-400">Response within 24 hours</p>
@@ -111,7 +111,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-coral-400" />
+                <MapPin className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
                 <div>
                   <p>Carmel Valley Office</p>
                   <p>San Diego, CA 92130</p>
@@ -119,7 +119,7 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start mt-3">
-                <Clock className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-coral-400" />
+                <Clock className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
                 <div>
                   <p>Office Hours</p>
                   <p className="text-xs text-gray-400">Mon-Thu: 9am-7pm</p>

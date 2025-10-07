@@ -27,7 +27,7 @@ const sessionAspects = [
       'Integration and homework assignment (15 min)',
       'Regular progress assessment',
     ],
-    gradient: 'from-coral-500 to-pink-500',
+    gradient: 'from-lime-500 to-pink-500',
   },
   {
     icon: Home,
@@ -39,7 +39,7 @@ const sessionAspects = [
       'Individual reflection time',
       'Progress tracking tools',
     ],
-    gradient: 'from-sage-500 to-emerald-500',
+    gradient: 'from-turquoise-500 to-emerald-500',
   },
   {
     icon: Target,
@@ -105,7 +105,7 @@ const expectations = [
     title: 'Honesty & Transparency',
     description: 'Full disclosure about relevant issues, openness about progress and struggles.',
     icon: MessageSquare,
-    color: 'text-coral-600',
+    color: 'text-lime-600',
   },
   {
     title: 'Time & Energy Investment',
@@ -174,8 +174,8 @@ export function SessionStructure() {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-400 to-coral-400 blur-lg opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-navy-400 to-coral-400 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-deepTeal-400 to-lime-400 blur-lg opacity-50" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-deepTeal-400 to-lime-400 flex items-center justify-center">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -183,7 +183,7 @@ export function SessionStructure() {
 
           <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
             Session Structure
-            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-navy-600 to-coral-600 bg-clip-text text-transparent mt-2">
+            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-deepTeal-600 to-lime-600 bg-clip-text text-transparent mt-2">
               & Expectations
             </span>
           </h2>
@@ -274,7 +274,7 @@ export function SessionStructure() {
                             transition={{ delay: index * 0.1 + dIndex * 0.05 }}
                             className="flex items-center gap-3 text-sm text-slate"
                           >
-                            <span className="text-sage-500 text-lg">•</span>
+                            <span className="text-turquoise-500 text-lg">•</span>
                             {detail}
                           </motion.li>
                         ))}
@@ -309,7 +309,7 @@ export function SessionStructure() {
                         {/* Time */}
                         <div className="flex-shrink-0 w-20 text-center">
                           <div className="text-sm font-semibold text-navy mb-1">{segment.time}</div>
-                          <div className="w-8 h-8 mx-auto rounded-lg bg-gradient-to-br from-sage-400 to-coral-400 flex items-center justify-center">
+                          <div className="w-8 h-8 mx-auto rounded-lg bg-gradient-to-br from-turquoise-400 to-lime-400 flex items-center justify-center">
                             <Icon className="w-4 h-4 text-white" />
                           </div>
                         </div>
@@ -324,7 +324,7 @@ export function SessionStructure() {
 
                         {/* Connector */}
                         {index < typicalSession.length - 1 && (
-                          <div className="absolute left-[4.5rem] mt-16 w-px h-6 bg-gradient-to-b from-sage-300 to-coral-300" />
+                          <div className="absolute left-[4.5rem] mt-16 w-px h-6 bg-gradient-to-b from-turquoise-300 to-lime-300" />
                         )}
                       </motion.div>
                     )
@@ -369,10 +369,10 @@ export function SessionStructure() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="mt-8 glass backdrop-blur-xl bg-gradient-to-br from-sage-50/80 to-coral-50/80 rounded-2xl p-6 border border-white/50"
+                className="mt-8 glass backdrop-blur-xl bg-gradient-to-br from-turquoise-50/80 to-lime-50/80 rounded-2xl p-6 border border-white/50"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sage-500 to-coral-500 flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-turquoise-500 to-lime-500 flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
                   <div>

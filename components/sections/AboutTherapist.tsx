@@ -36,13 +36,13 @@ export function AboutTherapist() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 bg-gradient-to-br from-warmSand-50 via-white to-pacificBlue-50 overflow-hidden"
+      className="relative py-12 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50 overflow-hidden"
     >
       {/* Beach-inspired background elements */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-sunsetCoral-200 to-sunsetCoral-300 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-br from-pacificBlue-200 to-pacificBlue-300 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-warmSand-300 to-warmSand-400 rounded-full blur-2xl" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-lime-200 to-lime-300 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-gradient-to-br from-turquoise-200 to-turquoise-300 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-lightGray-300 to-lightGray-400 rounded-full blur-2xl" />
       </div>
 
       {/* Subtle wave texture */}
@@ -101,8 +101,8 @@ export function AboutTherapist() {
               transition={{ delay: 0.7 }}
               className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50"
             >
-              <div className="text-2xl font-display font-bold text-pacificBlue-800">15+</div>
-              <div className="text-sm text-pacificBlue-600 font-beach-clean">Years Experience</div>
+              <div className="text-2xl font-display font-bold text-turquoise-800">15+</div>
+              <div className="text-sm text-turquoise-600 font-beach-clean">Years Experience</div>
             </motion.div>
           </motion.div>
 
@@ -120,15 +120,15 @@ export function AboutTherapist() {
               transition={{ delay: 0.2 }}
               className="mb-8"
             >
-              <div className="inline-flex items-center gap-2 bg-sunsetCoral-100 text-sunsetCoral-700 px-4 py-2 rounded-full text-sm font-beach-clean font-medium mb-4">
+              <div className="inline-flex items-center gap-2 bg-lime-100 text-lime-700 px-4 py-2 rounded-full text-sm font-beach-clean font-medium mb-4">
                 <Heart className="w-4 h-4" />
                 Meet Your Therapist
               </div>
-              <h2 className="text-4xl md:text-5xl font-display font-light text-coastalSlate-800 mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-light text-deepTeal-800 mb-4">
                 Meet Jordan Zipkin,{' '}
-                <span className="text-pacificBlue-600">LMFT</span>
+                <span className="text-turquoise-600">LMFT</span>
               </h2>
-              <p className="text-xl text-coastalSlate-600 font-beach-clean leading-relaxed">
+              <p className="text-xl text-deepTeal-600 font-beach-clean leading-relaxed">
                 A trusted local expert who happens to be really good at what she does
               </p>
             </motion.div>
@@ -141,18 +141,18 @@ export function AboutTherapist() {
               className="grid md:grid-cols-2 gap-6 mb-8"
             >
               <div className="space-y-4">
-                <p className="text-base text-coastalSlate-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
                   For over 15 years, I've had the privilege of helping San Diego couples navigate their most challenging moments. My approach balances genuine care with proven expertise.
                 </p>
-                <p className="text-base text-coastalSlate-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
                   I believe couples need more than talk therapy—they need evidence-based tools and practical strategies that actually work.
                 </p>
               </div>
               <div className="space-y-4">
-                <p className="text-base text-coastalSlate-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
                   My specialized training in the Gottman Method and Relational Life Therapy has helped thousands of couples rebuild trust and create stronger relationships.
                 </p>
-                <p className="text-base text-coastalSlate-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
                   My Carmel Valley office provides a safe, comfortable space, conveniently located near I-5 and accessible from throughout San Diego County.
                 </p>
               </div>
@@ -175,10 +175,10 @@ export function AboutTherapist() {
                     transition={{ delay: 0.6 + index * 0.1 }}
                     className="flex items-center gap-3 group"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pacificBlue-100 to-pacificBlue-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-5 h-5 text-pacificBlue-600" />
+                    <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-turquoise-100 to-turquoise-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-5 h-5 text-turquoise-600" />
                     </div>
-                    <span className="text-coastalSlate-700 font-beach-clean font-medium">
+                    <span className="text-deepTeal-700 font-beach-clean font-medium">
                       {credential.text}
                     </span>
                   </motion.div>
@@ -193,7 +193,7 @@ export function AboutTherapist() {
               transition={{ delay: 0.8 }}
               className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-white/50 mb-8"
             >
-              <h3 className="text-xl font-display font-medium text-coastalSlate-800 mb-4">
+              <h3 className="text-xl font-display font-medium text-deepTeal-800 mb-4">
                 Professional Highlights
               </h3>
               <div className="space-y-3">
@@ -205,8 +205,8 @@ export function AboutTherapist() {
                     transition={{ delay: 0.8 + index * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-sunsetCoral-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-coastalSlate-700 font-beach-clean leading-relaxed">
+                    <CheckCircle className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-deepTeal-700 font-beach-clean leading-relaxed">
                       {achievement}
                     </span>
                   </motion.div>
@@ -223,13 +223,13 @@ export function AboutTherapist() {
             >
               <Link
                 href="/schedule"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-pacificBlue-500 to-pacificBlue-600 text-white font-beach-clean font-semibold rounded-full hover:from-pacificBlue-600 hover:to-pacificBlue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-beach-clean font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Schedule a Consultation
               </Link>
               <Link
                 href="/approach"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm text-pacificBlue-700 font-beach-clean font-semibold rounded-full border-2 border-pacificBlue-200 hover:bg-pacificBlue-50 hover:border-pacificBlue-300 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm text-turquoise-700 font-beach-clean font-semibold rounded-full border-2 border-turquoise-200 hover:bg-turquoise-50 hover:border-turquoise-300 transition-all duration-300"
               >
                 Learn About My Approach
               </Link>

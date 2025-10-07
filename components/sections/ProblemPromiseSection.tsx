@@ -7,7 +7,7 @@ export function ProblemPromiseSection() {
   return (
     <section className="py-20 lg:py-28 relative overflow-hidden">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sand-50 via-white to-sage-50/30">
+      <div className="absolute inset-0 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50/30">
         <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
       </div>
 
@@ -35,28 +35,23 @@ export function ProblemPromiseSection() {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="text-4xl lg:text-5xl font-display font-light text-coastalSlate-800 mb-8"
+              className="text-4xl lg:text-5xl font-display font-light text-deepTeal-700 mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              I understand the pain you're experiencing.
-              <span className="block text-5xl lg:text-6xl font-normal italic gradient-text mt-2">
-                You don't have to face this alone.
-              </span>
+              It Hurts More Than You Can Put Into Words
             </motion.h2>
 
-            <div className="space-y-6 text-lg text-coastalSlate-700 font-heading leading-relaxed">
+            <div className="space-y-6 text-lg text-slate leading-relaxed">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Whether you've just discovered the betrayal or you're months into processing this trauma,
-                you're likely experiencing a whirlwind of emotions. The life you built together in San Diego —
-                from weekend trips to La Jolla Cove to quiet evenings in Balboa Park — suddenly feels shattered.
+                One day you thought your life was steady—the next, everything collapsed.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -64,9 +59,8 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                The hypervigilance, intrusive thoughts, and waves of grief you're experiencing are normal
-                trauma responses. Your nervous system is working overtime to protect you. Understanding
-                these reactions as biological, not personal failures, is the first step toward healing.
+                You replay moments, search for answers, and wonder if you'll ever feel normal again. Shame
+                creeps in: Why am I still here? Why can't I stop asking questions?
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -74,10 +68,8 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                Since 2008, I've helped hundreds of San Diego couples navigate this journey — from military
-                families facing deployment-related infidelity to professionals managing the fallout from
-                workplace affairs. My experience has shown me that with the right approach, couples can
-                not only recover but create relationships stronger than before.
+                And your partner? They're trapped in their own shame, unsure how to repair the damage or
+                respond without making it worse.
               </motion.p>
             </div>
           </motion.div>
@@ -90,7 +82,7 @@ export function ProblemPromiseSection() {
             className="relative"
           >
             {/* Glow effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-sage-400/20 to-coral-400/20 blur-2xl" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-turquoise-400/20 to-lime-400/20 blur-2xl" />
 
             {/* Glass card */}
             <div className="relative glass backdrop-blur-xl bg-white/90 rounded-3xl p-10 shadow-2xl border border-white/50">
@@ -109,22 +101,36 @@ export function ProblemPromiseSection() {
                   whileInView={{ scale: 1, rotate: 0 }}
                   transition={{ duration: 0.6, type: "spring" }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-sage-400 to-sage-500 mb-6"
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-turquoise-400 to-turquoise-500 mb-6"
                 >
                   <Sparkles className="w-6 h-6 text-white" />
                 </motion.div>
 
-                <h3 className="text-2xl lg:text-3xl font-display font-normal text-coastalSlate-800 mb-6">
-                  Why San Diego couples choose my practice:
+                <h3 className="text-2xl lg:text-3xl font-display font-normal text-deepTeal-700 mb-6">
+                  There Is a Path Forward
                 </h3>
+
+                <p className="text-lg text-slate mb-6 leading-relaxed">
+                  You don't have to do this alone. Affair Recovery of San Diego gives you a proven step-by-step
+                  framework to heal.
+                </p>
+
+                <p className="text-lg text-slate mb-6 leading-relaxed">
+                  I'm Jordan Zipkin, a therapist trained in trauma recovery, relational life therapy, and mindfulness.
+                  I'll help you calm the rollercoaster of emotions, rebuild safety and trust, and reconnect with each
+                  other in ways that feel real and lasting.
+                </p>
+
+                <h4 className="text-xl font-semibold text-deepTeal-700 mb-4">
+                  Why Couples Choose Affair Recovery of San Diego
+                </h4>
 
                 <ul className="space-y-4">
                   {[
-                    'Direct, compassionate guidance without judgment',
-                    'Evidence-based strategies from Gottman Method and Relational Life Therapy',
-                    'Understanding of San Diego\'s unique challenges (military deployments, tech industry demands)',
-                    'Practical homework designed for busy professional schedules',
-                    'Clear treatment plans with measurable progress milestones'
+                    'A Clear Roadmap to Rebuilding Trust – Know exactly what questions to ask, how to get consistent answers, and how your partner can show up with openness and empathy.',
+                    'Practical Tools to Calm the Chaos – Learn proven skills for regulating overwhelming emotions so you can stop spinning in anger, fear, or guilt.',
+                    "I Get Through to Partners Who've Been Defensive – As a male therapist, I'm often able to reach the partner who strayed (whether man or woman) in ways others haven't. Hurt partners tell me I'm the first person who got their partner to truly apologize, drop defensiveness, and show genuine empathy for their pain.",
+                    "Reconnect as Partners—and as Friends – Using Gottman's framework, we'll rebuild your friendship and intimacy so you don't just stay together, you enjoy being together."
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -135,13 +141,13 @@ export function ProblemPromiseSection() {
                       className="flex items-start group"
                     >
                       <motion.span
-                        className="text-sage-500 mr-3 text-xl"
+                        className="text-turquoise mr-3 text-xl"
                         whileHover={{ rotate: 360, scale: 1.2 }}
                         transition={{ duration: 0.5 }}
                       >
-                        ✦
+                        •
                       </motion.span>
-                      <span className="text-coastalSlate-700 group-hover:text-coastalSlate-900 transition-colors">
+                      <span className="text-slate group-hover:text-deepTeal-700 transition-colors">
                         {item}
                       </span>
                     </motion.li>

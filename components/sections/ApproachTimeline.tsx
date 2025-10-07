@@ -13,8 +13,8 @@ const timelinePhases = [
     timeframe: 'Weeks 1-6',
     description: 'Focus on immediate safety, emotional regulation, and understanding what happened.',
     icon: Shield,
-    color: 'from-sage-500 to-emerald-500',
-    bgColor: 'from-sage-50 to-emerald-50',
+    color: 'from-turquoise-500 to-emerald-500',
+    bgColor: 'from-turquoise-50 to-emerald-50',
     goals: [
       'Manage crisis and intense emotions',
       'Establish safety and boundaries',
@@ -69,8 +69,8 @@ const timelinePhases = [
     timeframe: 'Weeks 18-40',
     description: 'Focus on intimacy, creating new patterns, and building a stronger relationship.',
     icon: Heart,
-    color: 'from-coral-500 to-pink-500',
-    bgColor: 'from-coral-50 to-pink-50',
+    color: 'from-lime-500 to-pink-500',
+    bgColor: 'from-lime-50 to-pink-50',
     goals: [
       'Rebuild emotional intimacy',
       'Create new relationship agreements',
@@ -112,7 +112,7 @@ export function ApproachTimeline() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-navy-50 relative overflow-hidden">
+    <section ref={containerRef} className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-deepTeal-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <motion.div
@@ -153,16 +153,16 @@ export function ApproachTimeline() {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-400 to-sage-400 blur-lg opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-navy-400 to-sage-400 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-deepTeal-400 to-turquoise-400 blur-lg opacity-50" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-deepTeal-400 to-turquoise-400 flex items-center justify-center">
                 <Clock className="w-8 h-8 text-white" />
               </div>
             </div>
           </motion.div>
 
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
             Your Healing
-            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-navy-600 to-sage-600 bg-clip-text text-transparent mt-2">
+            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-deepTeal-600 to-turquoise-600 bg-clip-text text-transparent mt-2">
               Timeline
             </span>
           </h2>
@@ -189,7 +189,7 @@ export function ApproachTimeline() {
                 onClick={() => setActivePhase(index)}
                 className={`flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 ${
                   isActive
-                    ? 'glass backdrop-blur-md bg-white/90 shadow-lg border border-white/50 text-navy'
+                    ? 'glass backdrop-blur-md bg-white/90 shadow-lg border border-white/50 text-deepTeal'
                     : 'bg-white/60 hover:bg-white/80 text-slate border border-transparent'
                 }`}
                 whileHover={{ scale: 1.02, y: -2 }}
@@ -227,11 +227,11 @@ export function ApproachTimeline() {
                     <Icon className="w-8 h-8 text-white" />
                   </div>
 
-                  <h3 className="text-3xl font-display font-normal text-navy mb-2">
+                  <h3 className="text-3xl font-display font-normal text-deepTeal mb-2">
                     Phase {phase.phase}: {phase.title}
                   </h3>
 
-                  <p className="text-lg text-sage-600 font-medium mb-4">
+                  <p className="text-lg text-turquoise-600 font-medium mb-4">
                     {phase.subtitle}
                   </p>
 
@@ -252,7 +252,7 @@ export function ApproachTimeline() {
 
                   {/* Goals */}
                   <div className="mb-8">
-                    <h4 className="text-lg font-heading font-semibold text-navy mb-4">Phase Goals</h4>
+                    <h4 className="text-lg font-heading font-semibold text-deepTeal mb-4">Phase Goals</h4>
                     <div className="space-y-3">
                       {phase.goals.map((goal, index) => (
                         <motion.div
@@ -262,7 +262,7 @@ export function ApproachTimeline() {
                           transition={{ delay: index * 0.05 }}
                           className="flex items-center gap-3"
                         >
-                          <CheckCircle className="w-4 h-4 text-sage-500 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-turquoise-500 flex-shrink-0" />
                           <span className="text-slate">{goal}</span>
                         </motion.div>
                       ))}
@@ -271,7 +271,7 @@ export function ApproachTimeline() {
 
                   {/* Expected Outcomes */}
                   <div>
-                    <h4 className="text-lg font-heading font-semibold text-navy mb-4">Expected Outcomes</h4>
+                    <h4 className="text-lg font-heading font-semibold text-deepTeal mb-4">Expected Outcomes</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {phase.outcomes.map((outcome, index) => (
                         <motion.div
@@ -290,7 +290,7 @@ export function ApproachTimeline() {
 
                 {/* Methods Used */}
                 <div className="space-y-6">
-                  <h4 className="text-2xl font-display font-normal text-navy">Methods Used in This Phase</h4>
+                  <h4 className="text-2xl font-display font-normal text-deepTeal">Methods Used in This Phase</h4>
 
                   {phase.methods.map((method, index) => (
                     <motion.div
@@ -300,7 +300,7 @@ export function ApproachTimeline() {
                       transition={{ delay: index * 0.1 }}
                       className="glass backdrop-blur-xl bg-white/80 rounded-xl p-6 border border-white/50 shadow-lg"
                     >
-                      <h5 className="text-lg font-heading font-semibold text-navy mb-2">
+                      <h5 className="text-lg font-heading font-semibold text-deepTeal mb-2">
                         {method.name}
                       </h5>
                       <p className="text-slate">{method.description}</p>
@@ -321,7 +321,7 @@ export function ApproachTimeline() {
           className="max-w-6xl mx-auto"
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl lg:text-4xl font-display font-light text-navy mb-4">
+            <h3 className="text-3xl lg:text-4xl font-display font-light text-deepTeal mb-4">
               Key Milestones
             </h3>
             <p className="text-lg text-slate max-w-2xl mx-auto">
@@ -331,7 +331,7 @@ export function ApproachTimeline() {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-sage-300 via-coral-300 to-navy-300 rounded-full" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-turquoise-300 via-lime-300 to-deepTeal-300 rounded-full" />
 
             {/* Progress Markers */}
             <div className="space-y-12">
@@ -348,8 +348,8 @@ export function ApproachTimeline() {
                 >
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <div className="glass backdrop-blur-xl bg-white/90 rounded-2xl p-6 border border-white/50 shadow-lg max-w-sm">
-                      <div className="text-sm text-sage-600 font-medium mb-2">Week {marker.week}</div>
-                      <h4 className="text-lg font-heading font-semibold text-navy mb-2">
+                      <div className="text-sm text-turquoise-600 font-medium mb-2">Week {marker.week}</div>
+                      <h4 className="text-lg font-heading font-semibold text-deepTeal mb-2">
                         {marker.milestone}
                       </h4>
                       <p className="text-slate">{marker.description}</p>
@@ -359,7 +359,7 @@ export function ApproachTimeline() {
                   {/* Timeline Node */}
                   <div className="relative">
                     <motion.div
-                      className="w-4 h-4 rounded-full bg-gradient-to-br from-sage-500 to-coral-500 border-4 border-white shadow-lg"
+                      className="w-4 h-4 rounded-full bg-gradient-to-br from-turquoise-500 to-lime-500 border-4 border-white shadow-lg"
                       whileHover={{ scale: 1.2 }}
                     />
                   </div>
@@ -377,14 +377,14 @@ export function ApproachTimeline() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto mt-16 glass backdrop-blur-xl bg-gradient-to-br from-sage-50/80 to-coral-50/80 rounded-2xl p-8 border border-white/50 text-center"
+          className="max-w-4xl mx-auto mt-16 glass backdrop-blur-xl bg-gradient-to-br from-turquoise-50/80 to-lime-50/80 rounded-2xl p-8 border border-white/50 text-center"
         >
           <div className="flex items-start gap-4 text-left">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sage-500 to-coral-500 flex items-center justify-center flex-shrink-0 mt-1">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-turquoise-500 to-lime-500 flex items-center justify-center flex-shrink-0 mt-1">
               <CheckCircle className="w-4 h-4 text-white" />
             </div>
             <div>
-              <h4 className="font-semibold text-navy mb-2">Important to Remember:</h4>
+              <h4 className="font-semibold text-deepTeal mb-2">Important to Remember:</h4>
               <p className="text-slate">
                 Every couple's timeline is unique. Some move faster, others need more time.
                 What matters most is your commitment to the process and willingness to do the work.

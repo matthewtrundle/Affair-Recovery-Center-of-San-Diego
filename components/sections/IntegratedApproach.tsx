@@ -25,7 +25,7 @@ const methodNodes = [
     subtitle: 'Intimacy Skills',
     icon: Heart,
     position: { x: 80, y: 30 },
-    gradient: 'from-coral-500 to-pink-500',
+    gradient: 'from-lime-500 to-pink-500',
     strengths: [
       'Direct communication',
       'Pattern recognition',
@@ -39,7 +39,7 @@ const methodNodes = [
     subtitle: 'Trauma Healing',
     icon: Brain,
     position: { x: 50, y: 80 },
-    gradient: 'from-sage-500 to-emerald-500',
+    gradient: 'from-turquoise-500 to-emerald-500',
     strengths: [
       'Trauma psychoeducation',
       'Nervous system regulation',
@@ -77,7 +77,7 @@ const phases = [
     duration: '2-6 sessions',
     description: 'Create safety and manage the crisis',
     methods: ['Brain-based understanding', 'Gottman assessment', 'RLT boundaries'],
-    color: 'from-sage-500 to-emerald-500',
+    color: 'from-turquoise-500 to-emerald-500',
     icon: Shield,
   },
   {
@@ -95,7 +95,7 @@ const phases = [
     duration: '8-16 sessions',
     description: 'Create new relationship patterns',
     methods: ['Intimacy rebuilding', 'Attachment repair', 'Relapse prevention'],
-    color: 'from-coral-500 to-pink-500',
+    color: 'from-lime-500 to-pink-500',
     icon: Heart,
   },
 ]
@@ -113,7 +113,7 @@ export function IntegratedApproach() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section id="integration" ref={containerRef} className="py-20 lg:py-28 bg-gradient-to-br from-navy-50 via-white to-sand-50 relative overflow-hidden">
+    <section id="integration" ref={containerRef} className="py-20 lg:py-28 bg-gradient-to-br from-deepTeal-50 via-white to-lightGray-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <motion.div
@@ -154,8 +154,8 @@ export function IntegratedApproach() {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-400 to-sage-400 blur-lg opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-navy-400 to-sage-400 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-deepTeal-400 to-turquoise-400 blur-lg opacity-50" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-deepTeal-400 to-turquoise-400 flex items-center justify-center">
                 <Zap className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -163,7 +163,7 @@ export function IntegratedApproach() {
 
           <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
             How the Methods
-            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-navy-600 to-sage-600 bg-clip-text text-transparent mt-2">
+            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-deepTeal-600 to-turquoise-600 bg-clip-text text-transparent mt-2">
               Work Together
             </span>
           </h2>
@@ -269,7 +269,7 @@ export function IntegratedApproach() {
                       <ul className="space-y-1">
                         {node.strengths.map((strength, sIndex) => (
                           <li key={sIndex} className="text-xs text-slate flex items-center gap-2">
-                            <span className="text-sage-500">•</span>
+                            <span className="text-turquoise-500">•</span>
                             {strength}
                           </li>
                         ))}
@@ -351,7 +351,7 @@ export function IntegratedApproach() {
                     Phase {phase.phase}: {phase.title}
                   </h4>
 
-                  <p className="text-sage-600 font-medium mb-4">{phase.duration}</p>
+                  <p className="text-turquoise-600 font-medium mb-4">{phase.duration}</p>
 
                   <p className="text-lg text-slate mb-8 max-w-2xl mx-auto">
                     {phase.description}

@@ -76,8 +76,8 @@ export function PremiumHeader() {
               className="relative h-20 md:h-24 lg:h-28"
             >
               <Image
-                src="/images/logo/logo2.png"
-                alt="ARC - Affair Recovery Center San Diego"
+                src="/images/logo/affair recovery center logo.svg"
+                alt="Affair Recovery Center of San Diego"
                 width={400}
                 height={120}
                 className="object-contain h-full w-auto"
@@ -102,7 +102,7 @@ export function PremiumHeader() {
                 >
                   <span className="relative z-10">{item.name}</span>
                   <motion.span
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-coral-400 to-sage-400"
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-lime-400 to-turquoise-400"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -121,7 +121,7 @@ export function PremiumHeader() {
                 href="/schedule"
                 className="relative inline-flex items-center gap-2 px-6 py-2.5 group overflow-hidden rounded-full"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-sage-400 opacity-90 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-turquoise-400 opacity-90 group-hover:opacity-100 transition-opacity" />
                 <span className="relative text-white font-casual-header font-medium text-sm">
                   Book Now
                 </span>
@@ -150,7 +150,7 @@ export function PremiumHeader() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm text-warmSand-100 hover:text-warmSand-50 hover:bg-white/20 transition-all duration-300 self-center"
+            className="lg:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm text-lightGray-100 hover:text-lightGray-50 hover:bg-white/20 transition-all duration-300 self-center"
             whileTap={{ scale: 0.95 }}
           >
             <motion.div
@@ -188,13 +188,13 @@ export function PremiumHeader() {
                 >
                   <Link
                     href={item.href}
-                    className="flex items-center gap-3 text-warmSand-100 hover:text-warmSand-50 font-casual-header font-medium text-lg transition-all duration-300 p-3 rounded-lg hover:bg-white/10"
+                    className="flex items-center gap-3 text-lightGray-100 hover:text-lightGray-50 font-casual-header font-medium text-lg transition-all duration-300 p-3 rounded-lg hover:bg-white/10"
                     onClick={() => setIsOpen(false)}
                   >
-                    <IconComponent className="w-5 h-5 text-sunsetCoral-300" />
+                    <IconComponent className="w-5 h-5 text-lime-300" />
                     <div>
                       <div>{item.name}</div>
-                      <div className="text-xs text-warmSand-200/70 font-light">{item.description}</div>
+                      <div className="text-xs text-lightGray-200/70 font-light">{item.description}</div>
                     </div>
                   </Link>
                 </motion.div>
@@ -208,7 +208,7 @@ export function PremiumHeader() {
             >
               <Link
                 href="/schedule"
-                className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-sunsetCoral-400 to-warmSand-400 text-white rounded-full font-casual-header font-semibold shadow-lg"
+                className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-lime-400 to-lightGray-400 text-white rounded-full font-casual-header font-semibold shadow-lg"
                 onClick={() => setIsOpen(false)}
               >
                 <Calendar className="w-5 h-5" />

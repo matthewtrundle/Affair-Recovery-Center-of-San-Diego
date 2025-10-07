@@ -10,8 +10,8 @@ const methods = [
     title: 'Gottman Method',
     description: 'Research-based approach that helps couples build trust, manage conflict, and create shared meaning. Proven effective for affair recovery with specific protocols for rebuilding after betrayal.',
     icon: Users,
-    gradient: 'from-navy-500 via-navy-400 to-blue-400',
-    bgGradient: 'from-navy-100/50 to-transparent',
+    gradient: 'from-deepTeal-500 via-deepTeal-400 to-blue-400',
+    bgGradient: 'from-deepTeal-100/50 to-transparent',
     highlights: [
       'Trust Revival Method',
       'Conflict management skills',
@@ -23,8 +23,8 @@ const methods = [
     title: 'Relational Life Therapy',
     description: 'Direct, skills-based approach that addresses the root causes of disconnection. RLT helps partners move from destructive patterns to genuine intimacy and passion.',
     icon: Heart,
-    gradient: 'from-coral-500 via-coral-400 to-pink-400',
-    bgGradient: 'from-coral-100/50 to-transparent',
+    gradient: 'from-lime-500 via-lime-400 to-pink-400',
+    bgGradient: 'from-lime-100/50 to-transparent',
     highlights: [
       'Identifying relationship patterns',
       'Developing intimacy skills',
@@ -36,8 +36,8 @@ const methods = [
     title: 'Brain-Based Understanding',
     description: `Understanding how betrayal impacts the brain helps normalize your experience and provides a roadmap for healing. We'll explore trauma responses and nervous system regulation.`,
     icon: Brain,
-    gradient: 'from-sage-500 via-sage-400 to-green-400',
-    bgGradient: 'from-sage-100/50 to-transparent',
+    gradient: 'from-turquoise-500 via-turquoise-400 to-green-400',
+    bgGradient: 'from-turquoise-100/50 to-transparent',
     highlights: [
       'Trauma psychoeducation',
       'Nervous system regulation',
@@ -59,7 +59,7 @@ export function MethodCards() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white via-sand-50/30 to-white">
+    <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white via-lightGray-50/30 to-white">
       {/* Animated background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
@@ -98,14 +98,14 @@ export function MethodCards() {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-sage-400 to-coral-400 blur-xl opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-400 to-coral-400 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-turquoise-400 to-lime-400 blur-xl opacity-50" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-turquoise-400 to-lime-400 flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
             </div>
           </motion.div>
 
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
             Evidence-Based Methods
             <span className="block text-5xl lg:text-6xl font-normal italic gradient-text mt-2">
               That Work
@@ -223,7 +223,7 @@ export function MethodCards() {
                             className="flex items-start text-sm text-slate"
                           >
                             <motion.span
-                              className="text-sage-500 mr-3 text-lg"
+                              className="text-turquoise-500 mr-3 text-lg"
                               animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
                               transition={{ duration: 0.6 }}
                             >
@@ -272,7 +272,7 @@ export function MethodCards() {
           </p>
           <motion.a
             href="/approach"
-            className="inline-flex items-center gap-3 px-8 py-4 glass backdrop-blur-md bg-white/90 text-navy rounded-full font-medium border border-navy/20 hover:border-navy/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
+            className="inline-flex items-center gap-3 px-8 py-4 glass backdrop-blur-md bg-white/90 text-deepTeal rounded-full font-medium border border-deepTeal/20 hover:border-deepTeal/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

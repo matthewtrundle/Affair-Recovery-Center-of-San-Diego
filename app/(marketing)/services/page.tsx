@@ -11,9 +11,9 @@ import {
 } from '@/components/sections/ServicesPageClient'
 
 export const metadata: Metadata = generateSEO({
-  title: 'Services for Healing - Betrayal Recovery Therapy',
-  description: 'Comprehensive therapy services for couples healing from betrayal. Specialized couples therapy, individual sessions, intensive weekends, and discernment counseling in San Diego.',
-  keywords: ['affair recovery services', 'betrayal therapy San Diego', 'couples counseling services', 'infidelity recovery'],
+  title: 'Affair Recovery Counseling Services | San Diego & Virtual',
+  description: 'Four-pillar framework: calm emotions, rebuild trust, restore friendship, renew intimacy. In-person San Diego; virtual sessions for Los Angeles and California.',
+  keywords: ['affair recovery counseling', 'infidelity therapy San Diego', 'betrayal recovery services', 'couples therapy California'],
   url: '/services',
 })
 

@@ -10,7 +10,7 @@ const steps = [
     title: 'Stabilize',
     description: `Create safety and contain the crisis. We'll establish boundaries, manage immediate emotions, and help you both feel grounded enough to begin the work.`,
     icon: Shield,
-    gradient: 'from-navy-600 to-navy-400',
+    gradient: 'from-deepTeal-600 to-deepTeal-400',
     delay: 0,
   },
   {
@@ -18,7 +18,7 @@ const steps = [
     title: 'Structure',
     description: `Understand what happened and why. Through guided conversations, we'll explore the factors that led to the affair and begin processing the impact on both partners.`,
     icon: Compass,
-    gradient: 'from-sage-600 to-sage-400',
+    gradient: 'from-turquoise-600 to-turquoise-400',
     delay: 0.2,
   },
   {
@@ -26,7 +26,7 @@ const steps = [
     title: 'Rebuild',
     description: `Create a new relationship together. Using proven techniques, we'll help you rebuild trust, deepen intimacy, and create a stronger bond than you had before.`,
     icon: Heart,
-    gradient: 'from-coral-500 to-coral-300',
+    gradient: 'from-lime-500 to-lime-300',
     delay: 0.4,
   },
 ]
@@ -44,11 +44,11 @@ export function ProcessSteps() {
   return (
     <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden">
       {/* Background gradient mesh */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sand-50 via-white to-sage-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50" />
 
       {/* Floating orbs */}
       <motion.div
-        className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-sage-200/30 to-transparent rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-turquoise-200/30 to-transparent rounded-full blur-3xl"
         animate={{
           x: [0, 30, 0],
           y: [0, -40, 0],
@@ -60,7 +60,7 @@ export function ProcessSteps() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-coral-200/20 to-transparent rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-lime-200/20 to-transparent rounded-full blur-3xl"
         animate={{
           x: [0, -50, 0],
           y: [0, 40, 0],
@@ -85,12 +85,12 @@ export function ProcessSteps() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-sage-400 to-sage-500 mb-6"
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-turquoise-400 to-turquoise-500 mb-6"
           >
             <Sparkles className="w-8 h-8 text-white" />
           </motion.div>
 
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
             Your Journey to
             <span className="block text-5xl lg:text-6xl font-normal italic gradient-text mt-2">
               Recovery
@@ -155,7 +155,7 @@ export function ProcessSteps() {
                       <Icon className="h-8 w-8 text-white" />
                     </motion.div>
 
-                    <h3 className="text-2xl lg:text-3xl font-display font-normal text-navy mb-4">
+                    <h3 className="text-2xl lg:text-3xl font-display font-normal text-deepTeal mb-4">
                       {step.title}
                     </h3>
 
@@ -209,7 +209,7 @@ export function ProcessSteps() {
           </p>
           <motion.a
             href="/schedule"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-navy-600 to-navy-700 text-white rounded-full font-medium hover:from-navy-700 hover:to-navy-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-deepTeal-600 to-deepTeal-700 text-white rounded-full font-medium hover:from-deepTeal-700 hover:to-deepTeal-800 transition-all duration-300 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

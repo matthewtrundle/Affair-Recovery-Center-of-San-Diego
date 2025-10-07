@@ -10,9 +10,10 @@ import { ProblemPromiseSection } from '@/components/sections/ProblemPromiseSecti
 import { generateMetadata as generateSEO, generateOrganizationSchema, generateLocalBusinessSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEO({
-  title: 'Couples Therapy La Jolla | Affair Recovery San Diego',
-  description: 'Local San Diego therapist specializing in affair recovery. Serving La Jolla, Del Mar, Encinitas. 15+ years helping couples heal. Free consultation.',
-  keywords: ['couples therapy La Jolla', 'affair recovery San Diego', 'marriage counseling Del Mar', 'betrayal therapy Encinitas', 'relationship counseling San Diego'],
+  title: 'Affair Recovery San Diego | Couples Therapy & Infidelity Counseling',
+  description: 'Affair recovery therapy in San Diego. Rebuild trust, heal after infidelity, and reconnect. In-person San Diego; virtual sessions for Los Angeles and all of California.',
+  keywords: ['affair recovery San Diego', 'infidelity therapist San Diego', 'betrayal trauma couples therapy', 'Gottman therapist San Diego', 'Relational Life Therapy San Diego'],
+  url: '/',
 })
 
 export default function HomePage() {

@@ -43,7 +43,7 @@ export default function BetrayalRecoveryPage() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-sand-50 rounded-lg p-6">
+              <div className="bg-lightGray-50 rounded-lg p-6">
                 <h3 className="text-xl font-heading font-semibold text-navy mb-4">
                   If You Just Found Out
                 </h3>
@@ -68,7 +68,7 @@ export default function BetrayalRecoveryPage() {
                 </ul>
               </div>
 
-              <div className="bg-sand-50 rounded-lg p-6">
+              <div className="bg-lightGray-50 rounded-lg p-6">
                 <h3 className="text-xl font-heading font-semibold text-navy mb-4">
                   If You Had the Affair
                 </h3>
@@ -94,7 +94,7 @@ export default function BetrayalRecoveryPage() {
               </div>
             </div>
 
-            <div className="bg-coral-50 rounded-lg p-6 text-center">
+            <div className="bg-lime-50 rounded-lg p-6 text-center">
               <p className="text-slate">
                 <strong>Real talk:</strong> This only works if you're both in. Not 50-50 —
                 we need 100-100. The good news? Most couples who commit to the process
@@ -106,7 +106,7 @@ export default function BetrayalRecoveryPage() {
       </section>
 
       {/* What Sessions Look Like */}
-      <section className="py-16 lg:py-20 bg-sand-50">
+      <section className="py-16 lg:py-20 bg-lightGray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-heading font-bold text-navy mb-8 text-center">
@@ -221,7 +221,7 @@ export default function BetrayalRecoveryPage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sage-100 text-sage mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-turquoise-100 text-sage mb-4">
                   <Users className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-navy mb-3">
@@ -234,7 +234,7 @@ export default function BetrayalRecoveryPage() {
               </div>
 
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sage-100 text-sage mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-turquoise-100 text-sage mb-4">
                   <Heart className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-navy mb-3">
@@ -247,7 +247,7 @@ export default function BetrayalRecoveryPage() {
               </div>
 
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sage-100 text-sage mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-turquoise-100 text-sage mb-4">
                   <Brain className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-navy mb-3">
@@ -264,7 +264,7 @@ export default function BetrayalRecoveryPage() {
       </section>
 
       {/* Session Details */}
-      <section className="py-16 lg:py-20 bg-sand-50">
+      <section className="py-16 lg:py-20 bg-lightGray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-heading font-bold text-navy mb-8 text-center">

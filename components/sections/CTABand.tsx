@@ -53,8 +53,8 @@ export function CTABand({
         <div
           className={`absolute inset-0 ${
             isDefault
-              ? 'bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700'
-              : 'bg-gradient-to-br from-sage-600 via-sage-500 to-sage-400'
+              ? 'bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700'
+              : 'bg-gradient-to-br from-turquoise-600 via-turquoise-500 to-turquoise-400'
           }`}
         />
       </motion.div>
@@ -76,7 +76,7 @@ export function CTABand({
                radial-gradient(circle at 80% 80%, rgba(242, 155, 136, 0.1) 0%, transparent 50%),
                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%)`
             : `radial-gradient(circle at 20% 50%, rgba(12, 27, 42, 0.1) 0%, transparent 50%),
-               radial-gradient(circle at 80% 80%, rgba(242, 155, 136, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 80% 80%, rgba(134, 239, 172, 0.15) 0%, transparent 50%),
                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)`,
           backgroundSize: "200% 200%",
         }}
@@ -159,7 +159,7 @@ export function CTABand({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={index === title.split(' ').length - 1 ? 'block text-5xl lg:text-6xl font-normal italic bg-gradient-to-r from-coral-300 to-sage-300 bg-clip-text text-transparent mt-2' : ''}
+                className={index === title.split(' ').length - 1 ? 'block text-5xl lg:text-6xl font-normal italic bg-gradient-to-r from-lime-300 to-turquoise-300 bg-clip-text text-transparent mt-2' : ''}
               >
                 {word}{' '}
               </motion.span>
@@ -197,7 +197,7 @@ export function CTABand({
 
               {/* Hover glow effect */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-coral-400 to-sage-400 blur-xl"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-lime-400 to-turquoise-400 blur-xl"
                 animate={{
                   opacity: isHovered ? 0.4 : 0,
                 }}
@@ -216,13 +216,13 @@ export function CTABand({
                     }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Calendar className={`h-6 w-6 ${isDefault ? 'text-navy' : 'text-sage-600'}`} />
+                    <Calendar className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
                   </motion.div>
                 ) : showIcon ? (
-                  <Sparkles className={`h-6 w-6 ${isDefault ? 'text-navy' : 'text-sage-600'}`} />
+                  <Sparkles className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
                 ) : null}
 
-                <span className={`text-lg font-semibold ${isDefault ? 'text-navy' : 'text-sage-700'}`}>
+                <span className={`text-lg font-semibold ${isDefault ? 'text-deepTeal' : 'text-turquoise-700'}`}>
                   {buttonText}
                 </span>
 
@@ -232,7 +232,7 @@ export function CTABand({
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronRight className={`h-5 w-5 ${isDefault ? 'text-navy' : 'text-sage-600'}`} />
+                  <ChevronRight className={`h-5 w-5 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
                 </motion.div>
               </div>
 
@@ -271,7 +271,7 @@ export function CTABand({
                   duration: 2,
                   repeat: Infinity,
                 }}
-                className="w-2 h-2 bg-coral-400 rounded-full"
+                className="w-2 h-2 bg-lime-400 rounded-full"
               />
               <span>Confidential & Safe</span>
             </div>
@@ -285,7 +285,7 @@ export function CTABand({
                   delay: 0.5,
                   repeat: Infinity,
                 }}
-                className="w-2 h-2 bg-sage-400 rounded-full"
+                className="w-2 h-2 bg-turquoise-400 rounded-full"
               />
               <span>Evidence-Based</span>
             </div>

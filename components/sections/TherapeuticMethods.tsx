@@ -47,8 +47,8 @@ const methods = [
     subtitle: 'Skills-Based Intimacy Building',
     description: 'Created by Terry Real, RLT is a direct, action-oriented approach that gets to the root of relationship problems. It focuses on moving from destructive patterns to genuine intimacy and passion.',
     icon: Heart,
-    gradient: 'from-coral-500 via-pink-500 to-rose-500',
-    bgGradient: 'from-coral-50 to-pink-50',
+    gradient: 'from-lime-500 via-pink-500 to-rose-500',
+    bgGradient: 'from-lime-50 to-pink-50',
     principles: [
       {
         title: 'Psychological Patriarchy',
@@ -82,8 +82,8 @@ const methods = [
     subtitle: 'Trauma-Informed Healing',
     description: 'Betrayal is a form of trauma that affects the brain and nervous system. Understanding these impacts helps normalize your experience and provides a clear path for healing and recovery.',
     icon: Brain,
-    gradient: 'from-sage-500 via-emerald-500 to-teal-500',
-    bgGradient: 'from-sage-50 to-emerald-50',
+    gradient: 'from-turquoise-500 via-emerald-500 to-teal-500',
+    bgGradient: 'from-turquoise-50 to-emerald-50',
     principles: [
       {
         title: 'Trauma Response',
@@ -166,8 +166,8 @@ export function TherapeuticMethods() {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-sage-400 to-coral-400 blur-lg opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-400 to-coral-400 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-turquoise-400 to-lime-400 blur-lg opacity-50" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-turquoise-400 to-lime-400 flex items-center justify-center">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -175,7 +175,7 @@ export function TherapeuticMethods() {
 
           <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
             Three Powerful Methods
-            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-sage-600 to-coral-600 bg-clip-text text-transparent mt-2">
+            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-turquoise-600 to-lime-600 bg-clip-text text-transparent mt-2">
               One Integrated Approach
             </span>
           </h2>
@@ -242,7 +242,7 @@ export function TherapeuticMethods() {
                       {method.title}
                     </h3>
 
-                    <p className="text-lg text-sage-600 font-medium mb-6">
+                    <p className="text-lg text-turquoise-600 font-medium mb-6">
                       {method.subtitle}
                     </p>
 
@@ -250,9 +250,9 @@ export function TherapeuticMethods() {
                       {method.description}
                     </p>
 
-                    <div className="glass backdrop-blur-md bg-gradient-to-br from-sage-50/50 to-coral-50/50 rounded-2xl p-6 border border-white/50">
+                    <div className="glass backdrop-blur-md bg-gradient-to-br from-turquoise-50/50 to-lime-50/50 rounded-2xl p-6 border border-white/50">
                       <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sage-500 to-coral-500 flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-turquoise-500 to-lime-500 flex items-center justify-center flex-shrink-0 mt-1">
                           <CheckCircle className="w-4 h-4 text-white" />
                         </div>
                         <div>
@@ -305,7 +305,7 @@ export function TherapeuticMethods() {
                           transition={{ delay: index * 0.05 }}
                           className="flex items-center gap-3 p-3 glass backdrop-blur-sm bg-white/60 rounded-lg border border-white/30"
                         >
-                          <span className="text-sage-500 text-lg">✦</span>
+                          <span className="text-turquoise-500 text-lg">✦</span>
                           <span className="text-slate text-sm">{technique}</span>
                         </motion.div>
                       ))}

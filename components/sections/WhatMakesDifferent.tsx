@@ -15,7 +15,7 @@ const differentiators = [
       'Flexible method integration',
       'Regular progress evaluation',
     ],
-    gradient: 'from-coral-500 to-pink-500',
+    gradient: 'from-lime-500 to-pink-500',
   },
   {
     icon: Shield,
@@ -27,7 +27,7 @@ const differentiators = [
       'Paced disclosure process',
       'Stabilization before exploration',
     ],
-    gradient: 'from-sage-500 to-emerald-500',
+    gradient: 'from-turquoise-500 to-emerald-500',
   },
   {
     icon: Compass,
@@ -94,7 +94,7 @@ export function WhatMakesDifferent() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 bg-gradient-to-br from-sand-50 via-white to-sage-50 relative overflow-hidden">
+    <section ref={containerRef} className="py-20 lg:py-28 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -135,8 +135,8 @@ export function WhatMakesDifferent() {
             className="inline-block mb-6"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-sage-400 blur-lg opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-coral-400 to-sage-400 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-turquoise-400 blur-lg opacity-50" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-lime-400 to-turquoise-400 flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -144,7 +144,7 @@ export function WhatMakesDifferent() {
 
           <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
             What Makes This
-            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-coral-600 to-sage-600 bg-clip-text text-transparent mt-2">
+            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-lime-600 to-turquoise-600 bg-clip-text text-transparent mt-2">
               Approach Different
             </span>
           </h2>
@@ -219,7 +219,7 @@ export function WhatMakesDifferent() {
                           className="flex items-center gap-3 text-sm text-slate"
                         >
                           <motion.span
-                            className="text-sage-500 text-lg"
+                            className="text-turquoise-500 text-lg"
                             animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
                             transition={{ duration: 0.6 }}
                           >
@@ -242,7 +242,7 @@ export function WhatMakesDifferent() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="glass backdrop-blur-xl bg-gradient-to-br from-navy-900/95 to-slate-800/95 rounded-3xl p-8 lg:p-12 border border-white/20"
+          className="glass backdrop-blur-xl bg-gradient-to-br from-deepTeal-900/95 to-slate-800/95 rounded-3xl p-8 lg:p-12 border border-white/20"
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl lg:text-4xl font-display font-light text-white mb-4">
@@ -267,7 +267,7 @@ export function WhatMakesDifferent() {
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-sage-400 to-coral-400 mb-4"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-turquoise-400 to-lime-400 mb-4"
                   >
                     <Icon className="w-6 h-6 text-white" />
                   </motion.div>

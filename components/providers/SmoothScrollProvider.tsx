@@ -39,7 +39,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     <>
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-sage-400 via-coral-400 to-navy-600 transform-origin-0 z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-turquoise-400 via-lime-400 to-deepTeal-600 transform-origin-0 z-50"
         style={{ scaleX }}
       />
 
@@ -50,7 +50,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
 
       {/* Scroll to top button */}
       <motion.button
-        className="fixed bottom-8 right-8 w-12 h-12 bg-navy-800/90 backdrop-blur-md text-white rounded-full shadow-lg flex items-center justify-center hover:bg-navy-700 transition-colors z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-deepTeal-800/90 backdrop-blur-md text-white rounded-full shadow-lg flex items-center justify-center hover:bg-deepTeal-700 transition-colors z-40"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.1 }}

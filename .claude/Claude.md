@@ -76,9 +76,9 @@ CALENDLY_WEBHOOK_SECRET=
 
 OPENROUTER_API_KEY=
 IMAGE_TOOL_PATH=/Users/mattrundle/Documents/image-generator-tool
-2) Visual direction (seed)
+2) Visual direction (brand palette)
 
-Palette: Deep Navy #0C1B2A (H1/CTAs) • Slate #334155 (body) • Sage #8EA69B (accents) • Sand #E9E2D0 (bg tint) • Coral #F29B88 (subtle highlights)
+Palette: Deep Teal #125959 (primary/H1/CTAs) • Turquoise #2ABFB0 (secondary/accents) • Lime #ADD94E (highlights/CTAs) • Olive #9CBF4E (accents/depth) • Light Gray #F2F2F2 (backgrounds/subtle tints)
 
 Type: Headings — Cormorant Garamond or Playfair; Body — Inter or Source Sans 3
 

@@ -90,7 +90,7 @@ export function ServicesHero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-700"
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700"
     >
       {/* Background Layer */}
       <motion.div
@@ -106,7 +106,7 @@ export function ServicesHero() {
             transform: `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px)`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-900/95 via-navy-800/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/95 via-deepTeal-800/60 to-transparent" />
       </motion.div>
 
       {/* Floating particles */}
@@ -126,7 +126,7 @@ export function ServicesHero() {
             className="text-6xl md:text-7xl lg:text-8xl font-display font-light text-white mb-6"
           >
             <span className="block">Services for</span>
-            <span className="block gradient-text bg-gradient-to-r from-coral via-sage to-coral bg-clip-text text-transparent">
+            <span className="block gradient-text bg-gradient-to-r from-lime via-turquoise to-lime bg-clip-text text-transparent">
               Healing
             </span>
           </motion.h1>
@@ -202,7 +202,7 @@ export function ServicesHero() {
 // Rest of the components here...
 export function MainServicesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-navy-700 to-navy-800 relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-deepTeal-700 to-deepTeal-800 relative overflow-hidden">
       <FloatingElements />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -233,7 +233,7 @@ export function MainServicesSection() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-coral to-sage p-4 mr-4">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-lime to-turquoise p-4 mr-4">
                       <Heart className="h-8 w-8 text-white" />
                     </div>
                     <div>
@@ -267,14 +267,14 @@ export function MainServicesSection() {
                         transition={{ delay: 0.1 * index }}
                         className="flex items-start"
                       >
-                        <CheckCircle2 className="h-5 w-5 text-sage mr-3 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-turquoise mr-3 flex-shrink-0 mt-0.5" />
                         <span className="text-white/70">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
 
                   <Button
-                    className="bg-gradient-to-r from-coral to-sage hover:from-coral/80 hover:to-sage/80 text-white px-8 py-3 group"
+                    className="bg-gradient-to-r from-lime to-turquoise hover:from-lime/80 hover:to-turquoise/80 text-white px-8 py-3 group"
                     asChild
                   >
                     <Link href="/services/betrayal-recovery">
@@ -301,7 +301,7 @@ export function MainServicesSection() {
                       alt="Couple in therapy session working toward healing"
                       className="w-full h-64 lg:h-80 object-cover rounded-xl"
                     />
-                    <div className="absolute inset-3 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent rounded-xl" />
+                    <div className="absolute inset-3 bg-gradient-to-t from-deepTeal-900/60 via-transparent to-transparent rounded-xl" />
                   </div>
                 </div>
               </motion.div>
@@ -355,7 +355,7 @@ export function AdditionalServicesSection() {
   ]
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-sand-50 to-white relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-lightGray-50 to-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -414,7 +414,7 @@ export function ProcessOverviewSection() {
   ]
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-navy-800 to-navy-900 relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-deepTeal-800 to-deepTeal-900 relative overflow-hidden">
       <FloatingElements />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -452,7 +452,7 @@ export function ProcessOverviewSection() {
                     {step.icon}
                   </motion.div>
 
-                  <div className="text-sm font-medium text-coral mb-2 uppercase tracking-wider">
+                  <div className="text-sm font-medium text-lime mb-2 uppercase tracking-wider">
                     {step.timeline}
                   </div>
 
@@ -476,7 +476,7 @@ export function ProcessOverviewSection() {
 // Investment Section
 export function InvestmentSection() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-sand-50">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-lightGray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -485,7 +485,7 @@ export function InvestmentSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
             Investment in Your Relationship
           </h2>
           <p className="text-xl text-slate max-w-3xl mx-auto">
@@ -498,8 +498,8 @@ export function InvestmentSection() {
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <div className="flex items-center mb-6">
-                  <DollarSign className="h-8 w-8 text-sage mr-3" />
-                  <h3 className="text-2xl font-heading font-semibold text-navy">
+                  <DollarSign className="h-8 w-8 text-turquoise mr-3" />
+                  <h3 className="text-2xl font-heading font-semibold text-deepTeal">
                     Session Fees
                   </h3>
                 </div>
@@ -507,31 +507,31 @@ export function InvestmentSection() {
                 <div className="space-y-4 mb-8">
                   <div className="flex justify-between items-center py-3 border-b border-gray-200">
                     <span className="text-slate">Couples Therapy (60 min)</span>
-                    <span className="font-semibold text-navy">$180</span>
+                    <span className="font-semibold text-deepTeal">$180</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-200">
                     <span className="text-slate">Individual Session (50 min)</span>
-                    <span className="font-semibold text-navy">$150</span>
+                    <span className="font-semibold text-deepTeal">$150</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-200">
                     <span className="text-slate">Intensive Weekend</span>
-                    <span className="font-semibold text-navy">$1,800</span>
+                    <span className="font-semibold text-deepTeal">$1,800</span>
                   </div>
                 </div>
 
-                <div className="bg-sage-50 rounded-lg p-6">
-                  <h4 className="font-heading font-semibold text-navy mb-3">Insurance & Payment</h4>
+                <div className="bg-turquoise-50 rounded-lg p-6">
+                  <h4 className="font-heading font-semibold text-deepTeal mb-3">Insurance & Payment</h4>
                   <ul className="space-y-2 text-slate">
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-sage mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-turquoise mr-2 flex-shrink-0 mt-0.5" />
                       <span>Some insurance plans accepted</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-sage mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-turquoise mr-2 flex-shrink-0 mt-0.5" />
                       <span>Superbills provided for reimbursement</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-sage mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-turquoise mr-2 flex-shrink-0 mt-0.5" />
                       <span>Payment plans available</span>
                     </li>
                   </ul>
@@ -540,8 +540,8 @@ export function InvestmentSection() {
 
               <div>
                 <div className="flex items-center mb-6">
-                  <Lightbulb className="h-8 w-8 text-coral mr-3" />
-                  <h3 className="text-2xl font-heading font-semibold text-navy">
+                  <Lightbulb className="h-8 w-8 text-lime mr-3" />
+                  <h3 className="text-2xl font-heading font-semibold text-deepTeal">
                     Value Perspective
                   </h3>
                 </div>
@@ -552,23 +552,23 @@ export function InvestmentSection() {
                   your family's wellbeing, and your future happiness.
                 </p>
 
-                <div className="bg-coral-50 rounded-lg p-6 mb-6">
-                  <h4 className="font-heading font-semibold text-navy mb-3">What's Included</h4>
+                <div className="bg-lime-50 rounded-lg p-6 mb-6">
+                  <h4 className="font-heading font-semibold text-deepTeal mb-3">What's Included</h4>
                   <ul className="space-y-2 text-slate">
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-coral mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-lime mr-2 flex-shrink-0 mt-0.5" />
                       <span>Comprehensive assessment and treatment planning</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-coral mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-lime mr-2 flex-shrink-0 mt-0.5" />
                       <span>Between-session exercises and resources</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-coral mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-lime mr-2 flex-shrink-0 mt-0.5" />
                       <span>Crisis support as needed</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-coral mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-lime mr-2 flex-shrink-0 mt-0.5" />
                       <span>Ongoing progress monitoring</span>
                     </li>
                   </ul>
@@ -618,7 +618,7 @@ export function ServicesFAQSection() {
   ]
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-sand-50 to-white">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-lightGray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -627,7 +627,7 @@ export function ServicesFAQSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-slate max-w-3xl mx-auto">
@@ -651,7 +651,7 @@ export function ServicesFAQSection() {
                 onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-heading font-semibold text-navy pr-4">
+                  <h3 className="text-lg font-heading font-semibold text-deepTeal pr-4">
                     {faq.question}
                   </h3>
                   <motion.div
