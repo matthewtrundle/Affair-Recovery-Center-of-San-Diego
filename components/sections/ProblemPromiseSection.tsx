@@ -41,7 +41,7 @@ export function ProblemPromiseSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              I understand the pain you're experiencing.
+              It Hurts More Than You Can Put Into Words
             </motion.h2>
 
             <div className="space-y-6 text-lg text-slate leading-relaxed">
@@ -51,7 +51,7 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Whether you've just discovered the betrayal or you're months into processing this trauma, you're likely experiencing a whirlwind of emotions. The life you built together in San Diego — from weekend trips to La Jolla Cove to quiet evenings in Balboa Park — suddenly feels shattered.
+                One day you thought your life was steady—the next, everything collapsed.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,8 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                The hypervigilance, intrusive thoughts, and waves of grief you're experiencing are normal trauma responses. Your nervous system is working overtime to protect you. Understanding these reactions as biological, not personal failures, is the first step toward healing.
+                You replay moments, search for answers, and wonder if you'll ever feel normal again. Shame
+                creeps in: Why am I still here? Why can't I stop asking questions?
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -67,7 +68,8 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                Since 2008, I've helped hundreds of San Diego couples navigate this journey — from military families facing deployment-related infidelity to professionals managing the fallout from workplace affairs. My experience has shown me that with the right approach, couples can not only recover but create relationships stronger than before.
+                And your partner? They're trapped in their own shame, unsure how to repair the damage or
+                respond without making it worse.
               </motion.p>
             </div>
           </motion.div>
@@ -105,20 +107,30 @@ export function ProblemPromiseSection() {
                 </motion.div>
 
                 <h3 className="text-2xl lg:text-3xl font-display font-normal text-deepTeal-700 mb-6">
-                  You don't have to face this alone.
+                  There Is a Path Forward
                 </h3>
 
+                <p className="text-lg text-slate mb-6 leading-relaxed">
+                  You don't have to do this alone. Affair Recovery of San Diego gives you a proven step-by-step
+                  framework to heal.
+                </p>
+
+                <p className="text-lg text-slate mb-6 leading-relaxed">
+                  I'm Jordan Zipkin, a therapist trained in trauma recovery, relational life therapy, and mindfulness.
+                  I'll help you calm the rollercoaster of emotions, rebuild safety and trust, and reconnect with each
+                  other in ways that feel real and lasting.
+                </p>
+
                 <h4 className="text-xl font-semibold text-deepTeal-700 mb-4">
-                  Why San Diego couples choose my practice:
+                  Why Couples Choose Affair Recovery of San Diego
                 </h4>
 
                 <ul className="space-y-4">
                   {[
-                    'Direct, compassionate guidance without judgment',
-                    'Evidence-based strategies from Gottman Method and Relational Life Therapy',
-                    'Understanding of San Diego's unique challenges (military deployments, tech industry demands)',
-                    'Practical homework designed for busy professional schedules',
-                    'Clear treatment plans with measurable progress milestones'
+                    'A Clear Roadmap to Rebuilding Trust – Know exactly what questions to ask, how to get consistent answers, and how your partner can show up with openness and empathy.',
+                    'Practical Tools to Calm the Chaos – Learn proven skills for regulating overwhelming emotions so you can stop spinning in anger, fear, or guilt.',
+                    "I Get Through to Partners Who've Been Defensive – As a male therapist, I'm often able to reach the partner who strayed (whether man or woman) in ways others haven't. Hurt partners tell me I'm the first person who got their partner to truly apologize, drop defensiveness, and show genuine empathy for their pain.",
+                    "Reconnect as Partners—and as Friends – Using Gottman's framework, we'll rebuild your friendship and intimacy so you don't just stay together, you enjoy being together."
                   ].map((item, index) => (
                     <motion.li
                       key={index}

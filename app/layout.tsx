@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Crimson_Pro, EB_Garamond, Playfair_Display, Quicksand, Raleway, Comfortaa } from 'next/font/google'
+import { Inter, Cormorant_Garamond, Playfair_Display, Source_Sans_3 } from 'next/font/google'
 import '@/styles/globals.css'
 import { Analytics } from '@/components/Analytics'
 
@@ -10,18 +10,17 @@ const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
 })
 
-const crimsonPro = Crimson_Pro({
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-crimson',
+  variable: '--font-source-sans',
   display: 'swap',
-  style: ['normal', 'italic'],
+  weight: ['300', '400', '500', '600', '700'],
 })
 
-const ebGaramond = EB_Garamond({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-eb-garamond',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
   display: 'swap',
   style: ['normal', 'italic'],
 })
@@ -32,27 +31,6 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
   display: 'swap',
   style: ['normal', 'italic'],
-})
-
-const quicksand = Quicksand({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-quicksand',
-  display: 'swap',
-})
-
-const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-raleway',
-  display: 'swap',
-})
-
-const comfortaa = Comfortaa({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-comfortaa',
-  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -110,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${crimsonPro.variable} ${ebGaramond.variable} ${playfair.variable} ${quicksand.variable} ${raleway.variable} ${comfortaa.variable}`}>
+    <html lang="en" className={`${inter.variable} ${sourceSans.variable} ${cormorant.variable} ${playfair.variable}`}>
       <body className={inter.className}>
         <SmoothScrollProvider>
           {children}

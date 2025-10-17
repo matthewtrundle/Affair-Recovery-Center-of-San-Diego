@@ -166,18 +166,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['Ogg', 'Didot', 'Playfair Display', 'serif'],
-        heading: ['Crimson Pro', 'EB Garamond', 'serif'],
-        body: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        // Beach-inspired fonts
-        'beach-script': ['Kaushan Script', 'cursive'],
-        'beach-casual': ['Amatic SC', 'cursive'],
-        'beach-clean': ['Montserrat', 'sans-serif'],
-        // Casual San Diego style fonts
-        'san-diego': ['Quicksand', 'Raleway', 'Comfortaa', 'sans-serif'],
-        'casual-header': ['Quicksand', 'sans-serif'],
-        'relaxed': ['Raleway', 'sans-serif'],
-        'friendly': ['Comfortaa', 'cursive'],
+        display: ['var(--font-cormorant)', 'var(--font-playfair)', 'serif'],
+        heading: ['var(--font-cormorant)', 'var(--font-playfair)', 'serif'],
+        body: ['var(--font-inter)', 'var(--font-source-sans)', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       fontSize: {
         // Golden Ratio Scale
