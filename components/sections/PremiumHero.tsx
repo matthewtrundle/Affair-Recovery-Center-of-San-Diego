@@ -28,7 +28,7 @@ const videos = [
 
 // Rotating Text Component
 function RotatingText() {
-  const words = ['Rebuild Trust', 'Feel Secure Again', 'Heal Together', 'Find Your Way', 'Start Fresh']
+  const words = ['way through', 'way forward', 'new beginning', 'way to heal', 'hope ahead']
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -168,19 +168,28 @@ export function PremiumHero() {
               transition={{ duration: 1, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-6"
             >
-              <span className="block mb-2">Affair Recovery Therapy in San Diego –</span>
+              <span className="block mb-2">There is a</span>
               <RotatingText />
             </motion.h1>
 
-          {/* Subheading with typewriter effect */}
+          {/* Subheading */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="text-xl md:text-2xl font-heading text-white/90 mb-4 max-w-2xl"
+          >
+            When trust has been broken, healing requires expertise
+          </motion.p>
+
+          {/* Body Text */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-lg md:text-xl font-heading text-gray-200 mb-8 max-w-2xl"
+            className="text-lg font-heading text-gray-200 mb-8 max-w-2xl leading-relaxed"
           >
-            When infidelity shakes your world, it feels impossible to move forward. With the right guidance,
-            you can rebuild trust, find calm, and create a relationship that's stronger than before.
+            For fifteen years, I've guided San Diego's most successful couples through the complexities of betrayal recovery. My evidence-based approach combines Gottman Method expertise with cutting-edge trauma-informed care.
           </motion.p>
 
             {/* CTA Buttons with magnetic effect */}
@@ -198,7 +207,7 @@ export function PremiumHero() {
                 >
                   <Link href="/schedule">
                     <Sparkles className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    Start Healing Today
+                    Begin Your Recovery Journey
                   </Link>
                 </Button>
               </MagneticButton>
@@ -211,7 +220,7 @@ export function PremiumHero() {
                   asChild
                 >
                   <Link href="/approach">
-                    How I Work
+                    Explore Our Methodology
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 </Button>

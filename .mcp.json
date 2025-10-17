@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "archon": {
+      "url": "http://localhost:8051/sse",
+      "transport": {
+        "type": "sse"
+      }
+    }
+  }
+}
