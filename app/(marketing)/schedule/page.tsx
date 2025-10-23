@@ -3,8 +3,9 @@ import { CalendlyEmbed } from '@/components/CalendlyEmbed'
 import { generateMetadata as generateSEO, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEO({
-  title: 'Book Affair Recovery Therapy | San Diego & Virtual Sessions',
-  description: 'Start healing today. Book affair recovery therapy in San Diego with Jordan Zipkin. Virtual counseling available for Los Angeles and all of California.',
+  title: 'Schedule Consultation | Affair Recovery Therapy San Diego',
+  description: 'Book your confidential consultation for affair recovery therapy. Flexible scheduling for San Diego office or California telehealth sessions.',
+  keywords: ['schedule couples therapy san diego', 'book marriage counseling', 'affair recovery consultation'],
   url: '/schedule',
 })
 

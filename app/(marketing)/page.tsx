@@ -10,9 +10,9 @@ import { ProblemPromiseSection } from '@/components/sections/ProblemPromiseSecti
 import { generateMetadata as generateSEO, generateOrganizationSchema, generateLocalBusinessSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEO({
-  title: 'Affair Recovery San Diego | Couples Therapy & Infidelity Counseling',
-  description: 'Affair recovery therapy in San Diego. Rebuild trust, heal after infidelity, and reconnect. In-person San Diego; virtual sessions for Los Angeles and all of California.',
-  keywords: ['affair recovery San Diego', 'infidelity therapist San Diego', 'betrayal trauma couples therapy', 'Gottman therapist San Diego', 'Relational Life Therapy San Diego'],
+  title: 'Affair Recovery Therapist San Diego | Jordan Zipkin, LMFT',
+  description: 'Expert couples therapy for affair recovery and betrayal trauma in San Diego. Gottman-certified therapist helping couples rebuild trust. Schedule your consultation today.',
+  keywords: ['affair recovery san diego', 'infidelity therapist san diego', 'couples therapist san diego', 'betrayal trauma therapy', 'gottman certified therapist'],
   url: '/',
 })
 

@@ -26,45 +26,6 @@ const videos = [
   }
 ]
 
-// Rotating Text Component
-function RotatingText() {
-  const words = ['way through', 'way forward', 'new beginning', 'way to heal', 'hope ahead']
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <div className="relative inline-block">
-      {/* Background card for visibility */}
-      <div className="absolute inset-0 -inset-x-4 -inset-y-2 bg-white/10 backdrop-blur-sm rounded-2xl" />
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={words[index]}
-          className="relative block text-5xl md:text-6xl lg:text-7xl font-normal italic px-4 py-2"
-          style={{
-            background: 'linear-gradient(135deg, #8EA69B 0%, #4A9D9E 50%, #7A9E7E 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 2px 10px rgba(142, 166, 155, 0.3)'
-          }}
-          initial={{ opacity: 0, y: 20, rotateX: -90 }}
-          animate={{ opacity: 1, y: 0, rotateX: 0 }}
-          exit={{ opacity: 0, y: -20, rotateX: 90 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
-          {words[index]}
-        </motion.span>
-      </AnimatePresence>
-    </div>
-  )
-}
-
 export function PremiumHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -161,42 +122,31 @@ export function PremiumHero() {
             className="text-left"
             style={{ y: textY, opacity }}
           >
-            {/* Main Heading with Rotating Text */}
+            {/* Main Heading - Direct, SEO-optimized */}
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
               className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-6"
             >
-              <span className="block mb-2">There is a</span>
-              <RotatingText />
+              Affair Recovery Therapy in San Diego &mdash; Rebuild Trust and Feel Secure Again
             </motion.h1>
 
-          {/* Subheading */}
+          {/* Supporting Subhead - Trauma-aware, accessible */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-xl md:text-2xl font-heading text-white/90 mb-4 max-w-2xl"
+            className="text-xl md:text-2xl font-heading text-white/90 mb-8 max-w-2xl leading-relaxed"
           >
-            When trust has been broken, healing requires expertise
-          </motion.p>
-
-          {/* Body Text */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="text-lg font-heading text-gray-200 mb-8 max-w-2xl leading-relaxed"
-          >
-            For fifteen years, I've guided San Diego's most successful couples through the complexities of betrayal recovery. My evidence-based approach combines Gottman Method expertise with cutting-edge trauma-informed care.
+            When infidelity shakes your world, it feels impossible to move forward. With the right guidance, you can rebuild trust, find calm, and create a relationship that&apos;s stronger than before.
           </motion.p>
 
             {/* CTA Buttons with magnetic effect */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2 }}
+              transition={{ duration: 1, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-6"
             >
               <MagneticButton>
@@ -207,7 +157,7 @@ export function PremiumHero() {
                 >
                   <Link href="/schedule">
                     <Sparkles className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    Begin Your Recovery Journey
+                    Start Healing Today
                   </Link>
                 </Button>
               </MagneticButton>
@@ -220,7 +170,7 @@ export function PremiumHero() {
                   asChild
                 >
                   <Link href="/approach">
-                    Explore Our Methodology
+                    Learn How We Help
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 </Button>

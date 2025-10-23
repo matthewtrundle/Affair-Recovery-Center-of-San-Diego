@@ -4,6 +4,7 @@ import { generateMetadata as generateSEO, generateBreadcrumbSchema } from '@/lib
 import {
   ServicesHero,
   MainServicesSection,
+  FourPillarsSection,
   AdditionalServicesSection,
   ProcessOverviewSection,
   InvestmentSection,
@@ -11,9 +12,9 @@ import {
 } from '@/components/sections/ServicesPageClient'
 
 export const metadata: Metadata = generateSEO({
-  title: 'Affair Recovery Counseling Services | San Diego & Virtual',
-  description: 'Four-pillar framework: calm emotions, rebuild trust, restore friendship, renew intimacy. In-person San Diego; virtual sessions for Los Angeles and California.',
-  keywords: ['affair recovery counseling', 'infidelity therapy San Diego', 'betrayal recovery services', 'couples therapy California'],
+  title: 'Betrayal Trauma Therapy San Diego | Infidelity Recovery',
+  description: 'Specialized betrayal trauma therapy using Gottman Method and RLT. Help for both partners after affairs. In-person San Diego or California telehealth.',
+  keywords: ['betrayal trauma therapy san diego', 'infidelity recovery therapy', 'affair recovery counseling', 'couples therapy after infidelity'],
   url: '/services',
 })
 
@@ -32,6 +33,9 @@ export default function ServicesPage() {
 
       {/* Main Service */}
       <MainServicesSection />
+
+      {/* Four Pillars Framework */}
+      <FourPillarsSection />
 
       {/* Additional Services */}
       <AdditionalServicesSection />

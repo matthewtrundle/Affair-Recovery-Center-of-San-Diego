@@ -1,11 +1,11 @@
+import { withPayload } from '@payloadcms/next/withPayload'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     domains: ['localhost'],
     formats: ['image/avif', 'image/webp'],
   },
-  // Temporary workaround for CSS build issue
-  swcMinify: false,
   productionBrowserSourceMaps: false,
   webpack: (config, { isServer }) => {
     // Disable CSS minimization completely
@@ -16,4 +16,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default withPayload(nextConfig)

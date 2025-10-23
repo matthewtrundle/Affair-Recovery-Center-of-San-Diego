@@ -1,8 +1,8 @@
 // Main hero components
-export { SanDiegoHero } from './SanDiegoHero'
+// export { SanDiegoHero } from './SanDiegoHero' // Temporarily disabled for React 19 compatibility
 export { Hero } from './Hero'
 export { ImmersiveHero } from './ImmersiveHero'
-export { OceanHero } from './OceanHero'
+// export { OceanHero } from './OceanHero' // Temporarily disabled for React 19 compatibility
 export { PremiumHero } from './PremiumHero'
 export { ApproachHero } from './ApproachHero'
 

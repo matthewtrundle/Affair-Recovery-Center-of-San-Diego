@@ -246,8 +246,9 @@ export function MainServicesSection() {
 
                   <p className="text-white/80 text-lg mb-6 leading-relaxed">
                     A structured, evidence-based approach to healing from infidelity and betrayal trauma.
-                    Using proven methods from the Gottman Institute and Relational Life Therapy,
-                    we guide couples through crisis stabilization, understanding, and rebuilding.
+                    Serving San Diego couples from Carmel Valley to Downtown, from La Jolla to North Park,
+                    I use proven methods from the Gottman Institute and Relational Life Therapy to guide you
+                    through crisis stabilization, understanding, and rebuilding.
                   </p>
 
                   <div className="space-y-3 mb-8">
@@ -581,6 +582,147 @@ export function InvestmentSection() {
             </div>
           </PremiumCard>
         </div>
+      </div>
+    </section>
+  )
+}
+
+// Four Pillars Section
+export function FourPillarsSection() {
+  const pillars = [
+    {
+      number: 1,
+      title: "Emotion Regulation — Find Calm in the Chaos",
+      items: [
+        "Mindfulness & grounding skills: Quick tools to reduce reactivity in the moment.",
+        "Communication guardrails: How to ask and answer questions without spiraling.",
+        "Session structure: Clear boundaries for hard conversations so no one shuts down."
+      ],
+      gradient: "from-coral to-turquoise"
+    },
+    {
+      number: 2,
+      title: "Rebuilding Trust — Step by Step, with Structure",
+      items: [
+        "Honest, consistent answers: Responding with patience—even when questions repeat.",
+        "Reasonable openness: Practical transparency (e.g., phone face-up, shared calendars) to reduce anxiety while trust is rebuilt.",
+        "Repair rituals: Simple daily and weekly practices that demonstrate reliability."
+      ],
+      gradient: "from-turquoise to-lime"
+    },
+    {
+      number: 3,
+      title: "Rebuilding Friendship — Liking Each Other Again",
+      items: [
+        "Lighthearted conversations: Moving beyond crisis mode to rediscover fun together.",
+        "Inside jokes and shared hobbies: Rekindling what made you friends in the first place.",
+        "Date nights and check-ins: Regular time for connection, laughter, and joy."
+      ],
+      gradient: "from-lime to-sage"
+    },
+    {
+      number: 4,
+      title: "Renewing Intimacy — When It&apos;s Safe to Feel Desired Again",
+      items: [
+        "Gentle affection: Rebuilding physical connection at a pace that feels safe.",
+        "Safe emotional vulnerability: Creating space for desire without pressure.",
+        "Physical reconnection: Intimacy that flows naturally from trust and friendship."
+      ],
+      gradient: "from-sage to-coral"
+    }
+  ]
+
+  return (
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-lightGray-50 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
+            What to Expect in Affair Recovery Counseling
+          </h2>
+          <p className="text-xl text-slate max-w-3xl mx-auto">
+            We follow four pillars—emotion regulation, rebuilding trust, rebuilding friendship, and renewing intimacy—at a pace that fits you.
+          </p>
+        </motion.div>
+
+        <div className="max-w-6xl mx-auto space-y-8">
+          {pillars.map((pillar, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+            >
+              <PremiumCard variant="solid" hoverEffect="lift" className="p-8 lg:p-10">
+                <div className="flex flex-col lg:flex-row gap-6">
+                  {/* Pillar Number */}
+                  <div className="flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                      className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center`}
+                    >
+                      <span className="text-3xl lg:text-4xl font-display font-bold text-white">
+                        {pillar.number}
+                      </span>
+                    </motion.div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-2xl lg:text-3xl font-heading font-semibold text-deepTeal mb-6">
+                      {pillar.title}
+                    </h3>
+
+                    <ul className="space-y-4">
+                      {pillar.items.map((item, itemIndex) => (
+                        <motion.li
+                          key={itemIndex}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.1 * itemIndex }}
+                          className="flex items-start"
+                        >
+                          <CheckCircle2 className="h-5 w-5 text-turquoise mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-slate text-lg leading-relaxed">
+                            {item}
+                          </span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </PremiumCard>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-lime to-turquoise hover:from-lime/80 hover:to-turquoise/80 text-white px-10 py-6 text-lg group"
+            asChild
+          >
+            <Link href="/schedule">
+              <Sparkles className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+              Begin Your Healing Journey
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   )

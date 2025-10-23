@@ -9,16 +9,9 @@ import { CTABand } from '@/components/sections/CTABand'
 import { generateMetadata as generateSEO, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEO({
-  title: 'My Therapeutic Approach | Evidence-Based Affair Recovery',
-  description: 'Learn about my integrated approach combining Gottman Method, Relational Life Therapy, and brain-based trauma understanding for effective affair recovery and relationship healing.',
-  keywords: [
-    'Gottman Method San Diego',
-    'Relational Life Therapy',
-    'affair recovery approach',
-    'trauma-informed therapy',
-    'couples therapy methods',
-    'betrayal recovery techniques'
-  ],
+  title: 'Gottman & RLT Therapy Methods | Evidence-Based Approach',
+  description: 'Learn about our evidence-based approach combining Gottman Method and Relational Life Therapy for lasting relationship repair after betrayal.',
+  keywords: ['gottman therapist san diego', 'relational life therapy san diego', 'evidence-based couples therapy'],
   url: '/approach',
 })
 
