@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronRight, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone, Video } from 'lucide-react'
+import { Menu, X, ChevronRight, ChevronDown, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone, Video } from 'lucide-react'
 import Image from 'next/image'
 
 // Beach-themed SVG Icons
@@ -31,19 +31,27 @@ const ShellIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 )
 
 const navigation = [
-  { name: 'About', href: '/about', icon: User, description: 'Meet Jordan Zipkin' },
-  { name: 'Approach', href: '/approach', icon: Heart, description: 'Evidence-based methods' },
-  { name: 'Services', href: '/services', icon: Lightbulb, description: 'Therapy options' },
+  {
+    name: 'About',
+    href: '#',
+    icon: User,
+    description: 'Learn more',
+    submenu: [
+      { name: 'Meet Your Therapist', href: '/about', description: 'Get to know Jordan' },
+      { name: 'Approach', href: '/approach', description: 'Evidence-based methods' },
+      { name: 'Services', href: '/services', description: 'Therapy options' },
+    ]
+  },
   { name: 'Online Sessions', href: '/california-online-sessions', icon: Video, description: 'California telehealth' },
   { name: 'Success Stories', href: '/testimonials', icon: MessageCircle, description: 'Real transformations' },
   { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Your questions answered' },
   { name: 'Resources', href: '/blog', icon: BookOpen, description: 'Healing insights' },
-  { name: 'Contact', href: '/contact', icon: Phone, description: 'Reach out today' },
 ]
 
 export function PremiumHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const { scrollY } = useScroll()
 
   const headerOpacity = useTransform(scrollY, [0, 100], [0.95, 1])
@@ -59,12 +67,11 @@ export function PremiumHeader() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 shadow-md ${
         isScrolled ? 'py-1' : 'py-2'
       }`}
       style={{
-        backgroundColor: '#ffffffde',
-        backdropFilter: `blur(${isScrolled ? '15px' : '10px'})`,
+        backgroundColor: '#ffffff',
       }}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +81,11 @@ export function PremiumHeader() {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, duration: 0.3 }}
-              className="relative h-12 md:h-14 lg:h-16"
+              className={`relative transition-all duration-500 ${
+                isScrolled
+                  ? 'h-12 md:h-14 lg:h-16'  // Scrolled (compact)
+                  : 'h-15 md:h-[4.375rem] lg:h-20'  // At top (25% larger)
+              }`}
               style={{ filter: 'drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.3))' }}
             >
               <Image
@@ -97,19 +108,58 @@ export function PremiumHeader() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
+                className="relative"
+                onMouseEnter={() => item.submenu && setOpenDropdown(item.name)}
+                onMouseLeave={() => item.submenu && setOpenDropdown(null)}
               >
-                <Link
-                  href={item.href}
-                  className="relative text-[#115659] hover:text-[#115659]/80 font-medium text-base px-4 py-2 rounded-md transition-colors group"
-                >
-                  <span className="relative z-10">{item.name}</span>
-                  <motion.span
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#115659]"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
+                {item.submenu ? (
+                  <button
+                    className="relative text-[#115659] hover:text-[#115659]/80 font-medium text-sm px-4 py-2 rounded-md transition-colors group flex items-center gap-1"
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    <ChevronDown className="w-3 h-3 relative z-10" />
+                    <motion.span
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#115659]"
+                      initial={{ scaleX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="relative text-[#115659] hover:text-[#115659]/80 font-medium text-sm px-4 py-2 rounded-md transition-colors group flex items-center gap-1"
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    <motion.span
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#115659]"
+                      initial={{ scaleX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </Link>
+                )}
+
+                {/* Dropdown Menu */}
+                {item.submenu && openDropdown === item.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-0 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                  >
+                    {item.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        className="block px-4 py-2 text-[#115659] hover:bg-[#115659]/5 transition-colors"
+                      >
+                        <div className="font-medium text-sm">{subItem.name}</div>
+                        <div className="text-xs text-[#115659]/70">{subItem.description}</div>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
               </motion.div>
             ))}
 
@@ -120,12 +170,12 @@ export function PremiumHeader() {
               transition={{ delay: 0.4, type: "spring" }}
             >
               <Link
-                href="/schedule"
+                href="/contact"
                 className="relative inline-flex items-center gap-2 px-6 py-2.5 group overflow-hidden rounded-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-turquoise-400 group-hover:from-lime-500 group-hover:to-turquoise-500 transition-all duration-300" />
-                <span className="relative text-white font-bold text-sm" style={{ textShadow: '0px 1px 5px black' }}>
-                  Book Now
+                <span className="relative text-white font-bold text-base" style={{ textShadow: '0px 1px 5px black' }}>
+                  Start Healing Now
                 </span>
                 <ChevronRight className="relative w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
@@ -158,8 +208,7 @@ export function PremiumHeader() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="lg:hidden overflow-hidden"
           style={{
-            backgroundColor: '#ffffffde',
-            backdropFilter: 'blur(20px)',
+            backgroundColor: '#ffffff',
           }}
         >
           <div className="py-6 px-4 space-y-2">
@@ -172,17 +221,45 @@ export function PremiumHeader() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
                 >
-                  <Link
-                    href={item.href}
-                    className="flex items-center gap-3 text-[#115659] hover:bg-[#115659]/5 font-medium text-base transition-all duration-300 px-4 py-2 rounded-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <IconComponent className="w-5 h-5" />
-                    <div>
-                      <div>{item.name}</div>
-                      <div className="text-xs text-[#115659]/70 font-light">{item.description}</div>
-                    </div>
-                  </Link>
+                  {item.submenu ? (
+                    <>
+                      {/* Non-clickable header for items with submenu */}
+                      <div className="flex items-center gap-3 text-[#115659] font-medium text-base px-4 py-2">
+                        <IconComponent className="w-5 h-5" />
+                        <div>
+                          <div>{item.name}</div>
+                          <div className="text-xs text-[#115659]/70 font-light">{item.description}</div>
+                        </div>
+                      </div>
+
+                      {/* Mobile Submenu */}
+                      <div className="ml-8 mt-2 space-y-1">
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block text-[#115659]/80 hover:bg-[#115659]/5 text-sm px-4 py-2 rounded-lg transition-all"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <div className="font-medium">{subItem.name}</div>
+                            <div className="text-xs text-[#115659]/60">{subItem.description}</div>
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-3 text-[#115659] hover:bg-[#115659]/5 font-medium text-base transition-all duration-300 px-4 py-2 rounded-lg"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                      <div>
+                        <div>{item.name}</div>
+                        <div className="text-xs text-[#115659]/70 font-light">{item.description}</div>
+                      </div>
+                    </Link>
+                  )}
                 </motion.div>
               )
             })}
@@ -193,13 +270,13 @@ export function PremiumHeader() {
               className="pt-4 border-t border-[#115659]/20"
             >
               <Link
-                href="/schedule"
-                className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-lime-400 to-turquoise-400 text-white rounded-full font-bold shadow-lg"
+                href="/contact"
+                className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-lime-400 to-turquoise-400 text-white rounded-full font-bold shadow-lg text-base"
                 style={{ textShadow: '0px 1px 5px black' }}
                 onClick={() => setIsOpen(false)}
               >
                 <Calendar className="w-5 h-5" />
-                Book Now
+                Start Healing Now
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </motion.div>

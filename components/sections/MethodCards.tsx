@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, Users, Heart, Brain, Sparkles } from 'lucide-react'
 import { useRef, useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 const methods = [
   {
@@ -260,14 +261,16 @@ export function MethodCards() {
           <p className="text-lg text-slate mb-6">
             Curious about how these methods work together in your unique situation?
           </p>
-          <motion.a
-            href="/approach"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-deepTeal rounded-full font-medium border border-deepTeal/20 hover:border-deepTeal hover:bg-deepTeal-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
-            whileTap={{ scale: 0.98 }}
+          <Button
+            variant="outline"
+            size="lg"
+            asChild
           >
-            Explore Our Approach
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </motion.a>
+            <Link href="/approach" className="group">
+              Explore Our Approach
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

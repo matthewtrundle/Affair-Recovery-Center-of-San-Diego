@@ -74,12 +74,12 @@ export function PremiumHero() {
       ref={containerRef}
       className="relative min-h-screen overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700"
     >
-      {/* Background Layer - Clean Ocean Image */}
+      {/* Background Layer - San Diego Skyline (Subtle) */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-15"
           style={{
-            backgroundImage: 'url(/images/beach/torrey-pines-sunset.jpg)',
+            backgroundImage: 'url(/images/background/SD.jpeg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -115,7 +115,7 @@ export function PremiumHero() {
 
 
       {/* Content */}
-      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center pt-20 lg:pt-0">
+      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[75vh] flex items-center pt-20 lg:pt-20">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center w-full">
           {/* Left Content */}
           <motion.div
@@ -212,7 +212,7 @@ export function PremiumHero() {
 
               {/* Glass box container */}
               <div className="relative glass backdrop-blur-xl bg-white/10 rounded-3xl p-2 border border-white/20">
-                <div className="relative overflow-hidden rounded-2xl aspect-[1/1]">
+                <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
                   <AnimatePresence mode="wait">
                     <motion.video
                       key={currentVideoIndex}
@@ -288,7 +288,7 @@ export function PremiumHero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+        className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-30"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

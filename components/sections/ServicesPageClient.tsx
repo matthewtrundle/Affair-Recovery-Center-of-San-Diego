@@ -275,10 +275,11 @@ export function MainServicesSection() {
                   </div>
 
                   <Button
-                    className="bg-gradient-to-r from-lime to-turquoise hover:from-lime/80 hover:to-turquoise/80 text-white px-8 py-3 group"
+                    variant="secondary"
+                    size="lg"
                     asChild
                   >
-                    <Link href="/services/betrayal-recovery">
+                    <Link href="/services/betrayal-recovery" className="group">
                       Learn More About This Service
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
