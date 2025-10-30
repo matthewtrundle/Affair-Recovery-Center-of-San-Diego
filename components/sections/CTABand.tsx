@@ -43,7 +43,7 @@ export function CTABand({
   return (
     <section
       ref={containerRef}
-      className="relative py-20 lg:py-24 overflow-hidden"
+      className="relative py-16 md:py-20 lg:py-24 overflow-hidden"
     >
       {/* Dynamic gradient background */}
       <motion.div
@@ -181,8 +181,7 @@ export function CTABand({
 
           {/* Premium CTA Button */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
             className="inline-block"
@@ -190,7 +189,7 @@ export function CTABand({
             <Link
               href={buttonHref}
               onClick={handleClick}
-              className="relative inline-flex items-center gap-3 px-10 py-5 group"
+              className="relative inline-flex items-center gap-3 px-10 py-5 group transition-transform duration-300 hover:-translate-y-1"
             >
               {/* Button background with gradient */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white to-gray-100 shadow-2xl" />
@@ -210,14 +209,7 @@ export function CTABand({
               {/* Content */}
               <div className="relative flex items-center gap-3">
                 {showIcon && buttonHref === '/schedule' ? (
-                  <motion.div
-                    animate={{
-                      rotate: isHovered ? 360 : 0,
-                    }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <Calendar className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
-                  </motion.div>
+                  <Calendar className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
                 ) : showIcon ? (
                   <Sparkles className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
                 ) : null}
@@ -226,31 +218,11 @@ export function CTABand({
                   {buttonText}
                 </span>
 
-                <motion.div
-                  animate={{
-                    x: isHovered ? 5 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <ChevronRight className={`h-5 w-5 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
-                </motion.div>
+                <ChevronRight className={`h-5 w-5 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'} transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`} />
               </div>
 
-              {/* Shimmer effect */}
-              <motion.div
-                className="absolute inset-0 rounded-full opacity-30"
-                style={{
-                  background: `linear-gradient(105deg, transparent 40%, white 50%, transparent 60%)`,
-                  backgroundSize: "200% 100%",
-                }}
-                animate={{
-                  backgroundPosition: isHovered ? ["200% 0", "-200% 0"] : "200% 0",
-                }}
-                transition={{
-                  duration: 1,
-                  ease: "linear",
-                }}
-              />
+              {/* Subtle hover overlay */}
+              <div className={`absolute inset-0 rounded-full bg-black/5 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
             </Link>
           </motion.div>
 

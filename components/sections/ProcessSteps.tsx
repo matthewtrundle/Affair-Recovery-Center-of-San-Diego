@@ -42,7 +42,7 @@ export function ProcessSteps() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden">
+    <section ref={containerRef} className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
       {/* Background gradient mesh */}
       <div className="absolute inset-0 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50" />
 
@@ -147,10 +147,9 @@ export function ProcessSteps() {
                     <motion.div
                       className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${step.gradient} mb-6 shadow-lg`}
                       whileHover={{
-                        scale: 1.1,
-                        rotate: 360,
+                        scale: 1.05,
                       }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.3 }}
                     >
                       <Icon className="h-8 w-8 text-white" />
                     </motion.div>
@@ -209,9 +208,8 @@ export function ProcessSteps() {
           </p>
           <motion.a
             href="/schedule"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-deepTeal-600 to-deepTeal-700 text-white rounded-full font-medium hover:from-deepTeal-700 hover:to-deepTeal-800 transition-all duration-300 shadow-lg hover:shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-deepTeal-600 to-deepTeal-700 text-white rounded-full font-medium transition-all duration-300 shadow-lg hover:bg-white hover:text-deepTeal-700 hover:shadow-xl border-2 border-transparent hover:border-deepTeal-700"
+            whileTap={{ scale: 0.98 }}
           >
             Begin Your Recovery Journey
             <Sparkles className="w-5 h-5" />

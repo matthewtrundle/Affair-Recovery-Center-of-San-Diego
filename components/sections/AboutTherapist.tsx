@@ -28,15 +28,15 @@ export function AboutTherapist() {
     offset: ["start end", "end start"]
   })
 
-  // Parallax effects for images
-  const image1Y = useTransform(scrollYProgress, [0, 1], [0, -50])
-  const image2Y = useTransform(scrollYProgress, [0, 1], [0, -80])
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 20])
+  // Subtle parallax effects for images (reduced from original)
+  const image1Y = useTransform(scrollYProgress, [0, 1], [0, -20])
+  const image2Y = useTransform(scrollYProgress, [0, 1], [0, -30])
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 10])
 
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50 overflow-hidden"
+      className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-lightGray-50 via-white to-turquoise-50 overflow-hidden"
     >
       {/* Beach-inspired background elements */}
       <div className="absolute inset-0 opacity-30">
@@ -49,7 +49,7 @@ export function AboutTherapist() {
       <div className="absolute bottom-0 left-0 right-0 h-20 bg-texture-wave opacity-20" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-12 items-start lg:items-center">
 
           {/* Left Column - Images with Parallax */}
           <motion.div
@@ -68,7 +68,7 @@ export function AboutTherapist() {
                     alt="Jordan Zipkin, LMFT - Professional therapist"
                     width={500}
                     height={600}
-                    className="object-cover w-full h-[500px] group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover w-full h-[500px] group-hover:scale-[1.02] transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </div>
@@ -80,7 +80,7 @@ export function AboutTherapist() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-6 -right-6 w-40 h-40 group"
+                className="absolute -bottom-8 -right-8 w-36 h-36 lg:w-40 lg:h-40 group"
               >
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white">
                   <Image
@@ -88,7 +88,7 @@ export function AboutTherapist() {
                     alt="Jordan Zipkin, LMFT"
                     width={160}
                     height={160}
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </motion.div>
@@ -102,7 +102,7 @@ export function AboutTherapist() {
               className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50"
             >
               <div className="text-2xl font-display font-bold text-turquoise-800">15+</div>
-              <div className="text-sm text-turquoise-600 font-beach-clean">Years Experience</div>
+              <div className="text-sm text-turquoise-600 font-body">Years Experience</div>
             </motion.div>
           </motion.div>
 
@@ -120,7 +120,7 @@ export function AboutTherapist() {
               transition={{ delay: 0.2 }}
               className="mb-8"
             >
-              <div className="inline-flex items-center gap-2 bg-lime-100 text-lime-700 px-4 py-2 rounded-full text-sm font-beach-clean font-medium mb-4">
+              <div className="inline-flex items-center gap-2 bg-lime-100 text-lime-700 px-4 py-2 rounded-full text-sm font-body font-medium mb-4">
                 <Heart className="w-4 h-4" />
                 Meet Your Therapist
               </div>
@@ -128,7 +128,7 @@ export function AboutTherapist() {
                 Meet Jordan Zipkin,{' '}
                 <span className="text-turquoise-600">LMFT</span>
               </h2>
-              <p className="text-xl text-deepTeal-600 font-beach-clean leading-relaxed">
+              <p className="text-xl text-deepTeal-600 font-heading leading-relaxed">
                 A trusted local expert who happens to be really good at what she does
               </p>
             </motion.div>
@@ -141,18 +141,18 @@ export function AboutTherapist() {
               className="grid md:grid-cols-2 gap-6 mb-8"
             >
               <div className="space-y-4">
-                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-body">
                   For over 15 years, I've had the privilege of helping San Diego couples navigate their most challenging moments. My approach balances genuine care with proven expertise.
                 </p>
-                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-body">
                   I believe couples need more than talk therapy—they need evidence-based tools and practical strategies that actually work.
                 </p>
               </div>
               <div className="space-y-4">
-                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-body">
                   My specialized training in the Gottman Method and Relational Life Therapy has helped thousands of couples rebuild trust and create stronger relationships.
                 </p>
-                <p className="text-base text-deepTeal-700 leading-relaxed font-beach-clean">
+                <p className="text-base text-deepTeal-700 leading-relaxed font-body">
                   My Carmel Valley office provides a safe, comfortable space, conveniently located near I-5 and accessible from throughout San Diego County.
                 </p>
               </div>
@@ -178,7 +178,7 @@ export function AboutTherapist() {
                     <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-turquoise-100 to-turquoise-200 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                       <IconComponent className="w-5 h-5 text-turquoise-600" />
                     </div>
-                    <span className="text-deepTeal-700 font-beach-clean font-medium">
+                    <span className="text-deepTeal-700 font-body font-medium">
                       {credential.text}
                     </span>
                   </motion.div>
@@ -186,56 +186,70 @@ export function AboutTherapist() {
               })}
             </motion.div>
 
-            {/* Achievements */}
+            {/* Secondary CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-white/50 mb-8"
-            >
-              <h3 className="text-xl font-display font-medium text-deepTeal-800 mb-4">
-                Professional Highlights
-              </h3>
-              <div className="space-y-3">
-                {achievements.map((achievement, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle className="w-5 h-5 text-lime-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-deepTeal-700 font-beach-clean leading-relaxed">
-                      {achievement}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Link
-                href="/schedule"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-beach-clean font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Schedule a Consultation
-              </Link>
-              <Link
                 href="/approach"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm text-turquoise-700 font-beach-clean font-semibold rounded-full border-2 border-turquoise-200 hover:bg-turquoise-50 hover:border-turquoise-300 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-turquoise-700 font-body font-semibold rounded-full border-2 border-turquoise-200 hover:bg-turquoise-50 hover:border-turquoise-400 transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Learn About My Approach
               </Link>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Professional Highlights Section - Relocated */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto mt-16 mb-8"
+        >
+          <div className="bg-white/85 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/50 shadow-xl mb-8">
+            <h3 className="text-2xl md:text-3xl font-display font-medium text-deepTeal-800 text-center mb-8">
+              Professional Highlights
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {achievements.map((achievement, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle className="w-5 h-5 text-lime-500 flex-shrink-0 mt-1" />
+                  <span className="text-deepTeal-700 font-body leading-relaxed">
+                    {achievement}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Primary CTA - Centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              href="/schedule"
+              className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold text-lg rounded-full hover:bg-white hover:text-turquoise-700 border-2 border-transparent hover:border-turquoise-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            >
+              Schedule a Consultation
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Bottom decorative wave */}

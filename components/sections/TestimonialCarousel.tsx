@@ -72,7 +72,7 @@ export function TestimonialCarousel() {
   }
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden">
+    <section ref={containerRef} className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
       {/* Premium gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700" />
 
@@ -311,6 +311,24 @@ export function TestimonialCarousel() {
               </button>
             </div>
           </div>
+
+          {/* More Success Stories Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <motion.a
+              href="/testimonials"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-deepTeal-800 rounded-full font-semibold hover:bg-lime-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+              whileTap={{ scale: 0.98 }}
+            >
+              More Success Stories
+              <ChevronRight className="w-5 h-5" />
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -10,6 +10,8 @@ const navigation = {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services/betrayal-recovery' },
     { name: 'Approach', href: '/approach' },
+    { name: 'Online Sessions', href: '/california-online-sessions' },
+    { name: 'Testimonials', href: '/testimonials' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },

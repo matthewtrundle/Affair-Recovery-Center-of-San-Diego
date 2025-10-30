@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronRight, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone } from 'lucide-react'
+import { Menu, X, ChevronRight, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone, Video } from 'lucide-react'
 import Image from 'next/image'
 
 // Beach-themed SVG Icons
@@ -34,6 +34,7 @@ const navigation = [
   { name: 'About', href: '/about', icon: User, description: 'Meet Jordan Zipkin' },
   { name: 'Approach', href: '/approach', icon: Heart, description: 'Evidence-based methods' },
   { name: 'Services', href: '/services', icon: Lightbulb, description: 'Therapy options' },
+  { name: 'Online Sessions', href: '/california-online-sessions', icon: Video, description: 'California telehealth' },
   { name: 'Success Stories', href: '/testimonials', icon: MessageCircle, description: 'Real transformations' },
   { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Your questions answered' },
   { name: 'Resources', href: '/blog', icon: BookOpen, description: 'Healing insights' },
@@ -69,12 +70,12 @@ export function PremiumHeader() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <Link href="/" className="flex items-center group py-2.5">
+          <Link href="/" className="flex items-center group py-2">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400 }}
-              className="relative h-20 md:h-24 lg:h-28"
-              style={{ filter: 'drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.5))' }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, duration: 0.3 }}
+              className="relative h-12 md:h-14 lg:h-16"
+              style={{ filter: 'drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.3))' }}
             >
               <Image
                 src="/images/logo/affair-recovery-center-logo.png"
@@ -122,28 +123,11 @@ export function PremiumHeader() {
                 href="/schedule"
                 className="relative inline-flex items-center gap-2 px-6 py-2.5 group overflow-hidden rounded-full"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-turquoise-400 opacity-90 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-turquoise-400 group-hover:from-lime-500 group-hover:to-turquoise-500 transition-all duration-300" />
                 <span className="relative text-white font-bold text-sm" style={{ textShadow: '0px 1px 5px black' }}>
                   Book Now
                 </span>
-                <ChevronRight className="relative w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 opacity-30"
-                  style={{
-                    background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%)',
-                    backgroundSize: '200% 100%',
-                  }}
-                  animate={{
-                    backgroundPosition: ['-200% 0', '200% 0'],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
+                <ChevronRight className="relative w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </motion.div>
           </div>
@@ -151,8 +135,9 @@ export function PremiumHeader() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-full text-[#115659] hover:bg-[#115659]/10 transition-all duration-300 self-center"
+            className="lg:hidden p-3 rounded-full text-[#115659] hover:bg-[#115659]/10 transition-all duration-300 self-center"
             whileTap={{ scale: 0.95 }}
+            aria-label="Toggle navigation menu"
           >
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}

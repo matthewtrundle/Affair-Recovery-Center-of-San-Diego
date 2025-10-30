@@ -59,7 +59,7 @@ export function MethodCards() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-white via-lightGray-50/30 to-white">
+    <section ref={containerRef} className="py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-b from-white via-lightGray-50/30 to-white">
       {/* Animated background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
@@ -138,19 +138,13 @@ export function MethodCards() {
                 onHoverEnd={() => setHoveredIndex(null)}
                 className="relative group"
               >
-                {/* 3D Card effect */}
+                {/* Card container */}
                 <motion.div
                   className="relative h-full"
                   whileHover={{
-                    rotateY: 5,
-                    rotateX: -5,
-                    z: 50,
+                    y: -8,
                   }}
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    transformPerspective: 1000,
-                  }}
+                  transition={{ duration: 0.3 }}
                 >
                   {/* Gradient glow effect */}
                   <motion.div
@@ -162,7 +156,7 @@ export function MethodCards() {
                   />
 
                   {/* Glass card */}
-                  <div className="relative glass backdrop-blur-xl bg-white/80 rounded-2xl p-8 lg:p-10 h-full border border-white/50 hover:border-white/80 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                  <div className="relative bg-white/95 rounded-2xl p-8 lg:p-10 h-full border border-white/50 hover:border-white/80 transition-all duration-300 shadow-xl hover:shadow-2xl">
                     {/* Background gradient */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${method.bgGradient} rounded-2xl`} />
 
@@ -195,8 +189,8 @@ export function MethodCards() {
                       {/* Icon with animated gradient */}
                       <motion.div
                         className="relative inline-block mb-6"
-                        whileHover={{ scale: 1.1, rotate: 360 }}
-                        transition={{ duration: 0.6 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                       >
                         <div className={`absolute inset-0 bg-gradient-to-r ${method.gradient} rounded-2xl blur-lg opacity-50`} />
                         <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${method.gradient} shadow-lg flex items-center justify-center`}>
@@ -222,13 +216,9 @@ export function MethodCards() {
                             viewport={{ once: true }}
                             className="flex items-start text-sm text-slate"
                           >
-                            <motion.span
-                              className="text-turquoise-500 mr-3 text-lg"
-                              animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
-                              transition={{ duration: 0.6 }}
-                            >
+                            <span className="text-turquoise-500 mr-3 text-lg">
                               ✦
-                            </motion.span>
+                            </span>
                             {highlight}
                           </motion.li>
                         ))}
@@ -272,12 +262,11 @@ export function MethodCards() {
           </p>
           <motion.a
             href="/approach"
-            className="inline-flex items-center gap-3 px-8 py-4 glass backdrop-blur-md bg-white/90 text-deepTeal rounded-full font-medium border border-deepTeal/20 hover:border-deepTeal/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-deepTeal rounded-full font-medium border border-deepTeal/20 hover:border-deepTeal hover:bg-deepTeal-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+            whileTap={{ scale: 0.98 }}
           >
             Explore Our Approach
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </motion.a>
         </motion.div>
       </div>

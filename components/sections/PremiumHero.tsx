@@ -115,8 +115,8 @@ export function PremiumHero() {
 
 
       {/* Content */}
-      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center pt-20 lg:pt-0">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center w-full">
           {/* Left Content */}
           <motion.div
             className="text-left"
@@ -204,7 +204,7 @@ export function PremiumHero() {
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.6, type: "spring" }}
-            className="relative"
+            className="relative order-first lg:order-last"
           >
             <div className="relative">
               {/* Glow effect */}
@@ -228,8 +228,8 @@ export function PremiumHero() {
                     />
                   </AnimatePresence>
 
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/50 via-transparent to-transparent" />
+                  {/* Gradient overlay - reduced opacity for better visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/30 via-transparent to-transparent" />
 
                   {/* Video indicators */}
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
