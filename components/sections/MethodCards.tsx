@@ -262,12 +262,12 @@ export function MethodCards() {
             Curious about how these methods work together in your unique situation?
           </p>
           <Button
-            variant="outline"
+            variant="default"
             size="lg"
             asChild
           >
-            <Link href="/approach" className="group">
-              Explore Our Approach
+            <Link href="/schedule" className="group">
+              Schedule Your Consultation
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </Button>

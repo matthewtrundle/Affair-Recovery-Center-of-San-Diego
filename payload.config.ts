@@ -3,12 +3,19 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload'
 
+// Import collections
+import { Users } from './src/collections/Users'
+import { Posts } from './src/collections/Posts'
+import { Media } from './src/collections/Media'
+import { Subscribers } from './src/collections/Subscribers'
+import { Categories } from './src/collections/Categories'
+
 export default buildConfig({
   // Editor configuration - using Lexical rich text editor
   editor: lexicalEditor(),
 
-  // Collections - we'll add these in the next phase
-  collections: [],
+  // Collections
+  collections: [Users, Posts, Media, Subscribers, Categories],
 
   // Secret key for encrypting data - must be set in environment
   secret: process.env.PAYLOAD_SECRET || '',

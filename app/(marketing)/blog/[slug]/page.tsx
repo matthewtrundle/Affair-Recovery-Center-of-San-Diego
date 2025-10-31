@@ -1,117 +1,56 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-
-// This would typically come from your CMS or MDX files
-// For now, we'll create a simple structure for individual blog posts
-const blogPosts = [
-  {
-    slug: 'understanding-betrayal-trauma-brain-perspective',
-    title: 'Understanding Betrayal Trauma: A Brain-Based Perspective',
-    content: `
-      <h2>Understanding Betrayal Trauma</h2>
-      <p>Betrayal trauma represents one of the most profound psychological injuries a person can experience. When someone we trust deeply violates that trust through infidelity or other forms of betrayal, the impact goes far beyond emotional hurt—it fundamentally alters how our brain processes safety, relationships, and our sense of reality.</p>
-
-      <h3>The Neurobiological Impact</h3>
-      <p>Recent neuroscience research reveals that betrayal trauma affects multiple brain systems simultaneously. The amygdala, our brain's alarm system, becomes hyperactive, constantly scanning for threats. The hippocampus, responsible for memory formation, can become impaired, leading to fragmented memories of the traumatic discovery.</p>
-
-      <h3>Why Traditional Approaches May Fall Short</h3>
-      <p>Many traditional therapy approaches focus primarily on communication and relationship skills. While these are important, they often miss the crucial first step: stabilizing the nervous system. When someone is in a state of betrayal trauma, their capacity for higher-order thinking and emotional regulation is significantly compromised.</p>
-
-      <h3>A Brain-Informed Approach</h3>
-      <p>Understanding the neurobiology of betrayal trauma informs every aspect of how I work with couples in recovery. We begin with nervous system regulation, helping both partners understand what's happening in their brains and bodies. Only when there's a foundation of safety can we begin the deeper work of rebuilding trust and intimacy.</p>
-    `,
-    excerpt: 'Explore how betrayal trauma affects the brain and nervous system, and why traditional therapy approaches may fall short in the initial stages of recovery.',
-    date: '2024-09-15',
-    readTime: 8,
-    category: 'Recovery',
-    author: 'Jordan Zipkin, LMFT'
-  },
-  {
-    slug: 'first-90-days-after-discovery',
-    title: 'The First 90 Days After Discovery',
-    content: `
-      <h2>Navigating the Immediate Aftermath</h2>
-      <p>The first 90 days after discovering infidelity are often described as the most difficult period in a person's life. The world as you knew it has been shattered, and it can feel impossible to imagine ever feeling stable again. This guide will help you understand what to expect and how to navigate this crisis period.</p>
-
-      <h3>What's Normal in the First 90 Days</h3>
-      <ul>
-        <li>Intense emotional swings that can change by the hour</li>
-        <li>Obsessive thoughts about the betrayal</li>
-        <li>Difficulty sleeping, eating, or concentrating</li>
-        <li>Physical symptoms like nausea, headaches, or chest pain</li>
-        <li>Hypervigilance and constant need for reassurance</li>
-      </ul>
-
-      <h3>Stabilization Strategies</h3>
-      <p>During this phase, the focus should be on stabilization rather than major relationship decisions. This includes establishing safety, managing crisis symptoms, and beginning to process the trauma in a contained way.</p>
-
-      <h3>When to Seek Professional Help</h3>
-      <p>If you're experiencing thoughts of self-harm, inability to function at work or with family, or if symptoms aren't beginning to stabilize after several weeks, professional support is crucial. A therapist trained in betrayal trauma can provide specialized interventions to help you navigate this crisis.</p>
-    `,
-    excerpt: 'A comprehensive guide to navigating the immediate aftermath of discovering infidelity, including what to expect and how to stabilize during crisis.',
-    date: '2024-09-10',
-    readTime: 12,
-    category: 'Recovery',
-    author: 'Jordan Zipkin, LMFT'
-  },
-  {
-    slug: 'rebuilding-trust-roadmap',
-    title: 'Rebuilding Trust: A Roadmap',
-    content: `
-      <h2>The Trust Rebuilding Process</h2>
-      <p>Trust doesn't rebuild overnight, and there's no magic timeline for healing. However, there are specific, research-backed steps that can guide couples toward rebuilding a foundation of safety and trust in their relationship.</p>
-
-      <h3>Phase 1: Stabilization (Months 1-6)</h3>
-      <p>The initial phase focuses on stopping harmful behaviors, establishing safety protocols, and beginning to understand the impact of the betrayal. This includes full disclosure, cutting contact with affair partners, and implementing transparency measures.</p>
-
-      <h3>Phase 2: Processing (Months 6-18)</h3>
-      <p>Once basic safety is established, couples can begin deeper work on understanding how the betrayal occurred, processing the trauma, and learning new relationship skills. This phase involves significant emotional work for both partners.</p>
-
-      <h3>Phase 3: Integration (Months 18+)</h3>
-      <p>The final phase involves integrating the lessons learned, creating new relationship patterns, and building a stronger foundation than existed before the betrayal. Many couples report their relationship is ultimately stronger than it was before the affair.</p>
-
-      <h3>Key Milestones</h3>
-      <p>While every couple's journey is unique, there are certain milestones that indicate progress: decreased intrusive thoughts, ability to be physically intimate again, spontaneous positive interactions, and hope for the future.</p>
-    `,
-    excerpt: 'Trust doesn\'t rebuild overnight. Learn the essential steps, realistic timelines, and practical strategies for reconstructing safety in your relationship.',
-    date: '2024-09-05',
-    readTime: 10,
-    category: 'Trust Building',
-    author: 'Jordan Zipkin, LMFT'
-  }
-]
+import { Calendar, Clock, Tag, ArrowLeft, User } from 'lucide-react'
+import { getPostBySlug, getPosts } from '@/lib/payload'
+import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 
 type Props = {
   params: Promise<{ slug: string }>
 }
 
+// Generate static paths for all blog posts
+export async function generateStaticParams() {
+  const posts = await getPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+// Generate metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = blogPosts.find(p => p.slug === slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: 'Post Not Found | Affair Recovery Center',
     }
   }
 
+  const metaTitle = post.seo?.metaTitle || post.title
+  const metaDescription = post.seo?.metaDescription || post.excerpt
+
   return {
-    title: `${post.title} | Affair Recovery Center of San Diego`,
-    description: post.excerpt,
+    title: `${metaTitle} | Affair Recovery Center`,
+    description: metaDescription,
+    keywords: post.seo?.keywords || [post.category, 'affair recovery', 'betrayal trauma'],
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: post.publishedDate,
       authors: [post.author],
+      tags: post.tags,
     },
   }
 }
 
-export default async function BlogPost({ params }: Props) {
+export const revalidate = 3600 // Revalidate every hour
+
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post = blogPosts.find(p => p.slug === slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -125,52 +64,224 @@ export default async function BlogPost({ params }: Props) {
     })
   }
 
+  const getCategoryLabel = (category: string | any) => {
+    // Handle both string (legacy) and relationship object
+    if (typeof category === 'string') {
+      const map: Record<string, string> = {
+        'recovery': 'Recovery',
+        'trust-building': 'Trust Building',
+        'communication': 'Communication',
+        'self-care': 'Self-Care',
+      }
+      return map[category] || category
+    }
+    return category.name
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-600">
-      <div className="container mx-auto px-4 py-20 lg:py-32">
-        <article className="max-w-4xl mx-auto">
-          {/* Header */}
-          <header className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sage mb-6">
-              <span className="text-sm font-medium">{post.category}</span>
+    <article className="min-h-screen bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-600 py-20">
+      <div className="container mx-auto px-4 max-w-4xl">
+        {/* Back Link */}
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8 group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Back to Blog
+        </Link>
+
+        {/* Post Header */}
+        <header className="mb-12">
+          {/* Category Badge */}
+          <div className="mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-turquoise text-sm font-medium">
+              <Tag className="w-3 h-3" />
+              {getCategoryLabel(post.category)}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+            {post.title}
+          </h1>
+
+          {/* Meta Info */}
+          <div className="flex flex-wrap items-center gap-6 text-white/60 text-sm">
+            <div className="flex items-center gap-2">
+              <User className="w-4 h-4" />
+              <span>{post.author}</span>
             </div>
-
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-white mb-6">
-              {post.title}
-            </h1>
-
-            <div className="flex items-center justify-center gap-6 text-white/60 text-sm">
-              <span>By {post.author}</span>
-              <span>•</span>
-              <span>{formatDate(post.date)}</span>
-              <span>•</span>
-              <span>{post.readTime} min read</span>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
             </div>
-          </header>
+            {post.readTime && (
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span>{post.readTime} min read</span>
+              </div>
+            )}
+          </div>
 
-          {/* Content */}
-          <div
-            className="prose prose-lg prose-invert max-w-none mb-12"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          {/* Featured Image */}
+          {post.featuredImage && (
+            <div className="mt-8 rounded-2xl overflow-hidden">
+              {/* Placeholder - implement image rendering based on your Media collection */}
+              <div className="w-full h-96 bg-gradient-to-br from-deepTeal-600 to-deepTeal-800 flex items-center justify-center">
+                <span className="text-white/30 text-6xl">📖</span>
+              </div>
+            </div>
+          )}
 
-          {/* Back to Blog */}
-          <div className="text-center">
+          {/* Excerpt */}
+          <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl">
+            <p className="text-xl text-white/80 leading-relaxed italic">
+              {post.excerpt}
+            </p>
+          </div>
+        </header>
+
+        {/* Post Content */}
+        <div className="prose prose-invert prose-lg max-w-none">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
+            <LexicalContent content={post.content} />
+          </div>
+        </div>
+
+        {/* Tags */}
+        {post.tags && post.tags.length > 0 && (
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <h3 className="text-white/60 text-sm font-medium mb-4">Tagged with:</h3>
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-white/70 text-sm hover:bg-white/10 transition-colors"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Call to Action */}
+        <div className="mt-16 p-8 bg-gradient-to-r from-turquoise/20 to-lime/20 backdrop-blur-sm border border-white/20 rounded-2xl text-center">
+          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-white mb-4">
+            Ready to Start Your Healing Journey?
+          </h2>
+          <p className="text-white/80 mb-6 text-lg">
+            Schedule a consultation to learn how I can help you recover from betrayal and rebuild trust.
+          </p>
+          <Link
+            href="/schedule"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-lime to-turquoise text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          >
+            Schedule a Consultation
+          </Link>
+        </div>
+
+        {/* Related Posts - Coming Soon */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-heading font-bold text-white mb-6">Continue Reading</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Placeholder for related posts */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+              className="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-colors group"
             >
-              ← Back to Blog
+              <p className="text-white/60 text-sm mb-2">Explore More</p>
+              <h3 className="text-xl font-heading font-semibold text-white group-hover:text-turquoise transition-colors">
+                View All Articles
+              </h3>
             </Link>
           </div>
-        </article>
+        </div>
       </div>
-    </div>
+    </article>
   )
 }
 
-export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }))
+// Component to render Lexical content
+function LexicalContent({ content }: { content: any }) {
+  if (!content || !content.root) {
+    return (
+      <div className="text-white/60 italic">
+        Content is being prepared. Please check back soon.
+      </div>
+    )
+  }
+
+  // Simple renderer for Lexical content
+  // This is a basic implementation - you may want to enhance it with more node types
+  const renderNode = (node: any): React.ReactNode => {
+    if (!node) return null
+
+    switch (node.type) {
+      case 'root':
+        return <div className="space-y-4">{node.children?.map((child: any, i: number) => <div key={i}>{renderNode(child)}</div>)}</div>
+
+      case 'paragraph':
+        return <p className="text-white/90 leading-relaxed">{node.children?.map((child: any, i: number) => renderNode(child))}</p>
+
+      case 'heading':
+        const HeadingTag = `h${node.tag}` as keyof JSX.IntrinsicElements
+        const headingClasses = {
+          h1: 'text-4xl font-heading font-bold text-white mt-8 mb-4',
+          h2: 'text-3xl font-heading font-bold text-white mt-6 mb-3',
+          h3: 'text-2xl font-heading font-semibold text-white mt-5 mb-2',
+          h4: 'text-xl font-heading font-semibold text-white mt-4 mb-2',
+          h5: 'text-lg font-heading font-semibold text-white mt-3 mb-2',
+          h6: 'text-base font-heading font-semibold text-white mt-2 mb-1',
+        }
+        return <HeadingTag className={headingClasses[HeadingTag as keyof typeof headingClasses]}>{node.children?.map((child: any, i: number) => renderNode(child))}</HeadingTag>
+
+      case 'list':
+        const ListTag = node.listType === 'number' ? 'ol' : 'ul'
+        return <ListTag className={`${node.listType === 'number' ? 'list-decimal' : 'list-disc'} list-inside text-white/90 space-y-2 my-4`}>{node.children?.map((child: any, i: number) => renderNode(child))}</ListTag>
+
+      case 'listitem':
+        return <li className="ml-4">{node.children?.map((child: any, i: number) => renderNode(child))}</li>
+
+      case 'text':
+        let textContent = node.text || ''
+        let className = ''
+
+        if (node.format) {
+          if (node.format & 1) className += ' font-bold' // Bold
+          if (node.format & 2) className += ' italic' // Italic
+          if (node.format & 8) className += ' underline' // Underline
+        }
+
+        return <span className={className}>{textContent}</span>
+
+      case 'link':
+        return (
+          <a
+            href={node.url}
+            target={node.newTab ? '_blank' : undefined}
+            rel={node.newTab ? 'noopener noreferrer' : undefined}
+            className="text-turquoise hover:text-lime underline transition-colors"
+          >
+            {node.children?.map((child: any, i: number) => renderNode(child))}
+          </a>
+        )
+
+      case 'quote':
+        return (
+          <blockquote className="border-l-4 border-turquoise pl-6 my-6 italic text-white/80">
+            {node.children?.map((child: any, i: number) => renderNode(child))}
+          </blockquote>
+        )
+
+      default:
+        // Fallback for unknown node types
+        if (node.children) {
+          return <>{node.children.map((child: any, i: number) => renderNode(child))}</>
+        }
+        return null
+    }
+  }
+
+  return <div>{renderNode(content.root)}</div>
 }

@@ -49,7 +49,7 @@ export function AboutTherapist() {
       <div className="absolute bottom-0 left-0 right-0 h-20 bg-texture-wave opacity-20" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-16 items-start">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-20 items-start">
 
           {/* Left Column - Images + Professional Highlights */}
           <motion.div
@@ -81,7 +81,7 @@ export function AboutTherapist() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-8 -right-8 w-36 h-36 lg:w-40 lg:h-40 group"
+                className="absolute bottom-4 -right-8 w-36 h-36 lg:w-40 lg:h-40 group"
               >
                 <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white">
                   <Image
@@ -111,7 +111,7 @@ export function AboutTherapist() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="mt-32"
+              className="mt-40"
             >
               <h3 className="text-xl font-display font-medium text-deepTeal-800 mb-4">
                 Professional Highlights
@@ -171,15 +171,15 @@ export function AboutTherapist() {
             >
               <div className="space-y-4">
                 <p className="text-base text-deepTeal-700 leading-relaxed font-body">
-                  For over 15 years, I've had the privilege of helping San Diego couples navigate their most challenging moments. My approach balances genuine care with proven expertise.
+                  For over 15 years, I've had the privilege of helping San Diego couples navigate their most challenging moments. My approach balances genuine care with proven expertise—informed by both professional training and personal experience with the pain of betrayal and the journey of healing.
                 </p>
                 <p className="text-base text-deepTeal-700 leading-relaxed font-body">
-                  I believe couples need more than talk therapy—they need evidence-based tools and practical strategies that actually work.
+                  I believe couples need more than talk therapy—they need evidence-based tools and practical strategies that actually work. That's why I integrate the Gottman Method, Relational Life Therapy, and trauma-informed approaches.
                 </p>
               </div>
               <div className="space-y-4">
                 <p className="text-base text-deepTeal-700 leading-relaxed font-body">
-                  My specialized training in the Gottman Method and Relational Life Therapy has helped thousands of couples rebuild trust and create stronger relationships.
+                  I understand what you're going through because I've been there myself. That personal understanding, combined with specialized training, has helped hundreds of couples rebuild trust and create stronger relationships than they had before.
                 </p>
                 <p className="text-base text-deepTeal-700 leading-relaxed font-body">
                   My Carmel Valley office provides a safe, comfortable space, conveniently located near I-5 and accessible from throughout San Diego County.
