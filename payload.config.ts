@@ -41,6 +41,7 @@ export default buildConfig({
     meta: {
       titleSuffix: '- Affair Recovery Center',
     },
+    theme: 'light', // Force light theme for better visibility
   },
 
   // Server URL configuration

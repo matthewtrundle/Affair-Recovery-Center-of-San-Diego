@@ -80,8 +80,6 @@ export const metadata: Metadata = {
   },
 }
 
-import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
-
 export default function RootLayout({
   children,
 }: {
@@ -90,9 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sourceSans.variable} ${cormorant.variable} ${playfair.variable}`}>
       <body className={inter.className}>
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        {children}
         <Analytics />
       </body>
     </html>

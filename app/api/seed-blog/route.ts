@@ -123,9 +123,28 @@ export async function POST(request: Request) {
       })
     }
 
+    // Fetch all categories to map slugs to IDs
+    const categories = await payload.find({
+      collection: 'categories',
+      limit: 100,
+    })
+
+    // Create a map of slug -> ID
+    const categoryMap = new Map(
+      categories.docs.map((cat: any) => [cat.slug, cat.id])
+    )
+
     const createdPosts = []
 
     for (const post of blogPosts) {
+      // Get the category ID from the slug
+      const categoryId = categoryMap.get(post.category)
+
+      if (!categoryId) {
+        console.warn(`Category "${post.category}" not found for post "${post.title}"`)
+        continue
+      }
+
       const created = await payload.create({
         collection: 'posts',
         data: {
@@ -161,7 +180,7 @@ export async function POST(request: Request) {
               version: 1,
             },
           },
-          category: post.category,
+          category: categoryId,
           author: post.author,
           publishedDate: post.publishedDate,
           readTime: post.readTime,
