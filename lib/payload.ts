@@ -11,7 +11,7 @@ export async function getPosts(options?: {
   limit?: number
   category?: string
   featured?: boolean
-}) {
+}): Promise<Post[]> {
   const payload = await getPayloadClient()
 
   const where: any = { status: { equals: 'published' } }
@@ -31,11 +31,11 @@ export async function getPosts(options?: {
     sort: '-publishedDate',
   })
 
-  return posts.docs
+  return posts.docs as Post[]
 }
 
 // Fetch single post by slug
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<Post | null> {
   const payload = await getPayloadClient()
 
   const result = await payload.find({
@@ -47,11 +47,11 @@ export async function getPostBySlug(slug: string) {
     limit: 1,
   })
 
-  return result.docs[0] || null
+  return (result.docs[0] as Post) || null
 }
 
 // Fetch all categories
-export async function getCategories() {
+export async function getCategories(): Promise<Category[]> {
   const payload = await getPayloadClient()
 
   const categories = await payload.find({
@@ -60,7 +60,7 @@ export async function getCategories() {
     sort: 'name',
   })
 
-  return categories.docs
+  return categories.docs as Category[]
 }
 
 // Type for category data

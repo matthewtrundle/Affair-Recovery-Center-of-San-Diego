@@ -31,10 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaTitle = post.seo?.metaTitle || post.title
   const metaDescription = post.seo?.metaDescription || post.excerpt
 
+  // Extract category name from string or Category object
+  const categoryName = typeof post.category === 'string'
+    ? post.category
+    : post.category?.name || 'recovery'
+
   return {
     title: `${metaTitle} | Affair Recovery Center`,
     description: metaDescription,
-    keywords: post.seo?.keywords || [post.category, 'affair recovery', 'betrayal trauma'],
+    keywords: post.seo?.keywords || [categoryName, 'affair recovery', 'betrayal trauma'],
     openGraph: {
       title: metaTitle,
       description: metaDescription,
