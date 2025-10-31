@@ -9,18 +9,22 @@ import { Posts } from './src/collections/Posts'
 import { Media } from './src/collections/Media'
 import { Subscribers } from './src/collections/Subscribers'
 import { Categories } from './src/collections/Categories'
+import { Newsletters } from './src/collections/Newsletters'
+
+// Import custom components
+import { Dashboard } from './src/components/Dashboard'
 
 export default buildConfig({
   // Editor configuration - using Lexical rich text editor
   editor: lexicalEditor(),
 
   // Collections
-  collections: [Users, Posts, Media, Subscribers, Categories],
+  collections: [Users, Posts, Media, Subscribers, Categories, Newsletters],
 
   // Secret key for encrypting data - must be set in environment
   secret: process.env.PAYLOAD_SECRET || '',
 
-  // Database adapter - Supabase Postgres
+  // Database adapter - Neon Postgres (Vercel-managed)
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
@@ -37,11 +41,18 @@ export default buildConfig({
 
   // Admin panel configuration
   admin: {
-    user: 'users', // We'll create this collection later
+    user: 'users',
     meta: {
-      titleSuffix: '- Affair Recovery Center',
+      titleSuffix: '- ARC',
+      favicon: '/favicon.ico',
     },
-    theme: 'light', // Force light theme for better visibility
+    theme: 'light', // Clean, professional light theme
+    css: './styles/admin.scss',
+    components: {
+      views: {
+        Dashboard,
+      },
+    },
   },
 
   // Server URL configuration

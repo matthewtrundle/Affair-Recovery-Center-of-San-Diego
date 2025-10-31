@@ -5,6 +5,7 @@ export const Categories: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'slug', 'color'],
+    group: 'Content',
   },
   access: {
     read: () => true, // Public read access for blog

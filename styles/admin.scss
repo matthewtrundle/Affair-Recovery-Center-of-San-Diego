@@ -1,0 +1,269 @@
+/*
+ * Payload CMS Admin Panel Custom Styles
+ * Clean, user-friendly design for ARC
+ */
+
+/* Brand Colors */
+:root {
+  --arc-deep-teal: #125959;
+  --arc-turquoise: #2ABFB0;
+  --arc-lime: #ADD94E;
+  --arc-olive: #9CBF4E;
+  --arc-light-gray: #F2F2F2;
+  --arc-white: #FFFFFF;
+  --arc-text-dark: #2D3748;
+  --arc-text-light: #718096;
+}
+
+/* Custom Dashboard Styles */
+.custom-dashboard {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--arc-deep-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: var(--arc-text-light);
+  }
+}
+
+/* Quick Actions Grid */
+.quick-actions {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--arc-text-dark);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--arc-white);
+  border: 2px solid var(--arc-light-gray);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--arc-turquoise);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 191, 176, 0.15);
+  }
+
+  &.action-primary {
+    background: linear-gradient(135deg, var(--arc-deep-teal) 0%, var(--arc-turquoise) 100%);
+    color: white;
+    border-color: var(--arc-deep-teal);
+
+    h3, p {
+      color: white;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(18, 89, 89, 0.3);
+    }
+  }
+
+  &.action-secondary {
+    border-color: var(--arc-lime);
+
+    &:hover {
+      border-color: var(--arc-lime);
+      background: rgba(173, 217, 78, 0.05);
+    }
+  }
+}
+
+.action-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.action-content {
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--arc-text-dark);
+    margin: 0 0 0.25rem 0;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: var(--arc-text-light);
+    margin: 0;
+  }
+}
+
+/* Stats Section */
+.stats-section {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--arc-text-dark);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--arc-white);
+  border: 1px solid var(--arc-light-gray);
+  border-radius: 12px;
+
+  .stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+  }
+
+  .stat-content {
+    h3 {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--arc-text-light);
+      margin: 0 0 0.25rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--arc-deep-teal);
+      margin: 0;
+    }
+  }
+}
+
+/* Help Section */
+.help-section {
+  margin-top: 3rem;
+
+  a {
+    color: var(--arc-turquoise);
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--arc-deep-teal);
+    }
+  }
+}
+
+/* Global Admin Panel Improvements */
+body.payload-admin {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Cleaner spacing in forms */
+.payload-admin {
+  .field-type {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    font-weight: 500;
+    color: var(--arc-text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+    padding: 0.75rem;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: var(--arc-turquoise);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(42, 191, 176, 0.1);
+    }
+  }
+
+  /* Button improvements */
+  button {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &.btn--style-primary {
+      background: var(--arc-deep-teal);
+
+      &:hover {
+        background: var(--arc-turquoise);
+      }
+    }
+  }
+
+  /* Collection list improvements */
+  .collection-list {
+    .table {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-dashboard {
+    padding: 1rem;
+  }
+
+  .action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+}
