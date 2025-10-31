@@ -225,7 +225,7 @@ function LexicalContent({ content }: { content: any }) {
         return <p className="text-white/90 leading-relaxed">{node.children?.map((child: any, i: number) => renderNode(child))}</p>
 
       case 'heading':
-        const HeadingTag = `h${node.tag}` as keyof JSX.IntrinsicElements
+        const HeadingTag = `h${node.tag}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
         const headingClasses = {
           h1: 'text-4xl font-heading font-bold text-white mt-8 mb-4',
           h2: 'text-3xl font-heading font-bold text-white mt-6 mb-3',
@@ -234,7 +234,7 @@ function LexicalContent({ content }: { content: any }) {
           h5: 'text-lg font-heading font-semibold text-white mt-3 mb-2',
           h6: 'text-base font-heading font-semibold text-white mt-2 mb-1',
         }
-        return <HeadingTag className={headingClasses[HeadingTag as keyof typeof headingClasses]}>{node.children?.map((child: any, i: number) => renderNode(child))}</HeadingTag>
+        return <HeadingTag className={headingClasses[HeadingTag]}>{node.children?.map((child: any, i: number) => renderNode(child))}</HeadingTag>
 
       case 'list':
         const ListTag = node.listType === 'number' ? 'ol' : 'ul'
