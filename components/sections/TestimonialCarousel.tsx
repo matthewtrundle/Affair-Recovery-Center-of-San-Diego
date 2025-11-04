@@ -164,7 +164,7 @@ export function TestimonialCarousel() {
                         z: isActive ? 100 : 0,
                       }}
                       animate={{
-                        opacity: isActive ? 1 : 0.5,
+                        opacity: 1,
                         scale: isActive ? 1 : 0.85,
                         rotateY: isNext ? 15 : isPrev ? -15 : 0,
                         x: isNext ? 200 : isPrev ? -200 : 0,
@@ -188,10 +188,10 @@ export function TestimonialCarousel() {
                       }}
                     >
                       <div
-                        className={`glass backdrop-blur-xl rounded-3xl p-8 lg:p-12 max-w-3xl w-full mx-4 border ${
+                        className={`rounded-3xl p-8 lg:p-12 max-w-3xl w-full mx-4 border ${
                           isActive
-                            ? 'bg-white/95 border-white/40 shadow-2xl'
-                            : 'bg-white/70 border-white/20 shadow-lg'
+                            ? 'bg-white border-gray-200 shadow-2xl'
+                            : 'bg-white border-gray-200 shadow-lg'
                         } transition-all duration-500`}
                         onClick={() => !isActive && goToTestimonial(index)}
                         style={{ cursor: !isActive ? 'pointer' : 'default' }}
@@ -220,13 +220,6 @@ export function TestimonialCarousel() {
                           "{testimonial.content}"
                         </blockquote>
 
-                        {/* Highlight Badge */}
-                        <div className="inline-block px-4 py-2 bg-gradient-to-r from-turquoise-100 to-lime-100 rounded-full mb-6">
-                          <span className="text-sm font-semibold text-deepTeal-800">
-                            ✨ {testimonial.highlight}
-                          </span>
-                        </div>
-
                         {/* Author */}
                         <div className="flex items-center justify-between">
                           <div>
@@ -252,7 +245,7 @@ export function TestimonialCarousel() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={previousTestimonial}
-                className="w-12 h-12 rounded-full glass backdrop-blur-md bg-white/20 border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                className="w-12 h-12 rounded-full glass backdrop-blur-md bg-white/20 border border-white/30 flex items-center justify-center text-deepTeal-800 hover:bg-white/30 transition-colors"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -294,7 +287,7 @@ export function TestimonialCarousel() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full glass backdrop-blur-md bg-white/20 border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                className="w-12 h-12 rounded-full glass backdrop-blur-md bg-white/20 border border-white/30 flex items-center justify-center text-deepTeal-800 hover:bg-white/30 transition-colors"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="h-6 w-6" />
