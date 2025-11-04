@@ -122,12 +122,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image Left - No filters */}
-            <div className="relative h-[400px] overflow-hidden rounded-2xl shadow-xl order-2 md:order-1">
+            <div className="relative h-[500px] overflow-hidden rounded-2xl shadow-xl order-2 md:order-1 bg-lightGray-100">
               <Image
                 src="/images/jordan/Jordan3.webp"
                 alt="Jordan Zipkin, LMFT - Therapeutic Approach"
                 fill
-                className="object-cover object-center"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -216,12 +216,12 @@ export default function AboutPage() {
             </div>
 
             {/* Small Image 2 - No filters */}
-            <div className="relative h-[300px] overflow-hidden rounded-2xl shadow-lg">
+            <div className="relative h-[350px] overflow-hidden rounded-2xl shadow-lg bg-lightGray-100">
               <Image
                 src="/images/jordan/Jordan3.webp"
                 alt="Jordan Zipkin, LMFT"
                 fill
-                className="object-cover object-center"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
