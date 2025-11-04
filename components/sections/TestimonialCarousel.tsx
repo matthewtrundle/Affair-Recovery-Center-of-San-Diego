@@ -142,15 +142,13 @@ export function TestimonialCarousel() {
 
         <motion.div style={{ y }} className="max-w-5xl mx-auto">
           <div className="relative">
-            {/* 3D Carousel Container */}
+            {/* Simple Carousel Container */}
             <div className="relative h-[400px] lg:h-[450px]">
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence mode="wait">
                 {testimonials.map((testimonial, index) => {
                   const isActive = index === currentIndex
-                  const isPrev = index === (currentIndex - 1 + testimonials.length) % testimonials.length
-                  const isNext = index === (currentIndex + 1) % testimonials.length
 
-                  if (!isActive && !isPrev && !isNext) return null
+                  if (!isActive) return null
 
                   return (
                     <motion.div
@@ -158,43 +156,23 @@ export function TestimonialCarousel() {
                       className="absolute inset-0 flex items-center justify-center"
                       initial={{
                         opacity: 0,
-                        scale: 0.8,
-                        rotateY: isNext ? 45 : isPrev ? -45 : 0,
-                        x: isNext ? 300 : isPrev ? -300 : 0,
-                        z: isActive ? 100 : 0,
+                        y: 20,
                       }}
                       animate={{
                         opacity: 1,
-                        scale: isActive ? 1 : 0.85,
-                        rotateY: isNext ? 15 : isPrev ? -15 : 0,
-                        x: isNext ? 200 : isPrev ? -200 : 0,
-                        z: isActive ? 100 : 0,
-                        filter: isActive ? "blur(0px)" : "blur(2px)",
+                        y: 0,
                       }}
                       exit={{
                         opacity: 0,
-                        scale: 0.8,
-                        rotateY: isPrev ? 45 : -45,
-                        x: isPrev ? 300 : -300,
+                        y: -20,
                       }}
                       transition={{
-                        duration: 0.6,
-                        type: "spring",
-                        stiffness: 100,
-                      }}
-                      style={{
-                        transformStyle: "preserve-3d",
-                        transformPerspective: 1200,
+                        duration: 0.4,
+                        ease: "easeInOut",
                       }}
                     >
                       <div
-                        className={`rounded-3xl p-8 lg:p-12 max-w-3xl w-full mx-4 border ${
-                          isActive
-                            ? 'bg-white border-gray-200 shadow-2xl'
-                            : 'bg-white border-gray-200 shadow-lg'
-                        } transition-all duration-500`}
-                        onClick={() => !isActive && goToTestimonial(index)}
-                        style={{ cursor: !isActive ? 'pointer' : 'default' }}
+                        className="rounded-3xl p-8 lg:p-12 max-w-3xl w-full mx-4 border bg-white border-gray-200 shadow-2xl"
                       >
                         {/* Quote Icon */}
                         <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-500 rounded-full flex items-center justify-center shadow-lg">
