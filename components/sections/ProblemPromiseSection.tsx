@@ -35,13 +35,13 @@ export function ProblemPromiseSection() {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="text-4xl lg:text-5xl font-display font-light text-deepTeal-700 mb-8"
+              className="text-4xl lg:text-5xl font-display font-bold text-deepTeal-700 mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              I understand the pain you&apos;re experiencing.
+              I understand the pain you're experiencing.
             </motion.h2>
 
             <div className="space-y-6 text-lg text-slate leading-relaxed">
@@ -51,7 +51,7 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Whether you&apos;ve just discovered the betrayal or you&apos;re months into processing this trauma, you&apos;re likely experiencing a whirlwind of emotions. The life you built together in San Diego &mdash; from weekend trips to La Jolla Cove to quiet evenings in Balboa Park &mdash; suddenly feels shattered.
+                Whether you've just discovered the betrayal or you're months into processing this trauma, you're likely experiencing a whirlwind of emotions. The life you built together in San Diego &mdash; from weekend trips to La Jolla Cove to quiet evenings in Balboa Park &mdash; suddenly feels shattered.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                The hypervigilance, intrusive thoughts, and waves of grief you&apos;re experiencing are normal trauma responses. Your nervous system is working overtime to protect you. Understanding these reactions as biological, not personal failures, is the first step toward healing.
+                The hypervigilance, intrusive thoughts, and waves of grief you're experiencing are normal trauma responses. Your nervous system is working overtime to protect you. Understanding these reactions as biological, not personal failures, is the first step toward healing.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ export function ProblemPromiseSection() {
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                Since 2008, I&apos;ve helped hundreds of San Diego couples navigate this journey &mdash; from military families facing deployment-related infidelity to professionals managing the fallout from workplace affairs. My experience has shown me that with the right approach, couples can not only recover but create relationships stronger than before.
+                Since 2008, I've helped hundreds of San Diego couples navigate this journey &mdash; from military families facing deployment-related infidelity to professionals managing the fallout from workplace affairs. My experience has shown me that with the right approach, couples can not only recover but create relationships stronger than before.
               </motion.p>
             </div>
           </motion.div>
@@ -104,8 +104,8 @@ export function ProblemPromiseSection() {
                   <Sparkles className="w-6 h-6 text-white" />
                 </motion.div>
 
-                <h3 className="text-2xl lg:text-3xl font-display font-normal text-deepTeal-700 mb-6">
-                  You don&apos;t have to face this alone.
+                <h3 className="text-2xl lg:text-3xl font-display font-bold text-deepTeal-700 mb-6">
+                  You don't have to face this alone.
                 </h3>
 
                 <h4 className="text-xl font-semibold text-deepTeal-700 mb-4">
@@ -114,11 +114,11 @@ export function ProblemPromiseSection() {
 
                 <ul className="space-y-4">
                   {[
-                    'Direct, compassionate guidance without judgment',
-                    'Evidence-based strategies from Gottman Method and Relational Life Therapy',
-                    'Understanding of San Diego&apos;s unique challenges (military deployments, tech industry demands)',
-                    'Practical homework designed for busy professional schedules',
-                    'Clear treatment plans with measurable progress milestones'
+                    "Direct, compassionate guidance without judgment",
+                    "Evidence-based strategies from Gottman Method and Relational Life Therapy",
+                    "Understanding of San Diego's unique challenges (military deployments, tech industry demands)",
+                    "Practical homework designed for busy professional schedules",
+                    "Clear treatment plans with measurable progress milestones"
                   ].map((item, index) => (
                     <motion.li
                       key={index}

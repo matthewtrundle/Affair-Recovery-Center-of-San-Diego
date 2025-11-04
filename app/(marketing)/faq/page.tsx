@@ -76,10 +76,10 @@ export default function FAQPage() {
                   Can our relationship really recover from an affair?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  Yes—and many couples emerge stronger. Real talk: about 60% of couples who commit to the process recover and rebuild. The other 40% either realize they&apos;re incompatible or one partner isn&apos;t willing to do the work. My job is to help you figure out which path is right for you, with honesty and without judgment.
+                  Yes—and many couples emerge stronger. Real talk: about 60% of couples who commit to the process recover and rebuild. The other 40% either realize they're incompatible or one partner isn't willing to do the work. My job is to help you figure out which path is right for you, with honesty and without judgment.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  Recovery isn&apos;t just about &quot;getting back to normal.&quot; It&apos;s about building something better—a relationship with deeper trust, better communication, and real intimacy.
+                  Recovery isn't just about &quot;getting back to normal.&quot; It's about building something better—a relationship with deeper trust, better communication, and real intimacy.
                 </p>
               </div>
 
@@ -97,10 +97,10 @@ export default function FAQPage() {
 
               <div>
                 <h3 className="text-xl font-semibold text-deepTeal-600 mb-3">
-                  What if my partner isn&apos;t ready for therapy?
+                  What if my partner isn't ready for therapy?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  That&apos;s common. The partner who had the affair is often dealing with shame, fear, or defensiveness. Or maybe they&apos;re deployed, in denial, or just scared. I get it.
+                  That's common. The partner who had the affair is often dealing with shame, fear, or defensiveness. Or maybe they're deployed, in denial, or just scared. I get it.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
                   You can start with individual therapy to process trauma and develop coping skills. Many times, when the hurt partner starts healing on their own, the other partner becomes more willing to engage. I also offer discernment counseling to help couples decide whether to commit to recovery work or move toward separation.
@@ -115,7 +115,7 @@ export default function FAQPage() {
                   Sessions are 60 minutes for couples (75 minutes for the initial session). We typically meet weekly in the beginning, then space out to bi-weekly as you stabilize.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  Each session has structure but stays flexible to what&apos;s urgent. We might work on communication skills, process difficult emotions, review homework from the previous week, or address a recent crisis. I use evidence-based techniques from Gottman Method and Relational Life Therapy—no vague &quot;how does that make you feel&quot; stuff. We work on concrete skills.
+                  Each session has structure but stays flexible to what's urgent. We might work on communication skills, process difficult emotions, review homework from the previous week, or address a recent crisis. I use evidence-based techniques from Gottman Method and Relational Life Therapy—no vague &quot;how does that make you feel&quot; stuff. We work on concrete skills.
                 </p>
               </div>
 
@@ -141,10 +141,10 @@ export default function FAQPage() {
                   Should I ask every detail about the affair?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  Graphic sexual details usually add more pain than clarity. What matters more is understanding the &quot;why&quot;—what was missing, what vulnerabilities existed, how the affair served a function in your partner&apos;s life.
+                  Graphic sexual details usually add more pain than clarity. What matters more is understanding the &quot;why&quot;—what was missing, what vulnerabilities existed, how the affair served a function in your partner's life.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  That said, the betrayed partner needs enough information to feel they know the truth. We&apos;ll work together to figure out what questions actually help you heal versus which ones keep you stuck in obsessive loops. There&apos;s a balance, and I&apos;ll help you find it.
+                  That said, the betrayed partner needs enough information to feel they know the truth. We'll work together to figure out what questions actually help you heal versus which ones keep you stuck in obsessive loops. There's a balance, and I'll help you find it.
                 </p>
               </div>
 
@@ -153,10 +153,10 @@ export default function FAQPage() {
                   How do we handle the emotional explosions?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  First, those explosions are normal trauma responses. Your nervous system is in overdrive trying to protect you. Crying, yelling, the silent treatment—I&apos;ve seen it all, and none of it shocks me.
+                  First, those explosions are normal trauma responses. Your nervous system is in overdrive trying to protect you. Crying, yelling, the silent treatment—I've seen it all, and none of it shocks me.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  In therapy, we&apos;ll learn practical regulation skills: breathing techniques, grounding exercises, how to take timeouts effectively. I also teach the unfaithful partner how to stay present during your pain instead of getting defensive or shutting down. That&apos;s often the hardest but most important work.
+                  In therapy, we'll learn practical regulation skills: breathing techniques, grounding exercises, how to take timeouts effectively. I also teach the unfaithful partner how to stay present during your pain instead of getting defensive or shutting down. That's often the hardest but most important work.
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ export default function FAQPage() {
                   What about &quot;once a cheater, always a cheater&quot;?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed">
-                  That&apos;s a myth that ignores human capacity for growth. Some people do repeat patterns—but many don&apos;t, especially when they understand why it happened and do the deep work to change. Research and my 15+ years of experience show that when both partners commit to therapy and the unfaithful partner addresses underlying issues, recurrence rates drop significantly. The question isn&apos;t whether people can change; it&apos;s whether this person is willing to change.
+                  That's a myth that ignores human capacity for growth. Some people do repeat patterns—but many don't, especially when they understand why it happened and do the deep work to change. Research and my 15+ years of experience show that when both partners commit to therapy and the unfaithful partner addresses underlying issues, recurrence rates drop significantly. The question isn't whether people can change; it's whether this person is willing to change.
                 </p>
               </div>
 
@@ -174,10 +174,10 @@ export default function FAQPage() {
                   Can trust really be rebuilt?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  Yes—with transparency, consistency, and time. Trust isn&apos;t rebuilt overnight. It&apos;s rebuilt through hundreds of small moments: answering the phone when you say you will, being where you say you&apos;ll be, responding to questions with patience instead of defensiveness.
+                  Yes—with transparency, consistency, and time. Trust isn't rebuilt overnight. It's rebuilt through hundreds of small moments: answering the phone when you say you will, being where you say you'll be, responding to questions with patience instead of defensiveness.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  We use structured protocols from the Gottman Institute to rebuild trust systematically. This isn&apos;t about blind faith—it&apos;s about earned trust through demonstrated change over time.
+                  We use structured protocols from the Gottman Institute to rebuild trust systematically. This isn't about blind faith—it's about earned trust through demonstrated change over time.
                 </p>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function FAQPage() {
                   Where is your office located?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed">
-                  I&apos;m located in Carmel Valley, easily accessible from I-5 and I-805. Convenient parking available. I also offer virtual sessions for clients throughout California, which has been particularly helpful for military families during deployments or for busy professionals in Downtown, La Jolla, or North Park who prefer telehealth.
+                  I'm located in Carmel Valley, easily accessible from I-5 and I-805. Convenient parking available. I also offer virtual sessions for clients throughout California, which has been particularly helpful for military families during deployments or for busy professionals in Downtown, La Jolla, or North Park who prefer telehealth.
                 </p>
               </div>
 
@@ -218,7 +218,7 @@ export default function FAQPage() {
 
               <div>
                 <h3 className="text-xl font-semibold text-deepTeal-600 mb-3">
-                  What&apos;s your cancellation policy?
+                  What's your cancellation policy?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed">
                   I require 24 hours notice for cancellations. Late cancellations or no-shows are charged the full session fee. I understand emergencies happen—military families dealing with sudden deployments, for example—and I work with clients on a case-by-case basis when life throws curveballs.
@@ -252,10 +252,10 @@ export default function FAQPage() {
                   Do you take insurance?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  I accept select insurance plans and provide superbills for out-of-network reimbursement. Many insurance plans cover therapy for relationship issues when there&apos;s a mental health component (like depression, anxiety, or PTSD from betrayal trauma).
+                  I accept select insurance plans and provide superbills for out-of-network reimbursement. Many insurance plans cover therapy for relationship issues when there's a mental health component (like depression, anxiety, or PTSD from betrayal trauma).
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  I&apos;m happy to discuss payment options and help you understand your benefits during our consultation. For military families, Tricare and other military insurance options may apply.
+                  I'm happy to discuss payment options and help you understand your benefits during our consultation. For military families, Tricare and other military insurance options may apply.
                 </p>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default function FAQPage() {
                   Will you take sides?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed">
-                  No. My job isn&apos;t to be a judge or take sides. I&apos;m here to help both of you understand what happened, process the pain, and figure out whether and how to move forward. The betrayed partner deserves validation and support. The unfaithful partner needs accountability and help changing. Both of those things can be true at once.
+                  No. My job isn't to be a judge or take sides. I'm here to help both of you understand what happened, process the pain, and figure out whether and how to move forward. The betrayed partner deserves validation and support. The unfaithful partner needs accountability and help changing. Both of those things can be true at once.
                 </p>
               </div>
 
@@ -281,10 +281,10 @@ export default function FAQPage() {
                   What about secrets and confidentiality?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed mb-3">
-                  In couples therapy, I operate with a &quot;no secrets&quot; policy. If one partner tells me something in an individual session that affects the relationship, we&apos;ll work together on how and when to share it with their partner. This protects the therapy from becoming a repository for more secrets.
+                  In couples therapy, I operate with a &quot;no secrets&quot; policy. If one partner tells me something in an individual session that affects the relationship, we'll work together on how and when to share it with their partner. This protects the therapy from becoming a repository for more secrets.
                 </p>
                 <p className="text-lg text-slate leading-relaxed">
-                  Everything discussed in therapy is confidential under HIPAA and California law. Your business stays your business. The only exceptions are if there&apos;s imminent danger to self or others, child abuse, or elder abuse—situations where I&apos;m legally required to report.
+                  Everything discussed in therapy is confidential under HIPAA and California law. Your business stays your business. The only exceptions are if there's imminent danger to self or others, child abuse, or elder abuse—situations where I'm legally required to report.
                 </p>
               </div>
 
@@ -293,7 +293,7 @@ export default function FAQPage() {
                   Why did you specialize in affair recovery?
                 </h3>
                 <p className="text-lg text-slate leading-relaxed">
-                  After years of general couples therapy, I realized affair recovery required specialized training and a different approach. Too many therapists treat infidelity like any other relationship issue—it&apos;s not. It&apos;s trauma. I pursued advanced training in Gottman Method for affair recovery, Relational Life Therapy, and trauma treatment because couples in crisis deserve more than generic advice. Here in San Diego, with our unique mix of military families, tech professionals, and diverse communities, that specialization matters even more.
+                  After years of general couples therapy, I realized affair recovery required specialized training and a different approach. Too many therapists treat infidelity like any other relationship issue—it's not. It's trauma. I pursued advanced training in Gottman Method for affair recovery, Relational Life Therapy, and trauma treatment because couples in crisis deserve more than generic advice. Here in San Diego, with our unique mix of military families, tech professionals, and diverse communities, that specialization matters even more.
                 </p>
               </div>
             </div>

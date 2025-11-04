@@ -90,16 +90,16 @@ export default function AboutPage() {
             {/* Text Content */}
             <div className="space-y-6 text-base md:text-lg text-slate leading-relaxed">
               <p>
-                As a child and adolescent, I endured a tremendous amount of suffering. I was continually bullied in school and I didn&apos;t find the comfort or support I needed there or at home.
+                As a child and adolescent, I endured a tremendous amount of suffering. I was continually bullied in school and I didn't find the comfort or support I needed there or at home.
               </p>
               <p>
-                This pattern followed me into adulthood. I wasn&apos;t attracting the healthiest intimate relationships into my life. Eventually, I went through an affair and divorce that nearly broke me—experiencing firsthand the devastation, shame, and feeling of being utterly lost that comes with betrayal.
+                This pattern followed me into adulthood. I wasn't attracting the healthiest intimate relationships into my life. Eventually, I went through an affair and divorce that nearly broke me—experiencing firsthand the devastation, shame, and feeling of being utterly lost that comes with betrayal.
               </p>
               <p className="font-medium text-deepTeal-700">
                 That hardship became my turning point. I sought my own intensive therapy and it completely transformed my life.
               </p>
               <p>
-                I learned to rebuild trust—in myself and others. I discovered that healing from betrayal isn&apos;t just possible; with the right support and tools, it can lead to a stronger relationship than before.
+                I learned to rebuild trust—in myself and others. I discovered that healing from betrayal isn't just possible; with the right support and tools, it can lead to a stronger relationship than before.
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
           {/* Final paragraph centered */}
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg md:text-xl text-slate leading-relaxed">
-              I knew then that becoming a therapist was my passion. I had a wealth of difficult experiences, all of which I had now conquered, so I could relate to, empathize with, and help others who were also suffering. <span className="font-medium text-deepTeal-700">I understand the pain you&apos;re going through because I&apos;ve been there myself.</span>
+              I knew then that becoming a therapist was my passion. I had a wealth of difficult experiences, all of which I had now conquered, so I could relate to, empathize with, and help others who were also suffering. <span className="font-medium text-deepTeal-700">I understand the pain you're going through because I've been there myself.</span>
             </p>
           </div>
         </div>
@@ -169,11 +169,11 @@ export default function AboutPage() {
               <ul className="space-y-4 text-lg text-slate">
                 <li className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-lime-500 mr-3 flex-shrink-0 mt-1" />
-                  <span>Bachelor&apos;s degree in Psychology from Ithaca College, New York</span>
+                  <span>Bachelor's degree in Psychology from Ithaca College, New York</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-lime-500 mr-3 flex-shrink-0 mt-1" />
-                  <span>Master&apos;s degree in Clinical Psychology from Argosy University, Orange, California</span>
+                  <span>Master's degree in Clinical Psychology from Argosy University, Orange, California</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-lime-500 mr-3 flex-shrink-0 mt-1" />
@@ -272,7 +272,7 @@ export default function AboutPage() {
           </h2>
           <div className="bg-white/80 rounded-2xl p-8 md:p-12 shadow-sm">
             <p className="text-xl text-slate leading-relaxed mb-6">
-              If you&apos;re reading this, you&apos;re in one of the hardest moments of your life. You don&apos;t have to go through it alone. I&apos;ll walk beside you with compassion, directness, and tools that actually work.
+              If you're reading this, you're in one of the hardest moments of your life. You don't have to go through it alone. I'll walk beside you with compassion, directness, and tools that actually work.
             </p>
             <p className="text-lg text-slate leading-relaxed">
               My personal experience with betrayal and healing, combined with years of clinical training and a deep understanding of what it takes to rebuild trust, is why I focus on affair recovery therapy in San Diego and virtual sessions across California.
@@ -289,16 +289,16 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-6 text-lg text-slate leading-relaxed">
             <p>
-              Outside the therapy room, I&apos;m passionate about film and storytelling. I&apos;m a bit obsessed with Roger Ebert and love analyzing how stories unfold—which probably informs how I help couples understand and reshape their own narratives.
+              Outside the therapy room, I'm passionate about film and storytelling. I'm a bit obsessed with Roger Ebert and love analyzing how stories unfold—which probably informs how I help couples understand and reshape their own narratives.
             </p>
             <p>
               I was a Division I collegiate wrestler at Ithaca College and later coached wrestling at California high schools. Wrestling taught me discipline, resilience, and the importance of having someone in your corner who believes in you—lessons I bring to my work with couples every day.
             </p>
             <p>
-              I&apos;m also deeply committed to holistic health and wellness. Living with severe scoliosis has given me firsthand experience with chronic challenges and the importance of addressing the whole person—mind, body, and spirit. This perspective shapes how I approach therapy: healing isn&apos;t just about fixing what&apos;s broken; it&apos;s about building strength and resilience for the long term.
+              I'm also deeply committed to holistic health and wellness. Living with severe scoliosis has given me firsthand experience with chronic challenges and the importance of addressing the whole person—mind, body, and spirit. This perspective shapes how I approach therapy: healing isn't just about fixing what's broken; it's about building strength and resilience for the long term.
             </p>
             <p className="font-medium text-deepTeal-700 text-xl mt-8">
-              Just like in wrestling, where you need someone in your corner who believes in you, couples need a therapist who genuinely believes recovery is possible and has the skills to help them get there. That&apos;s what I bring to every session.
+              Just like in wrestling, where you need someone in your corner who believes in you, couples need a therapist who genuinely believes recovery is possible and has the skills to help them get there. That's what I bring to every session.
             </p>
           </div>
         </div>

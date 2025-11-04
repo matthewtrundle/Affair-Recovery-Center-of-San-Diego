@@ -89,7 +89,7 @@ export function PremiumHeader() {
               style={{ filter: 'drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.3))' }}
             >
               <Image
-                src="/images/logo/affair-recovery-center-logo.png"
+                src="/images/logo/logo3.png"
                 alt="Affair Recovery Center of San Diego"
                 width={1433}
                 height={393}

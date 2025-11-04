@@ -261,16 +261,12 @@ export function MethodCards() {
           <p className="text-lg text-slate mb-6">
             Curious about how these methods work together in your unique situation?
           </p>
-          <Button
-            variant="default"
-            size="lg"
-            asChild
+          <Link
+            href="/schedule"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
           >
-            <Link href="/schedule" className="group">
-              Schedule Your Consultation
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </Button>
+            Schedule Your Consultation
+          </Link>
         </motion.div>
       </div>
     </section>

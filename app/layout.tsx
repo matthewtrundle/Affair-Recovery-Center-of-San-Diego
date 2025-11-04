@@ -78,6 +78,11 @@ export const metadata: Metadata = {
   verification: {
     google: 'verification_token',
   },
+  icons: {
+    icon: '/images/logo/arcsd-favicon.png',
+    shortcut: '/images/logo/arcsd-favicon.png',
+    apple: '/images/logo/arcsd-favicon.png',
+  },
 }
 
 export default function RootLayout({

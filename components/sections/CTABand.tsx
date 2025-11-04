@@ -179,50 +179,17 @@ export function CTABand({
             </motion.p>
           )}
 
-          {/* Premium CTA Button */}
+          {/* Premium CTA Button - Standardized Style */}
           <motion.div
             whileTap={{ scale: 0.98 }}
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
             className="inline-block"
           >
             <Link
               href={buttonHref}
               onClick={handleClick}
-              className="relative inline-flex items-center gap-3 px-10 py-5 group transition-transform duration-300 hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
             >
-              {/* Button background with gradient */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white to-gray-100 shadow-2xl" />
-
-              {/* Hover glow effect */}
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-lime-400 to-turquoise-400 blur-xl"
-                animate={{
-                  opacity: isHovered ? 0.4 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-              />
-
-              {/* Glass overlay */}
-              <div className="absolute inset-0 rounded-full bg-white/90 backdrop-blur-sm" />
-
-              {/* Content */}
-              <div className="relative flex items-center gap-3">
-                {showIcon && buttonHref === '/schedule' ? (
-                  <Calendar className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
-                ) : showIcon ? (
-                  <Sparkles className={`h-6 w-6 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'}`} />
-                ) : null}
-
-                <span className={`text-lg font-semibold ${isDefault ? 'text-deepTeal' : 'text-turquoise-700'}`}>
-                  {buttonText}
-                </span>
-
-                <ChevronRight className={`h-5 w-5 ${isDefault ? 'text-deepTeal' : 'text-turquoise-600'} transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`} />
-              </div>
-
-              {/* Subtle hover overlay */}
-              <div className={`absolute inset-0 rounded-full bg-black/5 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+              {buttonText}
             </Link>
           </motion.div>
 

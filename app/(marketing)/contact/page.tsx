@@ -216,7 +216,7 @@ export default function ContactPage() {
               Ready to Begin Your Journey?
             </h2>
             <p className="text-lg text-slate max-w-2xl mx-auto">
-              Take the first step toward healing. I&apos;m here to support you.
+              Take the first step toward healing. I'm here to support you.
             </p>
           </motion.div>
 
