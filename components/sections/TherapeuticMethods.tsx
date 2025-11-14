@@ -125,7 +125,7 @@ export function TherapeuticMethods() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <section ref={containerRef} className="bg-white relative overflow-hidden py-8">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <motion.div
@@ -151,9 +151,9 @@ export function TherapeuticMethods() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Two Column Layout: Tabs Left, Content Right */}
-        <div className="grid lg:grid-cols-[340px_1fr] gap-8 lg:gap-12 max-w-7xl mx-auto">
-          {/* Left Column - Vertical Navigation Tabs */}
-          <div className="space-y-4">
+        <div className="grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-8 max-w-7xl mx-auto">
+          {/* Left Column - Compact Vertical Tabs */}
+          <div className="space-y-3">
             {methods.map((method, index) => {
               const Icon = method.icon
               const isActive = activeMethod === method.id
@@ -161,31 +161,27 @@ export function TherapeuticMethods() {
               return (
                 <motion.button
                   key={method.id}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   onClick={() => setActiveMethod(method.id)}
-                  className={`w-full inline-flex items-center justify-start gap-3 px-6 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-left ${
+                  className={`w-full inline-flex items-center justify-start gap-3 px-4 py-3 rounded-lg transition-all duration-300 text-left ${
                     isActive
-                      ? 'bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white scale-105'
-                      : 'bg-white text-deepTeal-700 hover:from-turquoise-600 hover:to-turquoise-700 hover:bg-gradient-to-r hover:text-white'
+                      ? 'bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white shadow-md'
+                      : 'bg-white text-deepTeal-700 hover:bg-turquoise-50 shadow-sm'
                   }`}
-                  whileHover={{ scale: isActive ? 1.05 : 1.02 }}
+                  whileHover={{ x: isActive ? 0 : 4 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
                     isActive
                       ? 'bg-white/20'
                       : `bg-gradient-to-br ${method.gradient}`
                   }`}>
-                    <Icon className="w-6 h-6 text-white" />
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-body font-semibold text-base">
+                    <div className="font-body font-semibold text-sm">
                       {method.title}
                     </div>
-                    <div className={`text-xs mt-1 ${
+                    <div className={`text-xs mt-0.5 ${
                       isActive ? 'text-white/80' : 'text-deepTeal-600'
                     }`}>
                       {method.subtitle}
@@ -201,53 +197,53 @@ export function TherapeuticMethods() {
             key={activeMethod}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {(() => {
               const method = methods.find(m => m.id === activeMethod)!
               const Icon = method.icon
 
               return (
-                <div className="grid lg:grid-cols-2 gap-8 items-start">
-                  {/* Method Overview */}
+                <div className="space-y-6">
+                  {/* Method Header - Compact */}
                   <div>
-                    <div className="mb-8">
-                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${method.gradient} mb-6`}>
-                        <Icon className="w-8 h-8 text-white" />
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${method.gradient}`}>
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-display font-normal text-navy">
+                          {method.title}
+                        </h3>
+                        <p className="text-sm text-turquoise-600 font-medium">
+                          {method.subtitle}
+                        </p>
+                      </div>
+                    </div>
 
-                      <h3 className="text-3xl lg:text-4xl font-display font-normal text-navy mb-3">
-                        {method.title}
-                      </h3>
+                    <p className="text-slate text-sm leading-relaxed mb-4">
+                      {method.description}
+                    </p>
 
-                      <p className="text-lg text-turquoise-600 font-medium mb-6">
-                        {method.subtitle}
-                      </p>
-
-                      <p className="text-slate leading-relaxed mb-8">
-                        {method.description}
-                      </p>
-
-                      <div className="glass backdrop-blur-md bg-gradient-to-br from-turquoise-50/50 to-lime-50/50 rounded-2xl p-6 border border-white/50">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-turquoise-500 to-lime-500 flex items-center justify-center flex-shrink-0 mt-1">
-                            <CheckCircle className="w-4 h-4 text-white" />
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-navy mb-2">Research-Backed Results</h4>
-                            <p className="text-slate text-sm">{method.researchBacked}</p>
-                          </div>
+                    <div className="glass backdrop-blur-md bg-gradient-to-br from-turquoise-50/50 to-lime-50/50 rounded-lg p-4 border border-white/50">
+                      <div className="flex items-start gap-2">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-turquoise-500 to-lime-500 flex items-center justify-center flex-shrink-0">
+                          <CheckCircle className="w-3 h-3 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-navy text-sm mb-1">Research-Backed Results</h4>
+                          <p className="text-slate text-xs">{method.researchBacked}</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Method Details */}
-                  <div className="space-y-8">
+                  {/* Two Column Layout for Principles and Techniques */}
+                  <div className="grid lg:grid-cols-2 gap-6">
                     {/* Core Principles */}
                     <div>
-                      <h4 className="text-xl font-heading font-semibold text-navy mb-6">Core Principles</h4>
-                      <div className="space-y-4">
+                      <h4 className="text-lg font-heading font-semibold text-navy mb-4">Core Principles</h4>
+                      <div className="space-y-3">
                         {method.principles.map((principle, index) => {
                           const PrincipleIcon = principle.icon
                           return (
@@ -256,14 +252,14 @@ export function TherapeuticMethods() {
                               initial={{ opacity: 0, x: 20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: index * 0.1 }}
-                              className="flex items-start gap-4 p-4 glass backdrop-blur-sm bg-white/80 rounded-xl border border-white/50"
+                              className="flex items-start gap-3 p-3 glass backdrop-blur-sm bg-white/80 rounded-lg border border-white/50"
                             >
-                              <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${method.gradient} flex items-center justify-center flex-shrink-0`}>
-                                <PrincipleIcon className="w-5 h-5 text-white" />
+                              <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${method.gradient} flex items-center justify-center flex-shrink-0`}>
+                                <PrincipleIcon className="w-4 h-4 text-white" />
                               </div>
                               <div>
-                                <h5 className="font-semibold text-navy mb-1">{principle.title}</h5>
-                                <p className="text-slate text-sm">{principle.description}</p>
+                                <h5 className="font-semibold text-navy text-sm mb-0.5">{principle.title}</h5>
+                                <p className="text-slate text-xs">{principle.description}</p>
                               </div>
                             </motion.div>
                           )
@@ -273,18 +269,18 @@ export function TherapeuticMethods() {
 
                     {/* Key Techniques */}
                     <div>
-                      <h4 className="text-xl font-heading font-semibold text-navy mb-6">Key Techniques</h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <h4 className="text-lg font-heading font-semibold text-navy mb-4">Key Techniques</h4>
+                      <div className="grid grid-cols-1 gap-2">
                         {method.techniques.map((technique, index) => (
                           <motion.div
                             key={technique}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.05 }}
-                            className="flex items-center gap-3 p-3 glass backdrop-blur-sm bg-white/60 rounded-lg border border-white/30"
+                            className="flex items-center gap-2 p-2 glass backdrop-blur-sm bg-white/60 rounded-lg border border-white/30"
                           >
-                            <span className="text-turquoise-500 text-lg">✦</span>
-                            <span className="text-slate text-sm">{technique}</span>
+                            <span className="text-turquoise-500 text-sm flex-shrink-0">✦</span>
+                            <span className="text-slate text-xs">{technique}</span>
                           </motion.div>
                         ))}
                       </div>
@@ -295,27 +291,6 @@ export function TherapeuticMethods() {
             })()}
           </motion.div>
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-20"
-        >
-          <p className="text-lg text-slate mb-6">
-            Ready to explore how these methods can help your relationship heal?
-          </p>
-          <motion.a
-            href="/schedule"
-            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Schedule Your Consultation
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   )

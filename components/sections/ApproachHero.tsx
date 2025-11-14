@@ -97,19 +97,6 @@ export function ApproachHero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="max-w-5xl mx-auto"
         >
-          {/* Subtitle */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-6"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 glass backdrop-blur-md bg-white/10 text-turquoise-300 rounded-full text-sm font-medium border border-white/20">
-              <Sparkles className="w-4 h-4" />
-              Evidence-Based Methods
-            </span>
-          </motion.div>
-
           {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -146,31 +133,6 @@ export function ApproachHero() {
             Three powerful, research-backed methods working together to help you heal from betrayal,
             rebuild trust, and create a stronger relationship than you ever thought possible.
           </motion.p>
-
-          {/* Three Method Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-wrap justify-center gap-4 mb-16"
-          >
-            {[
-              { name: 'Gottman Method', color: 'from-blue-500 to-indigo-500' },
-              { name: 'Relational Life Therapy', color: 'from-lime-500 to-pink-500' },
-              { name: 'Brain-Based Understanding', color: 'from-turquoise-500 to-emerald-500' },
-            ].map((method, index) => (
-              <motion.div
-                key={method.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className={`px-6 py-3 glass backdrop-blur-md bg-gradient-to-r ${method.color} bg-opacity-20 rounded-full border border-white/30 text-white font-medium`}
-              >
-                {method.name}
-              </motion.div>
-            ))}
-          </motion.div>
 
           {/* Scroll Indicator */}
           <motion.div

@@ -108,7 +108,7 @@ export function PremiumCard({
           initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 animate-shimmer" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
         </motion.div>
       )}
 
@@ -149,9 +149,9 @@ export function ServiceCard({
 
   return (
     <PremiumCard
-      variant="glass"
-      hoverEffect="tilt"
-      className="h-full"
+      variant="solid"
+      hoverEffect="lift"
+      className="h-full border border-gray-200"
     >
       <div className="flex flex-col h-full">
         {/* Icon */}
@@ -161,7 +161,7 @@ export function ServiceCard({
             rotate: isHovered ? 5 : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="w-12 h-12 rounded-full bg-gradient-to-br from-coral to-sage p-3 mb-4"
+          className="w-16 h-16 rounded-2xl bg-gradient-to-br from-turquoise-500 to-lime-500 flex items-center justify-center mb-4"
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
         >
@@ -169,12 +169,12 @@ export function ServiceCard({
         </motion.div>
 
         {/* Title */}
-        <h3 className="text-xl font-heading font-semibold text-white mb-3">
+        <h3 className="text-xl font-heading font-semibold text-deepTeal mb-3">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-white/70 mb-4 flex-1">
+        <p className="text-slate mb-4 flex-1 leading-relaxed">
           {description}
         </p>
 
@@ -186,9 +186,9 @@ export function ServiceCard({
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-start text-sm text-white/60"
+              className="flex items-start text-sm text-slate"
             >
-              <span className="text-coral mr-2">•</span>
+              <span className="text-turquoise-500 mr-2 mt-0.5">✦</span>
               {feature}
             </motion.li>
           ))}
@@ -198,7 +198,7 @@ export function ServiceCard({
         <motion.a
           href={href}
           whileHover={{ x: 5 }}
-          className="inline-flex items-center text-coral hover:text-sage transition-colors font-medium"
+          className="inline-flex items-center text-turquoise-600 hover:text-deepTeal transition-colors font-semibold text-sm"
         >
           Learn More
           <svg

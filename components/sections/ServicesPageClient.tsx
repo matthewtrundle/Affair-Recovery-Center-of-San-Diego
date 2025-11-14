@@ -90,7 +90,7 @@ export function ServicesHero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700"
+      className="relative overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700 py-20 lg:py-28"
     >
       {/* Background Layer */}
       <motion.div
@@ -113,7 +113,7 @@ export function ServicesHero() {
       <FloatingElements />
 
       {/* Content */}
-      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center max-w-4xl mx-auto"
           style={{ y: textY, opacity }}
@@ -123,19 +123,33 @@ export function ServicesHero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="text-6xl md:text-7xl lg:text-8xl font-display font-light text-white mb-6"
+            className="text-6xl md:text-7xl lg:text-8xl font-display font-light text-white mb-8"
           >
-            <span className="block">Services for</span>
-            <span className="block gradient-text bg-gradient-to-r from-lime via-turquoise to-lime bg-clip-text text-transparent">
+            <span className="block mb-2">Services for</span>
+            <motion.span
+              className="block bg-gradient-to-r from-turquoise-300 via-lime-300 to-turquoise-300 bg-clip-text text-transparent pb-4"
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              style={{
+                backgroundSize: '200% 200%',
+                paddingTop: '0.1em',
+              }}
+            >
               Healing
-            </span>
+            </motion.span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-xl md:text-2xl font-heading text-gray-200 mb-8 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl font-heading text-gray-200 mb-8 max-w-3xl mx-auto mt-4"
           >
             Comprehensive, evidence-based therapy services designed to guide couples
             through crisis, rebuild trust, and create lasting healing.
@@ -222,7 +236,7 @@ export function MainServicesSection() {
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
-          <PremiumCard variant="glass" hoverEffect="tilt" className="p-8 lg:p-12">
+          <PremiumCard variant="glass" hoverEffect="lift" className="p-8 lg:p-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div>
@@ -299,8 +313,8 @@ export function MainServicesSection() {
                   <div className="absolute -inset-4 bg-gradient-to-r from-coral/20 to-sage/20 blur-2xl" />
                   <div className="relative glass backdrop-blur-xl bg-white/10 rounded-2xl p-3 border border-white/20">
                     <img
-                      src="/images/sections/couples-therapy-session.webp"
-                      alt="Couple in therapy session working toward healing"
+                      src="/images/sections/couple-hero-healing.webp"
+                      alt="Couple working together toward healing and recovery"
                       className="w-full h-64 lg:h-80 object-cover rounded-xl"
                     />
                     <div className="absolute inset-3 bg-gradient-to-t from-deepTeal-900/60 via-transparent to-transparent rounded-xl" />
@@ -357,7 +371,7 @@ export function AdditionalServicesSection() {
   ]
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-lightGray-50 to-white relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-lightGray-100 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -366,10 +380,10 @@ export function AdditionalServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
             Additional Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate max-w-3xl mx-auto">
             Complementary services to support your healing journey
           </p>
         </motion.div>
@@ -826,6 +840,27 @@ export function ServicesFAQSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA to FAQ Page */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mt-12"
+        >
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-2 border-turquoise-500 text-turquoise-600 hover:bg-turquoise-50 px-8 py-6 text-lg"
+            asChild
+          >
+            <Link href="/faq">
+              View All FAQs
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   )

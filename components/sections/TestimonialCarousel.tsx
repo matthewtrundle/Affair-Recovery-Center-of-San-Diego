@@ -172,10 +172,10 @@ export function TestimonialCarousel() {
                       }}
                     >
                       <div
-                        className="rounded-3xl p-8 lg:p-12 max-w-3xl w-full mx-4 border bg-white border-gray-200 shadow-2xl"
+                        className="rounded-3xl p-8 lg:p-12 max-w-3xl w-full mx-4 border bg-white border-gray-200 shadow-2xl relative"
                       >
                         {/* Quote Icon */}
-                        <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-500 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-500 rounded-full flex items-center justify-center shadow-lg z-10">
                           <Quote className="w-6 h-6 text-white" />
                         </div>
 

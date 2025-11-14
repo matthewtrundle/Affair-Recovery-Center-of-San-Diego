@@ -10,7 +10,7 @@ const methodNodes = [
     title: 'Gottman Method',
     subtitle: 'Trust Revival',
     icon: Users,
-    position: { x: 20, y: 30 },
+    position: { x: 30, y: 25 },
     gradient: 'from-blue-500 to-indigo-500',
     strengths: [
       'Research-backed protocols',
@@ -24,7 +24,7 @@ const methodNodes = [
     title: 'Relational Life Therapy',
     subtitle: 'Intimacy Skills',
     icon: Heart,
-    position: { x: 80, y: 30 },
+    position: { x: 70, y: 25 },
     gradient: 'from-lime-500 to-pink-500',
     strengths: [
       'Direct communication',
@@ -38,7 +38,7 @@ const methodNodes = [
     title: 'Brain-Based Understanding',
     subtitle: 'Trauma Healing',
     icon: Brain,
-    position: { x: 50, y: 80 },
+    position: { x: 50, y: 68 },
     gradient: 'from-turquoise-500 to-emerald-500',
     strengths: [
       'Trauma psychoeducation',
@@ -57,16 +57,16 @@ const integrationPoints = [
     description: 'Gottman\'s structured approach combined with RLT\'s direct communication',
   },
   {
-    from: 'gottman',
-    to: 'brain',
-    label: 'Research + Trauma',
-    description: 'Evidence-based protocols informed by trauma understanding',
-  },
-  {
     from: 'rlt',
     to: 'brain',
     label: 'Skills + Safety',
     description: 'Building intimacy skills within a trauma-informed framework',
+  },
+  {
+    from: 'brain',
+    to: 'gottman',
+    label: 'Research + Trauma',
+    description: 'Evidence-based protocols informed by trauma understanding',
   },
 ]
 
@@ -172,114 +172,121 @@ export function IntegratedApproach() {
           </p>
         </motion.div>
 
-        {/* Integration Diagram */}
+        {/* Integration Diagram - Redesigned */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="relative max-w-4xl mx-auto h-96 mb-20"
+          className="max-w-5xl mx-auto mb-20"
         >
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-            {/* Connection Lines */}
-            {integrationPoints.map((connection, index) => {
-              const fromNode = methodNodes.find(n => n.id === connection.from)
-              const toNode = methodNodes.find(n => n.id === connection.to)
-
-              if (!fromNode || !toNode) return null
+          {/* Three Method Cards with Connecting Lines */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {methodNodes.map((node, index) => {
+              const Icon = node.icon
+              const isHovered = hoveredNode === node.id
 
               return (
-                <motion.line
-                  key={`${connection.from}-${connection.to}`}
-                  x1={fromNode.position.x}
-                  y1={fromNode.position.y}
-                  x2={toNode.position.x}
-                  y2={toNode.position.y}
-                  stroke="url(#gradient)"
-                  strokeWidth="0.5"
-                  strokeDasharray="2,2"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 0.6 }}
-                  transition={{ duration: 2, delay: index * 0.5 }}
-                />
+                <motion.div
+                  key={node.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  onHoverStart={() => setHoveredNode(node.id)}
+                  onHoverEnd={() => setHoveredNode(null)}
+                  className="relative group"
+                >
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative h-full"
+                  >
+                    {/* Glow Effect */}
+                    <motion.div
+                      className={`absolute -inset-2 bg-gradient-to-r ${node.gradient} rounded-2xl blur-xl`}
+                      animate={{
+                        opacity: isHovered ? 0.4 : 0,
+                      }}
+                      transition={{ duration: 0.3 }}
+                    />
+
+                    {/* Card */}
+                    <div className="relative glass backdrop-blur-xl bg-white/95 rounded-2xl p-6 border border-white/50 shadow-lg h-full flex flex-col items-center text-center">
+                      {/* Icon */}
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ duration: 0.3 }}
+                        className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${node.gradient} shadow-lg flex items-center justify-center mb-4`}
+                      >
+                        <Icon className="w-10 h-10 text-white" />
+                      </motion.div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-display font-semibold text-navy mb-2">
+                        {node.title}
+                      </h3>
+
+                      {/* Subtitle */}
+                      <p className="text-sm text-turquoise-600 font-medium mb-4">
+                        {node.subtitle}
+                      </p>
+
+                      {/* Strengths */}
+                      <div className="flex-1">
+                        <ul className="space-y-2 text-left">
+                          {node.strengths.map((strength, sIndex) => (
+                            <li key={sIndex} className="text-xs text-slate flex items-start gap-2">
+                              <span className="text-turquoise-500 mt-0.5">✦</span>
+                              <span>{strength}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
               )
             })}
+          </div>
 
-            {/* Gradient Definition */}
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8EA69B" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#F29B88" stopOpacity="0.8" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          {/* Method Nodes */}
-          {methodNodes.map((node, index) => {
-            const Icon = node.icon
-            const isHovered = hoveredNode === node.id
-
-            return (
+          {/* Integration Points - Horizontal Flow */}
+          <div className="grid md:grid-cols-3 gap-4">
+            {integrationPoints.map((connection, index) => (
               <motion.div
-                key={node.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-                style={{
-                  left: `${node.position.x}%`,
-                  top: `${node.position.y}%`,
-                }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                onHoverStart={() => setHoveredNode(node.id)}
-                onHoverEnd={() => setHoveredNode(null)}
+                key={`${connection.from}-${connection.to}`}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
+                viewport={{ once: true }}
+                className="glass backdrop-blur-md bg-gradient-to-br from-turquoise-50/80 to-lime-50/80 rounded-xl p-4 border border-white/50"
               >
-                <motion.div
-                  className="relative"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {/* Glow effect */}
-                  <motion.div
-                    className={`absolute -inset-4 bg-gradient-to-r ${node.gradient} rounded-full blur-xl`}
-                    animate={{
-                      opacity: isHovered ? 0.4 : 0,
-                    }}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  {/* Node */}
-                  <div className={`relative w-20 h-20 rounded-full bg-gradient-to-br ${node.gradient} shadow-lg flex items-center justify-center border-4 border-white`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-
-                  {/* Label */}
-                  <div className="absolute top-full mt-4 left-1/2 transform -translate-x-1/2 text-center w-32">
-                    <h4 className="text-sm font-semibold text-navy mb-1">{node.title}</h4>
-                    <p className="text-xs text-slate">{node.subtitle}</p>
-                  </div>
-
-                  {/* Hover Details */}
-                  {isHovered && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="absolute top-full mt-16 left-1/2 transform -translate-x-1/2 w-48 glass backdrop-blur-md bg-white/90 rounded-lg p-4 border border-white/50 shadow-lg z-10"
-                    >
-                      <h5 className="font-semibold text-navy mb-2">Key Strengths:</h5>
-                      <ul className="space-y-1">
-                        {node.strengths.map((strength, sIndex) => (
-                          <li key={sIndex} className="text-xs text-slate flex items-center gap-2">
-                            <span className="text-turquoise-500">•</span>
-                            {strength}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  )}
-                </motion.div>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-turquoise-500 to-lime-500" />
+                  <h4 className="text-sm font-semibold text-navy">{connection.label}</h4>
+                </div>
+                <p className="text-xs text-slate leading-relaxed">
+                  {connection.description}
+                </p>
               </motion.div>
-            )
-          })}
+            ))}
+          </div>
+
+          {/* Central Message */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <div className="inline-flex items-center gap-3 glass backdrop-blur-xl bg-gradient-to-r from-turquoise-500/10 to-lime-500/10 rounded-full px-6 py-3 border border-turquoise-200">
+              <Zap className="w-5 h-5 text-turquoise-600" />
+              <p className="text-sm font-medium text-navy">
+                Three proven approaches working together for comprehensive healing
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Treatment Phases */}

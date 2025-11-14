@@ -209,6 +209,20 @@
     animation: kenburns 20s ease-out infinite alternate;
   }
 
+  /* Shimmer Animation - Slowed down */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) skewX(-12deg);
+    }
+    100% {
+      transform: translateX(100%) skewX(-12deg);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 4s ease-in-out infinite;
+  }
+
   /* Beach Wave Animations */
   @keyframes wave {
     0%,

@@ -90,9 +90,9 @@ export default function CaliforniaOnlineSessionsPage() {
                 </Link>
               </Button>
               <Button
-                variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg"
                 asChild
               >
                 <Link href="/approach">

@@ -242,13 +242,13 @@ export function WhatMakesDifferent() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="glass backdrop-blur-xl bg-gradient-to-br from-deepTeal-900/95 to-slate-800/95 rounded-3xl p-8 lg:p-12 border border-white/20"
+          className="glass backdrop-blur-xl bg-gradient-to-br from-lightGray-100 to-turquoise-50 rounded-3xl p-8 lg:p-12 border border-deepTeal-200 shadow-2xl"
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl lg:text-4xl font-display font-light text-white mb-4">
+            <h3 className="text-3xl lg:text-4xl font-display font-light text-navy mb-4">
               Real Results from Real Couples
             </h3>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-slate text-lg max-w-2xl mx-auto">
               These outcomes reflect the effectiveness of this integrated approach with couples committed to the healing process.
             </p>
           </div>
@@ -267,7 +267,7 @@ export function WhatMakesDifferent() {
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-turquoise-400 to-lime-400 mb-4"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-turquoise-500 to-deepTeal-500 mb-4 shadow-md"
                   >
                     <Icon className="w-6 h-6 text-white" />
                   </motion.div>
@@ -277,13 +277,13 @@ export function WhatMakesDifferent() {
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.8, delay: index * 0.1 + 0.2, type: "spring" }}
                     viewport={{ once: true }}
-                    className="text-4xl lg:text-5xl font-display font-light text-white mb-2"
+                    className="text-4xl lg:text-5xl font-display font-light text-deepTeal-600 mb-2"
                   >
                     {stat.number}
                   </motion.div>
 
-                  <p className="text-white/90 font-medium mb-1">{stat.label}</p>
-                  <p className="text-white/60 text-sm">{stat.description}</p>
+                  <p className="text-navy font-semibold mb-1">{stat.label}</p>
+                  <p className="text-slate text-sm">{stat.description}</p>
                 </motion.div>
               )
             })}
@@ -294,9 +294,9 @@ export function WhatMakesDifferent() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mt-8 pt-8 border-t border-white/20"
+            className="text-center mt-8 pt-8 border-t border-deepTeal-200"
           >
-            <p className="text-white/70 text-sm">
+            <p className="text-slate text-sm">
               * Based on outcomes from couples who completed the full treatment program
             </p>
           </motion.div>

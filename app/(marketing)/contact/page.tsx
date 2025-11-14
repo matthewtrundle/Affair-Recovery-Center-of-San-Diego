@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
@@ -17,15 +16,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { PremiumCard } from '@/components/ui/PremiumCard'
-import { generateMetadata as generateSEO, generateBreadcrumbSchema, generateLocalBusinessSchema } from '@/lib/seo'
-
-// Note: This would be generated on the server in a real implementation
-// export const metadata: Metadata = generateSEO({
-//   title: 'Contact',
-//   description: 'Contact Jordan Zipkin, LMFT for couples therapy specializing in affair recovery in San Diego. Available for in-person and telehealth sessions.',
-//   keywords: ['contact therapist San Diego', 'couples counseling contact', 'affair recovery therapist'],
-//   url: '/contact',
-// })
+import { ContactForm } from '@/components/forms/ContactForm'
 
 const contactMethods = [
   {
@@ -45,15 +36,6 @@ const contactMethods = [
     href: 'tel:+16195550123',
     isPrimary: false,
     details: 'Yes, texting is totally fine'
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    description: 'Need to write it all out? Have specific questions? Not ready to talk yet? Email works great.',
-    action: 'jordan@affairrecoverysd.com',
-    href: 'mailto:jordan@affairrecoverysd.com',
-    isPrimary: false,
-    details: 'I\'ll get back to you within 48 hours'
   }
 ]
 
@@ -158,17 +140,6 @@ const officeInfo = [
 export default function ContactPage() {
   return (
     <>
-      {/* Structured Data */}
-      {typeof window === 'undefined' && (
-        <>
-          {generateBreadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'Contact', url: '/contact' },
-          ])}
-          {generateLocalBusinessSchema()}
-        </>
-      )}
-
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24 bg-gradient-to-br from-deepTeal-50 via-lightGray-50 to-turquoise-50 overflow-hidden">
         {/* Background Elements */}
@@ -271,6 +242,16 @@ export default function ContactPage() {
                 </PremiumCard>
               </motion.div>
             ))}
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <ContactForm />
+            </motion.div>
           </div>
         </div>
       </section>
