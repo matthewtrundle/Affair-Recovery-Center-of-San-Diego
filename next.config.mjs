@@ -8,7 +8,8 @@ const nextConfig = {
   },
   productionBrowserSourceMaps: false,
   webpack: (config, { isServer }) => {
-    // Disable CSS minimization completely
+    // Disable CSS minimization due to syntax error in generated CSS at line 2488
+    // TODO: Fix CSS syntax error and re-enable for better performance
     if (!isServer && config.optimization) {
       config.optimization.minimize = false;
     }

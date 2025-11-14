@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { PremiumCard, ServiceCard } from '@/components/ui/PremiumCard'
@@ -312,12 +313,15 @@ export function MainServicesSection() {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-coral/20 to-sage/20 blur-2xl" />
                   <div className="relative glass backdrop-blur-xl bg-white/10 rounded-2xl p-3 border border-white/20">
-                    <img
-                      src="/images/sections/couple-hero-healing.webp"
-                      alt="Couple working together toward healing and recovery"
-                      className="w-full h-64 lg:h-80 object-cover rounded-xl"
-                    />
-                    <div className="absolute inset-3 bg-gradient-to-t from-deepTeal-900/60 via-transparent to-transparent rounded-xl" />
+                    <div className="relative w-full h-64 lg:h-80 rounded-xl overflow-hidden">
+                      <Image
+                        src="/images/sections/couple-hero-healing.webp"
+                        alt="Couple working together toward healing and recovery"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/60 via-transparent to-transparent" />
+                    </div>
                   </div>
                 </div>
               </motion.div>

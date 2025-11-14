@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import Image from 'next/image'
 
 interface ParallaxSectionProps {
   children: React.ReactNode
@@ -246,10 +247,11 @@ export function StickyScrollReveal({
               {section.image && (
                 <RevealOnScroll delay={index * 0.1 + 0.2}>
                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                    <img
+                    <Image
                       src={section.image}
                       alt={section.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
                   </div>

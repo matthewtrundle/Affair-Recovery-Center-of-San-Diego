@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, Filter, Calendar, Clock, Tag, ArrowRight } from 'lucide-react'
 import { PremiumCard } from '@/components/ui/PremiumCard'
@@ -96,14 +96,14 @@ export function BlogList({ initialPosts, categories }: BlogListProps) {
   }
 
   // Helper to get category name from post
-  const getCategoryName = (post: Post): string => {
+  const getCategoryName = useCallback((post: Post): string => {
     if (typeof post.category === 'string') {
       // Legacy: try to find matching category by slug
       const found = categories.find(c => c.slug === post.category)
       return found?.name || post.category
     }
     return post.category.name
-  }
+  }, [categories])
 
   // Filter posts based on category and search
   const filteredPosts = useMemo(() => {
@@ -128,7 +128,7 @@ export function BlogList({ initialPosts, categories }: BlogListProps) {
     }
 
     return filtered
-  }, [initialPosts, selectedCategory, searchQuery, categories])
+  }, [initialPosts, selectedCategory, searchQuery, getCategoryName])
 
   const displayedPosts = filteredPosts.slice(0, visiblePosts)
   const hasMorePosts = visiblePosts < filteredPosts.length

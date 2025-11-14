@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
+import Image from 'next/image'
 
 export function ProblemPromiseSection() {
   return (
@@ -19,10 +20,11 @@ export function ProblemPromiseSection() {
         viewport={{ once: true }}
         className="absolute -top-20 -right-20 w-96 h-96 rounded-full overflow-hidden"
       >
-        <img
+        <Image
           src="/images/sections/feature-zen-garden.webp"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </motion.div>
 
@@ -86,10 +88,11 @@ export function ProblemPromiseSection() {
             <div className="relative glass backdrop-blur-xl bg-white/90 rounded-3xl p-10 shadow-2xl border border-white/50">
               {/* Background image overlay */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-5">
-                <img
+                <Image
                   src="/images/sections/feature-transformation.webp"
                   alt=""
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
 

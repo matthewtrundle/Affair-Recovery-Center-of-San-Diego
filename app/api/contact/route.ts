@@ -1,12 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy initialize Resend to prevent build-time errors when env var is missing
+let resend: Resend | null = null
+function getResendClient() {
+  if (!resend && process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY)
+  }
+  return resend
+}
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     const { name, email, phone, message, preferredContact, sessionType } = body
+
+    // Check if Resend is configured
+    const resendClient = getResendClient()
+    if (!resendClient) {
+      return NextResponse.json(
+        { error: 'Email service not configured. Please contact us directly at jordan@affairrecoverysd.com' },
+        { status: 503 }
+      )
+    }
 
     // Validation
     if (!name || !email || !message) {
@@ -43,7 +59,7 @@ Sent from Affair Recovery Center website contact form
     `.trim()
 
     // Send email via Resend
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await resendClient.emails.send({
       from: process.env.MAIL_FROM || 'Affair Recovery Center <contact@affairrecoverysd.com>',
       to: 'jordan@affairrecoverysd.com',
       reply_to: email,
@@ -60,9 +76,9 @@ Sent from Affair Recovery Center website contact form
     }
 
     // Optional: Add to Resend audience if configured
-    if (process.env.RESEND_AUDIENCE_ID) {
+    if (process.env.RESEND_AUDIENCE_ID && resendClient) {
       try {
-        await resend.contacts.create({
+        await resendClient.contacts.create({
           email,
           firstName: name.split(' ')[0],
           lastName: name.split(' ').slice(1).join(' ') || undefined,
