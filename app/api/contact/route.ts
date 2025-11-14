@@ -46,7 +46,7 @@ Sent from Affair Recovery Center website contact form
     const { data, error } = await resend.emails.send({
       from: process.env.MAIL_FROM || 'Affair Recovery Center <contact@affairrecoverysd.com>',
       to: 'jordan@affairrecoverysd.com',
-      replyTo: email,
+      reply_to: email,
       subject: `New Contact Form Submission from ${name}`,
       text: emailContent,
     })
