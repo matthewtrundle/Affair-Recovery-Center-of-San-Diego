@@ -6,11 +6,75 @@ import { Search, Filter, Calendar, Clock, Tag, ArrowRight } from 'lucide-react'
 import { PremiumCard } from '@/components/ui/PremiumCard'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Post, Category } from '@/lib/payload'
 
 interface BlogListProps {
   initialPosts: Post[]
   categories: Category[]
+}
+
+// Image mapping for blog post categories/themes
+// All available unique blog images (29 total - ensuring variety)
+const ALL_BLOG_IMAGES = [
+  // Couple/Relationship Images
+  '/images/sections/couple-hero-healing.webp',
+  '/images/sections/hero-couple-portrait.webp',
+  '/images/sections/feature-couple-beach.webp',
+  '/images/couples/beach-conversation.webp',
+
+  // Metaphor/Abstract Images
+  '/images/metaphor/metaphor-journey.webp',
+  '/images/metaphor/metaphor-calm-waters.webp',
+  '/images/metaphor/metaphor-connection.webp',
+
+  // San Diego Beach Scenes
+  '/images/sections/beach-la-jolla-cove.webp',
+  '/images/sections/beach-torrey-pines.webp',
+  '/images/sections/beach-sunset-cliffs.webp',
+  '/images/sections/beach-coronado.webp',
+  '/images/sections/beach-del-mar.webp',
+  '/images/sections/beach-windansea.webp',
+  '/images/sections/beach-tide-pools.webp',
+  '/images/sections/beach-zen-stones.webp',
+  '/images/sections/beach-driftwood-heart.webp',
+  '/images/sections/beach-sage-plants.webp',
+  '/images/beach/windansea-couple-walk.webp',
+  '/images/beach/torrey-pines-sunset.webp',
+
+  // Feature/Transformation Images
+  '/images/sections/feature-transformation.webp',
+  '/images/sections/feature-zen-garden.webp',
+  '/images/sections/section-marble-texture.webp',
+
+  // Parallax/Abstract
+  '/images/parallax/hero-parallax-ocean.webp',
+  '/images/parallax/hero-abstract-journey.webp',
+]
+
+// Track which images have been used to ensure uniqueness
+const usedImages = new Set<string>()
+
+const getPostImage = (post: Post): string => {
+  // Hash the post ID to get a consistent index for this specific post
+  const postIdHash = post.id ?
+    String(post.id).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) :
+    Math.floor(Math.random() * ALL_BLOG_IMAGES.length)
+
+  // Start with the hash-based index
+  let index = postIdHash % ALL_BLOG_IMAGES.length
+  let attempts = 0
+
+  // Find an unused image, cycling through the array if needed
+  while (usedImages.has(ALL_BLOG_IMAGES[index]) && attempts < ALL_BLOG_IMAGES.length) {
+    index = (index + 1) % ALL_BLOG_IMAGES.length
+    attempts++
+  }
+
+  const selectedImage = ALL_BLOG_IMAGES[index]
+  usedImages.add(selectedImage)
+
+  return selectedImage
 }
 
 export function BlogList({ initialPosts, categories }: BlogListProps) {
@@ -96,7 +160,7 @@ export function BlogList({ initialPosts, categories }: BlogListProps) {
       >
         {/* Search Input */}
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40 w-5 h-5" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70 w-5 h-5" />
           <input
             type="text"
             placeholder="Search articles..."
@@ -220,14 +284,20 @@ function BlogPostCard({ post, index, formatDate, getCategoryLabel }: {
         >
           {/* Featured Image */}
           <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-turquoise/20 to-lime/20">
-            {/* Placeholder for featured image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-deepTeal-600 to-deepTeal-800 flex items-center justify-center">
-              <div className="text-white/30 text-4xl">📖</div>
-            </div>
+            <Image
+              src={getPostImage(post)}
+              alt={post.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/60 to-transparent" />
 
             {/* Category Badge */}
-            <div className="absolute top-3 left-3">
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-black/20 backdrop-blur-sm text-xs font-medium text-white">
+            <div className="absolute top-3 left-3 z-10">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-xs font-medium text-white">
                 <Tag className="w-3 h-3" />
                 {getCategoryLabel()}
               </span>
@@ -235,7 +305,7 @@ function BlogPostCard({ post, index, formatDate, getCategoryLabel }: {
 
             {/* Featured Badge */}
             {post.featured && (
-              <div className="absolute top-3 right-3">
+              <div className="absolute top-3 right-3 z-10">
                 <span className="inline-flex items-center px-2 py-1 rounded-full bg-lime/80 backdrop-blur-sm text-xs font-medium text-white">
                   Featured
                 </span>

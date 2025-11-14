@@ -207,7 +207,7 @@ export default async function BlogPostPage({ params }: Props) {
   )
 }
 
-// Component to render Lexical content
+// Component to render Lexical content with enhanced visual design
 function LexicalContent({ content }: { content: any }) {
   if (!content || !content.root) {
     return (
@@ -217,43 +217,199 @@ function LexicalContent({ content }: { content: any }) {
     )
   }
 
-  // Simple renderer for Lexical content
-  // This is a basic implementation - you may want to enhance it with more node types
-  const renderNode = (node: any): React.ReactNode => {
+  let sectionCount = 0
+
+  // Helper to detect if text contains statistics
+  const isStatistic = (text: string): boolean => {
+    return /\d+%|\d+-\d+%|\d+ (months?|years?|weeks?|days?)/.test(text)
+  }
+
+  // Helper to extract and highlight statistics
+  const highlightStatistics = (text: string): React.ReactNode => {
+    const statRegex = /(\d+%|\d+-\d+%|\d+ (?:months?|years?|weeks?|days?))/g
+    const parts = text.split(statRegex)
+
+    return parts.map((part, i) => {
+      if (statRegex.test(part)) {
+        return (
+          <span key={i} className="inline-block px-2 py-0.5 bg-turquoise/20 border border-turquoise/30 rounded text-turquoise font-semibold">
+            {part}
+          </span>
+        )
+      }
+      return <span key={i}>{part}</span>
+    })
+  }
+
+  // Helper to detect if paragraph contains table markdown
+  const isTableRow = (text: string): boolean => {
+    return text.trim().startsWith('|') && text.trim().endsWith('|')
+  }
+
+  // Helper to parse and render markdown tables
+  const renderTable = (rows: string[]): React.ReactNode => {
+    if (rows.length < 3) return null // Need at least header, separator, and one data row
+
+    const parseRow = (row: string): string[] => {
+      return row.split('|').map(cell => cell.trim()).filter(cell => cell)
+    }
+
+    const headers = parseRow(rows[0])
+    const dataRows = rows.slice(2).map(parseRow) // Skip separator row
+
+    return (
+      <div className="my-10 overflow-x-auto">
+        <table className="w-full border-collapse bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden">
+          <thead>
+            <tr className="bg-turquoise/20 border-b border-white/20">
+              {headers.map((header, i) => (
+                <th key={i} className="px-6 py-4 text-left text-white font-semibold border-r border-white/10 last:border-r-0">
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {dataRows.map((row, rowIdx) => (
+              <tr key={rowIdx} className="border-b border-white/10 last:border-b-0 hover:bg-white/5 transition-colors">
+                {row.map((cell, cellIdx) => (
+                  <td key={cellIdx} className="px-6 py-4 text-white/90 border-r border-white/10 last:border-r-0">
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
+  const renderNode = (node: any, depth: number = 0): React.ReactNode => {
     if (!node) return null
 
     switch (node.type) {
       case 'root':
-        return <div className="space-y-4">{node.children?.map((child: any, i: number) => <div key={i}>{renderNode(child)}</div>)}</div>
+        // Collect consecutive table rows and render as table
+        const children: React.ReactNode[] = []
+        let tableBuffer: any[] = []
+
+        node.children?.forEach((child: any, i: number) => {
+          if (child.type === 'paragraph') {
+            const text = child.children?.map((c: any) => c.text || '').join('').trim()
+            if (isTableRow(text)) {
+              tableBuffer.push(text)
+              return
+            }
+          }
+
+          // If we have accumulated table rows and current node is not a table row, render the table
+          if (tableBuffer.length > 0) {
+            children.push(<div key={`table-${i}`}>{renderTable(tableBuffer)}</div>)
+            tableBuffer = []
+          }
+
+          children.push(<div key={i}>{renderNode(child, depth + 1)}</div>)
+        })
+
+        // Render any remaining table rows
+        if (tableBuffer.length > 0) {
+          children.push(<div key="table-final">{renderTable(tableBuffer)}</div>)
+        }
+
+        return <div className="space-y-8">{children}</div>
 
       case 'paragraph':
-        return <p className="text-white/90 leading-relaxed">{node.children?.map((child: any, i: number) => renderNode(child))}</p>
+        const paragraphText = node.children?.map((c: any) => c.text || '').join('')
+        const containsStats = isStatistic(paragraphText)
+
+        // Render paragraph with stat highlighting if needed
+        const paragraphContent = node.children?.map((child: any, i: number) => {
+          if (child.type === 'text' && containsStats) {
+            return <span key={i}>{highlightStatistics(child.text || '')}</span>
+          }
+          return renderNode(child, depth + 1)
+        })
+
+        return (
+          <p className="text-white/90 leading-[1.8] text-lg mb-6">
+            {paragraphContent}
+          </p>
+        )
 
       case 'heading':
         const HeadingTag = `h${node.tag}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+        const isH2 = node.tag === 'h2'
+
+        sectionCount++
+
         const headingClasses = {
-          h1: 'text-4xl font-heading font-bold text-white mt-8 mb-4',
-          h2: 'text-3xl font-heading font-bold text-white mt-6 mb-3',
-          h3: 'text-2xl font-heading font-semibold text-white mt-5 mb-2',
-          h4: 'text-xl font-heading font-semibold text-white mt-4 mb-2',
-          h5: 'text-lg font-heading font-semibold text-white mt-3 mb-2',
-          h6: 'text-base font-heading font-semibold text-white mt-2 mb-1',
+          h1: 'text-5xl font-heading font-bold text-white mt-16 mb-8 pb-4 border-b-2 border-turquoise/30',
+          h2: 'text-3xl font-heading font-bold text-white mt-14 mb-6 relative',
+          h3: 'text-2xl font-heading font-semibold text-turquoise mt-10 mb-4',
+          h4: 'text-xl font-heading font-semibold text-white/90 mt-8 mb-3',
+          h5: 'text-lg font-heading font-semibold text-white/80 mt-6 mb-2',
+          h6: 'text-base font-heading font-semibold text-white/70 mt-4 mb-2',
         }
-        return <HeadingTag className={headingClasses[HeadingTag]}>{node.children?.map((child: any, i: number) => renderNode(child))}</HeadingTag>
+
+        return (
+          <>
+            {isH2 && sectionCount > 1 && (
+              <div className="my-12 flex items-center gap-4">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                <div className="w-2 h-2 rounded-full bg-turquoise/50" />
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              </div>
+            )}
+            <HeadingTag className={headingClasses[HeadingTag]}>
+              {isH2 && (
+                <span className="absolute -left-6 top-1/2 -translate-y-1/2 w-1 h-12 bg-gradient-to-b from-turquoise to-lime rounded-full opacity-60" />
+              )}
+              {node.children?.map((child: any, i: number) => renderNode(child, depth + 1))}
+            </HeadingTag>
+          </>
+        )
 
       case 'list':
-        const ListTag = node.listType === 'number' ? 'ol' : 'ul'
-        return <ListTag className={`${node.listType === 'number' ? 'list-decimal' : 'list-disc'} list-inside text-white/90 space-y-2 my-4`}>{node.children?.map((child: any, i: number) => renderNode(child))}</ListTag>
+        const ListTag = node.tag === 'ol' ? 'ol' : 'ul'
+        return (
+          <div className="my-8 p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl">
+            <ListTag className={`${node.tag === 'ol' ? 'list-decimal' : 'list-disc'} list-inside text-white/90 space-y-3 text-lg leading-relaxed`}>
+              {node.children?.map((child: any, i: number) => renderNode(child, depth + 1))}
+            </ListTag>
+          </div>
+        )
 
       case 'listitem':
-        return <li className="ml-4">{node.children?.map((child: any, i: number) => renderNode(child))}</li>
+        return (
+          <li className="ml-2 pl-2">
+            {node.children?.map((child: any, i: number) => {
+              // For list items, render children directly without extra paragraph wrapper
+              if (child.type === 'paragraph') {
+                return <span key={i} className="inline">{child.children?.map((c: any, j: number) => renderNode(c, depth + 1))}</span>
+              }
+              return renderNode(child, depth + 1)
+            })}
+          </li>
+        )
 
       case 'text':
         let textContent = node.text || ''
-        let className = ''
+        let className = 'text-white/90'
 
-        if (node.format) {
-          if (node.format & 1) className += ' font-bold' // Bold
+        // Check for bold formatting (bit flag 1 for bold in Lexical)
+        if (node.format && Array.isArray(node.format)) {
+          if (node.format.includes('bold')) {
+            className += ' font-bold text-white'
+          }
+          if (node.format.includes('italic')) {
+            className += ' italic'
+          }
+          if (node.format.includes('underline')) {
+            className += ' underline'
+          }
+        } else if (typeof node.format === 'number') {
+          if (node.format & 1) className += ' font-bold text-white' // Bold
           if (node.format & 2) className += ' italic' // Italic
           if (node.format & 8) className += ' underline' // Underline
         }
@@ -266,27 +422,34 @@ function LexicalContent({ content }: { content: any }) {
             href={node.url}
             target={node.newTab ? '_blank' : undefined}
             rel={node.newTab ? 'noopener noreferrer' : undefined}
-            className="text-turquoise hover:text-lime underline transition-colors"
+            className="text-turquoise hover:text-lime underline decoration-turquoise/50 hover:decoration-lime/50 transition-all font-medium"
           >
-            {node.children?.map((child: any, i: number) => renderNode(child))}
+            {node.children?.map((child: any, i: number) => renderNode(child, depth + 1))}
           </a>
         )
 
       case 'quote':
         return (
-          <blockquote className="border-l-4 border-turquoise pl-6 my-6 italic text-white/80">
-            {node.children?.map((child: any, i: number) => renderNode(child))}
+          <blockquote className="my-10 p-6 bg-gradient-to-br from-turquoise/10 to-lime/5 border-l-4 border-turquoise rounded-r-xl">
+            <div className="flex gap-4">
+              <svg className="w-8 h-8 text-turquoise/40 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+              </svg>
+              <div className="italic text-white/90 text-lg leading-relaxed">
+                {node.children?.map((child: any, i: number) => renderNode(child, depth + 1))}
+              </div>
+            </div>
           </blockquote>
         )
 
       default:
         // Fallback for unknown node types
         if (node.children) {
-          return <>{node.children.map((child: any, i: number) => renderNode(child))}</>
+          return <>{node.children.map((child: any, i: number) => renderNode(child, depth + 1))}</>
         }
         return null
     }
   }
 
-  return <div>{renderNode(content.root)}</div>
+  return <div className="blog-content">{renderNode(content.root)}</div>
 }
