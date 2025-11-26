@@ -40,6 +40,8 @@ const navigation = [
       { name: 'Meet Your Therapist', href: '/about', description: 'Get to know Jordan' },
       { name: 'Approach', href: '/approach', description: 'Evidence-based methods' },
       { name: 'Services', href: '/services', description: 'Therapy options' },
+      { name: 'For the Hurt Partner', href: '/for-the-hurt-partner', description: 'If you were betrayed' },
+      { name: 'For the Partner Who Strayed', href: '/for-the-partner-who-strayed', description: 'If you had the affair' },
     ]
   },
   { name: 'Online Sessions', href: '/california-online-sessions', icon: Video, description: 'California telehealth' },
