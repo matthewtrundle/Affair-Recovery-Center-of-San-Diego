@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
+import { PageHeader } from '@/components/sections/PageHeader'
+import { HelpCircle } from 'lucide-react'
 
 export const metadata: Metadata = generateSEO({
   title: 'FAQ | Affair Recovery Therapy Questions Answered',
@@ -49,17 +51,14 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-lightGray-100 via-white to-lime-50">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="font-display text-4xl md:text-6xl text-deepTeal-600 mb-6">
-            Infidelity Recovery Therapy – FAQs
-          </h1>
-          <p className="text-lg md:text-xl text-slate leading-relaxed max-w-3xl mx-auto">
-            Common questions answered with clarity and compassion.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        badge="Questions Answered"
+        badgeIcon={HelpCircle}
+        title="Infidelity Recovery Therapy"
+        titleHighlight="FAQs"
+        subtitle="Common questions answered with clarity and compassion."
+        variant="lime"
+      />
 
       {/* FAQ Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -305,9 +304,9 @@ export default function FAQPage() {
       {/* CTA Band */}
       <CTABand
         title="Have More Questions?"
-        description="Schedule a free consultation to discuss your specific situation."
+        description="Reach out to discuss your specific situation and how I can help."
         buttonText="Let's Talk"
-        buttonHref="/schedule"
+        buttonHref="/contact"
       />
     </>
   )

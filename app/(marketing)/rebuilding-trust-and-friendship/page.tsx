@@ -174,7 +174,7 @@ export default function RebuildingTrustPage() {
         title="Let's Get Started"
         description="Take the first step toward rebuilding trust, friendship, and lasting connection."
         buttonText="Start Healing Today"
-        buttonHref="/schedule"
+        buttonHref="/contact"
       />
     </>
   )

@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Hero } from '@/components/sections/Hero'
+import { PageHeader } from '@/components/sections/PageHeader'
 import { CTABand } from '@/components/sections/CTABand'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Users, Heart, Brain, Calendar, Clock, Target } from 'lucide-react'
@@ -23,15 +23,13 @@ export default function BetrayalRecoveryPage() {
         { name: 'Betrayal Recovery', url: '/services/betrayal-recovery' },
       ])}
 
-      <Hero
-        title="Affair Recovery for San Diego Couples"
-        subtitle="Real help when everything feels broken"
-        description="Whether you're in Coronado or Carlsbad, I've helped hundreds of local couples move from discovery day devastation to actually trusting again. It's possible. I've seen it happen."
-        primaryCTA={{
-          text: 'Let\'s Talk (Free 15 min)',
-          href: '/schedule',
-        }}
-        backgroundImage="/images/hero-services.jpg"
+      <PageHeader
+        badge="Betrayal Recovery Therapy"
+        badgeIcon={Heart}
+        title="Affair Recovery for"
+        titleHighlight="San Diego Couples"
+        subtitle="Whether you're in Coronado or Carlsbad, I've helped hundreds of local couples move from discovery day devastation to actually trusting again. It's possible. I've seen it happen."
+        variant="turquoise"
       />
 
       {/* Who This Is For */}
@@ -334,7 +332,7 @@ export default function BetrayalRecoveryPage() {
         title="Ready to stop feeling like this?"
         description="Let's talk. Free 15-minute call to see if we're a good fit. No pressure, just real conversation."
         buttonText="Book Your Free Call"
-        buttonHref="/schedule"
+        buttonHref="/contact"
       />
     </>
   )

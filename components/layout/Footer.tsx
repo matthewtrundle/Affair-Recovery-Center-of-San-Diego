@@ -1,9 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Calendar, Heart, Clock } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { trackMailtoClick, trackTelClick, trackScheduleClick } from '@/lib/analytics'
+import { Phone, MapPin, Clock } from 'lucide-react'
+import { trackTelClick } from '@/lib/analytics'
 
 const navigation = {
   main: [
@@ -24,24 +23,16 @@ const navigation = {
 }
 
 export function Footer() {
-  const handleEmailClick = () => {
-    trackMailtoClick('footer')
-  }
-
   const handlePhoneClick = () => {
     trackTelClick('footer')
-  }
-
-  const handleScheduleClick = () => {
-    trackScheduleClick('footer')
   }
 
   return (
     <footer className="bg-gradient-to-b from-deepTeal-800 to-deepTeal-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* About Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 lg:pr-8">
             <h3 className="text-2xl font-display font-light mb-2">
               ARC San Diego
             </h3>
@@ -53,16 +44,6 @@ export function Footer() {
               and rebuilding trust. Jordan Zipkin, LMFT, brings over 15 years of experience
               helping San Diego couples heal using Gottman Method and Relational Life Therapy.
             </p>
-            <Button
-              variant="secondary"
-              asChild
-              onClick={handleScheduleClick}
-            >
-              <Link href="/schedule">
-                <Calendar className="h-4 w-4 mr-2" />
-                Schedule Your Free 15-Min Consultation
-              </Link>
-            </Button>
           </div>
 
           {/* Quick Links */}
@@ -88,27 +69,14 @@ export function Footer() {
             <ul className="space-y-3 text-gray-300">
               <li>
                 <a
-                  href="tel:+18585551234"
+                  href="tel:+16198810593"
                   onClick={handlePhoneClick}
                   className="flex items-start hover:text-white transition-colors group"
                 >
                   <Phone className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
                   <div>
-                    <p className="group-hover:text-white">(858) 555-1234</p>
+                    <p className="group-hover:text-white">(619) 881-0593</p>
                     <p className="text-xs text-gray-400">Mon-Fri, 9am-6pm PST</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:jordan@affairrecoverysandiego.com"
-                  onClick={handleEmailClick}
-                  className="flex items-start hover:text-white transition-colors group"
-                >
-                  <Mail className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
-                  <div>
-                    <p className="group-hover:text-white break-all">jordan@affairrecoverysandiego.com</p>
-                    <p className="text-xs text-gray-400">Response within 24 hours</p>
                   </div>
                 </a>
               </li>

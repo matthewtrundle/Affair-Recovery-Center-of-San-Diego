@@ -1,10 +1,10 @@
 'use client'
 
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Calendar, ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import { useRef, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // Video paths and quotes
 const videos = [
@@ -27,53 +27,18 @@ const videos = [
 ]
 
 export function PremiumHero() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
 
   // Auto-rotate videos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentVideoIndex((prev) => (prev + 1) % videos.length)
-    }, 5000) // Change video every 5 seconds to match video length
+    }, 5000)
     return () => clearInterval(interval)
   }, [])
 
-  const { scrollY } = useScroll()
-
-  // Parallax transforms
-  const backgroundY = useTransform(scrollY, [0, 1000], [0, -300])
-  const midgroundY = useTransform(scrollY, [0, 1000], [0, -150])
-  const foregroundY = useTransform(scrollY, [0, 1000], [0, -50])
-  const textY = useTransform(scrollY, [0, 500], [0, 150])
-  const opacity = useTransform(scrollY, [0, 500], [1, 0])
-
-  // Smooth spring animations
-  const springConfig = { stiffness: 100, damping: 30 }
-  const backgroundYSpring = useSpring(backgroundY, springConfig)
-  const midgroundYSpring = useSpring(midgroundY, springConfig)
-
-  // Mouse parallax effect
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return
-      const { clientX, clientY } = e
-      const { width, height } = containerRef.current.getBoundingClientRect()
-      setMousePosition({
-        x: (clientX - width / 2) / width,
-        y: (clientY - height / 2) / height,
-      })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
   return (
-    <section
-      ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700"
-    >
+    <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
       {/* Background Layer - San Diego Skyline (Subtle) */}
       <div className="absolute inset-0 z-0">
         <div
@@ -87,123 +52,34 @@ export function PremiumHero() {
         <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/80 via-deepTeal-800/40 to-transparent" />
       </div>
 
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0 z-15">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              x: [-10, 10, -10],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 5 + Math.random() * 10,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
-
       {/* Content */}
-      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 min-h-[75vh] flex items-center pt-20 lg:pt-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center w-full">
-          {/* Left Content */}
-          <motion.div
-            className="text-left"
-            style={{ y: textY, opacity }}
-          >
-            {/* Main Heading - Direct, SEO-optimized */}
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-6"
-            >
-              Affair Recovery Therapy in San Diego &mdash; Rebuild Trust and Feel Secure Again
-            </motion.h1>
-
-          {/* Supporting Subhead - Trauma-aware, accessible */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-xl md:text-2xl font-heading text-white/90 mb-8 max-w-2xl leading-relaxed"
-          >
-            When infidelity shakes your world, it feels impossible to move forward. With the right guidance, you can rebuild trust, find calm, and create a relationship that&apos;s stronger than before.
-          </motion.p>
-
-            {/* CTA Buttons with magnetic effect */}
+      <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 min-h-[600px] lg:min-h-[700px]">
+        <div className="flex flex-col h-full">
+          {/* Top Section - Grid with Text and Video */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center flex-1">
+            {/* Left Content */}
             <motion.div
+              className="text-left"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-6"
+              transition={{ duration: 0.8 }}
             >
-              <MagneticButton>
-                <Button
-                  size="lg"
-                  className="glass-dark text-white border-white/20 hover:bg-white/10 px-8 py-4 group"
-                  asChild
-                >
-                  <Link href="/schedule">
-                    <Sparkles className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    Start Healing Today
-                  </Link>
-                </Button>
-              </MagneticButton>
+              {/* Main Heading - Direct, SEO-optimized */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-6">
+                Affair Recovery Therapy in San Diego &mdash; Rebuild Trust and Feel Secure Again
+              </h1>
 
-              <MagneticButton>
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="text-white hover:bg-white/10 px-8 py-4 group"
-                  asChild
-                >
-                  <Link href="/approach">
-                    Learn How We Help
-                    <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
-                  </Link>
-                </Button>
-              </MagneticButton>
+              {/* Supporting Subhead - Trauma-aware, accessible */}
+              <p className="text-xl md:text-2xl font-heading text-white/90 max-w-2xl leading-relaxed">
+                When infidelity shakes your world, it feels impossible to move forward. With the right guidance, you can rebuild trust, find calm, and create a relationship that&apos;s stronger than before.
+              </p>
             </motion.div>
-
-            {/* Trust Indicators with Beach Elements */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
-              className="mt-12 flex flex-wrap gap-6 text-white/70 text-sm"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-lightGray-400 rounded-full animate-pulse" />
-                <span>Gottman Level 3 Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-turquoise-300 rounded-full animate-pulse" />
-                <span>Published Clinical Researcher</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-lime-400 rounded-full animate-pulse" />
-                <span>UCSD Clinical Faculty</span>
-              </div>
-            </motion.div>
-          </motion.div>
 
           {/* Right Side Video Box */}
           <motion.div
-            initial={{ opacity: 0, x: 100, scale: 0.8 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.6, type: "spring" }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="relative order-first lg:order-last"
           >
             <div className="relative">
@@ -228,7 +104,7 @@ export function PremiumHero() {
                     />
                   </AnimatePresence>
 
-                  {/* Gradient overlay - reduced opacity for better visibility */}
+                  {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/30 via-transparent to-transparent" />
 
                   {/* Video indicators */}
@@ -252,9 +128,9 @@ export function PremiumHero() {
                     <motion.div
                       key={currentVideoIndex}
                       className="absolute bottom-6 left-6 right-6"
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
+                      exit={{ opacity: 0 }}
                       transition={{ duration: 0.5 }}
                     >
                       <p className="text-white/90 text-lg font-heading italic">
@@ -264,78 +140,61 @@ export function PremiumHero() {
                   </AnimatePresence>
                 </div>
               </div>
+            </div>
+          </motion.div>
+          </div>
 
-              {/* Floating accent elements */}
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                  rotate: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-lime-400/20 to-turquoise-400/20 rounded-full blur-xl"
-              />
+          {/* Bottom Section - Centered CTAs */}
+          <motion.div
+            className="mt-12 lg:mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            {/* CTA Buttons - Centered */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="px-8 py-4"
+                asChild
+              >
+                <Link href="/contact">
+                  <Sparkles className="h-5 w-5 mr-2" />
+                  Begin Your Healing
+                </Link>
+              </Button>
+
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 py-4 border-white/30 text-white hover:bg-white/10"
+                asChild
+              >
+                <Link href="/approach">
+                  Learn How We Help
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Trust Indicators - Centered */}
+            <div className="mt-8 flex flex-wrap gap-6 justify-center text-white/70 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-lightGray-400 rounded-full" />
+                <span>Gottman Level 3 Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-turquoise-300 rounded-full" />
+                <span>Published Clinical Researcher</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-lime-400 rounded-full" />
+                <span>UCSD Clinical Faculty</span>
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-30"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-white/50"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 bg-white/50 rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
-  )
-}
-
-// Magnetic Button Component
-function MagneticButton({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-
-  const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return
-    const { clientX, clientY } = e
-    const { height, width, left, top } = ref.current.getBoundingClientRect()
-    const middleX = clientX - (left + width / 2)
-    const middleY = clientY - (top + height / 2)
-    setPosition({ x: middleX * 0.1, y: middleY * 0.1 })
-  }
-
-  const reset = () => {
-    setPosition({ x: 0, y: 0 })
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
-      animate={position}
-      transition={{ type: "spring", stiffness: 150, damping: 15 }}
-    >
-      {children}
-    </motion.div>
   )
 }

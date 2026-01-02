@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
+import { PageHeader } from '@/components/sections/PageHeader'
 import { CheckCircle, Heart, Shield, MessageCircle, RefreshCw, Eye, HandHeart, Lightbulb } from 'lucide-react'
 import Image from 'next/image'
 
@@ -59,20 +60,15 @@ export default function StrayedPartnerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-lightGray-100 via-white to-lime-50">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-deepTeal-600 mb-6">
-            Therapy for the Partner Who Strayed
-          </h1>
-          <p className="text-xl md:text-2xl text-slate max-w-3xl mx-auto leading-relaxed mb-4">
-            Rebuild Trust in San Diego
-          </p>
-          <p className="text-lg text-deepTeal-700 font-medium">
-            & Online Across California
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        badge="A Path to Redemption"
+        badgeIcon={RefreshCw}
+        title="Therapy for the Partner Who"
+        titleHighlight="Strayed"
+        subtitle="Learn to show up with patience, honesty, and the consistent actions that rebuild trust"
+        location="San Diego & Online Across California"
+        variant="lime"
+      />
 
       {/* Opening Statement */}
       <section className="py-12 md:py-16 bg-white">
@@ -341,9 +337,9 @@ export default function StrayedPartnerPage() {
       {/* CTA Band */}
       <CTABand
         title="Take Responsibility, Start Healing"
-        description="The first step toward rebuilding trust is showing up. Schedule a consultation today."
-        buttonText="Schedule a Consultation"
-        buttonHref="/schedule"
+        description="The first step toward rebuilding trust is showing up. Take that step today."
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )

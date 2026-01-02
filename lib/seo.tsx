@@ -17,7 +17,7 @@ const siteConfig = {
   name: 'Affair Recovery Center of San Diego',
   description: 'Evidence-based couples therapy specializing in affair recovery, betrayal trauma, and rebuilding trust. Gottman Method and Relational Life Therapy approaches.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://affairrecoverysandiego.com',
-  ogImage: '/og/home.png',
+  ogImage: '/og/og-default.png',
   author: 'Jordan Zipkin, LMFT',
   links: {
     twitter: 'https://twitter.com/affairrecoverysd',
@@ -114,7 +114,7 @@ export function generateOrganizationSchema() {
     name: 'Affair Recovery Center of San Diego',
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/brand/logo.png`,
+    logo: `${siteConfig.url}/images/logo/logo3.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-619-555-0123',
@@ -206,7 +206,7 @@ export function generateArticleSchema(article: {
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/images/brand/logo.png`,
+        url: `${siteConfig.url}/images/logo/logo3.png`,
       },
     },
   })

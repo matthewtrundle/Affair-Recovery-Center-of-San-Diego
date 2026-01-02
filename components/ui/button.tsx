@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Primary CTA - Deep Teal with white text (most prominent)
-        default: "bg-deepTeal text-white hover:bg-deepTeal-700 hover:-translate-y-0.5 shadow-lg hover:shadow-xl",
+        // Primary CTA - Gradient from deepTeal through turquoise to lime
+        default: "bg-gradient-to-r from-deepTeal-600 via-turquoise-500 to-lime-400 text-white hover:from-deepTeal-500 hover:via-turquoise-400 hover:to-lime-300 hover:-translate-y-0.5 shadow-lg hover:shadow-xl hover:shadow-turquoise-500/25",
 
-        // Secondary - Turquoise with white text (secondary actions)
-        secondary: "bg-turquoise text-white hover:bg-turquoise-600 hover:-translate-y-0.5 shadow-lg hover:shadow-xl",
+        // Secondary - Solid turquoise (for dark backgrounds)
+        secondary: "bg-white text-deepTeal-700 hover:bg-lime-50 hover:-translate-y-0.5 shadow-lg hover:shadow-xl",
 
-        // Outline - White bg with colored border (tertiary actions)
-        outline: "border-2 border-turquoise-200 bg-white text-turquoise-700 hover:bg-turquoise-50 hover:border-turquoise-400 shadow-md hover:shadow-lg",
+        // Outline - Transparent with colored border (tertiary actions)
+        outline: "border-2 border-turquoise-400 bg-transparent text-turquoise-600 hover:bg-turquoise-50 hover:border-turquoise-500 hover:text-turquoise-700 shadow-md hover:shadow-lg",
 
         // Destructive
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",

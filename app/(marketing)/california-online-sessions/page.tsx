@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'California Online Therapy Sessions',
     description: 'Secure online couples therapy sessions throughout California',
     images: [{
-      url: '/og/california-online.png',
+      url: '/og/og-default.png',
       width: 1200,
       height: 630,
       alt: 'California Online Therapy Sessions'
@@ -81,18 +81,17 @@ export default function CaliforniaOnlineSessionsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-deepTeal-700 hover:bg-lime-50 font-semibold px-8 py-6 text-lg"
                 asChild
               >
-                <Link href="/schedule">
+                <Link href="/contact">
                   <Calendar className="w-5 h-5 mr-2" />
-                  Schedule Online Session
+                  Begin Your Healing
                 </Link>
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg"
+                variant="ghost"
+                className="border-2 border-white/60 hover:border-white hover:bg-white/10"
                 asChild
               >
                 <Link href="/approach">
@@ -259,12 +258,11 @@ export default function CaliforniaOnlineSessionsPage() {
             </p>
             <Button
               size="lg"
-              className="bg-white text-deepTeal-700 hover:bg-lime-50 font-semibold px-10 py-6 text-lg"
               asChild
             >
-              <Link href="/schedule">
-                <Calendar className="w-6 h-6 mr-2" />
-                Schedule Your Online Session
+              <Link href="/contact">
+                <Calendar className="w-5 h-5 mr-2" />
+                Begin Your Healing
               </Link>
             </Button>
           </div>

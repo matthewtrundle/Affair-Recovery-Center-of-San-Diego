@@ -53,8 +53,8 @@ export default function ServicesPage() {
       <CTABand
         title="Ready to start your healing journey?"
         description="Take the first step toward rebuilding trust and creating the relationship you both deserve."
-        buttonText="Schedule Your Consultation"
-        buttonHref="/schedule"
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )

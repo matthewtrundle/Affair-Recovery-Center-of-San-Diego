@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
-import { CheckCircle } from 'lucide-react'
+import { PageHeader } from '@/components/sections/PageHeader'
+import { CheckCircle, Heart } from 'lucide-react'
 import Image from 'next/image'
 
 export const metadata: Metadata = generateSEO({
@@ -52,20 +53,15 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-lightGray-100 via-white to-deepTeal-50">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="font-display text-5xl md:text-6xl text-deepTeal-600 mb-6">
-            Heal From Betrayal and Rebuild Trust
-          </h1>
-          <p className="text-xl md:text-2xl text-slate max-w-3xl mx-auto leading-relaxed mb-4">
-            Affair Recovery Therapy in San Diego & Online Across California
-          </p>
-          <p className="text-lg text-deepTeal-700 font-medium">
-            By Jordan Zipkin, LMFT
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        badge="About Jordan Zipkin, LMFT"
+        badgeIcon={Heart}
+        title="Heal From Betrayal and"
+        titleHighlight="Rebuild Trust"
+        subtitle="Affair Recovery Therapy in San Diego & Online Across California"
+        location="By Jordan Zipkin, LMFT"
+        variant="turquoise"
+      />
 
       {/* Opening Statement */}
       <section className="py-12 md:py-16 bg-white">
@@ -368,10 +364,10 @@ export default function AboutPage() {
 
       {/* CTA Band */}
       <CTABand
-        title="Schedule Your First Session"
+        title="Begin Your Journey to Healing"
         description="Start your affair recovery journey today—in person in San Diego or online anywhere in California."
-        buttonText="Schedule a Consultation"
-        buttonHref="/schedule"
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )

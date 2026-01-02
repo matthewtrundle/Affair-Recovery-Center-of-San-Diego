@@ -3,38 +3,29 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import {
-  Mail,
   Phone,
   MapPin,
-  Calendar,
   Clock,
   Globe,
   ExternalLink,
   Shield,
   Heart,
-  AlertTriangle
+  AlertTriangle,
+  MessageSquare
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { PremiumCard } from '@/components/ui/PremiumCard'
 import { ContactForm } from '@/components/forms/ContactForm'
+import { PageHeader } from '@/components/sections/PageHeader'
 
 const contactMethods = [
   {
-    icon: Calendar,
-    title: 'Schedule a Free Call',
-    description: 'Let\'s talk for 15 minutes (free). I\'ll answer your questions, you\'ll see if I\'m the right fit. No pressure, just real conversation.',
-    action: 'Grab a Time That Works',
-    href: '/schedule',
-    isPrimary: true,
-    details: 'Weekday + weekend slots available'
-  },
-  {
     icon: Phone,
     title: 'Call or Text',
-    description: 'Sometimes you need to talk NOW. Or maybe online booking isn\'t your thing. Call or text me directly.',
-    action: '(619) 555-0123',
-    href: 'tel:+16195550123',
-    isPrimary: false,
+    description: 'Ready to talk? Call or text me directly. I\'m here to answer your questions and discuss how I can help.',
+    action: '(619) 881-0593',
+    href: 'tel:+16198810593',
+    isPrimary: true,
     details: 'Yes, texting is totally fine'
   }
 ]
@@ -140,38 +131,14 @@ const officeInfo = [
 export default function ContactPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-deepTeal-50 via-lightGray-50 to-turquoise-50 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-coral/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-sage/10 to-transparent rounded-full blur-3xl" />
-
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-navy mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl lg:text-2xl text-slate max-w-3xl mx-auto leading-relaxed">
-              Multiple ways to connect. Choose what feels most comfortable for you.
-            </p>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 flex items-center justify-center gap-2 text-slate-600"
-            >
-              <Shield className="h-4 w-4 text-sage" />
-              <span className="text-sm">Confidential • Secure • HIPAA Compliant</span>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <PageHeader
+        badge="Confidential & HIPAA Compliant"
+        badgeIcon={MessageSquare}
+        title="Get in"
+        titleHighlight="Touch"
+        subtitle="Multiple ways to connect. Choose what feels most comfortable for you."
+        variant="turquoise"
+      />
 
       {/* Contact Methods */}
       <section className="py-16 lg:py-20 bg-white">

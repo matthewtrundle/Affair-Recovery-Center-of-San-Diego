@@ -216,9 +216,9 @@ export default function TermsPage() {
       {/* CTA Band */}
       <CTABand
         title="Ready to Get Started?"
-        description="Schedule your free consultation today."
-        buttonText="Schedule Consultation"
-        buttonHref="/schedule"
+        description="Take the first step toward healing today."
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )

@@ -401,7 +401,7 @@ export function SessionStructure() {
             Ready to begin this structured approach to healing?
           </p>
           <motion.a
-            href="/schedule"
+            href="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 glass backdrop-blur-md bg-white/90 text-navy rounded-full font-medium border border-navy/20 hover:border-navy/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

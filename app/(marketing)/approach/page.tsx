@@ -46,8 +46,8 @@ export default function ApproachPage() {
       <CTABand
         title="Ready to experience this approach?"
         description="See how these methods can work together in your unique situation."
-        buttonText="Schedule Your Consultation"
-        buttonHref="/schedule"
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )

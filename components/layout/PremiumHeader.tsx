@@ -39,15 +39,23 @@ const navigation = [
     submenu: [
       { name: 'Meet Your Therapist', href: '/about', description: 'Get to know Jordan' },
       { name: 'Approach', href: '/approach', description: 'Evidence-based methods' },
-      { name: 'Services', href: '/services', description: 'Therapy options' },
+      { name: 'Services', href: '/services/betrayal-recovery', description: 'Therapy options' },
+    ]
+  },
+  { name: 'Online Sessions', href: '/california-online-sessions', icon: Video, description: 'California telehealth' },
+  {
+    name: 'Resources',
+    href: '#',
+    icon: BookOpen,
+    description: 'Healing insights',
+    submenu: [
+      { name: 'Educational Resources', href: '/blog', description: 'Articles & insights' },
       { name: 'For the Hurt Partner', href: '/for-the-hurt-partner', description: 'If you were betrayed' },
       { name: 'For the Partner Who Strayed', href: '/for-the-partner-who-strayed', description: 'If you had the affair' },
     ]
   },
-  { name: 'Online Sessions', href: '/california-online-sessions', icon: Video, description: 'California telehealth' },
   { name: 'Success Stories', href: '/testimonials', icon: MessageCircle, description: 'Real transformations' },
   { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Your questions answered' },
-  { name: 'Resources', href: '/blog', icon: BookOpen, description: 'Healing insights' },
 ]
 
 export function PremiumHeader() {
@@ -85,8 +93,8 @@ export function PremiumHeader() {
               transition={{ type: "spring", stiffness: 400, duration: 0.3 }}
               className={`relative transition-all duration-500 ${
                 isScrolled
-                  ? 'h-12 md:h-14 lg:h-16'  // Scrolled (compact)
-                  : 'h-15 md:h-[4.375rem] lg:h-20'  // At top (25% larger)
+                  ? 'h-12 md:h-14 xl:h-16'  // Scrolled (compact) - mobile stays fixed
+                  : 'h-12 md:h-[4.375rem] xl:h-20'  // At top - mobile stays h-12, desktop gets larger
               }`}
               style={{ filter: 'drop-shadow(0px 1px 0px rgba(0, 0, 0, 0.3))' }}
             >
@@ -102,8 +110,8 @@ export function PremiumHeader() {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop Navigation - show at xl and above for tablet hamburger */}
+          <div className="hidden xl:flex items-center gap-3">
             {navigation.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -184,10 +192,10 @@ export function PremiumHeader() {
             </motion.div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - show hamburger on tablet and below */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-3 rounded-full text-[#115659] hover:bg-[#115659]/10 transition-all duration-300 self-center"
+            className="xl:hidden p-3 rounded-full text-[#115659] hover:bg-[#115659]/10 transition-all duration-300 self-center"
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle navigation menu"
           >
@@ -200,7 +208,7 @@ export function PremiumHeader() {
           </motion.button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - show at tablet and below */}
         <motion.div
           initial={false}
           animate={{
@@ -208,7 +216,7 @@ export function PremiumHeader() {
             opacity: isOpen ? 1 : 0,
           }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="lg:hidden overflow-hidden"
+          className="xl:hidden overflow-hidden"
           style={{
             backgroundColor: '#ffffff',
           }}

@@ -176,13 +176,13 @@ export default async function BlogPostPage({ params }: Props) {
             Ready to Start Your Healing Journey?
           </h2>
           <p className="text-white/80 mb-6 text-lg">
-            Schedule a consultation to learn how I can help you recover from betrayal and rebuild trust.
+            Reach out to learn how I can help you recover from betrayal and rebuild trust.
           </p>
           <Link
-            href="/schedule"
+            href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-lime to-turquoise text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
           >
-            Schedule a Consultation
+            Begin Your Healing
           </Link>
         </div>
 

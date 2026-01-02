@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Calendar } from 'lucide-react'
+import { Menu, X, Heart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const navItems = [
@@ -103,15 +103,15 @@ export function PremiumNav() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="hidden lg:block"
             >
-              <Link href="/schedule">
+              <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="relative px-6 py-3 bg-gradient-to-r from-coral to-sage text-white rounded-full font-medium overflow-hidden group"
                 >
                   <span className="relative z-10 flex items-center">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Schedule Consultation
+                    <Heart className="h-4 w-4 mr-2" />
+                    Begin Your Healing
                   </span>
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-sage to-coral"
@@ -233,9 +233,9 @@ export function PremiumNav() {
                   transition={{ delay: 0.6 }}
                   className="pb-8"
                 >
-                  <Link href="/schedule" onClick={() => setIsOpen(false)}>
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
                     <button className="w-full py-4 bg-gradient-to-r from-coral to-sage text-white rounded-full font-medium text-lg">
-                      Schedule Consultation
+                      Begin Your Healing
                     </button>
                   </Link>
                 </motion.div>

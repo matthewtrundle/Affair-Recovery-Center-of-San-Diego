@@ -11,7 +11,7 @@ import { generateMetadata as generateSEO, generateOrganizationSchema, generateLo
 
 export const metadata: Metadata = generateSEO({
   title: 'Affair Recovery Therapist San Diego | Jordan Zipkin, LMFT',
-  description: 'Expert couples therapy for affair recovery and betrayal trauma in San Diego. Gottman-certified therapist helping couples rebuild trust. Schedule your consultation today.',
+  description: 'Expert couples therapy for affair recovery and betrayal trauma in San Diego. Gottman-certified therapist helping couples rebuild trust. Begin your healing journey today.',
   keywords: ['affair recovery san diego', 'infidelity therapist san diego', 'couples therapist san diego', 'betrayal trauma therapy', 'gottman certified therapist'],
   url: '/',
 })
@@ -45,8 +45,8 @@ export default function HomePage() {
       <CTABand
         title="Ready to begin healing?"
         description="The first step is often the hardest. I'm here to make it easier."
-        buttonText="Schedule Your Consultation"
-        buttonHref="/schedule"
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
 
       {/* FAQ Preview */}

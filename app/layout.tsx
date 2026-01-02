@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: 'Evidence-based couples therapy specializing in affair recovery and rebuilding trust',
     siteName: 'ARC San Diego',
     images: [{
-      url: '/og/home.png',
+      url: '/og/og-home.png',
       width: 1200,
       height: 630,
       alt: 'Affair Recovery Center of San Diego'
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Affair Recovery Center of San Diego',
     description: 'Evidence-based couples therapy specializing in affair recovery and rebuilding trust',
-    images: ['/og/home.png'],
+    images: ['/og/og-home.png'],
   },
   robots: {
     index: true,

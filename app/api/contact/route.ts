@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     const resendClient = getResendClient()
     if (!resendClient) {
       return NextResponse.json(
-        { error: 'Email service not configured. Please contact us directly at jordan@affairrecoverysd.com' },
+        { error: 'Email service not configured. Please contact us directly at jordan@MyStressSolutions.com' },
         { status: 503 }
       )
     }
@@ -61,7 +61,7 @@ Sent from Affair Recovery Center website contact form
     // Send email via Resend
     const { data, error } = await resendClient.emails.send({
       from: process.env.MAIL_FROM || 'Affair Recovery Center <contact@affairrecoverysd.com>',
-      to: 'jordan@affairrecoverysd.com',
+      to: process.env.CONTACT_EMAIL || 'jordan@MyStressSolutions.com',
       reply_to: email,
       subject: `New Contact Form Submission from ${name}`,
       text: emailContent,

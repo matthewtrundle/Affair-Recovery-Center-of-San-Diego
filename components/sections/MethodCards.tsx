@@ -262,10 +262,10 @@ export function MethodCards() {
             Curious about how these methods work together in your unique situation?
           </p>
           <Link
-            href="/schedule"
+            href="/contact"
             className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
           >
-            Schedule Your Consultation
+            Begin Your Healing
           </Link>
         </motion.div>
       </div>

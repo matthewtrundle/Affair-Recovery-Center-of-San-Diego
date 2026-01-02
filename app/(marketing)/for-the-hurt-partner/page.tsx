@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
+import { PageHeader } from '@/components/sections/PageHeader'
 import { CheckCircle, Heart, Shield, Brain, Compass, MessageCircle, Lock, Sun } from 'lucide-react'
 import Image from 'next/image'
 
@@ -59,20 +60,15 @@ export default function HurtPartnerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-lightGray-100 via-white to-turquoise-50">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-deepTeal-600 mb-6">
-            Healing After Infidelity
-          </h1>
-          <p className="text-xl md:text-2xl text-slate max-w-3xl mx-auto leading-relaxed mb-4">
-            Support for the Hurt Partner in San Diego
-          </p>
-          <p className="text-lg text-deepTeal-700 font-medium">
-            & Online Across California
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        badge="Support for the Hurt Partner"
+        badgeIcon={Heart}
+        title="Healing After"
+        titleHighlight="Infidelity"
+        subtitle="Compassionate support to help you find calm, get answers, and rebuild safety"
+        location="San Diego & Online Across California"
+        variant="turquoise"
+      />
 
       {/* Opening Statement */}
       <section className="py-12 md:py-16 bg-white">
@@ -362,8 +358,8 @@ export default function HurtPartnerPage() {
       <CTABand
         title="Start Healing Today"
         description="You don't have to live in constant doubt. Take the first step toward clarity, calm, and connection."
-        buttonText="Schedule a Consultation"
-        buttonHref="/schedule"
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )

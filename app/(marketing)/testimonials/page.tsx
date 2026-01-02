@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
+import { PageHeader } from '@/components/sections/PageHeader'
 import { Star } from 'lucide-react'
 
 export const metadata: Metadata = generateSEO({
@@ -64,17 +65,14 @@ const testimonials = [
 export default function TestimonialsPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-lightGray-100 via-white to-turquoise-50">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h1 className="font-display text-4xl md:text-6xl text-deepTeal-600 mb-6">
-            Affair Recovery Testimonials
-          </h1>
-          <p className="text-lg md:text-xl text-slate leading-relaxed max-w-3xl mx-auto">
-            Real stories from clients who've walked this path and found healing.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        badge="Client Stories"
+        badgeIcon={Star}
+        title="Affair Recovery"
+        titleHighlight="Testimonials"
+        subtitle="Real stories from clients who've walked this path and found healing."
+        variant="turquoise"
+      />
 
       {/* What Clients Say */}
       <section className="py-16 md:py-24 bg-white">
@@ -116,8 +114,8 @@ export default function TestimonialsPage() {
       <CTABand
         title="Start Your Own Success Story"
         description="Join the clients who have found hope, healing, and renewed connection."
-        buttonText="Schedule Your Consultation"
-        buttonHref="/schedule"
+        buttonText="Begin Your Healing"
+        buttonHref="/contact"
       />
     </>
   )
