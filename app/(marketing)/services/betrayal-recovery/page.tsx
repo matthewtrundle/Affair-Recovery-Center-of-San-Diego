@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { PageHeader } from '@/components/sections/PageHeader'
 import { CTABand } from '@/components/sections/CTABand'
 import { Button } from '@/components/ui/button'
-import { CheckCircle, Users, Heart, Brain, Calendar, Clock, Target } from 'lucide-react'
+import { CheckCircle, Users, Heart, Brain, Clock, Target } from 'lucide-react'
 import { generateMetadata as generateSEO, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEO({
@@ -25,7 +25,7 @@ export default function BetrayalRecoveryPage() {
 
       <PageHeader
         badge="Betrayal Recovery Therapy"
-        badgeIcon={Heart}
+        badgeIcon="heart"
         title="Affair Recovery for"
         titleHighlight="San Diego Couples"
         subtitle="Whether you're in Coronado or Carlsbad, I've helped hundreds of local couples move from discovery day devastation to actually trusting again. It's possible. I've seen it happen."

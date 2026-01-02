@@ -10,8 +10,7 @@ import {
   ExternalLink,
   Shield,
   Heart,
-  AlertTriangle,
-  MessageSquare
+  AlertTriangle
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { PremiumCard } from '@/components/ui/PremiumCard'
@@ -133,7 +132,7 @@ export default function ContactPage() {
     <>
       <PageHeader
         badge="Confidential & HIPAA Compliant"
-        badgeIcon={MessageSquare}
+        badgeIcon="message"
         title="Get in"
         titleHighlight="Touch"
         subtitle="Multiple ways to connect. Choose what feels most comfortable for you."

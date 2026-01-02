@@ -62,7 +62,7 @@ export default function StrayedPartnerPage() {
 
       <PageHeader
         badge="A Path to Redemption"
-        badgeIcon={RefreshCw}
+        badgeIcon="refresh"
         title="Therapy for the Partner Who"
         titleHighlight="Strayed"
         subtitle="Learn to show up with patience, honesty, and the consistent actions that rebuild trust"

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
 import { PageHeader } from '@/components/sections/PageHeader'
-import { CheckCircle, Heart } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 
 export const metadata: Metadata = generateSEO({
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
       <PageHeader
         badge="About Jordan Zipkin, LMFT"
-        badgeIcon={Heart}
+        badgeIcon="heart"
         title="Heal From Betrayal and"
         titleHighlight="Rebuild Trust"
         subtitle="Affair Recovery Therapy in San Diego & Online Across California"

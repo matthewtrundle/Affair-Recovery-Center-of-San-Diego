@@ -67,7 +67,7 @@ export default function TestimonialsPage() {
     <>
       <PageHeader
         badge="Client Stories"
-        badgeIcon={Star}
+        badgeIcon="star"
         title="Affair Recovery"
         titleHighlight="Testimonials"
         subtitle="Real stories from clients who've walked this path and found healing."

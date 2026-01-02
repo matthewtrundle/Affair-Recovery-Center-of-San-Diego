@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import { generateMetadata as generateSEO } from '@/lib/seo'
 import { CTABand } from '@/components/sections/CTABand'
 import { PageHeader } from '@/components/sections/PageHeader'
-import { HelpCircle } from 'lucide-react'
 
 export const metadata: Metadata = generateSEO({
   title: 'FAQ | Affair Recovery Therapy Questions Answered',
@@ -53,7 +52,7 @@ export default function FAQPage() {
 
       <PageHeader
         badge="Questions Answered"
-        badgeIcon={HelpCircle}
+        badgeIcon="help"
         title="Infidelity Recovery Therapy"
         titleHighlight="FAQs"
         subtitle="Common questions answered with clarity and compassion."

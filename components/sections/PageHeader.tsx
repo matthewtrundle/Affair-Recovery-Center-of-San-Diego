@@ -1,11 +1,22 @@
 'use client'
 
 import Image from 'next/image'
-import { LucideIcon } from 'lucide-react'
+import { Heart, HelpCircle, MessageSquare, RefreshCw, Star, Sparkles } from 'lucide-react'
+
+type IconName = 'heart' | 'help' | 'message' | 'refresh' | 'star' | 'sparkles'
+
+const iconMap: Record<IconName, React.ComponentType<{ className?: string }>> = {
+  heart: Heart,
+  help: HelpCircle,
+  message: MessageSquare,
+  refresh: RefreshCw,
+  star: Star,
+  sparkles: Sparkles,
+}
 
 interface PageHeaderProps {
   badge?: string
-  badgeIcon?: LucideIcon
+  badgeIcon?: IconName
   title: string
   titleHighlight?: string
   subtitle?: string
@@ -15,7 +26,7 @@ interface PageHeaderProps {
 
 export function PageHeader({
   badge,
-  badgeIcon: BadgeIcon,
+  badgeIcon,
   title,
   titleHighlight,
   subtitle,
@@ -25,6 +36,8 @@ export function PageHeader({
   const highlightColor = variant === 'turquoise' ? 'text-turquoise-300' : 'text-lime-400'
   const badgeColor = variant === 'turquoise' ? 'text-turquoise-300' : 'text-lime-400'
   const locationColor = variant === 'turquoise' ? 'text-lime-400' : 'text-turquoise-300'
+
+  const BadgeIcon = badgeIcon ? iconMap[badgeIcon] : null
 
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">

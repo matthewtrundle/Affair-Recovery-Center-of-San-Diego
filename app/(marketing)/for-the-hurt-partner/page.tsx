@@ -62,7 +62,7 @@ export default function HurtPartnerPage() {
 
       <PageHeader
         badge="Support for the Hurt Partner"
-        badgeIcon={Heart}
+        badgeIcon="heart"
         title="Healing After"
         titleHighlight="Infidelity"
         subtitle="Compassionate support to help you find calm, get answers, and rebuild safety"
