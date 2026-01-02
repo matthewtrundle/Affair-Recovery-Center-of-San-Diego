@@ -4,30 +4,45 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import { useEffect, useState, useRef } from 'react'
 
-// Video paths and quotes
+// Video paths and quotes - only load what's needed
 const videos = [
   {
     src: '/video/Firefly Aerial cinematic shot of a convertible car driving along the Pacific Coast Highway near San .mp4',
-    quote: "The journey forward begins with a single step"
+    quote: "The journey forward begins with a single step",
+    poster: '/images/video-posters/hero-1.webp'
   },
   {
     src: '/video/Firefly Cinematic shot of a couple walking side by side down a quiet San Diego street at dusk, warm .mp4',
-    quote: "Healing happens when we walk together"
+    quote: "Healing happens when we walk together",
+    poster: '/images/video-posters/hero-2.webp'
   },
   {
     src: '/video/Firefly Medium shot of a couple sitting close together on a bench in a quiet San Diego park, late af.mp4',
-    quote: "Trust can be rebuilt, stronger than before"
+    quote: "Trust can be rebuilt, stronger than before",
+    poster: '/images/video-posters/hero-3.webp'
   },
   {
     src: '/video/Firefly Wide cinematic shot of a couple walking slowly along a San Diego beach at sunset, seen from .mp4',
-    quote: "Your story isn't over—it's transforming"
+    quote: "Your story isn't over—it's transforming",
+    poster: '/images/video-posters/hero-4.webp'
   }
 ]
 
 export function PremiumHero() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const [loadedVideos, setLoadedVideos] = useState<Set<number>>(new Set([0]))
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+
+  // Preload next video when current one plays
+  useEffect(() => {
+    const nextIndex = (currentVideoIndex + 1) % videos.length
+    if (!loadedVideos.has(nextIndex)) {
+      setLoadedVideos(prev => new Set([...prev, nextIndex]))
+    }
+  }, [currentVideoIndex, loadedVideos])
 
   // Auto-rotate videos
   useEffect(() => {
@@ -39,15 +54,16 @@ export function PremiumHero() {
 
   return (
     <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
-      {/* Background Layer - San Diego Skyline (Subtle) */}
+      {/* Background Layer - San Diego Skyline (Subtle) - Using Next.js Image for optimization */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 opacity-15"
-          style={{
-            backgroundImage: 'url(/images/background/SD.jpeg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+        <Image
+          src="/images/background/SD.jpeg"
+          alt=""
+          fill
+          className="object-cover opacity-15"
+          priority
+          sizes="100vw"
+          quality={60}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/80 via-deepTeal-800/40 to-transparent" />
       </div>
@@ -89,20 +105,37 @@ export function PremiumHero() {
               {/* Glass box container */}
               <div className="relative glass backdrop-blur-xl bg-white/10 rounded-3xl p-2 border border-white/20">
                 <div className="relative overflow-hidden rounded-2xl aspect-[4/3]">
-                  <AnimatePresence mode="wait">
-                    <motion.video
-                      key={currentVideoIndex}
-                      src={videos[currentVideoIndex].src}
-                      autoPlay
-                      muted
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1 }}
-                    />
-                  </AnimatePresence>
+                  {/* Render videos with lazy loading - only load current and next */}
+                  {videos.map((video, index) => {
+                    const isActive = index === currentVideoIndex
+                    const shouldLoad = loadedVideos.has(index)
+
+                    return (
+                      <motion.video
+                        key={index}
+                        ref={el => { videoRefs.current[index] = el }}
+                        src={shouldLoad ? video.src : undefined}
+                        poster={video.poster}
+                        autoPlay={isActive}
+                        muted
+                        playsInline
+                        loop
+                        preload={shouldLoad ? 'auto' : 'none'}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        initial={false}
+                        animate={{
+                          opacity: isActive ? 1 : 0,
+                          zIndex: isActive ? 1 : 0
+                        }}
+                        transition={{ duration: 0.8 }}
+                        onEnded={() => {
+                          if (isActive) {
+                            setCurrentVideoIndex((prev) => (prev + 1) % videos.length)
+                          }
+                        }}
+                      />
+                    )
+                  })}
 
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/30 via-transparent to-transparent" />
