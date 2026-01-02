@@ -86,10 +86,10 @@ export function AboutTherapist() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 viewport={{ once: true }}
-                className="absolute top-4 left-4 bg-white/10 backdrop-blur-md rounded-xl p-4 shadow-lg border border-white/20"
+                className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-white/20"
               >
-                <div className="text-2xl font-display font-bold text-lime-400">15+</div>
-                <div className="text-sm text-white/80 font-body">Years Experience</div>
+                <div className="text-2xl font-display font-bold text-deepTeal-600">15+</div>
+                <div className="text-sm text-deepTeal-700 font-body">Years Experience</div>
               </motion.div>
             </div>
 
