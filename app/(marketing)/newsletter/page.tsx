@@ -62,7 +62,7 @@ export default function NewsletterPage() {
             <span className="text-sm font-medium">Newsletter Signup</span>
           </div>
 
-          <h1 className="text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
+          <h1 className="text-4xl lg:text-5xl font-display font-light text-white mb-6">
             Join Our{' '}
             <span className="bg-gradient-to-r from-lime to-turquoise bg-clip-text text-transparent">
               Healing Community

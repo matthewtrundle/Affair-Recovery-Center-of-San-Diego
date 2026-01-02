@@ -1,10 +1,9 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, Users, Heart, Brain, Sparkles } from 'lucide-react'
-import { useRef, useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { useState } from 'react'
 
 const methods = [
   {
@@ -49,36 +48,19 @@ const methods = [
 ]
 
 export function MethodCards() {
-  const containerRef = useRef<HTMLDivElement>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50])
-
   return (
-    <section ref={containerRef} className="py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-b from-white via-lightGray-50/30 to-white">
-      {/* Animated background pattern */}
+    <section className="py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-b from-white via-lightGray-50/30 to-white">
+      {/* Static background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-        <motion.div
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: `radial-gradient(circle at 20% 50%, rgba(142, 166, 155, 0.1) 0%, transparent 50%),
                             radial-gradient(circle at 80% 80%, rgba(242, 155, 136, 0.1) 0%, transparent 50%),
                             radial-gradient(circle at 40% 20%, rgba(12, 27, 42, 0.05) 0%, transparent 50%)`,
-          }}
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
           }}
         />
       </div>
@@ -134,7 +116,6 @@ export function MethodCards() {
                   stiffness: 100
                 }}
                 viewport={{ once: true }}
-                style={{ y }}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
                 className="relative group"

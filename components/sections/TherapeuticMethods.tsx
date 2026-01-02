@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { Users, Heart, Brain, CheckCircle, ArrowRight, BookOpen, Target, Shield } from 'lucide-react'
 import { PremiumCard } from '@/components/ui/PremiumCard'
 
@@ -114,21 +114,13 @@ const methods = [
 ]
 
 export function TherapeuticMethods() {
-  const containerRef = useRef<HTMLDivElement>(null)
   const [activeMethod, setActiveMethod] = useState('gottman')
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50])
-
   return (
-    <section ref={containerRef} className="bg-white relative overflow-hidden py-8">
+    <section className="bg-white relative overflow-hidden py-8">
       {/* Background Pattern */}
       <div className="absolute inset-0">
-        <motion.div
+        <div
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage: `
@@ -136,15 +128,6 @@ export function TherapeuticMethods() {
               radial-gradient(circle at 80% 80%, rgba(242, 155, 136, 0.08) 0%, transparent 50%),
               radial-gradient(circle at 40% 60%, rgba(51, 65, 85, 0.05) 0%, transparent 50%)
             `,
-          }}
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
           }}
         />
       </div>

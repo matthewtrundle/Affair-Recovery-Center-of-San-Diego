@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl lg:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl lg:text-5xl font-display font-light text-white mb-6 leading-tight">
             {post.title}
           </h1>
 
@@ -172,7 +172,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Call to Action */}
         <div className="mt-16 p-8 bg-gradient-to-r from-turquoise/20 to-lime/20 backdrop-blur-sm border border-white/20 rounded-2xl text-center">
-          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-white mb-4">
+          <h2 className="text-2xl lg:text-3xl font-display font-light text-white mb-4">
             Ready to Start Your Healing Journey?
           </h2>
           <p className="text-white/80 mb-6 text-lg">
@@ -188,7 +188,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Related Posts - Coming Soon */}
         <div className="mt-16">
-          <h2 className="text-2xl font-heading font-bold text-white mb-6">Continue Reading</h2>
+          <h2 className="text-2xl font-display font-light text-white mb-6">Continue Reading</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Placeholder for related posts */}
             <Link

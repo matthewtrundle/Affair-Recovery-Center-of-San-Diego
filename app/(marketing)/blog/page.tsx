@@ -36,7 +36,7 @@ export default async function BlogPage() {
               <span className="text-sm font-medium">Educational Resources</span>
             </div>
 
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold text-white mb-6">
+            <h1 className="text-4xl lg:text-6xl font-display font-light text-white mb-6">
               Resources for{' '}
               <span className="bg-gradient-to-r from-lime to-turquoise bg-clip-text text-transparent">
                 Healing
@@ -77,7 +77,7 @@ function NewsletterCTA() {
                 <span className="text-sm font-medium">Stay Connected</span>
               </div>
 
-              <h2 className="text-3xl lg:text-4xl font-heading font-bold text-white">
+              <h2 className="text-3xl lg:text-4xl font-display font-light text-white">
                 Get the latest insights delivered to your inbox
               </h2>
 
