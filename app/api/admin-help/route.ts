@@ -125,7 +125,6 @@ export async function POST(req: Request) {
       model: gateway('anthropic/claude-3.5-haiku'),
       system: SYSTEM_PROMPT,
       messages,
-      maxTokens: 1000,
     })
 
     return result.toDataStreamResponse()
