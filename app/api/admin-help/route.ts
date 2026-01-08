@@ -127,7 +127,7 @@ export async function POST(req: Request) {
       messages,
     })
 
-    return result.toDataStreamResponse()
+    return result.toTextStreamResponse()
   } catch (error) {
     console.error('Admin help chat error:', error)
     return new Response(
