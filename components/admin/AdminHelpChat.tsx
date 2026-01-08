@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, FormEvent } from 'react'
 import { useChat } from '@ai-sdk/react'
+import { DefaultChatTransport } from 'ai'
 
 export default function AdminHelpChat() {
   const [isOpen, setIsOpen] = useState(false)
@@ -9,7 +10,9 @@ export default function AdminHelpChat() {
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const { messages, status, error, sendMessage } = useChat({
-    api: '/api/admin-help',
+    transport: new DefaultChatTransport({
+      api: '/api/admin-help',
+    }),
     initialMessages: [
       {
         id: 'welcome',
