@@ -1,0 +1,110 @@
+/* Custom Admin Panel Styles for ARC */
+
+/* Brand Colors */
+:root {
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #f8fafb;
+  --theme-elevation-100: #f2f4f5;
+  --theme-elevation-150: #e8eced;
+  --theme-elevation-200: #dde2e4;
+  --theme-elevation-250: #d1d8db;
+  --theme-elevation-300: #c5cdd1;
+  --theme-elevation-350: #b8c2c7;
+  --theme-elevation-400: #a9b5bb;
+  --theme-elevation-450: #99a7ae;
+  --theme-elevation-500: #8899a1;
+  --theme-elevation-550: #778a93;
+  --theme-elevation-600: #657b85;
+  --theme-elevation-650: #536c77;
+  --theme-elevation-700: #405d69;
+  --theme-elevation-750: #2d4e5b;
+  --theme-elevation-800: #1a3f4d;
+  --theme-elevation-850: #07303f;
+  --theme-elevation-900: #0a2530;
+  --theme-elevation-950: #061a22;
+  --theme-elevation-1000: #030f14;
+
+  /* ARC Brand Colors */
+  --color-deep-teal: #125959;
+  --color-turquoise: #2ABFB0;
+  --color-lime: #ADD94E;
+  --color-olive: #9CBF4E;
+}
+
+/* Primary button styling */
+.btn--style-primary {
+  background-color: var(--color-deep-teal) !important;
+}
+
+.btn--style-primary:hover {
+  background-color: #0e4747 !important;
+}
+
+/* Sidebar active state */
+.nav-group__toggle--active,
+.nav__link--active {
+  background-color: rgba(18, 89, 89, 0.1) !important;
+}
+
+/* Collection description styling */
+.collection-list__sub-header {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--theme-elevation-600);
+  padding: 8px 16px;
+  background-color: var(--theme-elevation-50);
+  border-bottom: 1px solid var(--theme-elevation-150);
+  margin-bottom: 0;
+}
+
+/* Better table styling */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Dashboard welcome message */
+.dashboard__wrap h1 {
+  color: var(--color-deep-teal);
+}
+
+/* Custom nav group headers */
+.nav-group__label {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--theme-elevation-500);
+}
+
+/* Form field descriptions */
+.field-description {
+  font-size: 12px;
+  color: var(--theme-elevation-500);
+  margin-top: 4px;
+}
+
+/* Status pills */
+.pill {
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Success state */
+.pill--style-success {
+  background-color: rgba(42, 191, 176, 0.15);
+  color: #1a8a7d;
+}
+
+/* Warning state */
+.pill--style-warning {
+  background-color: rgba(173, 217, 78, 0.2);
+  color: #6b8a2d;
+}
+
+/* Featured checkbox highlight */
+input[name="featured"]:checked + .checkbox__input {
+  background-color: var(--color-lime);
+  border-color: var(--color-olive);
+}

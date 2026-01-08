@@ -1,37 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter, Cormorant_Garamond, Playfair_Display, Source_Sans_3 } from 'next/font/google'
-import '@/styles/globals.css'
-import { Analytics } from '@/components/Analytics'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
-})
-
-const sourceSans = Source_Sans_3({
-  subsets: ['latin'],
-  variable: '--font-source-sans',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap',
-  style: ['normal', 'italic'],
-})
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-playfair',
-  display: 'swap',
-  style: ['normal', 'italic'],
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://affairrecoverysandiego.com'),
@@ -85,17 +52,12 @@ export const metadata: Metadata = {
   },
 }
 
+// Root layout - minimal wrapper to allow each route group to have its own html/body
+// This prevents nested <html> tags between marketing and payload admin routes
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en" className={`${inter.variable} ${sourceSans.variable} ${cormorant.variable} ${playfair.variable}`}>
-      <body className={inter.className}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  )
+  return children
 }

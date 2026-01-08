@@ -40,11 +40,31 @@ export default buildConfig({
   admin: {
     user: 'users',
     meta: {
-      titleSuffix: '- ARC',
+      titleSuffix: '- ARC Admin',
+      description: 'Affair Recovery Center - Content Management',
+      icons: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          url: '/favicon.png',
+        },
+      ],
     },
-    theme: 'light', // Clean, professional light theme
+    theme: 'light',
+    components: {
+      graphics: {
+        Logo: '@/components/admin/Logo',
+        Icon: '@/components/admin/Icon',
+      },
+      beforeDashboard: ['@/components/admin/DashboardWelcome'],
+      providers: ['@/components/admin/AdminHelpProvider'],
+    },
   },
 
   // Server URL configuration
-  serverURL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  // In development, use empty string to allow Payload to use relative URLs
+  // In production, use the actual site URL from environment
+  serverURL: process.env.NODE_ENV === 'production'
+    ? (process.env.NEXT_PUBLIC_SITE_URL || '')
+    : '',
 })

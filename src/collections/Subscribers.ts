@@ -4,10 +4,15 @@ import { getWelcomeEmailHTML, getWelcomeEmailText } from '@/lib/emails/welcome'
 
 export const Subscribers: CollectionConfig = {
   slug: 'subscribers',
+  labels: {
+    singular: 'Subscriber',
+    plural: 'Email Subscribers',
+  },
   admin: {
     useAsTitle: 'email',
-    defaultColumns: ['email', 'firstName', 'status', 'createdAt'],
+    defaultColumns: ['email', 'firstName', 'status', 'source', 'createdAt'],
     group: 'Marketing',
+    description: 'People subscribed to receive emails. New subscribers get a welcome email automatically.',
   },
   access: {
     read: ({ req: { user } }) => !!user,
@@ -17,56 +22,73 @@ export const Subscribers: CollectionConfig = {
   },
   fields: [
     {
-      name: 'email',
-      type: 'email',
-      required: true,
-      unique: true,
-      index: true,
-      admin: {
-        description: 'Subscriber email address',
-      },
-    },
-    {
-      name: 'firstName',
-      type: 'text',
-      admin: {
-        description: 'Optional first name for personalization',
-      },
-    },
-    {
-      name: 'status',
-      type: 'select',
-      required: true,
-      defaultValue: 'active',
-      options: [
-        { label: 'Active', value: 'active' },
-        { label: 'Unsubscribed', value: 'unsubscribed' },
+      type: 'row',
+      fields: [
+        {
+          name: 'email',
+          type: 'email',
+          required: true,
+          unique: true,
+          index: true,
+          admin: {
+            width: '50%',
+            placeholder: 'subscriber@example.com',
+          },
+        },
+        {
+          name: 'firstName',
+          label: 'First Name',
+          type: 'text',
+          admin: {
+            width: '50%',
+            placeholder: 'Optional - for personalization',
+          },
+        },
       ],
-      admin: {
-        description: 'Subscription status',
-      },
     },
     {
-      name: 'source',
-      type: 'select',
-      required: true,
-      defaultValue: 'website',
-      options: [
-        { label: 'Website', value: 'website' },
-        { label: 'Blog', value: 'blog' },
-        { label: 'Social Media', value: 'social' },
-        { label: 'Other', value: 'other' },
+      type: 'row',
+      fields: [
+        {
+          name: 'status',
+          type: 'select',
+          required: true,
+          defaultValue: 'active',
+          options: [
+            { label: 'Active', value: 'active' },
+            { label: 'Unsubscribed', value: 'unsubscribed' },
+          ],
+          admin: {
+            width: '50%',
+            description: 'Active subscribers receive newsletters',
+          },
+        },
+        {
+          name: 'source',
+          label: 'Signup Source',
+          type: 'select',
+          required: true,
+          defaultValue: 'website',
+          options: [
+            { label: 'Website', value: 'website' },
+            { label: 'Blog', value: 'blog' },
+            { label: 'Social Media', value: 'social' },
+            { label: 'Manual', value: 'other' },
+          ],
+          admin: {
+            width: '50%',
+            description: 'Where they signed up',
+          },
+        },
       ],
-      admin: {
-        description: 'Where did this subscriber sign up?',
-      },
     },
     {
       name: 'tags',
       type: 'text',
       hasMany: true,
       admin: {
-        description: 'Tags for segmentation (e.g., "blog-reader", "consultation-interested")',
+        description: 'Optional tags for organizing subscribers',
+        placeholder: 'e.g., blog-reader, consultation-interested',
       },
     },
     {
@@ -74,7 +96,8 @@ export const Subscribers: CollectionConfig = {
       type: 'text',
       admin: {
         readOnly: true,
-        description: 'Resend API contact ID (auto-populated)',
+        description: 'Resend API ID (auto-populated)',
+        condition: (data) => !!data?.resendContactId,
       },
     },
   ],
@@ -105,7 +128,6 @@ export const Subscribers: CollectionConfig = {
             }
           } catch (error) {
             console.error('Welcome email error:', error)
-            // Don't block the subscription, just log the error
           }
 
           // Add to Resend audience
@@ -120,7 +142,6 @@ export const Subscribers: CollectionConfig = {
             }
           } catch (error) {
             console.error('Failed to add subscriber to Resend:', error)
-            // Don't block the subscription, just log the error
           }
         }
 

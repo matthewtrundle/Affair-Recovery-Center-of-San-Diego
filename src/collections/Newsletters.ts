@@ -4,11 +4,16 @@ import { sendNewsletter } from '@/lib/resend-newsletter'
 
 export const Newsletters: CollectionConfig = {
   slug: 'newsletters',
+  labels: {
+    singular: 'Newsletter',
+    plural: 'Newsletters',
+  },
   admin: {
     useAsTitle: 'subject',
-    defaultColumns: ['subject', 'status', 'scheduledDate', 'createdAt'],
+    defaultColumns: ['subject', 'status', 'sentAt', 'sentCount'],
     group: 'Marketing',
-    description: 'Create and send email newsletters to subscribers',
+    description:
+      'Send email newsletters to your subscribers in 3 easy steps: 1) Write content, 2) Choose recipients, 3) Check "Send Immediately" and click Save.',
   },
   access: {
     read: ({ req: { user } }) => !!user,
@@ -17,134 +22,186 @@ export const Newsletters: CollectionConfig = {
     delete: ({ req: { user } }) => user?.roles?.includes('admin'),
   },
   fields: [
+    // Step-by-step guide banner
     {
-      name: 'subject',
-      type: 'text',
-      required: true,
-      maxLength: 100,
+      name: 'howToSend',
+      type: 'ui',
       admin: {
-        description: 'Email subject line (max 100 characters)',
-        placeholder: 'Enter email subject...',
-      },
-    },
-    {
-      name: 'previewText',
-      type: 'text',
-      maxLength: 150,
-      admin: {
-        description: 'Preview text shown in email clients (max 150 characters)',
-        placeholder: 'This text appears in the inbox preview...',
-      },
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      required: true,
-      editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [...defaultFeatures],
-      }),
-      admin: {
-        description: 'Email body content - use simple formatting for better compatibility',
-      },
-    },
-    {
-      name: 'sendTo',
-      type: 'select',
-      required: true,
-      defaultValue: 'all',
-      options: [
-        { label: 'All Active Subscribers', value: 'all' },
-        { label: 'Test (Admin Only)', value: 'test' },
-      ],
-      admin: {
-        description: 'Choose who receives this newsletter',
-      },
-    },
-    {
-      name: 'schedule',
-      type: 'group',
-      fields: [
-        {
-          name: 'sendNow',
-          type: 'checkbox',
-          defaultValue: false,
-          admin: {
-            description: 'Send immediately when you save this newsletter',
-          },
+        components: {
+          Field: '@/components/admin/NewsletterGuide',
         },
+      },
+    },
+    {
+      type: 'tabs',
+      tabs: [
         {
-          name: 'scheduledDate',
-          type: 'date',
-          admin: {
-            description: 'Schedule to send at a specific date/time (optional)',
-            date: {
-              pickerAppearance: 'dayAndTime',
+          label: 'Step 1: Email Content',
+          description: 'Write your newsletter message',
+          fields: [
+            {
+              name: 'subject',
+              label: 'Subject Line',
+              type: 'text',
+              required: true,
+              maxLength: 100,
+              admin: {
+                placeholder: 'e.g., "This Month\'s Recovery Insights"',
+                description:
+                  'TIP: Keep it under 50 characters. This is what subscribers see first in their inbox.',
+              },
             },
-            condition: (data, siblingData) => !siblingData.sendNow,
-          },
+            {
+              name: 'previewText',
+              label: 'Preview Text (Optional)',
+              type: 'text',
+              maxLength: 150,
+              admin: {
+                placeholder: 'e.g., "New resources for your healing journey..."',
+                description:
+                  'TIP: This appears after the subject in email previews. Leave blank to use the first line of content.',
+              },
+            },
+            {
+              name: 'content',
+              label: 'Email Body',
+              type: 'richText',
+              required: true,
+              editor: lexicalEditor({
+                features: ({ defaultFeatures }) => [...defaultFeatures],
+              }),
+              admin: {
+                description:
+                  'TIP: Keep formatting simple - bold, italic, and links work best. Avoid complex layouts.',
+              },
+            },
+          ],
+        },
+        {
+          label: 'Step 2: Send Options',
+          description: 'Choose recipients and send',
+          fields: [
+            // Recipients selection with clear guidance
+            {
+              name: 'sendTo',
+              label: 'Who should receive this?',
+              type: 'select',
+              required: true,
+              defaultValue: 'test',
+              options: [
+                {
+                  label: 'Test Mode - Send to yourself first (recommended)',
+                  value: 'test',
+                },
+                {
+                  label: 'All Active Subscribers - Send to everyone',
+                  value: 'all',
+                },
+              ],
+              admin: {
+                description:
+                  'RECOMMENDATION: Always test with "Test Mode" first to preview how it looks, then come back and switch to "All Active Subscribers".',
+              },
+            },
+            // Send trigger - wrapped in 'schedule' group to match existing DB column 'schedule_send_now'
+            {
+              name: 'schedule',
+              type: 'group',
+              label: '',
+              admin: {
+                hideGutter: true,
+                style: { margin: 0, padding: 0 },
+              },
+              fields: [
+                {
+                  name: 'sendNow',
+                  label: 'Ready to Send?',
+                  type: 'checkbox',
+                  defaultValue: false,
+                  admin: {
+                    description:
+                      'CHECK THIS BOX + CLICK SAVE = Newsletter sends immediately! (Uncheck to save as draft)',
+                  },
+                },
+              ],
+            },
+            // Status info
+            {
+              type: 'collapsible',
+              label: 'Delivery Status & History',
+              admin: {
+                initCollapsed: true,
+                description: 'View sending status and results',
+              },
+              fields: [
+                {
+                  name: 'status',
+                  label: 'Current Status',
+                  type: 'select',
+                  required: true,
+                  defaultValue: 'draft',
+                  options: [
+                    { label: 'Draft - Not sent yet', value: 'draft' },
+                    { label: 'Sending... - In progress', value: 'sending' },
+                    { label: 'Sent - Delivered!', value: 'sent' },
+                    { label: 'Failed - Check error below', value: 'failed' },
+                  ],
+                  admin: {
+                    readOnly: true,
+                    description: 'This updates automatically when you send',
+                  },
+                },
+                {
+                  type: 'row',
+                  fields: [
+                    {
+                      name: 'sentAt',
+                      label: 'Date Sent',
+                      type: 'date',
+                      admin: {
+                        width: '50%',
+                        readOnly: true,
+                        condition: (data) => data?.status === 'sent',
+                      },
+                    },
+                    {
+                      name: 'sentCount',
+                      label: 'Total Recipients',
+                      type: 'number',
+                      admin: {
+                        width: '50%',
+                        readOnly: true,
+                        condition: (data) => data?.status === 'sent',
+                      },
+                    },
+                  ],
+                },
+                {
+                  name: 'errorMessage',
+                  label: 'Error Details',
+                  type: 'textarea',
+                  admin: {
+                    readOnly: true,
+                    condition: (data) => data?.status === 'failed',
+                    description: 'If sending failed, the error message will appear here',
+                  },
+                },
+              ],
+            },
+          ],
         },
       ],
-      admin: {
-        description: 'When should this newsletter be sent?',
-      },
-    },
-    {
-      name: 'status',
-      type: 'select',
-      required: true,
-      defaultValue: 'draft',
-      options: [
-        { label: 'Draft', value: 'draft' },
-        { label: 'Scheduled', value: 'scheduled' },
-        { label: 'Sending', value: 'sending' },
-        { label: 'Sent', value: 'sent' },
-        { label: 'Failed', value: 'failed' },
-      ],
-      admin: {
-        description: 'Current status of this newsletter',
-        readOnly: true,
-      },
-    },
-    {
-      name: 'sentAt',
-      type: 'date',
-      admin: {
-        description: 'When this newsletter was sent',
-        readOnly: true,
-        condition: (data) => data?.status === 'sent',
-      },
-    },
-    {
-      name: 'sentCount',
-      type: 'number',
-      admin: {
-        description: 'Number of emails successfully sent',
-        readOnly: true,
-        condition: (data) => data?.status === 'sent',
-      },
-    },
-    {
-      name: 'errorMessage',
-      type: 'textarea',
-      admin: {
-        description: 'Error details if sending failed',
-        readOnly: true,
-        condition: (data) => data?.status === 'failed',
-      },
     },
   ],
   hooks: {
     beforeChange: [
       async ({ operation, data }) => {
-        // On create, set initial status
         if (operation === 'create') {
           data.status = 'draft'
         }
 
-        // If sendNow is checked, trigger sending
         if (data.schedule?.sendNow && data.status === 'draft') {
           data.status = 'sending'
-          // The actual sending will be handled by an afterChange hook
         }
 
         return data
@@ -152,23 +209,21 @@ export const Newsletters: CollectionConfig = {
     ],
     afterChange: [
       async ({ operation, doc }) => {
-        // If status is 'sending', trigger the newsletter send process
         if (doc.status === 'sending') {
-          console.log(`📧 Newsletter "${doc.subject}" is being sent...`)
+          console.log(`Newsletter "${doc.subject}" is being sent...`)
 
-          // Send newsletter asynchronously (don't block the response)
           sendNewsletter(doc.id)
             .then((result) => {
               if (result.success) {
                 console.log(
-                  `✅ Newsletter "${doc.subject}" sent successfully to ${result.sentCount} recipients`
+                  `Newsletter "${doc.subject}" sent successfully to ${result.sentCount} recipients`
                 )
               } else {
-                console.error(`❌ Newsletter "${doc.subject}" failed:`, result.error)
+                console.error(`Newsletter "${doc.subject}" failed:`, result.error)
               }
             })
             .catch((error) => {
-              console.error(`❌ Newsletter send error:`, error)
+              console.error(`Newsletter send error:`, error)
             })
         }
       },

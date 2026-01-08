@@ -2,6 +2,10 @@ import type { CollectionConfig } from 'payload'
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  labels: {
+    singular: 'Image',
+    plural: 'Media Library',
+  },
   upload: {
     staticDir: 'public/images/blog',
     mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/gif'],
@@ -36,6 +40,9 @@ export const Media: CollectionConfig = {
   admin: {
     group: 'Content',
     useAsTitle: 'alt',
+    description: 'Upload images for blog posts and pages. Images are automatically optimized and resized for web performance. All images appear in the Media Library.',
+    // Only show to admins (editors can still upload via Posts but don't need direct access)
+    hidden: ({ user }) => !user?.roles?.includes('admin'),
   },
   access: {
     read: () => true, // Public can read media

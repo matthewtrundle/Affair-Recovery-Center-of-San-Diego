@@ -14,7 +14,8 @@ export async function getPosts(options?: {
 }): Promise<Post[]> {
   const payload = await getPayloadClient()
 
-  const where: any = { status: { equals: 'published' } }
+  // Use Payload's built-in _status field from drafts/versions system
+  const where: any = { _status: { equals: 'published' } }
 
   if (options?.category) {
     where.category = { equals: options.category }
@@ -42,7 +43,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     collection: 'posts',
     where: {
       slug: { equals: slug },
-      status: { equals: 'published' },
+      _status: { equals: 'published' },
     },
     limit: 1,
   })
@@ -88,7 +89,7 @@ export type Post = {
   publishedDate: string
   readTime?: number
   featured: boolean
-  status: 'draft' | 'published'
+  _status: 'draft' | 'published'  // Payload's built-in drafts field
   seo?: {
     metaTitle?: string
     metaDescription?: string

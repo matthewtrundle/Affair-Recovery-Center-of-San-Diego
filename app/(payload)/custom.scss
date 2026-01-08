@@ -1,74 +1,466 @@
-// Custom styles for Payload admin panel
-// Branded to match ARC San Diego's premium design palette
-
 // ============================================
-// Payload CSS Variables Override
+// ARC San Diego - Custom Admin Panel Styling
 // ============================================
-// Reference: https://payloadcms.com/docs/admin/customizing-css
+// Brand Colors:
+// - Deep Teal: #125959 (primary)
+// - Turquoise: #2ABFB0 (secondary/accent)
+// - Lime: #ADD94E (highlights)
+// - Olive: #9CBF4E (accents)
+// - Light Gray: #F2F2F2 (backgrounds)
 
 :root {
-  // ARC Brand Colors
-  --arc-ocean: #0a1628;
-  --arc-sage: #7a9e7e;
-  --arc-charcoal: #2d3748;
-  --arc-alabaster: #faf9f7;
-  --arc-coral: #e8998d;
+  // ===========================================
+  // PRIMARY THEME COLORS
+  // ===========================================
 
-  // Payload Theme Variables - Light Mode
-  --theme-bg: #faf9f7; // Alabaster background
-  --theme-text: #2d3748; // Charcoal text
-  --theme-elevation-0: #ffffff; // Cards
-  --theme-elevation-50: #f5f5f5;
-  --theme-elevation-100: #ececec;
-  --theme-elevation-150: #e3e3e3;
-  --theme-elevation-200: #d9d9d9;
-  --theme-elevation-250: #d0d0d0;
-  --theme-elevation-300: #c7c7c7;
-  --theme-elevation-400: #b4b4b4;
-  --theme-elevation-500: #9e9e9e;
-  --theme-elevation-600: #888888;
-  --theme-elevation-700: #6f6f6f;
-  --theme-elevation-800: #575757;
-  --theme-elevation-900: #3e3e3e;
-  --theme-elevation-1000: #0a1628; // Ocean dark
+  // Background colors
+  --theme-bg: #f8fafa;
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #f5f7f7;
+  --theme-elevation-100: #eef1f1;
+  --theme-elevation-150: #e5e9e9;
+  --theme-elevation-200: #dce1e1;
+  --theme-elevation-250: #d3d9d9;
+  --theme-elevation-300: #c9d1d1;
+  --theme-elevation-400: #b6c0c0;
+  --theme-elevation-500: #9eaaa9;
+  --theme-elevation-600: #869392;
+  --theme-elevation-700: #6d7c7b;
+  --theme-elevation-800: #556564;
+  --theme-elevation-900: #3c4d4d;
+  --theme-elevation-1000: #125959;
 
-  // Payload Brand Color (affects buttons, links, etc.)
-  --theme-success-50: #f0f7f4;
-  --theme-success-100: #d9ebe2;
-  --theme-success-150: #c3dfd0;
-  --theme-success-200: #acd3be;
-  --theme-success-250: #95c7ac;
-  --theme-success-300: #7fbb9a;
-  --theme-success-350: #7eb598;
-  --theme-success-400: #7aae8f;
-  --theme-success-450: #76a787;
-  --theme-success-500: #7a9e7e; // Sage
-  --theme-success-550: #6f9173;
-  --theme-success-600: #658468;
-  --theme-success-650: #5a775d;
-  --theme-success-700: #4f6a52;
-  --theme-success-750: #455d47;
-  --theme-success-800: #3a503c;
-  --theme-success-850: #2f4331;
-  --theme-success-900: #253626;
-  --theme-success-950: #1a291b;
+  // Text colors
+  --theme-text: #1a3a3a;
 
-  // Error states
+  // ===========================================
+  // SUCCESS/PRIMARY COLORS (Deep Teal)
+  // ===========================================
+  --theme-success-50: #e8f4f4;
+  --theme-success-100: #d1e9e9;
+  --theme-success-150: #badede;
+  --theme-success-200: #a3d3d3;
+  --theme-success-250: #8cc8c8;
+  --theme-success-300: #75bdbd;
+  --theme-success-350: #5eb2b2;
+  --theme-success-400: #47a7a7;
+  --theme-success-450: #309c9c;
+  --theme-success-500: #125959; // Primary brand color
+  --theme-success-550: #105050;
+  --theme-success-600: #0e4747;
+  --theme-success-650: #0c3e3e;
+  --theme-success-700: #0a3535;
+  --theme-success-750: #082c2c;
+  --theme-success-800: #062323;
+  --theme-success-850: #041a1a;
+  --theme-success-900: #021111;
+  --theme-success-950: #000808;
+
+  // ===========================================
+  // ERROR COLORS
+  // ===========================================
   --theme-error-50: #fef2f2;
-  --theme-error-500: #dc3545;
+  --theme-error-100: #fee2e2;
+  --theme-error-200: #fecaca;
+  --theme-error-300: #fca5a5;
+  --theme-error-400: #f87171;
+  --theme-error-500: #ef4444;
+  --theme-error-600: #dc2626;
+  --theme-error-700: #b91c1c;
+  --theme-error-800: #991b1b;
+  --theme-error-900: #7f1d1d;
   --theme-error-950: #450a0a;
 
-  // Warning states
+  // ===========================================
+  // WARNING COLORS
+  // ===========================================
   --theme-warning-50: #fffbeb;
+  --theme-warning-100: #fef3c7;
+  --theme-warning-200: #fde68a;
+  --theme-warning-300: #fcd34d;
+  --theme-warning-400: #fbbf24;
   --theme-warning-500: #f59e0b;
+  --theme-warning-600: #d97706;
+  --theme-warning-700: #b45309;
+  --theme-warning-800: #92400e;
+  --theme-warning-900: #78350f;
   --theme-warning-950: #451a03;
 
-  // Override input styling
+  // ===========================================
+  // INPUT STYLING
+  // ===========================================
   --theme-input-bg: #ffffff;
-  --theme-input-border: rgba(45, 55, 72, 0.2);
-  --theme-input-border-focus: #7a9e7e; // Sage
+  --theme-input-border: rgba(18, 89, 89, 0.15);
+  --theme-input-border-focus: #2ABFB0;
 }
 
-// Note: Payload uses CSS variables for theming.
-// The variables defined above will automatically theme the entire admin panel.
-// No additional overrides needed - Payload's components respect these variables.
+// ===========================================
+// CUSTOM COMPONENT STYLING
+// ===========================================
+
+// Sidebar styling
+.nav {
+  background: linear-gradient(180deg, #125959 0%, #0e4747 100%) !important;
+
+  &__header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  // Group headers
+  &__group-header {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  // Nav links
+  &__link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 6px !important;
+    margin: 2px 8px !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+      background: rgba(42, 191, 176, 0.2) !important;
+      color: #fff !important;
+    }
+
+    &--active {
+      background: rgba(42, 191, 176, 0.25) !important;
+      color: #fff !important;
+
+      &::before {
+        background: #2ABFB0 !important;
+      }
+    }
+  }
+
+  // Nav icons
+  &__icon {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+// Logo area
+.nav-header {
+  background: transparent !important;
+}
+
+// Header styling
+.app-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(18, 89, 89, 0.1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+// Buttons
+.btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+
+  &--style-primary {
+    background: linear-gradient(135deg, #125959 0%, #1a7a7a 100%) !important;
+    border: none !important;
+
+    &:hover {
+      background: linear-gradient(135deg, #0e4747 0%, #156868 100%) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(18, 89, 89, 0.25) !important;
+    }
+  }
+
+  &--style-secondary {
+    background: #f8fafa !important;
+    border: 1px solid rgba(18, 89, 89, 0.2) !important;
+    color: #125959 !important;
+
+    &:hover {
+      background: #eef4f4 !important;
+      border-color: rgba(18, 89, 89, 0.3) !important;
+    }
+  }
+}
+
+// Cards and panels
+.card {
+  border-radius: 12px !important;
+  border: 1px solid rgba(18, 89, 89, 0.08) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+
+  &:hover {
+    border-color: rgba(18, 89, 89, 0.15) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  }
+}
+
+// Table styling
+.table {
+  border-radius: 12px !important;
+  overflow: hidden;
+
+  &__header {
+    background: #f5f8f8 !important;
+
+    .table__cell {
+      font-weight: 600 !important;
+      color: #125959 !important;
+      text-transform: uppercase !important;
+      font-size: 11px !important;
+      letter-spacing: 0.5px !important;
+    }
+  }
+
+  &__row {
+    transition: background 0.15s ease !important;
+
+    &:hover {
+      background: rgba(42, 191, 176, 0.04) !important;
+    }
+  }
+}
+
+// Form fields
+.field {
+  &__label {
+    font-weight: 500 !important;
+    color: #1a3a3a !important;
+  }
+
+  &__description {
+    color: #6d7c7b !important;
+  }
+}
+
+// Input fields
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+  border-radius: 8px !important;
+  border: 1px solid rgba(18, 89, 89, 0.15) !important;
+  transition: all 0.2s ease !important;
+
+  &:focus {
+    border-color: #2ABFB0 !important;
+    box-shadow: 0 0 0 3px rgba(42, 191, 176, 0.15) !important;
+    outline: none !important;
+  }
+}
+
+// Tabs styling
+.tabs {
+  &__tab-button {
+    border-radius: 6px 6px 0 0 !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+
+    &--active {
+      background: #ffffff !important;
+      color: #125959 !important;
+      border-bottom-color: #2ABFB0 !important;
+    }
+  }
+}
+
+// Pills and badges
+.pill {
+  border-radius: 20px !important;
+  font-weight: 500 !important;
+
+  &--style-success {
+    background: rgba(42, 191, 176, 0.15) !important;
+    color: #125959 !important;
+  }
+
+  &--style-warning {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #92400e !important;
+  }
+
+  &--style-error {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #b91c1c !important;
+  }
+}
+
+// Status indicators
+.status-indicator {
+  &--published {
+    background: #2ABFB0 !important;
+  }
+
+  &--draft {
+    background: #f59e0b !important;
+  }
+}
+
+// Collapsible sections
+.collapsible {
+  border-radius: 10px !important;
+  border: 1px solid rgba(18, 89, 89, 0.1) !important;
+
+  &__header {
+    font-weight: 600 !important;
+
+    &:hover {
+      background: rgba(42, 191, 176, 0.04) !important;
+    }
+  }
+}
+
+// Document header
+.doc-header {
+  background: linear-gradient(135deg, #f8fafa 0%, #ffffff 100%) !important;
+  border-bottom: 1px solid rgba(18, 89, 89, 0.08) !important;
+}
+
+// Upload/dropzone styling
+.upload {
+  border-radius: 12px !important;
+  border: 2px dashed rgba(18, 89, 89, 0.2) !important;
+  background: rgba(42, 191, 176, 0.02) !important;
+
+  &:hover {
+    border-color: #2ABFB0 !important;
+    background: rgba(42, 191, 176, 0.05) !important;
+  }
+}
+
+// Modals
+.modal {
+  &__content {
+    border-radius: 16px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+}
+
+// Search input
+.search-filter {
+  &__input {
+    border-radius: 8px !important;
+    background: #f5f8f8 !important;
+    border: 1px solid transparent !important;
+
+    &:focus {
+      background: #ffffff !important;
+      border-color: #2ABFB0 !important;
+      box-shadow: 0 0 0 3px rgba(42, 191, 176, 0.15) !important;
+    }
+  }
+}
+
+// Rich text editor
+.rich-text {
+  border-radius: 10px !important;
+  border: 1px solid rgba(18, 89, 89, 0.15) !important;
+
+  &__toolbar {
+    background: #f5f8f8 !important;
+    border-bottom: 1px solid rgba(18, 89, 89, 0.1) !important;
+  }
+}
+
+// Popup menus
+.popup {
+  &__content {
+    border-radius: 10px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid rgba(18, 89, 89, 0.1) !important;
+  }
+
+  &__item {
+    &:hover {
+      background: rgba(42, 191, 176, 0.08) !important;
+    }
+  }
+}
+
+// Toast notifications
+.toast {
+  border-radius: 10px !important;
+
+  &--success {
+    background: linear-gradient(135deg, #125959 0%, #1a7a7a 100%) !important;
+  }
+}
+
+// Checkbox styling
+.checkbox {
+  &__input:checked + .checkbox__icon {
+    background: #125959 !important;
+    border-color: #125959 !important;
+  }
+}
+
+// Radio styling
+.radio {
+  &__input:checked + .radio__icon {
+    border-color: #125959 !important;
+
+    &::after {
+      background: #125959 !important;
+    }
+  }
+}
+
+// Select/dropdown styling
+.react-select {
+  &__control {
+    border-radius: 8px !important;
+    border-color: rgba(18, 89, 89, 0.15) !important;
+
+    &--is-focused {
+      border-color: #2ABFB0 !important;
+      box-shadow: 0 0 0 3px rgba(42, 191, 176, 0.15) !important;
+    }
+  }
+
+  &__menu {
+    border-radius: 10px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  &__option {
+    &--is-selected {
+      background: #125959 !important;
+    }
+
+    &--is-focused {
+      background: rgba(42, 191, 176, 0.1) !important;
+    }
+  }
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(18, 89, 89, 0.2);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(18, 89, 89, 0.3);
+  }
+}
+
+// Animation for loading states
+@keyframes pulse-teal {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.loading {
+  animation: pulse-teal 1.5s ease-in-out infinite;
+}

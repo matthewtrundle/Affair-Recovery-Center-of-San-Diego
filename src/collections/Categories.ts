@@ -2,10 +2,17 @@ import type { CollectionConfig } from 'payload'
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
+  labels: {
+    singular: 'Category',
+    plural: 'Categories',
+  },
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'slug', 'color'],
     group: 'Content',
+    description: 'Categories organize blog posts by topic. Each post must belong to one category. Categories appear as filter options on the blog page and as colored badges on post cards.',
+    // Only show to admins (editors can select categories but don't need to manage them)
+    hidden: ({ user }) => !user?.roles?.includes('admin'),
   },
   access: {
     read: () => true, // Public read access for blog
