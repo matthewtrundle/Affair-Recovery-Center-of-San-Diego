@@ -1,13 +1,14 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, FormEvent } from 'react'
 import { useChat } from '@ai-sdk/react'
 
 export default function AdminHelpChat() {
   const [isOpen, setIsOpen] = useState(false)
+  const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+  const { messages, status, error, sendMessage } = useChat({
     api: '/api/admin-help',
     initialMessages: [
       {
@@ -18,6 +19,8 @@ export default function AdminHelpChat() {
     ],
   })
 
+  const isLoading = status === 'streaming' || status === 'submitted'
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -25,6 +28,28 @@ export default function AdminHelpChat() {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    if (!input.trim() || isLoading) return
+    sendMessage(input)
+    setInput('')
+  }
+
+  // Get text content from message (handles both string and parts array)
+  const getMessageContent = (message: typeof messages[0]): string => {
+    if (typeof message.content === 'string') {
+      return message.content
+    }
+    // Handle parts array if present
+    if (message.parts) {
+      return message.parts
+        .filter((part): part is { type: 'text'; text: string } => part.type === 'text')
+        .map(part => part.text)
+        .join('')
+    }
+    return ''
+  }
 
   return (
     <>
@@ -158,7 +183,7 @@ export default function AdminHelpChat() {
                     whiteSpace: 'pre-wrap',
                   }}
                   dangerouslySetInnerHTML={{
-                    __html: formatMessage(message.content),
+                    __html: formatMessage(getMessageContent(message)),
                   }}
                 />
               </div>
@@ -208,7 +233,7 @@ export default function AdminHelpChat() {
           >
             <input
               value={input}
-              onChange={handleInputChange}
+              onChange={(e) => setInput(e.target.value)}
               placeholder="Ask a question..."
               style={{
                 flex: 1,
