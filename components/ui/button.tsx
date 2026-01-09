@@ -18,6 +18,9 @@ const buttonVariants = cva(
         // Outline - Transparent with colored border (tertiary actions)
         outline: "border-2 border-turquoise-400 bg-transparent text-turquoise-600 hover:bg-turquoise-50 hover:border-turquoise-500 hover:text-turquoise-700 shadow-md hover:shadow-lg",
 
+        // Pill outline - Works on both light and dark backgrounds (like "View All FAQs")
+        "pill-outline": "border-2 border-turquoise-400 bg-transparent text-turquoise-500 hover:bg-turquoise-500/10 hover:border-turquoise-500 transition-all duration-300",
+
         // Destructive
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
 
