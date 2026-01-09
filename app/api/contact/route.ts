@@ -212,6 +212,190 @@ Sent from Affair Recovery Center website contact form
       )
     }
 
+    // Send confirmation email to the person who submitted the form
+    const confirmationHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #125959 0%, #0d4545 100%); padding: 40px; text-align: center;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">
+                Thank You for Reaching Out
+              </h1>
+              <p style="margin: 12px 0 0 0; color: #2ABFB0; font-size: 16px;">
+                Affair Recovery Center of San Diego
+              </p>
+            </td>
+          </tr>
+
+          <!-- Main Content -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px 0; font-size: 18px; color: #125959; font-weight: 600;">
+                Dear ${name.split(' ')[0]},
+              </p>
+
+              <p style="margin: 0 0 20px 0; font-size: 16px; color: #374151; line-height: 1.7;">
+                Thank you for taking this important step. I know it takes courage to reach out, and I want you to know that your message has been received.
+              </p>
+
+              <p style="margin: 0 0 20px 0; font-size: 16px; color: #374151; line-height: 1.7;">
+                I personally review every inquiry and will respond within <strong style="color: #125959;">24-48 hours</strong>. In the meantime, please know that healing is possible, and you don't have to navigate this journey alone.
+              </p>
+
+              <!-- What to Expect Box -->
+              <div style="background-color: #f8fafa; border-radius: 8px; padding: 24px; margin: 24px 0;">
+                <h3 style="margin: 0 0 16px 0; color: #125959; font-size: 16px; font-weight: 600;">
+                  What Happens Next?
+                </h3>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="padding: 8px 0;">
+                      <table cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td style="width: 28px; vertical-align: top;">
+                            <span style="display: inline-block; width: 20px; height: 20px; background-color: #2ABFB0; color: white; border-radius: 50%; text-align: center; font-size: 12px; line-height: 20px; font-weight: bold;">1</span>
+                          </td>
+                          <td style="color: #374151; font-size: 14px; line-height: 1.5;">
+                            I'll review your message and learn about your situation
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0;">
+                      <table cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td style="width: 28px; vertical-align: top;">
+                            <span style="display: inline-block; width: 20px; height: 20px; background-color: #2ABFB0; color: white; border-radius: 50%; text-align: center; font-size: 12px; line-height: 20px; font-weight: bold;">2</span>
+                          </td>
+                          <td style="color: #374151; font-size: 14px; line-height: 1.5;">
+                            I'll reach out via your preferred contact method
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0;">
+                      <table cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td style="width: 28px; vertical-align: top;">
+                            <span style="display: inline-block; width: 20px; height: 20px; background-color: #2ABFB0; color: white; border-radius: 50%; text-align: center; font-size: 12px; line-height: 20px; font-weight: bold;">3</span>
+                          </td>
+                          <td style="color: #374151; font-size: 14px; line-height: 1.5;">
+                            We'll schedule a free 15-minute consultation to discuss your needs
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <p style="margin: 24px 0 0 0; font-size: 16px; color: #374151; line-height: 1.7;">
+                If you need immediate support or prefer to schedule directly, you're welcome to:
+              </p>
+
+              <!-- Action Buttons -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin: 20px 0;">
+                <tr>
+                  <td align="center">
+                    <a href="https://calendly.com/jordan-affairrecoverysd/consultation" style="display: inline-block; background-color: #125959; color: #ffffff; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 8px; text-decoration: none; margin-right: 12px;">
+                      Schedule Consultation
+                    </a>
+                    <a href="tel:+18585551234" style="display: inline-block; background-color: #ffffff; color: #125959; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 8px; text-decoration: none; border: 2px solid #125959;">
+                      Call (858) 555-1234
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Signature -->
+              <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+                <p style="margin: 0 0 4px 0; font-size: 16px; color: #374151;">
+                  With warmth and support,
+                </p>
+                <p style="margin: 0; font-size: 18px; color: #125959; font-weight: 600;">
+                  Jordan Zipkin, LMFT
+                </p>
+                <p style="margin: 4px 0 0 0; font-size: 14px; color: #6b7280;">
+                  Licensed Marriage & Family Therapist
+                </p>
+                <p style="margin: 2px 0 0 0; font-size: 14px; color: #6b7280;">
+                  Affair Recovery Center of San Diego
+                </p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f8fafa; padding: 24px 40px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 13px;">
+                This email is in response to your contact form submission.
+              </p>
+              <p style="margin: 0; color: #6b7280; font-size: 13px;">
+                <a href="https://affairrecoverysandiego.com" style="color: #125959; text-decoration: none;">affairrecoverysandiego.com</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `.trim()
+
+    const confirmationText = `
+Dear ${name.split(' ')[0]},
+
+Thank you for reaching out to the Affair Recovery Center of San Diego. I know it takes courage to take this step, and I want you to know that your message has been received.
+
+I personally review every inquiry and will respond within 24-48 hours. In the meantime, please know that healing is possible, and you don't have to navigate this journey alone.
+
+What Happens Next?
+1. I'll review your message and learn about your situation
+2. I'll reach out via your preferred contact method
+3. We'll schedule a free 15-minute consultation to discuss your needs
+
+If you need immediate support, you're welcome to schedule directly at:
+https://calendly.com/jordan-affairrecoverysd/consultation
+
+With warmth and support,
+Jordan Zipkin, LMFT
+Licensed Marriage & Family Therapist
+Affair Recovery Center of San Diego
+
+---
+https://affairrecoverysandiego.com
+    `.trim()
+
+    // Send confirmation email (don't fail the request if this fails)
+    try {
+      await resendClient.emails.send({
+        from: process.env.MAIL_FROM || 'Affair Recovery Center <contact@affairrecoverysd.com>',
+        to: email,
+        subject: 'Thank You for Reaching Out - Affair Recovery Center',
+        text: confirmationText,
+        html: confirmationHtml,
+      })
+    } catch (confirmError) {
+      // Log but don't fail - the main notification was sent successfully
+      console.warn('Failed to send confirmation email:', confirmError)
+    }
+
     // Optional: Add to Resend audience if configured
     if (process.env.RESEND_AUDIENCE_ID && resendClient) {
       try {
