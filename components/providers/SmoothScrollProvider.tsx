@@ -50,7 +50,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
 
       {/* Scroll to top button */}
       <motion.button
-        className="fixed bottom-8 right-8 w-12 h-12 bg-deepTeal-800/90 backdrop-blur-md text-white rounded-full shadow-lg flex items-center justify-center hover:bg-deepTeal-700 transition-colors z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-deepTeal-800/90 backdrop-blur-md text-white rounded-full shadow-lg hidden md:flex items-center justify-center hover:bg-deepTeal-700 transition-colors z-40"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.1 }}
