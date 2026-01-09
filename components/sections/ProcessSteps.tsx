@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Compass, Heart, Sparkles } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 const steps = [
   {
@@ -129,14 +131,12 @@ export function ProcessSteps() {
           <p className="text-lg text-slate mb-6">
             Ready to take the first step on your journey?
           </p>
-          <motion.a
-            href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-deepTeal-600 to-deepTeal-700 text-white rounded-full font-medium transition-all duration-300 shadow-lg hover:bg-white hover:text-deepTeal-700 hover:shadow-xl border-2 border-transparent hover:border-deepTeal-700"
-            whileTap={{ scale: 0.98 }}
-          >
-            Begin Your Recovery Journey
-            <Sparkles className="w-5 h-5" />
-          </motion.a>
+          <Button size="lg" asChild>
+            <Link href="/contact">
+              Begin Your Recovery Journey
+              <Sparkles className="w-5 h-5 ml-2" />
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

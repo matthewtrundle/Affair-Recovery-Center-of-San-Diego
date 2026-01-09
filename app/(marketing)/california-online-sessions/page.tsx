@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Video, MapPin, Shield, Calendar, CheckCircle, Clock } from 'lucide-react'
+import { Video, MapPin, Shield, Calendar, CheckCircle, Clock, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
@@ -90,12 +90,13 @@ export default function CaliforniaOnlineSessionsPage() {
               </Button>
               <Button
                 size="lg"
-                variant="ghost"
-                className="border-2 border-white/60 hover:border-white hover:bg-white/10"
+                variant="pill-outline"
+                className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
                 asChild
               >
                 <Link href="/approach">
                   Learn About Our Approach
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
             </div>

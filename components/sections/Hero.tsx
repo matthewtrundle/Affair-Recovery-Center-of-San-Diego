@@ -112,7 +112,6 @@ export function Hero({
             {primaryCTA && (
               <Button
                 size="lg"
-                variant={backgroundImage ? 'secondary' : 'default'}
                 asChild
                 onClick={handlePrimaryClick}
               >
@@ -126,8 +125,8 @@ export function Hero({
             {secondaryCTA && (
               <Button
                 size="lg"
-                variant="outline"
-                className={backgroundImage ? 'text-white border-white hover:bg-white/10' : ''}
+                variant="pill-outline"
+                className={backgroundImage ? 'border-white/40 text-white hover:bg-white/10 hover:border-white/60' : ''}
                 asChild
                 onClick={handleSecondaryClick}
               >

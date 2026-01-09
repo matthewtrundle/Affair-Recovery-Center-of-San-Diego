@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Primary CTA - Gradient from deepTeal through turquoise to lime
-        default: "bg-gradient-to-r from-deepTeal-600 via-turquoise-500 to-lime-400 text-white hover:from-deepTeal-500 hover:via-turquoise-400 hover:to-lime-300 hover:-translate-y-0.5 shadow-lg hover:shadow-xl hover:shadow-turquoise-500/25",
+        // Primary CTA - Solid turquoise (matches "Let's Talk" style)
+        default: "bg-turquoise-500 text-white hover:bg-turquoise-600 hover:-translate-y-0.5 shadow-lg hover:shadow-xl",
 
         // Secondary - Solid turquoise (for dark backgrounds)
         secondary: "bg-white text-deepTeal-700 hover:bg-lime-50 hover:-translate-y-0.5 shadow-lg hover:shadow-xl",

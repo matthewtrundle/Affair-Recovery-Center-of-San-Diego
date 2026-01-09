@@ -72,10 +72,10 @@ export function FAQPreview() {
             viewport={{ once: true }}
             className="text-center mt-10"
           >
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="pill-outline" size="lg" asChild>
               <Link href="/faq">
                 View All FAQs
-                <ArrowRight className="h-4 w-4 ml-2" />
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
             </Button>
           </motion.div>

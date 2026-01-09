@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronRight, ChevronDown, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone, Video } from 'lucide-react'
 import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 
 // Beach-themed SVG Icons
 const WaveIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
@@ -179,16 +180,12 @@ export function PremiumHeader() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, type: "spring" }}
             >
-              <Link
-                href="/contact"
-                className="relative inline-flex items-center gap-2 px-6 py-2.5 group overflow-hidden rounded-full"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-turquoise-400 group-hover:from-lime-500 group-hover:to-turquoise-500 transition-all duration-300" />
-                <span className="relative text-white font-bold text-base" style={{ textShadow: '0px 1px 5px black' }}>
+              <Button asChild>
+                <Link href="/contact">
                   Start Healing Now
-                </span>
-                <ChevronRight className="relative w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
             </motion.div>
           </div>
 
@@ -279,16 +276,13 @@ export function PremiumHeader() {
               transition={{ delay: navigation.length * 0.1, type: "spring", stiffness: 100 }}
               className="pt-4 border-t border-[#115659]/20"
             >
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-lime-400 to-turquoise-400 text-white rounded-full font-bold shadow-lg text-base"
-                style={{ textShadow: '0px 1px 5px black' }}
-                onClick={() => setIsOpen(false)}
-              >
-                <Calendar className="w-5 h-5" />
-                Start Healing Now
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+              <Button size="lg" asChild onClick={() => setIsOpen(false)}>
+                <Link href="/contact">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Start Healing Now
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
             </motion.div>
           </div>
 

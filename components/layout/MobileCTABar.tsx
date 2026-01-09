@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Phone, MessageSquare } from 'lucide-react'
 import { trackTelClick } from '@/lib/analytics'
+import { Button } from '@/components/ui/button'
 
 export function MobileCTABar() {
   const pathname = usePathname()
@@ -38,13 +39,12 @@ export function MobileCTABar() {
           </a>
 
           {/* Contact button */}
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-lime-400 to-turquoise-400 text-white font-semibold rounded-full shadow-md hover:from-lime-500 hover:to-turquoise-500 transition-all"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>Contact Us</span>
-          </Link>
+          <Button asChild>
+            <Link href="/contact">
+              <MessageSquare className="w-4 h-4 mr-2" />
+              Contact Us
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

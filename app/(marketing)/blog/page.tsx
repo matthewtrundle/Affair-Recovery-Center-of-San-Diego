@@ -4,6 +4,7 @@ import { BookOpen, Mail } from 'lucide-react'
 import { getPosts, getCategories } from '@/lib/payload'
 import { BlogList } from '@/components/blog/BlogList'
 import { PremiumCard } from '@/components/ui/PremiumCard'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -85,13 +86,12 @@ function NewsletterCTA() {
                 Join our community and receive evidence-based guidance, practical tools, and hope for your healing journey.
               </p>
 
-              <Link
-                href="/newsletter"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-deepTeal-800 font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
-              >
-                <Mail className="w-5 h-5" />
-                Subscribe to Newsletter
-              </Link>
+              <Button size="lg" asChild>
+                <Link href="/newsletter">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Subscribe to Newsletter
+                </Link>
+              </Button>
 
               <p className="text-sm text-white/60">
                 No spam, ever. Unsubscribe anytime. Your email is safe with us.

@@ -68,7 +68,6 @@ export function ServicesHero() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               size="lg"
-              className="glass-dark text-white border-white/20 hover:bg-white/10 text-lg px-10 py-6 group"
               asChild
             >
               <Link href="/contact">
@@ -78,14 +77,14 @@ export function ServicesHero() {
             </Button>
 
             <Button
-              variant="ghost"
+              variant="pill-outline"
               size="lg"
-              className="text-white hover:bg-white/10 text-lg px-10 py-6 group"
+              className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
               asChild
             >
               <Link href="/approach">
                 Learn Our Approach
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
             </Button>
           </div>
@@ -170,13 +169,14 @@ export function MainServicesSection() {
                   </div>
 
                   <Button
-                    variant="secondary"
+                    variant="pill-outline"
                     size="lg"
+                    className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
                     asChild
                   >
-                    <Link href="/services/betrayal-recovery" className="group">
+                    <Link href="/services/betrayal-recovery">
                       Learn More About This Service
-                      <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-5 w-5 ml-2" />
                     </Link>
                   </Button>
                 </motion.div>
@@ -612,11 +612,10 @@ export function FourPillarsSection() {
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-lime to-turquoise hover:from-lime/80 hover:to-turquoise/80 text-white px-10 py-6 text-lg group"
             asChild
           >
             <Link href="/contact">
-              <Sparkles className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+              <Sparkles className="h-5 w-5 mr-2" />
               Begin Your Healing Journey
             </Link>
           </Button>
@@ -734,8 +733,7 @@ export function ServicesFAQSection() {
         >
           <Button
             size="lg"
-            variant="outline"
-            className="border-2 border-turquoise-500 text-turquoise-600 hover:bg-turquoise-50 px-8 py-6 text-lg"
+            variant="pill-outline"
             asChild
           >
             <Link href="/faq">

@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Quote, Star, Heart } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Quote, Star, Heart, ArrowRight } from 'lucide-react'
 import { useRef } from 'react'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 const testimonials = [
   {
@@ -291,14 +293,17 @@ export function TestimonialCarousel() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <motion.a
-              href="/testimonials"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-deepTeal-800 rounded-full font-semibold hover:bg-lime-50 transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileTap={{ scale: 0.98 }}
+            <Button
+              variant="pill-outline"
+              size="lg"
+              className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
+              asChild
             >
-              More Success Stories
-              <ChevronRight className="w-5 h-5" />
-            </motion.a>
+              <Link href="/testimonials">
+                More Success Stories
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
           </motion.div>
         </motion.div>
       </div>

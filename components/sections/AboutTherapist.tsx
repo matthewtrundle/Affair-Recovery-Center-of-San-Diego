@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, MapPin, GraduationCap, Clock, Heart, Star } from 'lucide-react'
+import { CheckCircle, MapPin, GraduationCap, Clock, Heart, Star, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const credentials = [
   { icon: GraduationCap, text: "Licensed Marriage & Family Therapist (LMFT)" },
@@ -188,18 +189,23 @@ export function AboutTherapist() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
         >
-          <Link
-            href="/approach"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-body font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg"
+          <Button
+            variant="pill-outline"
+            size="lg"
+            className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
+            asChild
           >
-            Learn About My Approach
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-          >
-            Begin Your Healing
-          </Link>
+            <Link href="/approach">
+              Learn About My Approach
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </Button>
+          <Button size="lg" asChild>
+            <Link href="/contact">
+              Begin Your Healing
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

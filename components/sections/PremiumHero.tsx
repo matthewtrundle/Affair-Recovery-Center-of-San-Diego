@@ -117,9 +117,9 @@ export function PremiumHero() {
                 </Button>
 
                 <Button
-                  variant="outline"
+                  variant="pill-outline"
                   size="lg"
-                  className="px-8 py-4 border-white/30 text-white hover:bg-white/10"
+                  className="px-8 py-4 border-white/40 text-white hover:bg-white/10 hover:border-white/60"
                   asChild
                 >
                   <Link href="/approach">
