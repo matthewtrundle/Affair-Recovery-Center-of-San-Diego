@@ -52,6 +52,19 @@ export function PremiumHero() {
     return () => clearInterval(interval)
   }, [])
 
+  // Play active video, pause others when slide changes
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === currentVideoIndex) {
+          video.play().catch(() => {}) // Catch autoplay policy errors
+        } else {
+          video.pause()
+        }
+      }
+    })
+  }, [currentVideoIndex])
+
   return (
     <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden bg-gradient-to-b from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
       {/* Background Layer - San Diego Skyline (Subtle) - Using Next.js Image for optimization */}
@@ -86,9 +99,51 @@ export function PremiumHero() {
               </h1>
 
               {/* Supporting Subhead - Trauma-aware, accessible */}
-              <p className="text-xl md:text-2xl font-heading text-white/90 max-w-2xl leading-relaxed">
+              <p className="text-xl md:text-2xl font-heading text-white/90 max-w-2xl leading-relaxed mb-8">
                 When infidelity shakes your world, it feels impossible to move forward. With the right guidance, you can rebuild trust, find calm, and create a relationship that&apos;s stronger than before.
               </p>
+
+              {/* CTA Buttons - Below text on left */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button
+                  size="lg"
+                  className="px-8 py-4"
+                  asChild
+                >
+                  <Link href="/contact">
+                    <Sparkles className="h-5 w-5 mr-2" />
+                    Begin Your Healing
+                  </Link>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 border-white/30 text-white hover:bg-white/10"
+                  asChild
+                >
+                  <Link href="/approach">
+                    Learn How We Help
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap gap-4 text-white/70 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-lightGray-400 rounded-full" />
+                  <span>Gottman Level 3 Certified</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-turquoise-300 rounded-full" />
+                  <span>Published Clinical Researcher</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-lime-400 rounded-full" />
+                  <span>UCSD Clinical Faculty</span>
+                </div>
+              </div>
             </motion.div>
 
           {/* Right Side Video Box */}
@@ -176,56 +231,6 @@ export function PremiumHero() {
             </div>
           </motion.div>
           </div>
-
-          {/* Bottom Section - Centered CTAs */}
-          <motion.div
-            className="mt-12 lg:mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            {/* CTA Buttons - Centered */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="px-8 py-4"
-                asChild
-              >
-                <Link href="/contact">
-                  <Sparkles className="h-5 w-5 mr-2" />
-                  Begin Your Healing
-                </Link>
-              </Button>
-
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-8 py-4 border-white/30 text-white hover:bg-white/10"
-                asChild
-              >
-                <Link href="/approach">
-                  Learn How We Help
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Link>
-              </Button>
-            </div>
-
-            {/* Trust Indicators - Centered */}
-            <div className="mt-8 flex flex-wrap gap-6 justify-center text-white/70 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-lightGray-400 rounded-full" />
-                <span>Gottman Level 3 Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-turquoise-300 rounded-full" />
-                <span>Published Clinical Researcher</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-lime-400 rounded-full" />
-                <span>UCSD Clinical Faculty</span>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

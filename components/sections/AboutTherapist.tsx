@@ -177,23 +177,30 @@ export function AboutTherapist() {
               })}
             </div>
 
-            {/* CTAs - Side by side under bio columns */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <Link
-                href="/approach"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white/10 text-white font-body font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
-              >
-                Learn About My Approach
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
-              >
-                Begin Your Healing
-              </Link>
-            </div>
           </motion.div>
         </div>
+
+        {/* CTAs - Full width centered row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
+        >
+          <Link
+            href="/approach"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-body font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            Learn About My Approach
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white font-body font-semibold rounded-full hover:from-turquoise-600 hover:to-turquoise-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Begin Your Healing
+          </Link>
+        </motion.div>
       </div>
     </section>
   )
