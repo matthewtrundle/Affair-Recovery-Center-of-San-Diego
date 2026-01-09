@@ -74,27 +74,29 @@ const officeInfo = [
     title: 'Office Hours',
     content: (
       <>
-        <div className="space-y-3 text-slate mb-4">
-          <div className="flex justify-between items-center py-1">
-            <span>Monday - Thursday:</span>
-            <span className="font-medium text-navy">9:00 AM - 7:00 PM</span>
-          </div>
-          <div className="flex justify-between items-center py-1">
-            <span>Friday:</span>
-            <span className="font-medium text-navy">9:00 AM - 5:00 PM</span>
-          </div>
-          <div className="flex justify-between items-center py-1">
-            <span>Saturday:</span>
-            <span className="font-medium text-coral">By appointment</span>
-          </div>
-          <div className="flex justify-between items-center py-1">
-            <span>Sunday:</span>
-            <span className="font-medium text-slate-400">Closed</span>
-          </div>
-        </div>
+        <table className="w-full text-slate mb-4">
+          <tbody className="divide-y divide-slate-100">
+            <tr>
+              <td className="py-2 pr-4">Mon–Thu</td>
+              <td className="py-2 text-right font-medium text-navy whitespace-nowrap">9 AM – 7 PM</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4">Friday</td>
+              <td className="py-2 text-right font-medium text-navy whitespace-nowrap">9 AM – 5 PM</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4">Saturday</td>
+              <td className="py-2 text-right font-medium text-coral whitespace-nowrap">By appointment</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-4">Sunday</td>
+              <td className="py-2 text-right font-medium text-slate-400 whitespace-nowrap">Closed</td>
+            </tr>
+          </tbody>
+        </table>
         <div className="text-sm text-slate-600 bg-turquoise-50 rounded-lg p-3">
-          <div className="font-medium text-turquoise-700 mb-1">Flexible Scheduling:</div>
-          <div>Early morning and evening appointments available for working professionals</div>
+          <div className="font-medium text-turquoise-700 mb-1">Flexible Scheduling</div>
+          <div>Early morning & evening appointments available</div>
         </div>
       </>
     )
@@ -106,20 +108,19 @@ const officeInfo = [
       <>
         <div className="text-slate space-y-4">
           <div>
-            <p className="font-medium text-navy mb-2">In-Person Sessions:</p>
-            <p className="text-sm mb-2">San Diego County including:</p>
-            <div className="grid grid-cols-2 gap-1 text-sm">
-              <div>• Downtown San Diego</div>
-              <div>• La Jolla</div>
-              <div>• Del Mar</div>
-              <div>• Carlsbad</div>
-              <div>• Escondido</div>
-              <div>• Encinitas</div>
+            <p className="font-medium text-navy mb-2">In-Person Sessions</p>
+            <p className="text-sm text-slate-600 mb-3">San Diego County including:</p>
+            <div className="flex flex-wrap gap-2 text-sm">
+              {['La Jolla', 'Del Mar', 'Carlsbad', 'Encinitas', 'Carmel Valley', 'Downtown'].map((area) => (
+                <span key={area} className="px-2 py-1 bg-turquoise-50 text-turquoise-700 rounded-md">
+                  {area}
+                </span>
+              ))}
             </div>
           </div>
-          <div className="border-t border-turquoise-100 pt-4">
-            <p className="font-medium text-navy mb-2">Telehealth Sessions:</p>
-            <p className="text-sm">Available for all California residents with secure, HIPAA-compliant video platform</p>
+          <div className="border-t border-slate-100 pt-4">
+            <p className="font-medium text-navy mb-2">Telehealth Sessions</p>
+            <p className="text-sm text-slate-600">Available for all California residents via secure, HIPAA-compliant video</p>
           </div>
         </div>
       </>
