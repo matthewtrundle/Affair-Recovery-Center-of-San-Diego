@@ -23,17 +23,7 @@ const achievements = [
 
 export function AboutTherapist() {
   return (
-    <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden">
-      {/* Dark background with sunset beach image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/beach/sunset-cliffs-silhouette.webp"
-          alt=""
-          fill
-          className="object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-deepTeal-900/95 via-deepTeal-800/90 to-deepTeal-900/95" />
-      </div>
+    <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden bg-lightGray-50">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 lg:gap-20 items-start">
@@ -50,7 +40,7 @@ export function AboutTherapist() {
             <div className="relative">
               {/* Main large image */}
               <div className="relative group">
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/10">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-deepTeal-100">
                   <Image
                     src="/images/therapist/Jordan1.webp"
                     alt="Jordan Zipkin, LMFT - Professional therapist"
@@ -58,7 +48,6 @@ export function AboutTherapist() {
                     height={600}
                     className="object-cover w-full h-[400px] group-hover:scale-[1.02] transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/50 via-transparent to-transparent" />
                 </div>
               </div>
 
@@ -70,7 +59,7 @@ export function AboutTherapist() {
                 viewport={{ once: true }}
                 className="absolute bottom-4 -right-8 w-36 h-36 lg:w-40 lg:h-40 group"
               >
-                <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white/20">
+                <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white">
                   <Image
                     src="/images/therapist/Jordan2.webp"
                     alt="Jordan Zipkin, LMFT"
@@ -102,14 +91,14 @@ export function AboutTherapist() {
               viewport={{ once: true }}
               className="mt-40"
             >
-              <h3 className="text-xl font-display font-medium text-white mb-4">
+              <h3 className="text-xl font-display font-medium text-navy mb-4">
                 Professional Highlights
               </h3>
               <div className="space-y-3">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-lime-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/80 font-body leading-relaxed">
+                    <CheckCircle className="w-5 h-5 text-turquoise-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate font-body leading-relaxed">
                       {achievement}
                     </span>
                   </div>
@@ -128,15 +117,15 @@ export function AboutTherapist() {
           >
             {/* Section header */}
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 bg-white/10 text-lime-400 px-4 py-2 rounded-full text-sm font-body font-medium mb-4 border border-white/10">
+              <div className="inline-flex items-center gap-2 bg-turquoise-50 text-turquoise-600 px-4 py-2 rounded-full text-sm font-body font-medium mb-4 border border-turquoise-100">
                 <Heart className="w-4 h-4" />
                 Meet Your Therapist
               </div>
-              <h2 className="text-4xl md:text-5xl font-display font-light text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-light text-navy mb-4">
                 Meet Jordan Zipkin,{' '}
-                <span className="text-turquoise-300">LMFT</span>
+                <span className="text-turquoise-500">LMFT</span>
               </h2>
-              <p className="text-xl text-white/90 font-heading leading-relaxed">
+              <p className="text-xl text-slate font-heading leading-relaxed">
                 A trusted local expert who happens to be really good at what he does
               </p>
             </div>
@@ -144,18 +133,18 @@ export function AboutTherapist() {
             {/* Bio content - Two column grid */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="space-y-4">
-                <p className="text-base text-white/80 leading-relaxed font-body">
+                <p className="text-base text-slate leading-relaxed font-body">
                   For over 15 years, I've had the privilege of helping San Diego couples navigate their most challenging moments. My approach balances genuine care with proven expertise—informed by both professional training and personal experience with the pain of betrayal and the journey of healing.
                 </p>
-                <p className="text-base text-white/80 leading-relaxed font-body">
+                <p className="text-base text-slate leading-relaxed font-body">
                   I believe couples need more than talk therapy—they need evidence-based tools and practical strategies that actually work. That's why I integrate the Gottman Method, Relational Life Therapy, and trauma-informed approaches.
                 </p>
               </div>
               <div className="space-y-4">
-                <p className="text-base text-white/80 leading-relaxed font-body">
+                <p className="text-base text-slate leading-relaxed font-body">
                   I understand what you're going through because I've been there myself. That personal understanding, combined with specialized training, has helped hundreds of couples rebuild trust and create stronger relationships than they had before.
                 </p>
-                <p className="text-base text-white/80 leading-relaxed font-body">
+                <p className="text-base text-slate leading-relaxed font-body">
                   My Carmel Valley office provides a safe, comfortable space, conveniently located near I-5 and accessible from throughout San Diego County.
                 </p>
               </div>
@@ -167,10 +156,10 @@ export function AboutTherapist() {
                 const IconComponent = credential.icon
                 return (
                   <div key={index} className="flex items-center gap-3 group">
-                    <div className="flex-shrink-0 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-white/10">
-                      <IconComponent className="w-5 h-5 text-turquoise-300" />
+                    <div className="flex-shrink-0 w-10 h-10 bg-turquoise-50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform border border-turquoise-100">
+                      <IconComponent className="w-5 h-5 text-turquoise-500" />
                     </div>
-                    <span className="text-white/90 font-body font-medium">
+                    <span className="text-navy font-body font-medium">
                       {credential.text}
                     </span>
                   </div>
@@ -192,7 +181,6 @@ export function AboutTherapist() {
           <Button
             variant="pill-outline"
             size="lg"
-            className="border-white/40 text-white hover:bg-white/10 hover:border-white/60"
             asChild
           >
             <Link href="/approach">

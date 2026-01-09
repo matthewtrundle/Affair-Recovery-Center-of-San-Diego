@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ApproachHero } from '@/components/sections/ApproachHero'
+import { PageHeader } from '@/components/sections/PageHeader'
 import { TherapeuticMethods } from '@/components/sections/TherapeuticMethods'
 import { IntegratedApproach } from '@/components/sections/IntegratedApproach'
 import { SessionStructure } from '@/components/sections/SessionStructure'
@@ -25,7 +25,14 @@ export default function ApproachPage() {
       ])}
 
       {/* Hero Section */}
-      <ApproachHero />
+      <PageHeader
+        badge="Evidence-Based Methods"
+        badgeIcon="sparkles"
+        title="My Therapeutic"
+        titleHighlight="Approach"
+        subtitle="Three powerful, research-backed methods working together to help you heal from betrayal, rebuild trust, and create a stronger relationship."
+        variant="turquoise"
+      />
 
       {/* Therapeutic Methods with Interactive Cards */}
       <TherapeuticMethods />

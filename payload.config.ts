@@ -1,6 +1,7 @@
 import sharp from 'sharp'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { buildConfig } from 'payload'
 
 // Import collections
@@ -67,4 +68,16 @@ export default buildConfig({
   serverURL: process.env.NODE_ENV === 'production'
     ? (process.env.NEXT_PUBLIC_SITE_URL || '')
     : '',
+
+  // Plugins - Cloud storage for Vercel deployment
+  plugins: [
+    vercelBlobStorage({
+      // Enable only in production (Vercel) - use local storage in development
+      enabled: process.env.NODE_ENV === 'production',
+      collections: {
+        media: true, // Apply to media collection
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+    }),
+  ],
 })

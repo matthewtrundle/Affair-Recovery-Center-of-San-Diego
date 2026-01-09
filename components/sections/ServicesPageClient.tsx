@@ -317,20 +317,41 @@ export function ProcessOverviewSection() {
     <section className="py-20 lg:py-28 bg-gradient-to-b from-deepTeal-800 to-deepTeal-900 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-white mb-6">
-            Our Healing Process
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A structured, evidence-based approach typically spanning 12-20 sessions
-          </p>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <h2 className="text-4xl lg:text-5xl font-display font-light text-white mb-6">
+              Our Healing Process
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl">
+              A structured, evidence-based approach typically spanning 12-20 sessions
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border border-white/10">
+              <Image
+                src="/images/sections/feature-transformation.webp"
+                alt="The transformation journey of healing"
+                width={500}
+                height={350}
+                className="object-cover w-full h-[280px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/50 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {processSteps.map((step, index) => (
@@ -533,20 +554,41 @@ export function FourPillarsSection() {
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-lightGray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
-            What to Expect in Affair Recovery Counseling
-          </h2>
-          <p className="text-xl text-slate max-w-3xl mx-auto">
-            We follow four pillars—emotion regulation, rebuilding trust, rebuilding friendship, and renewing intimacy—at a pace that fits you.
-          </p>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <h2 className="text-4xl lg:text-5xl font-display font-light text-deepTeal mb-6">
+              What to Expect in Affair Recovery Counseling
+            </h2>
+            <p className="text-xl text-slate max-w-3xl">
+              We follow four pillars—emotion regulation, rebuilding trust, rebuilding friendship, and renewing intimacy—at a pace that fits you.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/couples/beach-conversation.webp"
+                alt="Couple reconnecting and rebuilding their relationship"
+                width={500}
+                height={350}
+                className="object-cover w-full h-[280px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/30 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+        </div>
 
         <div className="max-w-6xl mx-auto space-y-8">
           {pillars.map((pillar, index) => (

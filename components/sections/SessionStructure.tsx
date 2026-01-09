@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
+import Image from 'next/image'
 import { Clock, Calendar, Home, CheckCircle, MessageSquare, BookOpen, Target, Users, ArrowRight } from 'lucide-react'
 
 const sessionAspects = [
@@ -158,39 +159,60 @@ export function SessionStructure() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        {/* Header with Image */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            whileInView={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, type: "spring" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="inline-block mb-6"
+            className="text-center lg:text-left"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-deepTeal-400 to-lime-400 blur-lg opacity-50" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-deepTeal-400 to-lime-400 flex items-center justify-center">
-                <Calendar className="w-8 h-8 text-white" />
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8, type: "spring" }}
+              viewport={{ once: true }}
+              className="inline-block mb-6"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-deepTeal-400 to-lime-400 blur-lg opacity-50" />
+                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-deepTeal-400 to-lime-400 flex items-center justify-center">
+                  <Calendar className="w-8 h-8 text-white" />
+                </div>
               </div>
-            </div>
+            </motion.div>
+
+            <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
+              Session Structure
+              <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-deepTeal-600 to-lime-600 bg-clip-text text-transparent mt-2">
+                & Expectations
+              </span>
+            </h2>
+            <p className="text-xl text-slate max-w-3xl font-heading">
+              Understanding what to expect helps you get the most from our work together.
+            </p>
           </motion.div>
 
-          <h2 className="text-4xl lg:text-5xl font-display font-light text-navy mb-6">
-            Session Structure
-            <span className="block text-5xl lg:text-6xl font-normal bg-gradient-to-r from-deepTeal-600 to-lime-600 bg-clip-text text-transparent mt-2">
-              & Expectations
-            </span>
-          </h2>
-          <p className="text-xl text-slate max-w-3xl mx-auto font-heading">
-            Understanding what to expect helps you get the most from our work together.
-          </p>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/metaphor/metaphor-calm-waters.webp"
+                alt="Finding calm and clarity in your healing journey"
+                width={500}
+                height={350}
+                className="object-cover w-full h-[300px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/30 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+        </div>
 
         {/* Tab Navigation */}
         <motion.div

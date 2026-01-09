@@ -161,10 +161,10 @@ export function TherapeuticMethods() {
                     <Icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-body font-semibold text-sm">
+                    <div className="font-body font-semibold text-base">
                       {method.title}
                     </div>
-                    <div className={`text-xs mt-0.5 ${
+                    <div className={`text-sm mt-0.5 ${
                       isActive ? 'text-white/80' : 'text-deepTeal-600'
                     }`}>
                       {method.subtitle}
@@ -198,13 +198,13 @@ export function TherapeuticMethods() {
                         <h3 className="text-2xl font-display font-normal text-navy">
                           {method.title}
                         </h3>
-                        <p className="text-sm text-turquoise-600 font-medium">
+                        <p className="text-base text-turquoise-600 font-medium">
                           {method.subtitle}
                         </p>
                       </div>
                     </div>
 
-                    <p className="text-slate text-sm leading-relaxed mb-4">
+                    <p className="text-slate text-base leading-relaxed mb-4">
                       {method.description}
                     </p>
 
@@ -214,8 +214,8 @@ export function TherapeuticMethods() {
                           <CheckCircle className="w-3 h-3 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-navy text-sm mb-1">Research-Backed Results</h4>
-                          <p className="text-slate text-xs">{method.researchBacked}</p>
+                          <h4 className="font-semibold text-navy text-base mb-1">Research-Backed Results</h4>
+                          <p className="text-slate text-sm">{method.researchBacked}</p>
                         </div>
                       </div>
                     </div>
@@ -241,8 +241,8 @@ export function TherapeuticMethods() {
                                 <PrincipleIcon className="w-4 h-4 text-white" />
                               </div>
                               <div>
-                                <h5 className="font-semibold text-navy text-sm mb-0.5">{principle.title}</h5>
-                                <p className="text-slate text-xs">{principle.description}</p>
+                                <h5 className="font-semibold text-navy text-base mb-0.5">{principle.title}</h5>
+                                <p className="text-slate text-sm">{principle.description}</p>
                               </div>
                             </motion.div>
                           )
@@ -262,8 +262,8 @@ export function TherapeuticMethods() {
                             transition={{ delay: index * 0.05 }}
                             className="flex items-center gap-2 p-2 glass backdrop-blur-sm bg-white/60 rounded-lg border border-white/30"
                           >
-                            <span className="text-turquoise-500 text-sm flex-shrink-0">✦</span>
-                            <span className="text-slate text-xs">{technique}</span>
+                            <span className="text-turquoise-500 text-base flex-shrink-0">✦</span>
+                            <span className="text-slate text-sm">{technique}</span>
                           </motion.div>
                         ))}
                       </div>

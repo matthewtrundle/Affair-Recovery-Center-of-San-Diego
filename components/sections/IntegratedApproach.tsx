@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
+import Image from 'next/image'
 import { Users, Heart, Brain, ArrowRight, Zap, Target, Shield } from 'lucide-react'
 
 const methodNodes = [
@@ -228,7 +229,7 @@ export function IntegratedApproach() {
                       </h3>
 
                       {/* Subtitle */}
-                      <p className="text-sm text-turquoise-600 font-medium mb-4">
+                      <p className="text-base text-turquoise-600 font-medium mb-4">
                         {node.subtitle}
                       </p>
 
@@ -236,7 +237,7 @@ export function IntegratedApproach() {
                       <div className="flex-1">
                         <ul className="space-y-2 text-left">
                           {node.strengths.map((strength, sIndex) => (
-                            <li key={sIndex} className="text-xs text-slate flex items-start gap-2">
+                            <li key={sIndex} className="text-sm text-slate flex items-start gap-2">
                               <span className="text-turquoise-500 mt-0.5">✦</span>
                               <span>{strength}</span>
                             </li>
@@ -263,9 +264,9 @@ export function IntegratedApproach() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 rounded-full bg-gradient-to-r from-turquoise-500 to-lime-500" />
-                  <h4 className="text-sm font-semibold text-navy">{connection.label}</h4>
+                  <h4 className="text-base font-semibold text-navy">{connection.label}</h4>
                 </div>
-                <p className="text-xs text-slate leading-relaxed">
+                <p className="text-sm text-slate leading-relaxed">
                   {connection.description}
                 </p>
               </motion.div>
@@ -297,13 +298,33 @@ export function IntegratedApproach() {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl lg:text-4xl font-display font-light text-navy mb-4">
-              Treatment Phases
-            </h3>
-            <p className="text-lg text-slate max-w-2xl mx-auto">
-              The integration follows a structured timeline, with methods working together at each phase.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div className="text-center lg:text-left">
+              <h3 className="text-3xl lg:text-4xl font-display font-light text-navy mb-4">
+                Treatment Phases
+              </h3>
+              <p className="text-lg text-slate max-w-2xl">
+                The integration follows a structured timeline, with methods working together at each phase.
+              </p>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/metaphor/metaphor-journey.webp"
+                  alt="The journey of healing and recovery"
+                  width={500}
+                  height={350}
+                  className="object-cover w-full h-[280px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deepTeal-900/30 via-transparent to-transparent" />
+              </div>
+            </motion.div>
           </div>
 
           {/* Phase Navigation */}
@@ -329,7 +350,7 @@ export function IntegratedApproach() {
                   </div>
                   <div className="text-left">
                     <div className="font-semibold">Phase {phase.phase}: {phase.title}</div>
-                    <div className="text-xs opacity-70">{phase.duration}</div>
+                    <div className="text-sm opacity-70">{phase.duration}</div>
                   </div>
                 </motion.button>
               )
