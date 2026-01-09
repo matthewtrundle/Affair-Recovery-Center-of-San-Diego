@@ -70,14 +70,16 @@ export default buildConfig({
     : '',
 
   // Plugins - Cloud storage for Vercel deployment
-  plugins: [
-    vercelBlobStorage({
-      // Enable only in production (Vercel) - use local storage in development
-      enabled: process.env.NODE_ENV === 'production',
-      collections: {
-        media: true, // Apply to media collection
-      },
-      token: process.env.BLOB_READ_WRITE_TOKEN || '',
-    }),
-  ],
+  // Note: Plugin components are always registered but storage only activates when token is valid
+  plugins: process.env.BLOB_READ_WRITE_TOKEN
+    ? [
+        vercelBlobStorage({
+          enabled: true,
+          collections: {
+            media: true,
+          },
+          token: process.env.BLOB_READ_WRITE_TOKEN,
+        }),
+      ]
+    : [],
 })
