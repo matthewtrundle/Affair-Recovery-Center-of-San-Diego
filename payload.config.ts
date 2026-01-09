@@ -1,7 +1,7 @@
 import sharp from 'sharp'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
-// import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob' // Disabled - version incompatibility
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { buildConfig } from 'payload'
 
 // Import collections
@@ -69,8 +69,16 @@ export default buildConfig({
     ? (process.env.NEXT_PUBLIC_SITE_URL || '')
     : '',
 
-  // Plugins - Cloud storage disabled temporarily due to version incompatibility
-  // TODO: Re-enable when @payloadcms/storage-vercel-blob is updated
-  // Media will use local storage for now
-  plugins: [],
+  // Plugins - Cloud storage for Vercel deployment
+  // Plugin always loaded to ensure import map is generated correctly
+  // Storage only activates when valid BLOB_READ_WRITE_TOKEN is present
+  plugins: [
+    vercelBlobStorage({
+      enabled: !!process.env.BLOB_READ_WRITE_TOKEN,
+      collections: {
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+    }),
+  ],
 })
