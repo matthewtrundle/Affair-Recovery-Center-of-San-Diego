@@ -3,8 +3,14 @@ import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+    ],
     formats: ['image/avif', 'image/webp'],
+    qualities: [60, 75, 85, 100],
   },
   productionBrowserSourceMaps: false,
   webpack: (config, { isServer }) => {
