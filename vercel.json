@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.affairrecoverysandiego.com"
+        }
+      ],
+      "destination": "https://affairrecoverysandiego.com/$1",
+      "permanent": true
+    }
+  ]
+}
