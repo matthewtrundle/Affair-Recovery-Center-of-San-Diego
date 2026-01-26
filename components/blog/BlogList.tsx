@@ -56,6 +56,12 @@ const ALL_BLOG_IMAGES = [
 const usedImages = new Set<string>()
 
 const getPostImage = (post: Post): string => {
+  // Use featured image if available
+  if (post.featuredImage && typeof post.featuredImage === 'object' && post.featuredImage.url) {
+    return post.featuredImage.url
+  }
+
+  // Fallback to stock images
   // Hash the post ID to get a consistent index for this specific post
   const postIdHash = post.id ?
     String(post.id).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) :

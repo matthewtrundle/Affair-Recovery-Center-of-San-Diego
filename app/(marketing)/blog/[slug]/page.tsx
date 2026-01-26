@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, Clock, Tag, ArrowLeft, User } from 'lucide-react'
 import { getPostBySlug, getPosts } from '@/lib/payload'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
@@ -129,12 +130,16 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Featured Image */}
-          {post.featuredImage && (
+          {post.featuredImage && typeof post.featuredImage === 'object' && post.featuredImage.url && (
             <div className="mt-8 rounded-2xl overflow-hidden">
-              {/* Placeholder - implement image rendering based on your Media collection */}
-              <div className="w-full h-96 bg-gradient-to-br from-deepTeal-600 to-deepTeal-800 flex items-center justify-center">
-                <span className="text-white/30 text-6xl">📖</span>
-              </div>
+              <Image
+                src={post.featuredImage.url}
+                alt={post.featuredImage.alt || post.title}
+                width={1200}
+                height={675}
+                className="w-full h-auto object-cover"
+                priority
+              />
             </div>
           )}
 

@@ -8,6 +8,10 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
     ],
     formats: ['image/avif', 'image/webp'],
     qualities: [60, 75, 85, 100],
