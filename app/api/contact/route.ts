@@ -387,7 +387,7 @@ https://affairrecoverysandiego.com
       await resendClient.emails.send({
         from: process.env.MAIL_FROM || 'Jordan Zipkin <jordan@mystresssolutions.com>',
         to: email,
-        replyTo: 'jordan@mystresssolutions.com',
+        reply_to: 'jordan@mystresssolutions.com',
         subject: 'Thank You for Reaching Out - Affair Recovery Center',
         text: confirmationText,
         html: confirmationHtml,
