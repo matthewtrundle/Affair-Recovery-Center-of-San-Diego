@@ -37,18 +37,14 @@ const officeInfo = [
       <>
         <address className="text-slate not-italic mb-4">
           <div className="font-medium text-navy">Jordan Zipkin, LMFT</div>
-          Carmel Valley Professional Center<br />
-          Right off the 5 at Del Mar Heights Road<br />
-          San Diego, CA 92130
+          2525 Camino Del Rio South<br />
+          Suite 313<br />
+          San Diego, CA 92108
         </address>
         <div className="text-sm text-slate-600 mb-4">
           <div className="flex items-center gap-2 mb-1">
             <span>🚗</span>
-            <span>Free parking (no hunting for spots!)</span>
-          </div>
-          <div className="flex items-center gap-2 mb-1">
-            <span>☕</span>
-            <span>Starbucks in the building</span>
+            <span>Free parking available</span>
           </div>
           <div className="flex items-center gap-2">
             <span>🔒</span>
@@ -57,7 +53,7 @@ const officeInfo = [
         </div>
         <Button variant="outline" size="sm" asChild>
           <a
-            href="https://maps.google.com/?q=123+Main+Street+San+Diego+CA+92101"
+            href="https://maps.app.goo.gl/HLNCVNRPAMGxzGpu8"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2"

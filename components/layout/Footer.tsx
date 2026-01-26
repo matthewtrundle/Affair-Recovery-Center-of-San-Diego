@@ -83,9 +83,9 @@ export function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5 text-lime-400" />
                 <div>
-                  <p>Carmel Valley Office</p>
-                  <p>San Diego, CA 92130</p>
-                  <p className="text-xs text-gray-400">Near I-5 & SR-56</p>
+                  <p>2525 Camino Del Rio South</p>
+                  <p>Suite 313</p>
+                  <p>San Diego, CA 92108</p>
                 </div>
               </li>
               <li className="flex items-start mt-3">
