@@ -21,7 +21,7 @@ export async function sendEmail(options: EmailOptions) {
 
   try {
     const emailData: any = {
-      from: options.from || process.env.MAIL_FROM || 'Affair Recovery Center <hello@affairrecoverysandiego.com>',
+      from: options.from || process.env.MAIL_FROM || 'Jordan Zipkin <jordan@mystresssolutions.com>',
       to: options.to,
       subject: options.subject,
     }
