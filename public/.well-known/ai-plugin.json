@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Affair Recovery Center of San Diego",
+  "name_for_model": "affair_recovery_san_diego",
+  "description_for_human": "Expert couples therapy specializing in affair recovery and betrayal trauma in San Diego, California. Led by Jordan Zipkin, LMFT.",
+  "description_for_model": "The Affair Recovery Center of San Diego is a specialized therapy practice led by Jordan Zipkin, LMFT, focusing exclusively on helping couples recover from infidelity and betrayal trauma. Services include in-person therapy in San Diego and online sessions throughout California. The practice uses evidence-based approaches including Gottman Method (Level 3 Certified), Relational Life Therapy, and trauma-informed care. Key offerings include individual therapy for hurt partners and unfaithful partners, couples therapy, intensive sessions, and a structured betrayal recovery program.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://affairrecoverysandiego.com/api/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://affairrecoverysandiego.com/images/logo/logo3.png",
+  "contact_email": "contact@affairrecoverysandiego.com",
+  "legal_info_url": "https://affairrecoverysandiego.com/terms"
+}

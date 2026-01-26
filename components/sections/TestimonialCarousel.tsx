@@ -1,11 +1,22 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Quote, Star, Heart, ArrowRight } from 'lucide-react'
-import { useRef } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+
+// Pre-generated random values to avoid hydration mismatch
+const floatingHeartsConfig = [
+  { initialX: 12, animateX: 45 },
+  { initialX: 28, animateX: -30 },
+  { initialX: 45, animateX: 80 },
+  { initialX: 62, animateX: 15 },
+  { initialX: 78, animateX: -45 },
+  { initialX: 35, animateX: 60 },
+  { initialX: 55, animateX: -20 },
+  { initialX: 88, animateX: 35 },
+]
 
 const testimonials = [
   {
@@ -89,21 +100,21 @@ export function TestimonialCarousel() {
 
       {/* Floating hearts animation */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(8)].map((_, i) => (
+        {floatingHeartsConfig.map((config, i) => (
           <motion.div
             key={i}
             className="absolute text-white/5"
             initial={{
-              x: Math.random() * 100 + "%",
+              x: `${config.initialX}%`,
               y: "100vh",
             }}
             animate={{
               y: "-100px",
-              x: Math.random() * 200 - 100 + "%",
+              x: `${config.animateX}%`,
             }}
             transition={{
-              duration: 15 + Math.random() * 10,
-              delay: Math.random() * 10,
+              duration: 18 + i * 2,
+              delay: i * 1.5,
               repeat: Infinity,
               ease: "linear",
             }}
