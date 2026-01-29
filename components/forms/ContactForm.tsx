@@ -274,7 +274,7 @@ export function ContactForm() {
                     {errorMessage || 'Failed to send message'}
                   </p>
                   <p className="text-xs text-coral-700 mt-1">
-                    Please try again or email directly at jordan@affairrecoverysd.com
+                    Please try again or email directly at jordan@mystresssolutions.com
                   </p>
                 </div>
               </motion.div>
