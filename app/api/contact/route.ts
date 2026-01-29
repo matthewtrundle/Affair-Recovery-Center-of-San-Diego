@@ -196,7 +196,7 @@ Sent from Affair Recovery Center website contact form
 
     // Send email via Resend
     const { data, error } = await resendClient.emails.send({
-      from: process.env.MAIL_FROM || 'Jordan Zipkin <jordan@mystresssolutions.com>',
+      from: process.env.MAIL_FROM || 'Affair Recovery Center <noreply@affairrecoverysandiego.com>',
       to: process.env.CONTACT_EMAIL || 'jordan@mystresssolutions.com',
       reply_to: email,
       subject: `New Contact Form Submission from ${name}`,
@@ -385,7 +385,7 @@ https://affairrecoverysandiego.com
     // Send confirmation email (don't fail the request if this fails)
     try {
       await resendClient.emails.send({
-        from: process.env.MAIL_FROM || 'Jordan Zipkin <jordan@mystresssolutions.com>',
+        from: process.env.MAIL_FROM || 'Affair Recovery Center <noreply@affairrecoverysandiego.com>',
         to: email,
         reply_to: 'jordan@mystresssolutions.com',
         subject: 'Thank You for Reaching Out - Affair Recovery Center',
