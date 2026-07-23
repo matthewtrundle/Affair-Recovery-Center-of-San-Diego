@@ -264,12 +264,14 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="mb-3">
-                    <strong>Couples therapy:</strong> $180 per 60-minute session<br />
-                    <strong>Individual sessions:</strong> $150 per 50-minute session<br />
-                    <strong>Intensive weekends:</strong> $1,800 (12-16 hours over two days)
+                    <strong>50 Minute Session</strong>
                   </p>
                   <p>
-                    The first session is slightly longer (75 minutes) to allow for comprehensive assessment. Payment plans are available for clients who need them.
+                    $225 for Online Sessions for Men<br />
+                    $250 for Online Sessions for Couples<br />
+                    $245 for In-Person Sessions for Men<br />
+                    $270 for In-Person Sessions for Couples<br />
+                    $130 for EMDR Therapy
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -280,11 +282,19 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="mb-3">
-                    I accept select insurance plans and provide superbills for out-of-network reimbursement. Many insurance plans cover therapy for relationship issues when there's a mental health component (like depression, anxiety, or PTSD from betrayal trauma).
+                    We do not take insurance, but there is a possibility that your insurance provider will reimburse you for part of the cost of our sessions.
                   </p>
-                  <p>
-                    I'm happy to discuss payment options and help you understand your benefits during our consultation. For military families, Tricare and other military insurance options may apply.
+                  <p className="mb-3">
+                    We can provide you with a superbill (a receipt with basic information that, when presented to your insurance provider, can result in their reimbursing you for a portion of the psychotherapy fees).
                   </p>
+                  <p className="mb-3">
+                    Please know that:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>A good portion of my clients are reimbursed between 30-50% of our fee.</li>
+                    <li>Being reimbursed for our full fee is rare.</li>
+                    <li>Some of our clients do not receive any reimbursement.</li>
+                  </ul>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
