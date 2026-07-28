@@ -2,6 +2,7 @@ import { Inter, Cormorant_Garamond, Playfair_Display, Source_Sans_3 } from 'next
 import Script from 'next/script'
 import '@/styles/globals.css'
 import { Analytics } from '@/components/Analytics'
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 import { PremiumHeader } from '@/components/layout/PremiumHeader'
 import { Footer } from '@/components/layout/Footer'
 import { MobileCTABar } from '@/components/layout/MobileCTABar'
@@ -77,6 +78,7 @@ export default function MarketingLayout({
           <MobileCTABar />
         </SmoothScrollProvider>
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   )
