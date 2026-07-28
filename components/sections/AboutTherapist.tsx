@@ -8,17 +8,16 @@ import { Button } from '@/components/ui/button'
 
 const credentials = [
   { icon: GraduationCap, text: "Licensed Marriage & Family Therapist (LMFT)" },
-  { icon: Star, text: "Gottman Method Couples Therapy Level 3" },
+  { icon: Star, text: "Gottman Method Couples Therapy Levels 1-2" },
   { icon: CheckCircle, text: "Relational Life Therapy Training" },
   { icon: Clock, text: "15+ years helping San Diego couples" },
-  { icon: MapPin, text: "Carmel Valley office, convenient to I-5" },
+  { icon: MapPin, text: "Mission Valley office, convenient to I-5" },
 ]
 
 const achievements = [
-  "Published researcher in attachment and trauma healing",
+  "Have helped over 500 couples in 15+ years save their marriages",
   "Specialized training in betrayal trauma recovery",
-  "Member of the American Association for Marriage and Family Therapy",
-  "Regular speaker at relationship wellness conferences"
+  "Member of the American Association for Marriage and Family Therapy"
 ]
 
 export function AboutTherapist() {
@@ -145,7 +144,7 @@ export function AboutTherapist() {
                   I understand what you're going through because I've been there myself. That personal understanding, combined with specialized training, has helped hundreds of couples rebuild trust and create stronger relationships than they had before.
                 </p>
                 <p className="text-base text-slate leading-relaxed font-body">
-                  My Carmel Valley office provides a safe, comfortable space, conveniently located near I-5 and accessible from throughout San Diego County.
+                  My Mission Valley office provides a safe, comfortable space, conveniently located near I-5 and accessible from throughout San Diego County.
                 </p>
               </div>
             </div>

@@ -90,7 +90,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="mb-3">
-                    Most San Diego couples I work with benefit from 12-20 sessions over 6-12 months. The first 4-6 sessions focus on crisis stabilization—stopping the bleeding, so to speak. Then we move into deeper work on understanding what happened and rebuilding trust.
+                    Most of my clients tell me they get a lot better or are done with therapy within 6-10 sessions. The first 4-6 sessions focus on crisis stabilization—stopping the bleeding, so to speak. Then we move into deeper work on understanding what happened and rebuilding trust.
                   </p>
                   <p>
                     Some couples benefit from ongoing maintenance sessions after intensive work. Think of it like physical therapy: the acute phase has an endpoint, but staying strong requires continued attention.
@@ -118,7 +118,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="mb-3">
-                    Sessions are 60 minutes for couples (75 minutes for the initial session). We typically meet weekly in the beginning, then space out to bi-weekly as you stabilize.
+                    Sessions are 50 minutes for couples. We meet either weekly or bi-weekly, depending on your preferences and clinical recommendations.
                   </p>
                   <p>
                     Each session has structure but stays flexible to what's urgent. We might work on communication skills, process difficult emotions, review homework from the previous week, or address a recent crisis. I use evidence-based techniques from Gottman Method and Relational Life Therapy—no vague "how does that make you feel" stuff. We work on concrete skills.
@@ -212,7 +212,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p>
-                    I'm located in Carmel Valley, easily accessible from I-5 and I-805. Convenient parking available. I also offer virtual sessions for clients throughout California, which has been particularly helpful for military families during deployments or for busy professionals in Downtown, La Jolla, or North Park who prefer telehealth.
+                    I'm located in Mission Valley, easily accessible from I-5 and I-805. Convenient parking available. I also offer virtual sessions for clients throughout California, which has been particularly helpful for military families during deployments or for busy professionals in Downtown, La Jolla, or North Park who prefer telehealth.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -270,8 +270,7 @@ export default function FAQPage() {
                     $225 for Online Sessions for Men<br />
                     $250 for Online Sessions for Couples<br />
                     $245 for In-Person Sessions for Men<br />
-                    $270 for In-Person Sessions for Couples<br />
-                    $130 for EMDR Therapy
+                    $270 for In-Person Sessions for Couples
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -312,7 +311,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p>
-                    No. My job isn't to be a judge or take sides. I'm here to help both of you understand what happened, process the pain, and figure out whether and how to move forward. The betrayed partner deserves validation and support. The unfaithful partner needs accountability and help changing. Both of those things can be true at once.
+                    Yes. I take sides in favor of the relationship. When I see or hear something that's damaging to the relationship, I hold the behavior/statement/choice accountable in a firm and friendly way. I'm here to help both of you understand what happened, process the pain, and figure out whether and how to move forward. The betrayed partner deserves validation and support. The unfaithful partner needs accountability and help changing. Both of those things can be true at once.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -323,7 +322,7 @@ export default function FAQPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="mb-3">
-                    In couples therapy, I operate with a "no secrets" policy. If one partner tells me something in an individual session that affects the relationship, we'll work together on how and when to share it with their partner. This protects the therapy from becoming a repository for more secrets.
+                    In couples therapy, I can keep secrets. I will always encourage partners to share with one another though. I find this approach helps gives me the clearest and most comprehensive picture of what is happening early on, and therefore best armors me to help.
                   </p>
                   <p>
                     Everything discussed in therapy is confidential under HIPAA and California law. Your business stays your business. The only exceptions are if there's imminent danger to self or others, child abuse, or elder abuse—situations where I'm legally required to report.

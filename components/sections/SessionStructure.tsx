@@ -11,8 +11,8 @@ const sessionAspects = [
     title: 'Session Length & Frequency',
     description: 'Optimized timing for meaningful progress',
     details: [
-      '60-minute sessions (not 50 minutes)',
-      'Weekly sessions initially',
+      '50 minutes',
+      'Either weekly or bi-weekly sessions (dependent on your preference and clinical recommendation)',
       'Biweekly as progress stabilizes',
       'Monthly maintenance sessions',
     ],
