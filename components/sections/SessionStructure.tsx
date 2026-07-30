@@ -13,8 +13,7 @@ const sessionAspects = [
     details: [
       '50 minutes',
       'Either weekly or bi-weekly sessions (dependent on your preference and clinical recommendation)',
-      'Biweekly as progress stabilizes',
-      'Monthly maintenance sessions',
+      'Monthly maintenance sessions once you have stabilized',
     ],
     gradient: 'from-blue-500 to-indigo-500',
   },
