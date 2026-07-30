@@ -133,15 +133,15 @@ export function PremiumHero() {
               <div className="flex flex-wrap gap-4 text-white/70 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-lightGray-400 rounded-full" />
-                  <span>Gottman Level 3 Certified</span>
+                  <span>Gottman Level 1 and 2 Certified</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-turquoise-300 rounded-full" />
-                  <span>Published Clinical Researcher</span>
+                  <span>Certified in Relational Life Therapy</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-lime-400 rounded-full" />
-                  <span>UCSD Clinical Faculty</span>
+                  <span>Trauma Expert</span>
                 </div>
               </div>
             </motion.div>

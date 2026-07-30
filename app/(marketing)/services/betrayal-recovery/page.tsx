@@ -276,8 +276,8 @@ export default function BetrayalRecoveryPage() {
                   How We Meet
                 </h3>
                 <ul className="space-y-2 text-slate">
-                  <li>• 60 minutes (75 for first session)</li>
-                  <li>• Weekly at first (yes, you need it)</li>
+                  <li>• 50 minutes</li>
+                  <li>• Weekly or bi-weekly depending on your preference and clinical recommendations</li>
                   <li>• Homework that won't feel like homework</li>
                   <li>• Check-ins every 6 weeks ("Are we getting somewhere?")</li>
                 </ul>

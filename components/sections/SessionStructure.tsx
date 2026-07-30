@@ -11,8 +11,8 @@ const sessionAspects = [
     title: 'Session Length & Frequency',
     description: 'Optimized timing for meaningful progress',
     details: [
-      '60-minute sessions (not 50 minutes)',
-      'Weekly sessions initially',
+      '50 minutes',
+      'Either weekly or bi-weekly sessions (dependent on your preference and clinical recommendation)',
       'Biweekly as progress stabilizes',
       'Monthly maintenance sessions',
     ],
@@ -24,7 +24,7 @@ const sessionAspects = [
     description: 'Balanced approach to processing and skill-building',
     details: [
       'Check-in and homework review (10 min)',
-      'Skill-building or processing (35 min)',
+      'Skill-building or processing (25 min)',
       'Integration and homework assignment (15 min)',
       'Regular progress assessment',
     ],
@@ -70,19 +70,19 @@ const typicalSession = [
     icon: Target,
   },
   {
-    time: '25-40 min',
+    time: '25-35 min',
     title: 'Practice & Integration',
     description: 'Try new skills in session, role-play difficult conversations.',
     icon: Users,
   },
   {
-    time: '40-55 min',
+    time: '35-45 min',
     title: 'Planning & Homework',
     description: 'What to practice this week, specific exercises, next session planning.',
     icon: BookOpen,
   },
   {
-    time: '55-60 min',
+    time: '45-50 min',
     title: 'Closing Ritual',
     description: 'Quick connection moment, appreciation, or grounding exercise.',
     icon: CheckCircle,
@@ -313,7 +313,7 @@ export function SessionStructure() {
             <div className="max-w-4xl mx-auto">
               <div className="glass backdrop-blur-xl bg-white/90 rounded-2xl p-8 border border-white/50 shadow-lg">
                 <h3 className="text-2xl font-display font-normal text-navy mb-8 text-center">
-                  60-Minute Session Breakdown
+                  50-Minute Session Breakdown
                 </h3>
 
                 <div className="space-y-6">
