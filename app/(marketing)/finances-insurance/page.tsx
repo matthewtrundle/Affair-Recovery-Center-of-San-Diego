@@ -139,9 +139,9 @@ export default function FinancesInsurancePage() {
       </section>
 
       {/* Payment methods */}
-      <section className="py-16 md:py-20 bg-lightGray-50">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-display text-deepTeal-700 mb-8 pb-4 border-b-2 border-turquoise-200">
+          <h2 className="text-3xl font-display text-white mb-8 pb-4 border-b-2 border-white/20">
             Forms of Payment
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -150,15 +150,15 @@ export default function FinancesInsurancePage() {
               return (
                 <div
                   key={method.title}
-                  className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300"
+                  className="bg-white/10 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.14] transition-colors duration-300"
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-olive-500 rounded-xl flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-display font-medium text-deepTeal mb-2">
+                  <h3 className="text-xl font-display font-medium text-white mb-2">
                     {method.title}
                   </h3>
-                  <p className="text-slate leading-relaxed">
+                  <p className="text-white/80 leading-relaxed">
                     {method.description}
                   </p>
                 </div>
@@ -276,16 +276,16 @@ export default function FinancesInsurancePage() {
       </section>
 
       {/* Cancellation policy + Good Faith Estimate */}
-      <section className="py-16 md:py-24 bg-lightGray-50">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
         <div className="container mx-auto px-4 max-w-4xl grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8">
+          <div className="bg-white/10 border border-white/10 rounded-2xl p-8">
             <div className="w-12 h-12 bg-gradient-to-br from-turquoise-500 to-turquoise-600 rounded-xl flex items-center justify-center mb-5">
               <CalendarX className="w-6 h-6 text-white" />
             </div>
-            <h2 className="text-2xl font-display text-deepTeal-700 mb-4">
+            <h2 className="text-2xl font-display text-white mb-4">
               Cancellation Policy
             </h2>
-            <p className="text-slate leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               If you are unable to attend a session, please cancel at least 24
               hours beforehand. Otherwise, you will be charged the full rate of
               the session. Life happens—military deployments, emergencies, sick
@@ -293,14 +293,14 @@ export default function FinancesInsurancePage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8">
+          <div className="bg-white/10 border border-white/10 rounded-2xl p-8">
             <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-olive-500 rounded-xl flex items-center justify-center mb-5">
               <FileText className="w-6 h-6 text-white" />
             </div>
-            <h2 className="text-2xl font-display text-deepTeal-700 mb-4">
+            <h2 className="text-2xl font-display text-white mb-4">
               Good Faith Estimate
             </h2>
-            <p className="text-slate leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               Under the No Surprises Act, clients who are not using insurance
               have the right to a Good Faith Estimate of what their care will
               cost. That right applies when you request an estimate or schedule
