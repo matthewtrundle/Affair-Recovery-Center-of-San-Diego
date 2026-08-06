@@ -7,7 +7,7 @@ import {
   Heart,
   CreditCard,
   Banknote,
-  ShieldCheck,
+  FileCheck,
   FileText,
   CalendarX,
   Phone,
@@ -58,18 +58,18 @@ const rates = [
 const paymentMethods = [
   {
     icon: CreditCard,
-    title: 'Credit & Debit',
-    description: 'Kept securely on file and charged at the time of service.',
+    title: 'Credit Cards',
+    description: 'All major credit cards are accepted.',
   },
   {
     icon: Banknote,
     title: 'Cash',
-    description: 'Welcome as well—please bring exact change.',
+    description: 'Always welcome.',
   },
   {
-    icon: ShieldCheck,
-    title: 'HSA & FSA',
-    description: 'Most health savings and flexible spending cards are accepted.',
+    icon: FileCheck,
+    title: 'Check',
+    description: 'Made out at your session.',
   },
 ]
 
@@ -100,7 +100,7 @@ export default function FinancesInsurancePage() {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-display font-light text-deepTeal mb-4">
               Session{' '}
-              <span className="text-4xl md:text-5xl font-normal italic text-turquoise-600">
+              <span className="font-normal italic text-turquoise-600">
                 Rates
               </span>
             </h2>
@@ -132,40 +132,62 @@ export default function FinancesInsurancePage() {
           </div>
 
           <p className="text-center text-slate mt-10 leading-relaxed">
-            If finances are a concern, please reach out. A limited number of
-            reduced-fee spots and session packages are available, and it is
-            always worth a conversation before you rule therapy out.
+            If finances are a concern, please reach out. It is always worth a
+            conversation before you rule therapy out.
           </p>
         </div>
       </section>
 
       {/* Payment methods */}
-      <section className="py-16 md:py-20 bg-lightGray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-display text-deepTeal-700 mb-8 pb-4 border-b-2 border-turquoise-200">
-            Forms of Payment
-          </h2>
+      <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
+        {/* Soft mesh glow for depth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 15% 15%, rgba(42, 191, 176, 0.20) 0%, transparent 45%),
+                              radial-gradient(circle at 85% 85%, rgba(173, 217, 78, 0.14) 0%, transparent 45%)`,
+          }}
+        />
+
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-display font-light text-white mb-4">
+              Forms of{' '}
+              <span className="font-normal italic text-lime-400">Payment</span>
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed">
+              We keep this simple. Use whichever method is easiest for you.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6">
             {paymentMethods.map((method) => {
               const Icon = method.icon
               return (
                 <div
                   key={method.title}
-                  className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300"
+                  className="group relative bg-white/[0.07] border border-white/10 rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.12] hover:border-lime-400/40"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-olive-500 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="relative inline-flex mb-5">
+                    <div className="absolute inset-0 rounded-full bg-lime-400/30 blur-xl scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-lime-500 to-olive-600 ring-1 ring-white/20 flex items-center justify-center">
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-display font-medium text-deepTeal mb-2">
+                  <h3 className="text-xl font-display font-medium text-white mb-2">
                     {method.title}
                   </h3>
-                  <p className="text-slate leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {method.description}
                   </p>
                 </div>
               )
             })}
           </div>
+
+          <p className="text-center text-white/60 mt-12">
+            Planning to seek reimbursement? Ask for a superbill at any time.
+          </p>
         </div>
       </section>
 
@@ -277,38 +299,66 @@ export default function FinancesInsurancePage() {
       </section>
 
       {/* Cancellation policy + Good Faith Estimate */}
-      <section className="py-16 md:py-24 bg-lightGray-50">
-        <div className="container mx-auto px-4 max-w-4xl grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-turquoise-500 to-turquoise-600 rounded-xl flex items-center justify-center mb-5">
-              <CalendarX className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-2xl font-display text-deepTeal-700 mb-4">
-              Cancellation Policy
+      <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
+        {/* Soft mesh glow for depth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 85% 15%, rgba(42, 191, 176, 0.20) 0%, transparent 45%),
+                              radial-gradient(circle at 15% 85%, rgba(173, 217, 78, 0.14) 0%, transparent 45%)`,
+          }}
+        />
+
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-display font-light text-white mb-4">
+              Good to{' '}
+              <span className="font-normal italic text-lime-400">Know</span>
             </h2>
-            <p className="text-slate leading-relaxed">
-              Please cancel or reschedule your appointment with at least 24
-              hours notice. With less than 24 hours notice, you will be charged
-              for the session. Life happens—military deployments, emergencies,
-              sick kids—and those situations are handled case by case.
+            <p className="text-lg text-white/70 leading-relaxed">
+              Two things worth understanding before your first session.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-olive-500 rounded-xl flex items-center justify-center mb-5">
-              <FileText className="w-6 h-6 text-white" />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="group relative bg-white/[0.07] border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.12] hover:border-turquoise-400/40">
+              <div className="relative inline-flex mb-5">
+                <div className="absolute inset-0 rounded-full bg-turquoise-400/30 blur-xl scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-turquoise-500 to-turquoise-600 ring-1 ring-white/20 flex items-center justify-center">
+                  <CalendarX className="w-7 h-7 text-white" />
+                </div>
+              </div>
+              <h3 className="text-xl font-display font-medium text-white mb-3">
+                Cancellation Policy
+              </h3>
+              <p className="text-white/70 leading-relaxed">
+                If you are unable to attend a session, please cancel at least 24
+                hours beforehand. Otherwise, you will be charged the full rate
+                of the session. Life happens—military deployments, emergencies,
+                sick kids—and those situations are handled case by case.
+              </p>
             </div>
-            <h2 className="text-2xl font-display text-deepTeal-700 mb-4">
-              Good Faith Estimate
-            </h2>
-            <p className="text-slate leading-relaxed">
-              Under the No Surprises Act, clients who are not using insurance
-              have the right to a Good Faith Estimate of what their care will
-              cost. That right applies when you request an estimate or schedule
-              a session at least three business days in advance. As a matter of
-              practice, we provide one in writing before we begin, and you can
-              request an updated estimate at any point in our work together.
-            </p>
+
+            <div className="group relative bg-white/[0.07] border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.12] hover:border-lime-400/40">
+              <div className="relative inline-flex mb-5">
+                <div className="absolute inset-0 rounded-full bg-lime-400/30 blur-xl scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-lime-500 to-olive-600 ring-1 ring-white/20 flex items-center justify-center">
+                  <FileText className="w-7 h-7 text-white" />
+                </div>
+              </div>
+              <h3 className="text-xl font-display font-medium text-white mb-3">
+                Good Faith Estimate
+              </h3>
+              <p className="text-white/70 leading-relaxed">
+                Under the No Surprises Act, clients who are not using insurance
+                have the right to a Good Faith Estimate of what their care will
+                cost. That right applies when you request an estimate or
+                schedule a session at least three business days in advance. As a
+                matter of practice, we provide one in writing before we begin,
+                and you can request an updated estimate at any point in our work
+                together.
+              </p>
+            </div>
           </div>
         </div>
       </section>
