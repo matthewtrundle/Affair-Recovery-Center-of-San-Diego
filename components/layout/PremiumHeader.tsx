@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronRight, ChevronDown, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone, Video } from 'lucide-react'
+import { Menu, X, ChevronRight, ChevronDown, Heart, MessageCircle, Calendar, User, Lightbulb, HelpCircle, BookOpen, Phone, Video, CreditCard } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
@@ -57,6 +57,7 @@ const navigation = [
   },
   { name: 'Success Stories', href: '/testimonials', icon: MessageCircle, description: 'Real transformations' },
   { name: 'FAQ', href: '/faq', icon: HelpCircle, description: 'Your questions answered' },
+  { name: 'Finances & Insurance', href: '/finances-insurance', icon: CreditCard, description: 'Rates & reimbursement' },
 ]
 
 export function PremiumHeader() {
