@@ -7,7 +7,7 @@ import {
   Heart,
   CreditCard,
   Banknote,
-  ShieldCheck,
+  FileCheck,
   FileText,
   CalendarX,
   Phone,
@@ -58,18 +58,18 @@ const rates = [
 const paymentMethods = [
   {
     icon: CreditCard,
-    title: 'Credit & Debit',
-    description: 'Kept securely on file and charged at the time of service.',
+    title: 'Credit Cards',
+    description: 'All major credit cards are accepted.',
   },
   {
     icon: Banknote,
     title: 'Cash',
-    description: 'Welcome as well—please bring exact change.',
+    description: 'Accepted at the time of service.',
   },
   {
-    icon: ShieldCheck,
-    title: 'HSA & FSA',
-    description: 'Most health savings and flexible spending cards are accepted.',
+    icon: FileCheck,
+    title: 'Check',
+    description: 'Made out at your session.',
   },
 ]
 
@@ -132,9 +132,8 @@ export default function FinancesInsurancePage() {
           </div>
 
           <p className="text-center text-slate mt-10 leading-relaxed">
-            If finances are a concern, please reach out. A limited number of
-            reduced-fee spots and session packages are available, and it is
-            always worth a conversation before you rule therapy out.
+            If finances are a concern, please reach out. It is always worth a
+            conversation before you rule therapy out.
           </p>
         </div>
       </section>
@@ -287,10 +286,10 @@ export default function FinancesInsurancePage() {
               Cancellation Policy
             </h2>
             <p className="text-slate leading-relaxed">
-              Please cancel or reschedule your appointment with at least 24
-              hours notice. With less than 24 hours notice, you will be charged
-              for the session. Life happens—military deployments, emergencies,
-              sick kids—and those situations are handled case by case.
+              If you are unable to attend a session, please cancel at least 24
+              hours beforehand. Otherwise, you will be charged the full rate of
+              the session. Life happens—military deployments, emergencies, sick
+              kids—and those situations are handled case by case.
             </p>
           </div>
 
