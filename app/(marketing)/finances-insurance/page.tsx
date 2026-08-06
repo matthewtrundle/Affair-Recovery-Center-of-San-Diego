@@ -193,9 +193,18 @@ export default function FinancesInsurancePage() {
             </p>
             <p>
               Because of those stipulations, we work with clients on a self-pay
-              basis only. It keeps your privacy fully intact and lets the two of
-              us decide together exactly how long we work together—without
-              outside influence or pressure.
+              basis only. We do not bill insurance directly, so nothing about
+              your care is sent to an insurer by us, and the two of us decide
+              together exactly how long we work together—without outside
+              influence or pressure.
+            </p>
+            <p>
+              One important caveat: if you choose to submit a superbill for
+              reimbursement, you are the one making a claim, and your insurer
+              will require a diagnosis and may request additional information
+              about your treatment. Staying fully out of the insurance system
+              means not filing a claim at all. That choice is entirely yours,
+              and we are glad to talk through the tradeoffs.
             </p>
           </div>
         </div>
@@ -294,10 +303,11 @@ export default function FinancesInsurancePage() {
             </h2>
             <p className="text-slate leading-relaxed">
               Under the No Surprises Act, clients who are not using insurance
-              have the right to receive a Good Faith Estimate of what their care
-              will cost. You will receive one in writing before your first
-              session, and you can request an updated estimate at any point in
-              our work together.
+              have the right to a Good Faith Estimate of what their care will
+              cost. That right applies when you request an estimate or schedule
+              a session at least three business days in advance. As a matter of
+              practice, we provide one in writing before we begin, and you can
+              request an updated estimate at any point in our work together.
             </p>
           </div>
         </div>
