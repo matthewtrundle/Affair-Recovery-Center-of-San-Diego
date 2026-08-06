@@ -64,7 +64,7 @@ const paymentMethods = [
   {
     icon: Banknote,
     title: 'Cash',
-    description: 'Accepted at the time of service.',
+    description: 'Always welcome.',
   },
   {
     icon: FileCheck,
@@ -100,7 +100,7 @@ export default function FinancesInsurancePage() {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-display font-light text-deepTeal mb-4">
               Session{' '}
-              <span className="text-4xl md:text-5xl font-normal italic text-turquoise-600">
+              <span className="font-normal italic text-turquoise-600">
                 Rates
               </span>
             </h2>
@@ -139,32 +139,55 @@ export default function FinancesInsurancePage() {
       </section>
 
       {/* Payment methods */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-display text-white mb-8 pb-4 border-b-2 border-white/20">
-            Forms of Payment
-          </h2>
+      <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-deepTeal-900 via-deepTeal-800 to-deepTeal-700">
+        {/* Soft mesh glow for depth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 15% 15%, rgba(42, 191, 176, 0.20) 0%, transparent 45%),
+                              radial-gradient(circle at 85% 85%, rgba(173, 217, 78, 0.14) 0%, transparent 45%)`,
+          }}
+        />
+
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-display font-light text-white mb-4">
+              Forms of{' '}
+              <span className="font-normal italic text-lime-400">Payment</span>
+            </h2>
+            <p className="text-lg text-white/70 leading-relaxed">
+              We keep this simple. Use whichever method is easiest for you.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-6">
             {paymentMethods.map((method) => {
               const Icon = method.icon
               return (
                 <div
                   key={method.title}
-                  className="bg-white/10 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.14] transition-colors duration-300"
+                  className="group relative bg-white/[0.07] border border-white/10 rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.12] hover:border-lime-400/40"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-olive-500 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="relative inline-flex mb-5">
+                    <div className="absolute inset-0 rounded-full bg-lime-400/30 blur-xl scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-lime-500 to-olive-600 ring-1 ring-white/20 flex items-center justify-center">
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
                   </div>
                   <h3 className="text-xl font-display font-medium text-white mb-2">
                     {method.title}
                   </h3>
-                  <p className="text-white/80 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {method.description}
                   </p>
                 </div>
               )
             })}
           </div>
+
+          <p className="text-center text-white/60 mt-12">
+            Planning to seek reimbursement? Ask for a superbill at any time.
+          </p>
         </div>
       </section>
 
