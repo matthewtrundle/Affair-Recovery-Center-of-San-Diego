@@ -114,7 +114,7 @@ export default function BetrayalRecoveryPage() {
             <div className="space-y-8">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-heading font-semibold text-navy mb-4">
-                  First Month: Stopping the Bleeding
+                  Phase One: Stopping the Bleeding
                 </h3>
                 <p className="text-slate mb-4">
                   First, we gotta calm things down. You can't rebuild while the house is still on fire:
@@ -145,7 +145,7 @@ export default function BetrayalRecoveryPage() {
 
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-heading font-semibold text-navy mb-4">
-                  Months 2-4: Understanding the Why
+                  Phase Two: Understanding the Why
                 </h3>
                 <p className="text-slate mb-4">
                   Now we dig deeper (but with care — this isn't about blame):
@@ -176,7 +176,7 @@ export default function BetrayalRecoveryPage() {
 
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-heading font-semibold text-navy mb-4">
-                  Months 4+: Building Something Better
+                  Phase Three: Building Something Better
                 </h3>
                 <p className="text-slate mb-4">
                   This is where it gets good — creating version 2.0 of your relationship:
