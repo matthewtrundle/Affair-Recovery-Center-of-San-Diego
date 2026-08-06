@@ -12,6 +12,7 @@ const navigation = {
     { name: 'Online Sessions', href: '/california-online-sessions' },
     { name: 'Testimonials', href: '/testimonials' },
     { name: 'FAQ', href: '/faq' },
+    { name: 'Finances & Insurance', href: '/finances-insurance' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ],
